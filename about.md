@@ -1,3 +1,7 @@
+---
+layout: page
+title: About
+---
 ## Disclaimer
 
 This is supposed to be a place where I can say something in this virtual web world; the blog may loosely related to my real-life identity, but my real-life identity is not responsible for anything posted here.
