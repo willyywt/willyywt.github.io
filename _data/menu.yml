@@ -12,6 +12,8 @@ entries:
   - title: Miscellaneous Things
     entires:
       - title: "A fedora setup script: <a href='setup.sh'>setup.sh</a>"
+      - title: Rss feed
+        url: feed.xml
   
   - title: About
     url: about
