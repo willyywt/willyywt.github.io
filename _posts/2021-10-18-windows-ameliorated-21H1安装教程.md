@@ -14,7 +14,10 @@ ameliorated网站：https://ameliorated.info/。 右上角的三个图标对应t
 
 ## 警告
 ameliorated移除了Windows 10设置界面的不少设置，包括Xbox游戏、更新与安全。ameliorated移除了Windows内建的微软拼音的输入法设置，所以如果要改快捷键等等必须在pre-ameliorated之前设置。（当然如果你一上来就装搜狗拼音这一条就和你无关）
+
 ameliorated移除了Windows Store，依赖Windows Store的话不要用ameliorated。
+
+ameliorated只适用于Windows重装，在已有的Windows系统中运行可能不能达到ameliorated正常运行的效果。你可以划一个新的分区对ame进行试验，或者借此机会重新安装Windows。
 
 ## 预备材料
 * 闲置的u盘一个（或者移动硬盘）。如果你已经有一个在用的，请把里面的文件备份到其它地方，或者干脆用一个新的（如果买新的建议无脑选闪迪的容量>=64GB的u盘，价格和容量（GB）的比值接近1:1）。对u盘有如下要求：
@@ -40,6 +43,7 @@ https://mirrors.tuna.tsinghua.edu.cn/fedora/updates/34/Everything/x86_64/Package
    * 国际版Firefox链接：https://www.mozilla.org/zh-CN/firefox/（注意域名后缀.org而不是.com.cn）
    * 网卡驱动（直接从机器销售厂家的网站上下载，不要用驱动精灵等流氓软件）
 * 当然，还要有少量的耐心（毕竟大部分步骤都不是很熟悉）
+
 # 第一部分：（Ventoy）制作Windows启动盘并分区
 
 # 第二部分：安装Windows
