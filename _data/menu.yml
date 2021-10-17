@@ -9,31 +9,12 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: Some miscellaneous
-    entires:
-      - title: A fedora setup script
-        url: setup.sh
-      - title: Rss feed
-        url: feed.xml
-
-  - title: Some miscellaneous
-    entires:
-      - title: A fedora setup script
-        url: setup.sh
-      - title: Rss feed
-        url: feed.xml
-
-  - title: another list
+  - title: Miscellaneous Things
     entries:
       - title: A fedora setup script
         url: setup.sh
       - title: Rss feed 
         url: feed.xml
-      - title: with subitems
-        entries:
-          - title: with subsubitems
-          - title: example page
-            url: about
  
   - title: About
     url: about
