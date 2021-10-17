@@ -9,14 +9,14 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: Miscellaneous
+  - title: Some miscellaneous
     entires:
       - title: A fedora setup script
         url: setup.sh
       - title: Rss feed
         url: feed.xml
 
-  - title: Miscellaneous
+  - title: Some miscellaneous
     entires:
       - title: A fedora setup script
         url: setup.sh
