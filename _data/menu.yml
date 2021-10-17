@@ -9,7 +9,7 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: Miscellaneous Things
+  - title: Miscellaneous
     entires:
       - title: "A fedora setup script: <a href='setup.sh'>setup.sh</a>"
       - title: Rss feed
