@@ -1,0 +1,22 @@
+# For documentation on this file, see:
+# https://github.com/riggraz/no-style-please#customize-the-menu
+
+entries:
+  - title: All Posts
+    post_list:
+      limit: 10
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive.html
+
+  - title: Miscellaneous Things
+    entires:
+      - title: "A fedora setup script: <a href='setup.sh'>setup.sh</a>"
+  
+  - title: About
+    url: about
+        
+  - title: Powered By
+    entries:
+      - title: "Theme: <a href='https://github.com/riggraz/no-style-please'>no-style-please</a>, a simple <a href='https://jekyllrb.com/'>Jekyll</a> theme (Default theme engine for github)"
+      - title: "Host: Github pages (git repo: <a href='https://github.com/willyywt/willyywt.github.io'>willywt.github.io</a>)"
