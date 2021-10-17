@@ -16,6 +16,13 @@ entries:
       - title: Rss feed
         url: feed.xml
 
+  - title: Miscellaneous
+    entires:
+      - title: A fedora setup script
+        url: setup.sh
+      - title: Rss feed
+        url: feed.xml
+
   - title: another list
     entries:
       - title: with subitems
