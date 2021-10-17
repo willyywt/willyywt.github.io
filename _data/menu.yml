@@ -15,6 +15,7 @@ entries:
         url: setup.sh
       - title: Rss feed 
         url: feed.xml
+      - title: "世纪互联版Onedrive的挂载目录: <a href='https://file.willyangywt.cc'>file.willyangywt.cc</a>"
  
   - title: About
     url: about
