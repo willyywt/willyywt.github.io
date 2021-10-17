@@ -19,7 +19,7 @@ Binary format: [PGP Public Key](willy.gpg)
 ASCII plain text format: [PGP Public Key - Plain Text](willy-plain.txt)
 
 ### GPG GUI frontend: kleopatra
-You can use a GUI frontend like KDE's [kleopatra](https://www.kde.org/applications/utilities/kleopatra/). 
+You can use a GUI frontend like KDE's [kleopatra](https://apps.kde.org/kleopatra/)
 
 On Microsoft Windows: get it by installing [gpg4win](https://www.gpg4win.org/download.html), which includes the command line gpg.exe and the graphical frontend kleopatra.exe.
 
