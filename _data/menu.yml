@@ -25,6 +25,10 @@ entries:
 
   - title: another list
     entries:
+      - title: A fedora setup script
+        url: setup.sh
+      - title: Rss feed 
+        url: feed.xml
       - title: with subitems
         entries:
           - title: with subsubitems
