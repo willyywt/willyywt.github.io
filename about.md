@@ -11,16 +11,3 @@ This is supposed to be a place where I can say something in this virtual web wor
 
 中文翻译：随性写，技术性的博客一般只写英文，不翻译；非技术性的随缘直接用中文写
 
-## My PGP Public key
-This is my PGP public key, created with [gnupg](https://www.gnupg.org). If you meet me in person you can challenge this PGP key's authority by requiring me to sign arbitary text file.
-
-Binary format: [PGP Public Key](willy.gpg)
-
-ASCII plain text format: [PGP Public Key - Plain Text](willy-plain.txt)
-
-### GPG GUI frontend: kleopatra
-You can use a GUI frontend like KDE's [kleopatra](https://apps.kde.org/kleopatra/)
-
-On Microsoft Windows: get it by installing [gpg4win](https://www.gpg4win.org/download.html), which includes the command line gpg.exe and the graphical frontend kleopatra.exe.
-
-On (GNU/)Linux: get it from your distribution. 
