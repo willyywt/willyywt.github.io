@@ -9,8 +9,9 @@
 # SETUP_FLATPAK_SYSTEM_DIR:        Flatpak system installation directory
 # SETUP_FILE_DIR:                  Backup dir (SETUP_FILE_DIR is only a shorthand to set SETUP_FILE_DIR_FULL and will not be used later)
 # SETUP_FILE_DIR_FULL:             Backup dir, cannonical
-# SETUP_CONFIG_GIT_EMAIL       Git author name
-# SETUP_CONFIG_GIT_NAME        Git author name
+# SETUP_CONFIG_GIT_EMAIL           Git author email
+# SETUP_CONFIG_GIT_NAME            Git author name
+# SETUP_SET_MAC_RANDOMIZATION      Use macchanger to randomize mac address
 # Don't plain to test non-default value
 # SETUP_IS_BTRFS:                  Create btrfs subvolume for flatpak system
 # SETUP_IS_SELINUX:                Have SELinux enabled
@@ -21,7 +22,8 @@ if [ -z $SETUP_SET_FLATHUB_SJTU ] ; then SETUP_SET_FLATHUB_SJTU=1 ; fi
 if [ -z $SETUP_SET_FLATPAK_FCITX ] ; then SETUP_SET_FLATPAK_FCITX=1 ; fi                                                   
 if [ -z $SETUP_FLATPAK_SYSTEM_DIR ] ; then SETUP_FLATPAK_SYSTEM_DIR="/var/lib/flatpak" ; fi        
 if [ -z $SETUP_FILE_DIR ] ; then SETUP_FILE_DIR="setup" ; fi                                       
-if [ -z $SETUP_FILE_DIR_FULL ] ; then SETUP_FILE_DIR_FULL=$HOME/$SETUP_FILE_DIR; fi                
+if [ -z $SETUP_FILE_DIR_FULL ] ; then SETUP_FILE_DIR_FULL=$HOME/$SETUP_FILE_DIR ; fi                
+if [ -z $SETUP_SET_MAC_RANDOMIZATION ]; then SETUP_SET_MAC_RANDOMIZATION=1 ; fi
 
 ## Don't plain to test non-default value
 if [ -z $SETUP_IS_BTRFS ]; then SETUP_IS_BTRFS=1; fi                                               
@@ -65,6 +67,21 @@ setup_fs_dir() {
 #}}}1
 _setup_warning_backup_not_found() {
 	echo "Warning: backup cannot be found: $1" >&2
+}
+setup_rpm_installed() {
+	# if setup_rpm_installed gnome-shell ; then echo "Installed gnome-shell"; fi
+	rpm -qi $1 > /dev/null
+}
+setup_rpm_check_all() {
+	failed=0
+	SETUP_ALL=(macchangers gnome-tweaks gnome-extensions-app)
+	for pkg in ${SETUP_ALL[*]} ; do
+	       if ! setup_rpm_installed $pkg ; then
+		       echo "Warning: $pkg not installed"
+		       failed=1
+	       fi 
+	done
+	return $failed
 }
 setup_backup() {
 	if [ ! -d $1 ]; then
@@ -259,6 +276,7 @@ setup_config_git() {
 	if [ $SETUP_CONFIG_GIT_NAME ] ; then
 		git config --global user.name $SETUP_CONFIG_GIT_NAME #willyang
 	fi
+	git config --global init.defaultBranch main
 }
 setup_config_ssh() {
 # ssh proxy for github
@@ -273,7 +291,7 @@ setup_config_s3cmd() {
 # s3cmd
 mkdir ~/.s3temp # ~/utility/s3put.sh
 mkdir ~/.s3backtmp # ~/utility/s3backup.sh
-ln -s /tmp/.s3cfg ~/.s3cfg
+ln -s /run/user/1000/.s3cfg ~/.s3cfg
 }
 
 
@@ -387,6 +405,30 @@ fs.inotify.max_user_watches=524288
 __EOF__
 	sudo cp /tmp/$_SETUP_TEMP-sysctl.conf /etc/sysctl.conf
 }
+setup_su_macchange() {
+	if [ $SETUP_SET_MAC_RANDOMIZATION == 0 ] ; then return 0; fi
+	if ! setup_rpm_installed macchange; then echo "Error: macchange not installed"; return 1; fi
+	cat > /tmp/$_SETUP_TEMP-macspoof << __EOF__
+#https://wiki.archlinux.org/title/MAC_address_spoofing#systemd_unit
+[Unit]
+Description=macchanger on %I
+Wants=network-pre.target
+Before=network-pre.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+ExecStart=/usr/bin/macchanger -e %I
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
+__EOF__
+	sudo cp /tmp/$_SETUP_TEMP-macspoof /etc/systemd/system/macspoof@.service
+	# Not yet enabled, because we don't know network device interface
+	# Example: systemctl enable macspoof@wlp1s0.service
+	# Don't use --now before restarting Networkmanager
+}
 setup_su_backup() {
 	if [ ! -d $1 ]; then
 		_setup_warning_backup_not_found $3
@@ -444,6 +486,7 @@ main() {
 	sudo echo "Start ROOT config"
 	# Also does flatpak system backup if SETUP_SET_FLATPAK_SYSTEM_BACKUP
 	setup_su_flatpak &
+	setup_su_macchange &
 	setup_su_logind &
 	setup_su_polkit &
 	setup_su_packagekit &
@@ -452,5 +495,3 @@ main() {
 	wait
 	echo "Setup finished!"
 }
-
-main
