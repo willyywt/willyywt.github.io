@@ -16,11 +16,11 @@ I am now migrating to new cryptography tools and stop using the broken PGP.
 * Low-level details must not be configurable by users
 
 ## Minisign
-**My minisign public key: RWSVADkxkRruodtZOCHC0ym+ANlFDgx9UdCnseqWXzO0SvZgF+IP6kl+**
+My minisign public key: **RWSVADkxkRruodtZOCHC0ym+ANlFDgx9UdCnseqWXzO0SvZgF+IP6kl+**
 
 Download the public key file (the same key as the above string): [minisign public key](minisign-1.pub)
 
-As usual, the real-world folks can challenge this key's authority by requiring me to sign arbitary files.
+As usual, real-world folks can challenge this key's authority by requiring me to sign arbitary files.
 
 ### Git archive signing
 This blog's [git repository](https://github.com/willyywt/willyywt.github.io) will from now have tags occasionally. I will use `git archive --format=zip` to create an archive for each tag, upload the archive as a github release, and sign the git archive file using minisign.
