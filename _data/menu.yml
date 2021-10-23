@@ -11,8 +11,8 @@ entries:
 
   - title: Miscellaneous Things
     entries:
-      - title: A fedora setup script
-        url: setup.sh
+      - title: My fedora setup (and linux in general)
+        url: fedora-setup
       - title: Rss feed 
         url: feed.xml
       - title: "世纪互联版Onedrive的挂载目录: <a href='https://file.willyangywt.cc'>file.willyangywt.cc</a>"
