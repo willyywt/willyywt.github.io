@@ -15,7 +15,7 @@ In this very miserable world, no standard base image exists, like any other sane
 
 The "linux desktop" actually never come true in Window XP ages; it only come sort of true when the "biggest innovation", GPU drivers, start to [work with linux desktop](https://www.techrepublic.com/article/fedora-at-15-why-matthew-miller-sees-a-bright-future-for-the-linux-distribution/), but still (as of 2021) [not scalable to the general public](https://itvision.altervista.org/why.linux.is.not.ready.for.the.desktop.current.html). 
 
-Some reasons why it still failed completely and utterly, 20 years later when people start to expect its success: [Why hasn’t The Year of the Linux Desktop happened yet?](https://blogs.gnome.org/uraeus/2017/12/19/why-hasnt-the-year-of-the-linux-desktop-happened-yet/).
+Some reasons why it still failed completely and utterly, 20 years since people first start to expect its success: [Why hasn’t The Year of the Linux Desktop happened yet?](https://blogs.gnome.org/uraeus/2017/12/19/why-hasnt-the-year-of-the-linux-desktop-happened-yet/).
 
 So before the long waited a unified base image appears, I have to rely on a distribution.
 A few criterion of mine:
