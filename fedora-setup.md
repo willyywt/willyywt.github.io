@@ -4,14 +4,15 @@ title: My fedora linux setup
 ---
 I will try to summarize my experience of fedora linux distribution ("Fedora Linux" is in /etc/os-release as of fedora 35:[F35-ChangeSet](https://fedoraproject.org/wiki/Releases/35/ChangeSet) [Fedora_Linux_in_os-release](https://fedoraproject.org/wiki/Changes/Fedora_Linux_in_os-release)), and some distribution-agnostic experience with (GNU/)Linux desktop.
 
+tl;dr: A pipe of complaints, probably continuously growing with time. I will write this article with a much more trenchant tone than usual, because real developers face the real world other than living in the illusionary universe..
+
 This article is a big TODO now
 
 ## Why fedora?
-tl;dr: A pipe of complaints, probably continuously growing with time
 
 The very miserable linux desktop world, where commercialization fails utterly and completely, has only very few developers (even GNOME and KDE lacks developers severely), and even fewer commercially backed ones. The linux universe is absurdly low in human resource density (developers scatter around the world, no commercial and full-time support for most developers). I see no unified pushing force other than very few projects: the [Linux Kernel](https://www.kernel.org/) itself, the compilers [GCC](https://www.kernel.org/) and [Clang](https://clang.llvm.org/), the [Xorg](https://www.x.org) and [freedesktop](https://www.freedesktop.org/) developers, the [GNOME](http://gnome.org/) and [KDE](https://kde.org/) desktop environments. 
 
-In this very miserable world, no standard base image exists, like any other sane operating system have. This world is still in the 1970s UNIX centuries, when users have to depend on system administrators to get software, and these administrators made users depend on them, without any idea of "interchangeability" or "standardization". By contrast, Windows have developed a single base image since forever, standardize on Win32 APIs, and provide stable user space API also since forever. In the sense of base image, linux can not even be called an operating system: [There is no linux platform](https://blogs.gnome.org/tbernard/2019/12/04/there-is-no-linux-platform-1/).
+In this very miserable world, no standard base image exists, which any other sane operating systems like Windows, MacOS/iOS and Android have. This world is still in the 1970s UNIX centuries, when users have to depend on system administrators to get software, and these administrators made users depend on them, without any idea of "interchangeability" or "standardization". By contrast, Windows have developed a single base image since forever, standardize on Win32 APIs, and provide stable user space API also since forever. (The linux world's stable userspace API only stops at the kernel, and things dramatically breaks on top; although on the bright side, projects like [Freedesktop Runtime](https://www.codethink.co.uk/articles/2021/ABI-stability-freedesktop/) start to care about ABI.) In the sense of base image, linux can not even be called an operating system: [There is no linux platform](https://blogs.gnome.org/tbernard/2019/12/04/there-is-no-linux-platform-1/).
 
 The "linux desktop" actually never come true in Window XP ages; it only come sort of true when the "biggest innovation", GPU drivers, start to [work with linux desktop](https://www.techrepublic.com/article/fedora-at-15-why-matthew-miller-sees-a-bright-future-for-the-linux-distribution/), but still (as of 2021) [not scalable to the general public](https://itvision.altervista.org/why.linux.is.not.ready.for.the.desktop.current.html). 
 
@@ -40,5 +41,15 @@ GNOME is not so bad despite the rumors. Some reasons for GNOME:
 
 One architectural problem is that GNOME's wayland compositor and X11 window manager, mutter, is not separated to its own process, but convoluted with gnome-shell, so it can theoretically expose more instability and memory leak than KWin. It is very unlikely to be changed shortly because this will almost always break gnome-shell extensions.
 
+## The wrong idea of flatpak: trying to become a sandbox
+My view on flatpak (more accurately, it's [official runtimes](https://docs.flatpak.org/en/latest/available-runtimes.html))is that it is just a completely new linux distribution. Yes, one another incompatiable linux distribution, not some fancy other things that flatpak claims to be.
+
+The great part of it is that it runs on top of almost all linux distributions, and does somewhat integration on fonts, themes, etc. It also has a right development model: a notion of a base image. Developers now directly build application on top of freedesktop runtime (and gnome and kde runtimes, which are based on freedesktop runtime), instead of having a middle man, the "distributions" that stop developers to make applications, and are pround to be the "proud" remains of the "1970s UNIX system admins" (yes, admins do a lot of hard work, but the world will be better without them). Importantly, the runtime [cares about API stability](https://www.codethink.co.uk/articles/2021/ABI-stability-freedesktop/).
+
+The wrong part is that it is trying to boost itself as a "sandbox". A desktop system never care about "sandbox", for two reasons. The first one is about practical limits: sanboxing is impossible to build without [stable system API, system-wide sandbox framework, well-written mandatory access control policies](https://madaidans-insecurities.github.io/linux.html). The previous link is about securites which is different than sandboxing, but doesn't change the point that today's linux world is not ready for it: no stable system API, no system-wide sandbox framwork beyond the kernel, no well-written madatory access control policies outside fedora-based distributions (which doesn't include X11 window managers and Wayland compositors, because Red Hat doesn't spend a lot of money on desktops). The second one is even more severe, about designed usages: people simply don't expect desktop systems to be "sandboxed".
+
+TODO: more elaboration
+
 ## A setup script
 [setup.sh](setup.sh)
+
