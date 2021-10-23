@@ -11,3 +11,7 @@ This is supposed to be a place where I can say something in this virtual web wor
 
 中文翻译：随性写，技术性的博客一般只写英文，不翻译；非技术性的随缘直接用中文写
 
+## No Comments?
+This is a personal blog, and I don't want to be a moderator for my personal blog.
+
+If you have any suggestions for improvement, send me a pull request: [github.com/willyywt/willyywt.github.io/pulls](https://github.com/willyywt/willyywt.github.io/pulls). Remember I am not always on the mood for reviewing pull requests.

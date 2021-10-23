@@ -13,7 +13,9 @@ The very miserable linux desktop world, where commercialization fails utterly an
 
 In this very miserable world, no standard base image exists, like any other sane operating system have. This world is still in the 1970s UNIX centuries, when users have to depend on system administrators to get software, and these administrators made users depend on them, without any idea of "interchangeability" or "standardization". By contrast, Windows have developed a single base image since forever, standardize on Win32 APIs, and provide stable user space API also since forever. In the sense of base image, linux can not even be called an operating system: [There is no linux platform](https://blogs.gnome.org/tbernard/2019/12/04/there-is-no-linux-platform-1/).
 
-the "linux desktop" actually never come true in Window XP ages; it only come sort of true when the "biggest innovation", GPU drivers, start to [work with linux desktop](https://www.techrepublic.com/article/fedora-at-15-why-matthew-miller-sees-a-bright-future-for-the-linux-distribution/), but still (as of 2021) [not scalable to the general public](https://itvision.altervista.org/why.linux.is.not.ready.for.the.desktop.current.html). 
+The "linux desktop" actually never come true in Window XP ages; it only come sort of true when the "biggest innovation", GPU drivers, start to [work with linux desktop](https://www.techrepublic.com/article/fedora-at-15-why-matthew-miller-sees-a-bright-future-for-the-linux-distribution/), but still (as of 2021) [not scalable to the general public](https://itvision.altervista.org/why.linux.is.not.ready.for.the.desktop.current.html). 
+
+Some reasons why it still failed completely and utterly, 20 years later when people start to expect its success: [Why hasn’t The Year of the Linux Desktop happened yet?](https://blogs.gnome.org/uraeus/2017/12/19/why-hasnt-the-year-of-the-linux-desktop-happened-yet/).
 
 So before the long waited a unified base image appears, I have to rely on a distribution.
 A few criterion of mine:
