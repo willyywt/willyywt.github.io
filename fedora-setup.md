@@ -25,6 +25,7 @@ A few criterion of mine:
 * Click to install and upgrade (Arch and Gentoo fails with "click to upgrade")
 * Saner packaging standard than debian
 * Shorter life cycle (LTS is almost synonymous to "bug included" plus "missing features" plus "security not included", and most developers only want to work with latest versions; you don't want LTS unless on servers)
+* Closer to upstream (two counter examples: [Ubuntu root access](https://cyberriskleaders.com/how-to-get-root-on-ubuntu-20-04-by-pretending-nobodys-home/) and [Cinnamon lock by-pass](https://github.com/linuxmint/cinnamon-screensaver/issues/354). While upstream code will have bugs, the downstream patches are more likely to fall behind)
 * Binary packages from upstream (some projects build binary packages for Ubuntu and RHEL, and RHEL ones usually work with fedora since [RHEL provides abi compatibility for basic packages](https://access.redhat.com/articles/rhel8-abi-compatibility))
 
 SELinux is sometimes annoying but since setting permissive mode can be made [per-domain](https://wiki.centos.org/HowTos/SELinux#Gathering_Audit_Logs_In_Permissive_Mode) it make sense to leave it open enforcing.
@@ -32,12 +33,15 @@ SELinux is sometimes annoying but since setting permissive mode can be made [per
 ## Why GNOME?
 GNOME is not so bad despite the rumors. Some reasons for GNOME:
 * Have the most features (rules out everything other than GNOME, KDE, Xfce and Cinnamon)
+* Have more developers (rules out Xfce and Cinnamon)
 * Have a working wayland compositor (Cinnamon's x11 window manager is based on a very old version of mutter; KDE is catching up, but KDE has more compatibility concerns, since GNOME is notorious for cutting features while KDE is not)
-* Much less buggier than KDE (mostly because KDE have fewer developers and even fewer commercially backed ones)
+* Much less buggier than KDE (mostly because KDE have fewer developers and even fewer commercially backed ones, although GNOME is short of developing resources either)
 * Have more consistent design and less confusing settings interface
 * I personally do not requires desktop widgets very hardly (If so GNOME is not a choice)
 * I personally do not theme stuff other than a shell theme: [flat-remix-gnome](https://github.com/daniruiz/flat-remix-gnome) (GNOME's adwaita looks much worse than KDE's breeze (and oxygen if you like), but not so creepy on a good laptop screen and a wallpaper)
 * I also do not rely on KWin scripts to do certain things
+
+TODO: use KDE for much longer times, and try out Xfce and Cinnamon
 
 One architectural problem is that GNOME's wayland compositor and X11 window manager, mutter, is not separated to its own process, but convoluted with gnome-shell, so it can theoretically expose more instability and memory leak than KWin. It is very unlikely to be changed shortly because this will almost always break gnome-shell extensions.
 
