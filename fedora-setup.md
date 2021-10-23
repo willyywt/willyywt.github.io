@@ -34,7 +34,7 @@ SELinux is sometimes annoying but since setting permissive mode can be made [per
 GNOME is not so bad despite the rumors. Some reasons for GNOME:
 * Have the most features (rules out everything other than GNOME, KDE, Xfce and Cinnamon)
 * Have more developers (rules out Xfce and Cinnamon)
-* Have a working wayland compositor (Cinnamon's x11 window manager is based on a very old version of mutter; KDE is catching up, but KDE has more compatibility concerns, since GNOME is notorious for cutting features while KDE is not)
+* Have a working wayland compositor (Currently use unstable protocols: [fullscreen-shell-unstable-v1](https://wayland.app/protocols/fullscreen-shell-unstable-v1) and [tablet-unstable-v2](https://wayland.app/protocols/tablet-unstable-v2))(Cinnamon's x11 window manager is based on a very old version of mutter; KDE is catching up, but KDE has more compatibility concerns, since GNOME is notorious for cutting features while KDE is not; [wlroots](https://github.com/swaywm/wlroots/)-based ones like [Sway](https://swaywm.org/) are not desktop environments)
 * Much less buggier than KDE (mostly because KDE have fewer developers and even fewer commercially backed ones, although GNOME is short of developing resources either)
 * Have more consistent design and less confusing settings interface
 * I personally do not requires desktop widgets very hardly (If so GNOME is not a choice)
