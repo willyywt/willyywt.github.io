@@ -36,3 +36,7 @@ Not planned，太懒。不过一共也就20几行sass，手动改一下应该不
 不过纯数字可读性有点差，选单词生成，直接从/usr/share/dict/linux.words里面读就可以，当然也可以选择KeepassXC的自动生成（不好写脚本）
 
 也有用诗歌等等的，不过随机生成对查找应该更友好
+
+## Jekyll Quirks
+https://blog.csdn.net/zhangpeterx/article/details/103920538
+https://xiazemin.github.io/MyBlog/jekyll/2020/05/31/raw.html
