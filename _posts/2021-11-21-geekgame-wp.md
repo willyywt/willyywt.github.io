@@ -506,4 +506,4 @@ def gen4096():
 交互方法：在和server.py交互的时候选择God，首先把God提供的`N`记录下来，然后提交三次给God签名，前两次的`name`各提交`aname1`和`aname2`的一个后回车，`key`直接按回车，第三次的`name`按回车，`key`提交`aC`按回车，收集到三个值分别记录为`cname1`，`cname2`，`cc`（直接记录整数，不含hex编码），然后计算`cname * cname2 * pow(cc, -4, N)`的值就是要给Richard的acert值。附录rsalog.txt有一个和server.py交互的完整例子。
 
 ## 附录
-![rsalog.txt](static/2021-11-21/rsalog.txt)
+[rsalog.txt](static/2021-11-21/rsalog.txt)
