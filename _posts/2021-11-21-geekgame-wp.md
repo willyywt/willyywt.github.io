@@ -2,6 +2,16 @@
 layout: page
 title: "（萌新向）1st PKU GeekGame writeup - By willyywt"
 ---
+北京大学信息安全综合能力竞赛（第一届）~~其实作为咸鱼玩家是为了800块钱才去的~~
+
+本来对CTF比赛不太感冒，但是看了第零届的题目觉得可以冲一把，并且刷题味道不重
+
+1st PKU Geekgame存档：[github.com/PKU-GeekGame/geekgame-1st](https://github.com/PKU-GeekGame/geekgame-1st/)
+
+**强烈推荐：中科大hackergame工作人员以校外选手身份参赛的Writeup：[欢迎参加明年十月份中科大第九届信安大赛](https://github.com/PKU-GeekGame/geekgame-1st/tree/master/writeups/players/%E6%AC%A2%E8%BF%8E%E5%8F%82%E5%8A%A0%E6%98%8E%E5%B9%B4%E5%8D%81%E6%9C%88%E4%BB%BD%E4%B8%AD%E7%A7%91%E5%A4%A7%E7%AC%AC%E4%B9%9D%E5%B1%8A%E4%BF%A1%E5%AE%89%E5%A4%A7%E8%B5%9B)和[taoky](https://github.com/PKU-GeekGame/geekgame-1st/tree/master/writeups/players/taoky-v2)**
+
+以下为本萌新的Writeup（看了大佬的writeup以后我的一看就很菜）
+
 ## Misc
 
 ## 签到
