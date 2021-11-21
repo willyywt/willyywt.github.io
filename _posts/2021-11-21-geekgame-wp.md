@@ -70,6 +70,8 @@ quora（quora上面的回答多数不太可信..）提到了EFF's SSL Observator
 
 最后只找到（哪个关键词搜出来的忘了）[crt.sh](https://crt.sh/?q=geekgame.pku.edu.cn)，交2021-07-11T00:49:53+08:00不对，交 2021-07-11T08:49:53+08:00也不对，不知道什么原因
 
+update: 08:49:53是对的
+
 > #4
 > 2020 年 DEFCON CTF 资格赛签到题的 flag 是？
 这个其实不简单，因为你都不知道哪一题是签到题
@@ -281,7 +283,9 @@ b'flag{ffdbca6ecc5d86cb71cadfd43df36649}'
 
 ## Flag即服务
 这题一看就好难，完全没想法，就根据第二阶段的提示
+
 > 浏览器会遵循 RFC 3986 处理 URL 中的特殊路径，别的软件可能不会。
+
 拿了第一个flag，后面的提示看[qs](https://www.npmjs.com/package/qs)和[path-to-regexp](https://www.npmjs.com/package/path-to-regexp)的文档，然而看懂了也没思路
 
 curl不会严格检查'.'的转义，所以`GET /api/%2e%2e/package.json`，然后是经典笑话`0.1+0.2!==0.3`（一开始真的就写了flag{0.3}，果然不对），用浏览器（或者更好，直接用node）运行得到flag
@@ -315,7 +319,7 @@ curl不会严格检查'.'的转义，所以`GET /api/%2e%2e/package.json`，然�
 
 第一个flag只需要暴力打印整个flag1.txt的缓冲区即可，brainfuck代码：`,[>.[-]+]`，相当于
 {% raw %}
-```C
+```
 putchar(*ptr); //手动修改第一个保证循环开始
 while(*ptr) { //没有while(true)，伪造一个
     ++ptr;
