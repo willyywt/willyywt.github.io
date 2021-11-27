@@ -17,4 +17,6 @@ This is a personal blog, and I don't want to be a moderator for my personal blog
 If you have any suggestions for improvement, send me a pull request: [github.com/willyywt/willyywt.github.io/pulls](https://github.com/willyywt/willyywt.github.io/pulls). Remember I am not always on the mood for reviewing pull requests.
 
 ## Hello World announce (First blog)
-The very first "hello world" page: [Github Pages Hello World](2021/10/17/hello-github-pages.html). Initially just hello world but has evolved to a meta page now.
+The very first "hello world" page: [Github Pages Hello World](2021/10/17/hello-github-pages.html). 
+
+Initially just hello world but has evolved to a meta page now which discusses my motivations and some possible plans behind the blog.

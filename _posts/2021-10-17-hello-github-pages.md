@@ -13,6 +13,8 @@ WordPress太复杂了，很多php文件根本看不懂，也不是我的义务�
 
 （安全漏洞不只限于提权，如果一个接口太消耗服务器资源也是漏洞的表现）
 
+只主持静态服务会大大降低服务的复杂程度，要管动态服务花费的精力就高不少
+
 ## 为什么不自己主持服务
 也是一样，太复杂了。买vps不难，但是服务质量难以和Github Pages抗衡，特别是国内动不动就无理由封禁的网络环境下，依靠Github Pages才是更能长久的。（git clone和Github Pages访问速度可以接受）
 
@@ -36,6 +38,19 @@ WordPress太复杂了，很多php文件根本看不懂，也不是我的义务�
 懒的写，直接选择随机生成
 
 不过纯数字可读性有点差，选单词生成，直接从/usr/share/dict/linux.words里面读就可以，当然也可以选择KeepassXC的自动生成（不好写脚本）
+{% raw %}
+```sh
+#!/bin/sh
+MESSAGE1=$(shuf -n 5 /usr/share/dict/linux.words | tr '\n' '-')
+MESSAGE2=$(shuf -n 5 /usr/share/dict/linux.words | tr -d '\n' )
+MESSAGE="$MESSAGE1$MESSAGE2"
+if [ "$1" == "-m" ]; then
+        echo $MESSAGE
+        exit 0
+fi
+git commit -m "$MESSAGE" "$@"
+```
+{% endraw %}
 
 也有用诗歌等等的，不过随机生成对查找应该更友好
 
