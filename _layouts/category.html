@@ -1,15 +1,16 @@
 ---
 layout: default
 ---
+<h2>Category: {{ page.category }}</h2>
 <ul class="posts-list">
   {% assign category = page.category | default: page.title %}
   {% for post in site.categories[category] %}
     <li>
       <h3>
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          {{ post.title }}
+        <span class="post-meta"> {{ post.date | date_to_string }} </span>
+        <a class="black-link post-link-layout" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
         </a>
-        <small>{{ post.date | date_to_string }}</small>
       </h3>
     </li>
   {% endfor %}
