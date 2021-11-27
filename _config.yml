@@ -10,6 +10,8 @@ favicon: "logo.png" # name+extension of favicon (which must be put on the root f
 
 show_excerpts: true
 
+permalink: /:year/:month/:day/:title:output_ext
+
 # if you want to publish to Github Pages, change "theme: moving" to "remote_theme: huangyz0918/moving"
 remote_theme: huangyz0918/moving
 
