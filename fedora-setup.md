@@ -1,8 +1,9 @@
 ---
-layout:page
-title: My fedora linux setup
+layout: default
+title: "My fedora linux setup"
 ---
-I will try to summarize my experience of fedora linux distribution ("Fedora Linux" is in /etc/os-release as of fedora 35:[F35-ChangeSet](https://fedoraproject.org/wiki/Releases/35/ChangeSet) [Fedora_Linux_in_os-release](https://fedoraproject.org/wiki/Changes/Fedora_Linux_in_os-release)), and some distribution-agnostic experience with (GNU/)Linux desktop.
+
+I will try to summarize my experience of fedora linux distribution ("Fedora Linux" is in /etc/os-release as of fedora 35:[F35-ChangeSet](https://fedoraproject.org/wiki/Releases/35/ChangeSet) [Fedora\_Linux\_in\_os-release](https://fedoraproject.org/wiki/Changes/Fedora_Linux_in_os-release)), and some distribution-agnostic experience with (GNU/)Linux desktop.
 
 tl;dr: A pipe of complaints, probably continuously growing with time. I will write this article with a much more trenchant tone than usual, because real developers face the real world other than living in the illusionary universe..
 
