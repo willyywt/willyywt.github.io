@@ -1,2 +1,13 @@
+<<<<<<< HEAD
 _posts/vx*
 mkrelease.sh
+=======
+*.gem
+.bundle
+.jekyll-cache
+.sass-cache
+_site
+Gemfile.lock
+
+.DS_Store
+>>>>>>> 4a2278499087af63f0637e1014ca4423f3648dfd
