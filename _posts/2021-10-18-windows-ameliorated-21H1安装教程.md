@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Windows ameliorated 21H1 安装教程（超级详细）"
+categories: anti-spyware
 ---
 > 施工中，还没有图和
 

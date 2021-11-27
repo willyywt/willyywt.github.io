@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gromit-mpx: a really awesome screen annotation tool"
+categories: awesome
 ---
 
 [gromit-mpx](https://github.com/bk138/gromit-mpx) is a really awesome tool that can make annotations on screen. It runs on X11 (since 1.4 also on XWayland) and on multiple desktop environments.

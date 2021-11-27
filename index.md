@@ -1,4 +1,3 @@
 ---
-layout: home
+layout: index
 ---
-"TESTING"

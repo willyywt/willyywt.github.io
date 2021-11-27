@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Github Pages Hello World
+categories: Admin
 ---
 Hello Github Pages!
 
