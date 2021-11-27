@@ -32,8 +32,6 @@ WordPress太复杂了，很多php文件根本看不懂，也不是我的义务�
 ## 网页的美化计划
 把Theme从[no-style-please](https://github.com/riggraz/no-style-please) 改成了[moving](https://github.com/huangyz0918/moving)，看上去不那么丑了
 
-不过还有好多bug要修，比如代码高亮等等
-
 ## Git Commit
 懒的写，直接选择随机生成
 

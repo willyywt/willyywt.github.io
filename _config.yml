@@ -13,17 +13,9 @@ show_excerpts: true
 # if you want to publish to Github Pages, change "theme: moving" to "remote_theme: huangyz0918/moving"
 remote_theme: huangyz0918/moving
 
-kramdown:
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:   # Rouge Options › https\://github.com/jneen/rouge#full-options
-    css_class: highlight
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 1
+moving:
+  back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - kramdown
