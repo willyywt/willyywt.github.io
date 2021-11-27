@@ -44,6 +44,7 @@ layout: default
           <a class="black-link post-link-layout" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
+	  {{ post.excerpt }}
       </li>
   
       {% if forloop.last %}
