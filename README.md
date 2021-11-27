@@ -10,3 +10,6 @@ For real-world folks: feel free to discuss this blog with me, for any ideas you 
 Public key: RWSVADkxkRruodtZOCHC0ym+ANlFDgx9UdCnseqWXzO0SvZgF+IP6kl+
 
 Also see [minisign-1.pub](minisign-1.pub) (the same key as above)
+
+## LICENSE
+See the file LICENSE
