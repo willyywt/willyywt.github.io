@@ -3,7 +3,7 @@
 // Define defaults for each variable.
 
 $base-font-family: "Bitter", 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', "Bitter", sans-serif;
-$base-font-size: 16px !default;
+$base-font-size: 18px !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.85 !default;
 $base-line-height: 1.8 !default;
@@ -22,10 +22,10 @@ $orange-color: #f66a0a !default;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width: 900px !default;
+$content-width: 800px !default;
 
 $on-palm: 600px !default;
-$on-laptop: 900px !default;
+$on-laptop: 800px !default;
 
 $on-medium: $on-palm !default;
 $on-large: $on-laptop !default;
