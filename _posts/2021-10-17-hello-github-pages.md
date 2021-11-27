@@ -28,7 +28,9 @@ WordPress太复杂了，很多php文件根本看不懂，也不是我的义务�
 有一篇文章将中国网络建设的落后性，似乎有点意思：[为什么在中国“公有云”落地那么难？](https://www.pingwest.com/a/2710)
 
 ## 网页的美化计划
-Not planned，太懒。不过一共也就20几行sass，手动改一下应该不难
+把Theme从[no-style-please](https://github.com/riggraz/no-style-please) 改成了[moving](https://github.com/huangyz0918/moving)，看上去不那么丑了
+
+不过还有好多bug要修，比如代码高亮等等
 
 ## Git Commit
 懒的写，直接选择随机生成
@@ -39,4 +41,5 @@ Not planned，太懒。不过一共也就20几行sass，手动改一下应该不
 
 ## Jekyll Quirks
 https://blog.csdn.net/zhangpeterx/article/details/103920538
+
 https://xiazemin.github.io/MyBlog/jekyll/2020/05/31/raw.html
