@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "（萌新向）1st PKU GeekGame writeup - By willyywt"
 ---
 北京大学信息安全综合能力竞赛（第一届）~~其实作为咸鱼玩家是为了800块钱才去的~~

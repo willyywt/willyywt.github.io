@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Github Pages Hello World
 ---
 Hello Github Pages!

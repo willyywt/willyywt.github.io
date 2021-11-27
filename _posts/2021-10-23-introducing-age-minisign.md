@@ -1,6 +1,6 @@
 ---
-layout: page
-title: Introducing cryptography tools - age and minisign
+layout: post
+title: "Introducing cryptography tools - age and minisign"
 ---
 ## Age and minisign
 I am now migrating to new cryptography tools and stop using the broken PGP.

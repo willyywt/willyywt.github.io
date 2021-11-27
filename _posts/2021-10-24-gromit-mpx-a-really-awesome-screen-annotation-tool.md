@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "Gromit-mpx: a really awesome screen annotation tool"
 ---
 
