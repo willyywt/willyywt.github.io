@@ -62,6 +62,7 @@ title: "（萌新向）1st PKU GeekGame writeup - By willyywt"
 
 > #3
 >  geekgame.pku.edu.cn 的 HTTPS 证书曾有一次忘记续期了，发生过期的时间是？
+
 查TLS证书历史不多见，但是也有网站收集签发的TLS证书（可能首先是担心域名的所有权问题，毕竟一般的TLS证书只要校验域名所有权，而校验的方法无非就是邮件，DNS信息，遇到NSA这种机构威胁一波完全有可能伪造）
 
 搜”https certificate history“有好几个网页提供类似搜索，但是都没有找到geekgame对应的证书
@@ -74,14 +75,15 @@ update: 08:49:53是对的
 
 > #4
 > 2020 年 DEFCON CTF 资格赛签到题的 flag 是？
+
 这个其实不简单，因为你都不知道哪一题是签到题
 
 首先找到了[DEF CON CTF 2020 QUALS](https://oooverflow.io/dc-ctf-2020-quals/)，观察到一段话
-_Static (but playable)_
-这说明题目环境就在里面，点进去ZOOOM视频聊天（其实是gif动画，话说美国漫画都这样嘛）第一个"welcome-to-dc-2020-quals"就是
+_Static (but playable)_ 这说明题目环境就在里面，点进去ZOOOM视频聊天（其实是gif动画，话说美国漫画都这样嘛）第一个"welcome-to-dc-2020-quals"就是
 
 > #5
 > 在大小为 672328094 * 386900246 的方形棋盘上放 3 枚（相同的）皇后且它们互不攻击，有几种方法？
+
 直接搜类似"k nxm queens problem"的关键词是几乎不可能成功的
 
 尝试发挥深厚的组合功底手算，发现太麻烦了，gg
@@ -101,12 +103,15 @@ _Static (but playable)_
 
 > #7
 > 国际互联网由许多个自治系统（AS）组成。北京大学有一个自己的自治系统，它的编号是？
- AS24349
+
+AS24349
+
 update: 正确答案是AS59201，不是太懂
 
 > #8
 > 截止到 2021 年 6 月 1 日，完全由北京大学信息科学技术学院下属的中文名称最长的实验室叫？
-不会
+
+区域光纤通信网与新型光通信系统国家重点实验室
 
 ## 翻车的谜语人
 题目给了一个ncap的dump，用wireshark分析之
