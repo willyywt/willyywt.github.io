@@ -5,7 +5,7 @@ url: https://willyangywt.cc # root address of the site
 description: > # description of the site (multiple lines allowed)
   Willyywt (aka yang wentao)'s personal blog.
 
-favicon: "logo.png" # name+extension of favicon (which must be put on the root folder)
+favicon: "favicon.ico" # name+extension of favicon (which must be put on the root folder)
 # goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
 
 permalink: /:year/:month/:day/:title:output_ext
