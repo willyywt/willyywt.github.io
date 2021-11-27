@@ -3,6 +3,9 @@ layout: post
 title: "Introducing cryptography tools - age and minisign"
 categories: [admin, awesome] 
 ---
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
 I am now migrating to new cryptography tools and stop using the broken PGP.
 
 ## Age and minisign

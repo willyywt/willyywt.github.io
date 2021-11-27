@@ -2,6 +2,9 @@
 layout: post
 title: "（萌新向）1st PKU GeekGame writeup - By willyywt"
 ---
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
 北京大学信息安全综合能力竞赛（第一届）~~其实作为咸鱼玩家是为了800块钱才去的~~
 
 本来对CTF比赛不太感冒，但是看了第零届的题目觉得可以冲一把，并且刷题味道不重

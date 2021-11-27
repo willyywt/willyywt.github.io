@@ -3,7 +3,9 @@ layout: post
 title: "Gromit-mpx: a really awesome screen annotation tool"
 categories: awesome
 ---
-
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
 [gromit-mpx](https://github.com/bk138/gromit-mpx) is a really awesome tool that can make annotations on screen. It runs on X11 (since 1.4 also on XWayland) and on multiple desktop environments.
 
 TODO: work with other desktop environments other than GNOME
