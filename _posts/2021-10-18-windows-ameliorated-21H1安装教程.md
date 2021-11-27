@@ -3,7 +3,7 @@ layout: post
 title: "Windows ameliorated 21H1 安装教程（超级详细）"
 categories: anti-spyware
 ---
-> 施工中，还没有图和
+施工中，还没有图和
 
 本人其实是比较懒的，一直犹豫了很久不想总结一份教程，这次随着21H1的更新以及本人选择的预装软件的选择的调整，下定决心写一份安装教程。
 

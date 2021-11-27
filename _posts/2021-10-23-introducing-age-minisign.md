@@ -3,9 +3,9 @@ layout: post
 title: "Introducing cryptography tools - age and minisign"
 categories: [admin, awesome] 
 ---
-## Age and minisign
 I am now migrating to new cryptography tools and stop using the broken PGP.
 
+## Age and minisign
 * For encryption: [age](https://github.com/FiloSottile/age) (or use 7-zip when using file archive)
 * For signing: [minisign](https://github.com/jedisct1/minisign)
 

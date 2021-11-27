@@ -5,8 +5,6 @@ categories: admin
 ---
 Hello Github Pages!
 
-开张宣告：本人的第一个在线博客！
-
 ## 为什么不用WordPress
 WordPress太复杂了，很多php文件根本看不懂，也不是我的义务。我不了解WordPress，但是WordPress显然更倾向于功能的可扩展性，而不是可维护性和间接性。WordPress可以部署非常复杂的网站，但是对一个个人博客来说太复杂了（虽然也有很多人选择"Proudly powered by wordpress"）。
 
