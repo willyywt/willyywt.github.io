@@ -11,5 +11,10 @@ Public key: RWSVADkxkRruodtZOCHC0ym+ANlFDgx9UdCnseqWXzO0SvZgF+IP6kl+
 
 Also see [minisign-1.pub](minisign-1.pub) (the same key as above)
 
+## Build the site locally
+Install the [dependency](https://pages.github.com/versions/) and run `jekyll build`.
+
+Disclaimer: I am a freshman in ruby entirely and I have no idea how things break.
+
 ## LICENSE
 See the file LICENSE
