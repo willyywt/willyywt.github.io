@@ -11,7 +11,7 @@ favicon: "logo.png" # name+extension of favicon (which must be put on the root f
 permalink: /:year/:month/:day/:title:output_ext
 
 # if you want to publish to Github Pages, change "theme: moving" to "remote_theme: huangyz0918/moving"
-remote_theme: huangyz0918/moving
+#remote_theme: huangyz0918/moving
 
 moving:
   back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
