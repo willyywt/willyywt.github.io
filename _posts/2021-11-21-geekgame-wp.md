@@ -97,6 +97,7 @@ _Static (but playable)_ 这说明题目环境就在里面，点进去ZOOOM视频
 
 > #6
 > 上一届（第零届）比赛的“小北问答1202”题目会把所有选手提交的答案存到 SQLite 数据库的一个表中，这个表名叫？
+
 这类纯技术细节必须看源代码，不会有任何writeup讲如此无聊的细节
 
 [db.py](https://github.com/PKU-GeekGame/geekgame-0th/blob/main/src/choice/game/db.py)（如果上不去github只能说有科学上网的工具会对比赛帮助很大）
