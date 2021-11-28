@@ -15,7 +15,9 @@ layout: default
         <a class="black-link post-link-layout" href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
         </a>
+	{% if site.show_excerpts %}
 	{{ post.excerpt }}
+	{% endif %}
     </li>
   {% endfor %}
 </ul>
