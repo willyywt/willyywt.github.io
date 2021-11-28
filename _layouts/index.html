@@ -38,7 +38,7 @@ layout: default
           <span class="post-meta">
             {{ post.date | date: date_format }}
           </span>
-          <a class="black-link post-link-layout" href="{{ post.url | relative_url }}">
+          <a class="post-link-layout" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
 	  {% if site.show_excerpts %}
