@@ -18,7 +18,7 @@ The revived ambiance theme is very greyish and not flat (looks like a revival of
 
 ### Screenshots:
 ![ambiance-gtk-theme-screenshot-1](../../../static/2021-12-02/ambiance-gtk-theme-screenshot-1.png)
-*From the top to bottom: [xournalpp](https://xournalpp.github.io/), [goldendict](http://goldendict.org/), [Firefox](https://www.mozilla.org/firefox/), [Evolution](https://wiki.gnome.org/Apps/Evolution)*
+*From the top to bottom: [xournalpp](https://xournalpp.github.io/), [goldendict](http://goldendict.org/)*
 
 ![ambiance-gtk-theme-screenshot-2](../../../static/2021-12-02/ambiance-gtk-theme-screenshot-2.png)
 *From the top to bottom:[GNOME Control Center](https://gitlab.gnome.org/GNOME/gnome-control-center), [Lyx](https://www.lyx.org/), [GNOME Files](https://wiki.gnome.org/Apps/Files), [Firewalld](https://firewalld.org/)*
