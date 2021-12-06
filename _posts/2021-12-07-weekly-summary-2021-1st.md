@@ -56,6 +56,9 @@ I had a script using `find`, `xargs` to make `sha256sum` results recursive over 
 
 ## References
 [如何注册窗口类？](https://meishizaolunzi.com/ru-he-zhu-ce-chuang-kou-lei/)
+
 [Windows API 中的 GDI](https://www.kancloud.cn/apachecn/zetcode-zh/1950120) (mirror of [ZetCode - Windows API tutorial](https://zetcode.com/gui/winapi/gdi/))
+
 [Windows API 菜单](https://www.kancloud.cn/apachecn/zetcode-zh/1950113) (mirror of [ZetCode - Windows API tutorial](http://zetcode.com/gui/winapi/menus/))
+
 [Windows-classic-samples](https://github.com/microsoft/Windows-classic-samples)
