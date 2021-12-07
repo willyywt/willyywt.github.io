@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Introducing cryptography tools - age and minisign"
 categories: [admin, awesome] 
@@ -12,7 +12,7 @@ I am now migrating to new cryptography tools and stop using the broken PGP.
 * For encryption: [age](https://github.com/FiloSottile/age) (or use 7-zip when using file archive)
 * For signing: [minisign](https://github.com/jedisct1/minisign)
 
-## Priciples for cryptography design
+## Principles for cryptography design
 (TODO: these principles need to be heavily elaborated and refer to lots of available references)
 * Compatibility is evil: Compatibility always compromises cryptography security.
 * "Open Standard" is the problem itself. Programs need to work in narrower cases first then expand to general cases, especially for programs in alpha stages
@@ -32,6 +32,6 @@ This blog's [git repository](https://github.com/willyywt/willyywt.github.io) wil
 [Github releases](https://github.com/willyywt/willyywt.github.io/releases/)
 
 ### Minisign Usage
-Minisign is bascially few hundred line wrappers for [libsodium](https://libsodium.org/). It rans on all major compilers and operating systems.
+Minisign is basically few hundred line wrappers for [libsodium](https://libsodium.org/). It runs on all major compilers and operating systems.
 
 [Minisign](https://jedisct1.github.io/minisign/)
