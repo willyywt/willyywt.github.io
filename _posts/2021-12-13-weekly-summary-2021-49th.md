@@ -5,7 +5,7 @@ title: "Yang Wentao's weekly summary (2021 49th)"
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
-Mostly a coasting week, I didn't do any serious stuff related to programming, but I messed around some miscellaneous stuff, about git.
+Mostly a coasting week, I didn't do any serious stuff related to programming, but I messed around some miscellaneous stuff, about git and GTK 3 tutorials.
 
 ## Merging daniruiz/flat-remix-gnome
 I merged [daniruiz/flat-remix-gnome](https://github.com/daniruiz/flat-remix-gnome) to [willyywt/flat-remix-gnome](https://github.com/willyywt/flat-remix-gnome). I didn't do this for several weeks and I noticed that daniruiz has added some stuff since I last merged daniruiz/flat-remix-gnome:
