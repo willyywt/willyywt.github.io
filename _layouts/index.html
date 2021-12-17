@@ -14,7 +14,7 @@ layout: default
     {% for node in pages_list %}
       {% if node.title != null %}
         {% if node.layout == "category" %}
-          <li><a class="category-link {% if page.url == node.url %} active{% endif %}"
+          <li><a class="black-link {% if page.url == node.url %} active{% endif %}"
           href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a></li>
         {% endif %}
       {% endif %}
@@ -38,7 +38,7 @@ layout: default
           <span class="post-meta">
             {{ post.date | date: date_format }}
           </span>
-          <a class="post-link-layout" href="{{ post.url | relative_url }}">
+          <a class="post-link-layout black-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
 	  {% if site.show_excerpts %}
