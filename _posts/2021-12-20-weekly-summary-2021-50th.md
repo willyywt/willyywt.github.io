@@ -64,8 +64,8 @@ Acad::ErrorStatus status;
 AcDbEntity* pEnt;
 status = acdbOpenObject(pEnt, eid, AcDb::kForWrite);
 if (status != Acad::ErrorStatus::eOk) {
-		acdbFail(_T("Cannot open object"));
-		return;
+	acdbFail(_T("Cannot open object"));
+	return;
 }
 /* Do something with pEnt */
 func(pEnt);
@@ -132,21 +132,21 @@ Use matrix operations to do so:
 ```cpp
 //target_axis must be normalized (length is 1) before calling this function
 void _RT(AcDb3dSolid* pSolid, AcGeVector3d target_axis, AcGePoint3d target_center, bool do_rot) {
-		AcGeMatrix3d mtransition, mrotate;
-		// Do rotate
-		// pSolid->createFrustum() creates pSolid with main axis being the Zaxis
-		// Rotate around rotate_axis by 180 degree, so the desired axis will be target_axis
-		AcGeVector3d rotate_axis = target_axis + AcGeVector3d::kZAxis;
-		if (do_rot) {
-			mrotate.setToRotation(PI, rotate_axis, AcGePoint3d::kOrigin); //Rotate around rotate_axis by 180 degree
-			pSolid->transformBy(mrotate); 
-		}
-		// Do transform
-		AcGeVector3d transistion_vec;
-		transistion_vec.set(target_center.x, target_center.y, target_center.z);
-		mtransition.setToTranslation(transistion_vec); 
-		pSolid->transformBy(mtransition);
+	AcGeMatrix3d mtransition, mrotate;
+	// Do rotate
+	// pSolid->createFrustum() creates pSolid with main axis being the Zaxis
+	// Rotate around rotate_axis by 180 degree, so the desired axis will be target_axis
+	AcGeVector3d rotate_axis = target_axis + AcGeVector3d::kZAxis;
+	if (do_rot) {
+		mrotate.setToRotation(PI, rotate_axis, AcGePoint3d::kOrigin); //Rotate around rotate_axis by 180 degree
+		pSolid->transformBy(mrotate); 
 	}
+	// Do transform
+	AcGeVector3d transistion_vec;
+	transistion_vec.set(target_center.x, target_center.y, target_center.z);
+	mtransition.setToTranslation(transistion_vec); 
+	pSolid->transformBy(mtransition);
+}
 ```
 
 ### Request input at the autocad command input
