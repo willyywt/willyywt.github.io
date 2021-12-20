@@ -2,6 +2,21 @@
 layout: about
 title: About
 ---
+## About me
+I am an undergraduate student at the mechanics department, Peking University. 
+
+Good at math (after all, mechanics is the most mathy thing just after pure mathematics...), Interested in programming with mostly C and sometimes C++. 
+
+A user of Fedora Zhongwen (Chinese) User Group (see telegram channel: [fedorazh](https://t.me/fedorazh))
+
+Pretty bad at sports.
+
+A fan of singer [Zhou Shen](https://en.wikipedia.org/wiki/Zhou_Shen). Best known for "Big Fish", he has a tender and translucent voice and have crystal clear powers. He is also talented in imitating various voices ranging from little girls to old witches. He is silent and calm for most times just as his songs presents but sometimes becomes funny or bizarre when he finds it intersting to do so, like singing "Sunset red" (最美不过夕阳红 温馨又从容) at his birthday live streaming.
+
+![Zhou Shen at his first series of concerts, 深空间](../../../static/20190709_075450_007.jpg "Zhou Shen at his first series of concerts, 深空间")
+
+Also interested in various other singers like utaite singer [Jayn](https://utaite.fandom.com/wiki/Jayn) ("littlejayneycakes" on youtube) ("utaite" probably means "anime and Vocaloid")
+
 ## Disclaimer
 
 This is supposed to be a place where I can say something in this virtual web world; the blog may loosely related to my real-life identity, but my real-life identity is not responsible for anything posted here.
