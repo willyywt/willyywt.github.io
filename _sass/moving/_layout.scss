@@ -181,7 +181,7 @@
 .post-year {
   margin-top: 2rem;
   margin-bottom: 0.25rem;
-  font-weight: 700;
+  font-weight: 600;
   color: lighten($text-color, 15%);
 
   @media (max-width: 500px) {
@@ -217,7 +217,7 @@
 .black-link {
   color: $text-color;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
 
   &:hover {
     color: $text-color;
