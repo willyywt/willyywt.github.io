@@ -2,5 +2,10 @@
 sitemap: false
 ---
 
-@import "moving";
+@media (prefers-color-scheme: light) {
+	@import "moving";
+}
+@media (prefers-color-scheme: dark) {
+	@import "moving-dark";
+}
 @import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');

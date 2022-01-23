@@ -159,7 +159,7 @@
 
 .home-sub-heading {
   margin-top: -0.6rem;
-  color: lighten($text-color, 25%);
+  color: lighten($grey-color-dark, 25%);
 
   @media (max-width: 500px) {
     @include relative-font-size(0.8);
@@ -200,7 +200,7 @@
   }
 
   @include relative-font-size(1);
-  color: lighten($text-color, 25%);
+  color: lighten($grey-color-dark, 25%);
 }
 
 .post-link-layout {
@@ -314,7 +314,7 @@
 
     .about-avatar {
       padding: 1px;
-      border: 1px solid $grey-color-light;
+      border: 1px solid $grey-color-dark;
       width: 10rem;
       height: 10rem;
       margin: 0 2rem 0 0;
@@ -333,7 +333,7 @@
       .about-description {
         margin-top: -0.6rem;
         @include relative-font-size(1);
-        color: lighten($text-color, 25%);
+        color: lighten($grey-color-dark, 25%);
       }
     }
   }
