@@ -3,9 +3,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   {%- seo -%}
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
   <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}?" />
   <link rel="stylesheet" href="{{ site.url }}/assets/css/agate.css" />
+  <noscript>
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
+  </noscript>
+  <script>
+    var cssId = 'maincss';
+    if (!document.getElementById(cssId))
+    {
+       var head  = document.getElementsByTagName('head')[0];
+       var link  = document.createElement('link');
+       link.id   = cssId;
+       link.rel  = 'stylesheet';
+       link.type = 'text/css';
+       link.href = '{{ site.url }}/assets/css/main.css';
+       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+         link.href = '{{ site.url }}/assets/css/main-dark.css';
+       }
+       link.media = 'all';
+       head.appendChild(link);
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
