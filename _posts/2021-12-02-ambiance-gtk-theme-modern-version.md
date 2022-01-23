@@ -17,6 +17,9 @@ Although the source repo says it's designed for the Unity desktop, I test it on 
 The revived ambiance theme is very greyish and not flat (looks like a revival of the good old GTK 2 looks), and has silver header bar instead of the yellowish one in adwaita. It's accent color (`$selected_bg_color`) is configurable at a source level, at 'Adwaita-Ubuntu/gtk-3.0/_colors.scss'. The default one is `#23A5D4`.
 
 ### Screenshots:
+*Update 2022-01-23: changed accent color to #EC0101 (light red), which looks much more marrier. See new screen shots below*
+
+Light blue:
 ![ambiance-gtk-theme-screenshot-1](../../../static/2021-12-02/ambiance-gtk-theme-screenshot-1.png)
 *From the top to bottom: [xournalpp](https://xournalpp.github.io/), [goldendict](http://goldendict.org/)*
 
@@ -26,5 +29,12 @@ The revived ambiance theme is very greyish and not flat (looks like a revival of
 ![ambiance-gtk-theme-screenshot-3](../../../static/2021-12-02/ambiance-gtk-theme-screenshot-3.png)
 *From the top to bottom:[GNOME Files](https://wiki.gnome.org/Apps/Files), [Firefox](https://www.mozilla.org/firefox/), [Evolution](https://wiki.gnome.org/Apps/Evolution)*
 
+Light red:
+![ambiance-gtk-theme-screenshot-4](../../../static/2022-01-23/ambiance-gtk-theme-screenshot-4.png)
+*Evince with light red*
+
+![ambiance-gtk-theme-screenshot-5](../../../static/2022-01-23/ambiance-gtk-theme-screenshot-5.png)
+*Firefox, evolution, GNOME Files*
+
 ### Note
-I choose 12px as the default font size, because 11px (the default choice of GNOME Shell) is not big enough for me.
+I choose 12px as the default font size, because on 1080p computer screens 11px (the default choice of GNOME Shell) is not big enough for me.

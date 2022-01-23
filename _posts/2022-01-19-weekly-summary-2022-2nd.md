@@ -69,3 +69,15 @@ LBM deals with real physics model, so even in the simple and classical lid drive
 * Cavity size.
 * Reynolds number of the fluid. For larger Reynolds number turbulance occur and LBM start to converge more slowly. For smaller Reynolds number laminar (sheet-like) flows occur.
 * Velocity of sound speed of the fluid. In D2Q9 model this is a fixed value 1/sqrt(3). (Do *not* try to modify this value)
+
+## Some fiddling around
+
+### Changed accent color of ambiance gtk theme
+Previous post: I changed my gtk theme to [a modern vesion of ambiance](https://github.com/willyywt/adwaita-gtk-ubuntu).
+
+I changed accent color to #EC0101 (light red), which looks much more marrier.
+
+### VNote QtWebengine crash on fedora 35
+I didn't think of it and thought it would be resolved soon, but after vnote updated I realized that even the author don't know how to deal with it.
+
+It is a known issue: [1942](https://github.com/vnotex/vnote/issues/1942). It seems to be a Qt issue and nobody has figured this out. Adding command line option `--no-sandbox` work around it: [VNote诡异问题](https://www.usmacd.com/2021/11/29/vnote/) (`no-sandbox` for chromium is known to be insecure, but is applied for all [electron](https://www.electronjs.org/) apps.)
