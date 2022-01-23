@@ -9,7 +9,7 @@ categories: weekly-summary
 Holiday time! Setting up some basic understandings of LBM (lattice boltzmann method). Also fiddle around with my linux distribuion.
 
 ## Lattice Boltzmann Method
-LBM (lattice boltzmann method) is a numerial simulation method commonly used in CFD (computational fluid dynamics). It is not direcly based on the well-known NS (Navier-Stokes) equations, but based on the following modle:
+LBM (lattice boltzmann method) is a numerial simulation method commonly used in CFD (computational fluid dynamics). It is not direcly based on the well-known NS (Navier-Stokes) equations, but based on the following modal:
 * the Boltzmann equation (yes, the equation from the molecular dyhamics)
 * Discrete lattice description of the velocity, time and space
 * the BGK (Bhatnagar, Gross and Krook) approximation to reduce the collision term to fluctuation around the equilibrium distribution. (Without approximation the Bolzmann equation would be impossible to solve except very few special cases.)
@@ -41,10 +41,11 @@ Fortran has implicit declaration not only for variables, but also for **function
 * If you use a function without declaration, fortran will happily compile. (Of course, use  `implicit none` to make compilers error against this)
 * Fortran will try to find its definition elsewhere. (Not too bad ugh?)
 * Fortran will assign a default return type for this function (`integer` or `real`), but the return type will not match with your definition elsewhere. If your definition is `double precision`, fortran will *not* link the function to your defintion, while still compiling! In fact, fortran will "cleverly" add a stub function which returns zero, and ignoring your definition entirely! (WTF??)
+
 The solution: in addition to `implicit none`, define your function in the module, and use the module in other files. Other files will correctly link to the definition, and error out if the name, parameter type or return type of the function is different than the definition in the module.
 
 ## LBM Calculation steps
-The program from the postdoc is indeed much more simpler than many traditional methods like FEM (Finite Element Method) or SPH Method (Smooth Particle Hydrodynamics Method). (In fact, Prof Liu assigned this to the postdoc in consideration of LBM's potential to compete with traditional methods.) It's also much simpler than many algorithms taught in CS.
+The program from the postdoc is indeed much more simpler than many traditional methods like FEM (Finite Element Method) or SPH Method (Smooth Particle Hydrodynamics Method). (In fact, Prof Liu assigned this to the postdoc to try out LBM's potential to compete with traditional methods.) It's also much simpler than many algorithms taught in CS.
 
 1. Assign initial condition.
 2. Collision: use the collision operator to calculate the next state of particles. (Only done for internal particles)
@@ -66,7 +67,7 @@ In CFD calculations are usually done on dimensionless numbers, and restore to ph
 LBM deals with real physics model, so even in the simple and classical lid driven cavity problem, there are lots of parameters. I list some of the most interest here:
 
 * Density of the lattice. As in the traditional FEM, the density of the lattice determines the final accuracy of the calcuation: the densiter the lattice is, the more accurate the result will be. But usually, the lattice doesn't need to be incredibly dense to get satisfactory results.
-* Velocity of the lid. Because LBM can be reduced to NS equations only under Low Mach Number Assumption, the lid must not be large, preferably less than 0.3 times of the sound speed of the fliud. The velocity of the lid is usually 0.1 at the largest.
+* Velocity of the lid. Because LBM can be reduced to NS equations only under Low Mach Number Assumption, the velocity of the lid must not be large, preferably less than 0.3 times of the sound speed of the fliud. The velocity of the lid is usually 0.1 at the largest.
 * Cavity size.
 * Reynolds number of the fluid. For larger Reynolds number turbulance occur and LBM start to converge more slowly. For smaller Reynolds number laminar (sheet-like) flows occur.
 * Velocity of sound speed of the fluid. In D2Q9 model this is a fixed value 1/sqrt(3). (Do *not* try to modify this value)
@@ -74,7 +75,7 @@ LBM deals with real physics model, so even in the simple and classical lid drive
 ## Some fiddling around
 
 ### Changed accent color of ambiance gtk theme
-Previous post: I changed my gtk theme to [a modern vesion of ambiance](https://willyangywt.cc/2021/12/02/ambiance-gtk-theme-modern-version.html)
+Previous post: I changed my gtk theme to [a modern vesion of ambiance](https://willyangywt.cc/2021/12/02/ambiance-gtk-theme-modern-version.html).
 
 I changed accent color to #EC0101 (light red), which looks much more marrier.
 
