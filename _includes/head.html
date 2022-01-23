@@ -1,4 +1,5 @@
 <head>
+  <style>html{visibility: hidden;opacity:0;}</style>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="{{ site.url }}/assets/css/agate.css" />
   <noscript>
     <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/unhide.css" />
   </noscript>
   <script>
     var cssId = 'maincss';
@@ -23,6 +25,13 @@
        }
        link.media = 'all';
        head.appendChild(link);
+       var link2  = document.createElement('link');
+       link2.id   = cssId + 'show';
+       link2.rel  = 'stylesheet';
+       link2.type = 'text/css';
+       link2.href = '{{ site.url }}/assets/css/unhide.css';
+       link2.media = 'all';
+       head.appendChild(link2);
     }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
