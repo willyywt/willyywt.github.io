@@ -78,6 +78,8 @@ Previous post: I changed my gtk theme to [a modern vesion of ambiance](https://g
 I changed accent color to #EC0101 (light red), which looks much more marrier.
 
 ### VNote QtWebengine crash on fedora 35
-I didn't think of it and thought it would be resolved soon, but after vnote updated I realized that even the author don't know how to deal with it.
+([VNote](https://vnotex.github.io/vnote) is a pleasant note-taking platform. It is not only a confortable markdown editor but also suitable for those who wants to use markdown to establish a complete note taking workflow.)
 
-It is a known issue: [1942](https://github.com/vnotex/vnote/issues/1942). It seems to be a Qt issue and nobody has figured this out. Adding command line option `--no-sandbox` work around it: [VNote诡异问题](https://www.usmacd.com/2021/11/29/vnote/) (`no-sandbox` for chromium is known to be insecure, but is applied for all [electron](https://www.electronjs.org/) apps.)
+On fedora 35 VNote's QtWebengine always crashes on start, which breaks the HTML preview ("read mode"). I didn't think about it at first and thought it would be resolved soon, but after vnote updated I realized that even the author don't know how to deal with it.
+
+It is a known issue: [1942](https://github.com/vnotex/vnote/issues/1942). It seems to be a Qt issue and nobody including the author has figured this out. Adding command line option `--no-sandbox` work around it: [VNote诡异问题](https://www.usmacd.com/2021/11/29/vnote/) (`no-sandbox` for chromium is known to be insecure, but is applied for all [electron](https://www.electronjs.org/) apps.)
