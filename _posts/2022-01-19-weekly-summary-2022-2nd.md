@@ -56,7 +56,7 @@ The program from the postdoc is indeed much more simpler than many traditional m
 
 LBM itself is a large topic and many models have been established based on LBM. Currently the most influential model is a series of DnQm model by Qian etc. in the 1990s, where n is the dimension of space and m is the dimension of discrete velocity. For the program from the postdoc $n=2$, $m=9$.
 
-* Collision: $f$ becomes $f - (f - f_{eq})/\tau$ ($f_{eq}$ is the equilibrium distribution function)
+* Collision: $f$ becomes $f - (f - f_{eq})/\tau$, where $f_{eq}$ is the equilibrium distribution function
 * Evolution: $f(x, t)$ move to $f(x+\alpha, t+dt)$
 * Boundary: (Is another difficult topic, but for simple velocity condition:)$f(x_b,t) = \bar{f_{eq}}(u,\rho)$ where $x_b$ is the coordinate of boundary particle, $\bar{f_{eq}}(u,\rho)$ is $f_{eq}(x,t)$ expressed in terms of velocity $u$ and density $\rho$.  When the velocity of fluid at the boundary is given, $u$ takes such velocity and $\rho$ is approximated with the density of internal particles next to the boundary.
 
