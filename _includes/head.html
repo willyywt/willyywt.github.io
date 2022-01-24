@@ -6,9 +6,34 @@
   {%- seo -%}
   <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}?" />
   <link rel="stylesheet" href="{{ site.url }}/assets/css/agate.css" />
-  <link rel="stylesheet" media="(prefers-color-scheme: light)" href="{{ site.url }}/assets/css/main.css" />
-  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="{{ site.url }}/assets/css/main-dark.css" />
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/unhide.css" />
+  <noscript>
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
+    <link rel="stylesheet" href="{{ site.url }}/assets/css/unhide.css" />
+  </noscript>
+  <script>
+    var cssId = 'maincss';
+    if (!document.getElementById(cssId))
+    {
+       var head  = document.getElementsByTagName('head')[0];
+       var link  = document.createElement('link');
+       link.id   = cssId;
+       link.rel  = 'stylesheet';
+       link.type = 'text/css';
+       link.href = '{{ site.url }}/assets/css/main.css';
+       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+         link.href = '{{ site.url }}/assets/css/main-dark.css';
+       }
+       link.media = 'all';
+       head.appendChild(link);
+       var link2  = document.createElement('link');
+       link2.id   = cssId + 'show';
+       link2.rel  = 'stylesheet';
+       link2.type = 'text/css';
+       link2.href = '{{ site.url }}/assets/css/unhide.css';
+       link2.media = 'all';
+       head.appendChild(link2);
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
