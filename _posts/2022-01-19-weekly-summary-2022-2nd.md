@@ -54,11 +54,11 @@ The program from the postdoc is indeed much more simpler than many traditional m
 5. Calculate boundary particles decided by boundary conditions.
 6. Repeat 2-5. Stop when the densify function has converged (can be seen by calculating the difference between two iteratons of 2-5)
 
-LBM itself is a large topic and many models have been established based on LBM. Currently the most influential model is a series of DnQm model by Qian etc. in the 1990s, where n is the dimension of space and m is the dimension of discrete velocity. For the program from the postdoc n=2, m=9.
+LBM itself is a large topic and many models have been established based on LBM. Currently the most influential model is a series of DnQm model by Qian etc. in the 1990s, where n is the dimension of space and m is the dimension of discrete velocity. For the program from the postdoc $n=2$, $m=9$.
 
-* Collision: f becomes f - (f - feq) / tau
-* Evolution: f(x, t) move to f(x+alpha, t+dt)
-* Boundary: (Is another difficult topic, but for simple velocity condition:)f(x,t) = f~(u,p) where u takes the value of the velocity of fluid at the boundary and p takes the value of density of internal particles next to the boundary.
+* Collision: $f$ becomes $f - (f - f_{eq})/\tau$ ($f_{eq}$ is the equilibrium distribution function)
+* Evolution: $f(x, t)$ move to $f(x+\alpha, t+dt)$
+* Boundary: (Is another difficult topic, but for simple velocity condition:)$f(x_b,t) = \bar{f_{eq}}(u,\rho)$ where $x_b$ is the coordinate of boundary particle, $\bar{f_{eq}}(u,\rho)$ is $f_{eq}(x,t)$ expressed in terms of velocity $u$ and density $\rho$.  When the velocity of fluid at the boundary is given, $u$ takes such velocity and $\rho$ is approximated with the density of internal particles next to the boundary.
 
 ### Dimensionless quantity
 In CFD calculations are usually done on dimensionless numbers, and restore to physical quantities only after calculation. The textbook of fluid mechanics seems to cover it bui I haven't read it yet. (Another reason to start to learn fluid mechanics)
@@ -70,7 +70,7 @@ LBM deals with real physics model, so even in the simple and classical lid drive
 * Velocity of the lid. Because LBM can be reduced to NS equations only under Low Mach Number Assumption, the velocity of the lid must not be large, preferably less than 0.3 times of the sound speed of the fliud. The velocity of the lid is usually 0.1 at the largest.
 * Cavity size.
 * Reynolds number of the fluid. For larger Reynolds number turbulance occur and LBM start to converge more slowly. For smaller Reynolds number laminar (sheet-like) flows occur.
-* Velocity of sound speed of the fluid. In D2Q9 model this is a fixed value 1/sqrt(3). (Do *not* try to modify this value)
+* Velocity of sound speed of the fluid. In D2Q9 model this is a fixed value $1/\sqrt{3}$. (Do *not* try to modify this value)
 
 ## Some fiddling around
 
