@@ -43,6 +43,9 @@ Media query is one line away: `@media (prefers-color-scheme: light)`. Sass doesn
 
 I turned to a more monolithic approach: load different css stylesheet files depend on media query results. I planned to use `@media (prefers-color-scheme: light)` and `@media (prefers-color-scheme: dark)` for this purpose (it can be added to `<link>` element `media` attribute), but this is not friendly to old browsers which do not support `prefers-color-scheme` at all (those browsers will not use any of these stylesheets), so I changed my plan: now I use javascript to load `<link>` element so that browsers which does not return true for `window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches` can fallback to the light css stylesheet.
 
+### Dark mode known problem
+A white flash may occur when jumping from white-background websites or about:blank. I guess this is due to the initial `html{display:none}`.
+
 ## Move bitter font to local
 The moving theme uses bitter from google fonts, but I think hosting it locally is better, so I have changed the theme to use local bitter font.
 
