@@ -11,7 +11,7 @@ A user of Fedora Zhongwen (Chinese) User Group (see telegram channel: [fedorazh]
 
 Pretty bad at sports.
 
-A fan of singer [Zhou Shen](https://en.wikipedia.org/wiki/Zhou_Shen). Best known for "Big Fish", he has a tender and translucent voice and have crystal clear powers. He is also talented in imitating various voices ranging from little girls to old witches. He is silent and calm for most times just as his songs presents but sometimes becomes funny or bizarre when he finds it intersting to do so, like singing "Sunset red" (最美不过夕阳红 温馨又从容) at his birthday live streaming.
+A fan of singer [Zhou Shen](https://en.wikipedia.org/wiki/Zhou_Shen). Best known for "Big Fish", he has a tender and translucent voice and have crystal clear powers. He is also talented in imitating various voices ranging from little girls to old witches. He is silent and calm for most times just as his songs presents but sometimes becomes funny or bizarre when he finds it intersting to do so.
 
 ![Zhou Shen at his first series of concerts, 深空间](../../../static/20190709_075450_007.jpg "Zhou Shen at his first series of concerts, 深空间")
 
@@ -30,6 +30,12 @@ This is supposed to be a place where I can say something in this virtual web wor
 This is a personal blog, and I don't want to be a moderator for my personal blog.
 
 If you have any suggestions for improvement, send me a pull request: [github.com/willyywt/willyywt.github.io/pulls](https://github.com/willyywt/willyywt.github.io/pulls). Remember I am not always on the mood for reviewing pull requests.
+
+## Theme
+The site's theme is forked from the jekyll "moving" theme (git repo [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/)). For my additions to the theme, see my blog post [My blog theme: jekyll 'moving' theme with more features](theme.html)
+
+## Site's git repo
+[github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) 
 
 ## Hello World announce (First blog)
 The very first "hello world" page: [Github Pages Hello World](2021/10/17/hello-github-pages.html). 
