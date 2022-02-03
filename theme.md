@@ -20,16 +20,15 @@ I took advantage of many builtin jekyll features (which wasn't in the original "
 
 ### Category
 I added categories for each blog post using jekyll's builtin category feature.
-* Each category has a page (category list page) which lists all posts of such category. The category list page must be manually written in file `category/<name>.md` where `<name>` is the category name, like
+* Each category has a page (category list page) which lists all posts of such category. Each category's list page must be manually written in file `category/<name>.md` where `<name>` is the category name (unfortunately jekyll doesn't do this automatically), like this: (assuming "name" is "admin")
 ```
-# category/admin.md
 ---
 layout: category
 title: "Category: admin"
 category: admin
 ---
 ```
-* On the index page we iterate all pages under this site, finds the pages under `layout: category`, and show a link to such page (category list page).
+* On the index page we iterate all pages under this site, finds the pages under `layout: category`, and show links to these pages (category list pages).
 * The template layout of category list pages is defined as in `_layouts/category.html`.
 
 ### Excerpt
