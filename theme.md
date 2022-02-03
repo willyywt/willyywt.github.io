@@ -19,8 +19,11 @@ I also changed css to my liking, like changed base font size to 16 instead of 18
 I took advantage of many builtin jekyll features (which wasn't in the original "moving" theme). Jekyll's documentation on jekyll post is at [Posts | Jekyll](https://jekyllrb.com/docs/posts/).
 
 ### Category
-I added categories for each blog post using jekyll's builtin category feature.
-* Each category has a page (category list page) which lists all posts of such category. Each category's list page must be manually written in file `category/<name>.md` where `<name>` is the category name (unfortunately jekyll doesn't do this automatically), like this: (assuming "name" is "admin")
+I added categories for each blog post. Category is a jekyll's builtin feature, but jekyll doesn't define how to display pages of such category: what jekyll do is to find pages under a specific category. So I define how to display pages of a category as in the following:
+
+* On the index page we iterate all pages under this site, finds the pages under `layout: category`, and show links to these list pages, which are category list pages.
+* The template layout of category list pages is defined as in `_layouts/category.html`, so that category list page can list all posts in a specific category. 
+* Each category's list page is manually written in file `category/<name>.md` where `<name>` is the category name, like this: (assuming "name" is "admin" and the file is `category/admin.md`)
 ```
 ---
 layout: category
@@ -28,8 +31,6 @@ title: "Category: admin"
 category: admin
 ---
 ```
-* On the index page we iterate all pages under this site, finds the pages under `layout: category`, and show links to these pages (category list pages).
-* The template layout of category list pages is defined as in `_layouts/category.html`.
 
 ### Excerpt
 Excerpt is also a jekyll's builtin feature. By default this will be the first paragraph (first `<p>` element) of your post. You can also explicitly designate a post's excerpt using the jekyll `excerpt` variable.
