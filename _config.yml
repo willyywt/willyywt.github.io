@@ -12,6 +12,10 @@ permalink: /:year/:month/:day/:title:output_ext
 show_excerpts: true
 search_index: true
 
+kramdown:
+  # https://stackoverflow.com/a/25597026/17956106
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
 moving:
   back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
 

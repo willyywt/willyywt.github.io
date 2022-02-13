@@ -1,5 +1,5 @@
 ---
-layout: searchindex
+layout: search_index
 ---
 [{% if site.search_index %}{% for post in site.posts %}{
 	"title": {{ post.title | jsonify }},
