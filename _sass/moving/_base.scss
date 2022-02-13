@@ -216,7 +216,8 @@ pre {
 /**
   * Aside: Table of Content
   */
-.wrapper .aside-toc {
+.wrapper aside-toc {
+	padding-left: 24px;
   @media screen and (min-width: $on-large) {
 	  grid-column: 1/2;
   }
