@@ -17,6 +17,9 @@
 .aside-toc ul {
         list-style: none;
 }
+.aside-toc > ul {
+  margin-left: 0px;
+}
 
 /**
  * Site footer
