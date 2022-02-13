@@ -4,12 +4,11 @@ layout: default
 
 <div class="home">
   <div class="home-title">
-    <h1 class="home-heading">{{ site.title }}</p>
-    <h2 class="home-sub-heading">{{- site.description | escape -}}</p>
+    <h1 class="home-heading">{{ site.title }}</h1>
+    <h2 class="home-sub-heading">{{- site.description | escape -}}</h2>
   </div>
   <header class="site-category">
   <ul>
-
     {% assign pages_list = site.pages %}
     {% for node in pages_list %}
       {% if node.title != null %}
