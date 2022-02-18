@@ -13,9 +13,9 @@ TODO: work with other desktop environments other than GNOME
 ![gromit mpx on GNOME with VSCodium and appindicator extension](../../../static/2021-10-24-1.png "gromit mpx on GNOME with VSCodium and appindicator extension")
 
 ## Graphics tablets
-Magically, it works with graphics tablets, although the developer did not primary aim at tablets. XWayland does not provides direct access to hardware though: XWayland only provides a virtual input device which does not reflect all capabilities of hardware devices, so I can only expect very basic usage of graphic tablets. To completely support graphic tablets on XWayland is not possible: the best can do is to start a native wayland process, collect events from it, and send messages to the main process.
+Magically, it works with graphics tablets, although the developer did not primary aim at tablets. 
 
-I have one Wacom ctl 672 tablet (costs just 500 RMB, since it's an beginner model). Its graphic tablet stylus has two buttons on it, and when using gromit-mpx I am able to use the upper one as right click (work as an eraser on gromit-mpx) and the lower one as a middle click (which creates green color annotations on gromit-mpx). The annotations are also pressure sensitive but only rounded to two levels of line thickness.
+I have one Wacom ctl 672 tablet (costs just 500 RMB, since it's an beginner model). Its graphic tablet stylus has two buttons on it, and when using gromit-mpx I am able to use the upper one as right click (work as an eraser on gromit-mpx) and the lower one as a middle click (which creates green color annotations on gromit-mpx). The annotations are also pressure sensitive.
 
 ## Some primitive hacking
 TODO: make this hacking more "professional", and not so primitive
