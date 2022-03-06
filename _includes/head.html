@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   {%- seo -%}
   <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}?" />
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/agate.css" />
+  <link rel="stylesheet" href="/assets/css/agate.css" />
   <noscript>
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/unhide.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/unhide.css" />
   </noscript>
   <script>
     var cssId = 'maincss';
@@ -19,9 +19,9 @@
        link.id   = cssId;
        link.rel  = 'stylesheet';
        link.type = 'text/css';
-       link.href = '{{ site.url }}/assets/css/main.css';
+       link.href = '/assets/css/main.css';
        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-         link.href = '{{ site.url }}/assets/css/main-dark.css';
+         link.href = '/assets/css/main-dark.css';
        }
        link.media = 'all';
        head.appendChild(link);
@@ -29,7 +29,7 @@
        link2.id   = cssId + 'show';
        link2.rel  = 'stylesheet';
        link2.type = 'text/css';
-       link2.href = '{{ site.url }}/assets/css/unhide.css';
+       link2.href = '/assets/css/unhide.css';
        link2.media = 'all';
        head.appendChild(link2);
     }
