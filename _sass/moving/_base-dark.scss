@@ -180,9 +180,7 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9);
-  border: 1px solid darken($background-color, 3%);
-  border-radius: 3px;
-  background-color: lighten($background-color, 3%);
+  border: 2px solid darken($background-color, 3%);
 }
 
 code {
