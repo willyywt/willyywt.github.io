@@ -10,7 +10,7 @@ favicon: "favicon.ico" # name+extension of favicon (which must be put on the roo
 permalink: /:year/:month/:day/:title:output_ext
 
 show_excerpts: true
-search_index: true
+search_index: false
 
 kramdown:
   # https://stackoverflow.com/a/25597026/17956106
