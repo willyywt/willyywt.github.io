@@ -6,7 +6,7 @@ categories: admin
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
-Yggdrasil is a easy way to connect different devices together. Each device has IPV6 address generated from their cryptographic keys, connect to known nodes on their configuration file, and use a tree-like routing scheme. Yggdrasil is also a superior TCP-over-TCP implementation [suppressing traditional OpenVPN and SSH forwarding](https://yggdrasil-network.github.io/2018/07/15/remote-access.html). Currently I use yggdrasil with several network applications, most notabaly [KDEConnect](https://kdeconnect.kde.org/).
+Yggdrasil is a easy way to connect different devices together. Each device has IPV6 address generated from their cryptographic keys, connect to known nodes on their configuration file, and use a tree-like routing scheme. Yggdrasil is also a superior TCP-over-TCP implementation [suppressing traditional OpenVPN and SSH forwarding](https://yggdrasil-network.github.io/2018/07/15/remote-access.html). Currently I use yggdrasil with several network applications, most notabaly [KDEConnect](https://kdeconnect.kde.org/) and [Syncthing](https://syncthing.net/).
 
 ## Yggdrasil Network
 The yggdrasil network is a virtual, layered mesh IPV6 network with a special routing scheme for mesh network.
@@ -20,9 +20,16 @@ Yggdrasil makes accepting connections from a small list of devices trivial: beca
 
 Yggdrasil is a superior TCP-over-TCP implementation and also a superior virtual network implementation: even not considering the entire yggdrasil network, you can use yggdrasil as a intranet penetration tool. Once the devices is connected to the yggdrasil network (by connecting to a public peer from yggdrasil project, or to your custom server), you can connect to the devices from anywhere in the yggdrasil network, as if the devices behind NAT have a public IP address and can accept incoming connection. Yggdrasil have performance [suppressing traditional OpenVPN and SSH forwarding](https://yggdrasil-network.github.io/2018/07/15/remote-access.html).
 
-## Use yggdrasil with KDEConnect
+## Use yggdrasil to peer with devices behind NAT
 
-## Use yggdrasil with firewall to unblock internal ports
+### KDEConnect
 
+### Syncthing
+
+## Use yggdrasil to save the hassle of TLS certificate
+
+### Qbittorrent
 [qbittorrent](https://www.qbittorrent.org/)
+
+### Radicale
 [radicale](https://radicale.org)  (a CAlDAV and CardDAV server)
