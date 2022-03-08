@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Yggdrasil network: a virtual mesh ipv6 network with tree-like routing"
+last_modified_at: 2022-03-08
 categories: admin
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public

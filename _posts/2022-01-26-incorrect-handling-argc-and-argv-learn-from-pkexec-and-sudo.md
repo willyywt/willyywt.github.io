@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Incorrect handling argc and argv - learn from pkexec and sudo
+last_modified_at: 2022-01-26
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
