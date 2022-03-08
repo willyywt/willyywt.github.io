@@ -14,7 +14,9 @@ $spacing-unit: 30px !default;
 // Dark Mode
 $text-color: #cfcfc1 !default;
 $background-color: #111 !default;
-$brand-color: #9a9af9 !default;
+
+// Previously use #9a9af9 which has higher contrast (7.5:1) but less attractive
+$brand-color: #bf4dbf !default;
 
 $grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
