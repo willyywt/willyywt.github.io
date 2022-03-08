@@ -1,0 +1,104 @@
+pre > code { background-color: $background; }
+
+html { -webkit-font-smoothing: antialiased; } /* only if background darker than font */
+
+.highlight {
+  background: $background;
+  color: $primary;
+}
+
+.highlight > code { color: $secondary; }
+
+.highlight .hll { background-color: $selected; }
+
+.highlight .lineno {
+  background-color: $lineno-background;
+  color: $secondary;
+}
+
+/* --- Generics --- */
+.highlight .ge { font-style: italic; } /* emph */
+.highlight .gs { font-weight: bold; } /* strong */
+
+/* --- Operators --- */
+.highlight .o { color: $operator; } /* Operator */
+.highlight .ow { color: $operator; } /* Word */
+
+/* --- Comments --- */
+.highlight .c { color: $comment; font-style: italic; } /* Comment */
+.highlight .cm { color: $comment; font-style: italic; } /* Multi-line */
+.highlight .cp { color: $comment; font-style: italic; } /* Preproc */
+.highlight .c1 { color: $comment; font-style: italic; } /* Single */
+.highlight .cs { color: $comment; font-style: italic; } /* Special */
+
+/* --- Names --- */
+.highlight .n { color: $primary; } /* Name */
+.highlight .py { color: $primary; } /* Property */
+.highlight .nl { color: $primary; } /* Label */
+.highlight .ni { color: $primary; } /* Entity */
+.highlight .nb { color: $primary; } /* Builtin */ /* shell commands */
+.highlight .bp { color: $primary; } /* Builtin.Pseudo */
+.highlight .nf { color: $secondary; } /* Function */
+.highlight .na { color: $secondary; } /* Attribute */
+.highlight .nx { color: $secondary; } /* Other */
+.highlight .nc { color: $namespace; } /* Class */
+.highlight .nn { color: $namespace; } /* Namespace */
+.highlight .no { color: $scoped; } /* Constant */
+.highlight .ne { color: $scoped; } /* Exception */
+.highlight .nd { color: $operator; } /* Decorator */
+.highlight .nt { color: $operator; } /* Tag */
+
+/* --- Keywords --- */
+.highlight .kn { color: $operator; } /* Namespace */
+.highlight .k { color: $keyword; } /* Keyword */
+.highlight .kc { color: $keyword; } /* Constant */
+.highlight .kd { color: $keyword; } /* Declaration */
+.highlight .kp { color: $keyword; } /* Pseudo */
+.highlight .kr { color: $keyword; } /* Reserved */
+.highlight .kt { color: $namespace; } /* Type */
+
+/* --- Variables --- */
+.highlight .nv { color: $scoped; } /* Variable */
+.highlight .vc { color: $scoped; } /* Class */
+.highlight .vg { color: $scoped; } /* Global */
+.highlight .vi { color: $scoped; } /* Instance */
+
+/* --- Numerals --- */
+.highlight .m { color: $numeric; } /* Number */
+.highlight .il { color: $numeric; } /* Long */
+.highlight .mf { color: $numeric; } /* Float */
+.highlight .mh { color: $numeric; } /* Hex */
+.highlight .mi { color: $numeric; } /* Integer */
+.highlight .mo { color: $numeric; } /* Oct */
+
+/* --- Strings --- */
+.highlight .s { color: $string; } /* String */
+.highlight .sr { color: $string; } /* Regex */
+.highlight .sb { color: $string; } /* Backtick */
+.highlight .s2 { color: $string; } /* Double */
+.highlight .sh { color: $string; } /* Heredoc */
+.highlight .sx { color: $string; } /* Other */
+.highlight .s1 { color: $string; } /* Single */
+.highlight .ss { color: $string; } /* Symbol */
+.highlight .se { color: $numeric; } /* Escape */
+.highlight .si { color: $numeric; } /* Interpol */
+.highlight .sc { color: $primary; } /* Char */
+.highlight .sd { color: $comment; } /* Doc */
+
+/* --- Other Literals --- */
+.highlight .l { color: $numeric; } /* Literal */
+.highlight .ld { color: $string; } /* Date */
+
+/* --- Typographic Elements --- */
+.highlight .p { color: $primary; } /* Punctuation */
+.highlight .w { color: $primary; } /* Whitespace */ /* shouldn't this have a background-color instead ? */
+
+/* --- Others --- */
+.highlight .err { color: $scoped; } /* Error */
+.highlight .gp { color: $namespace; } /* shell prompt */
+
+/* --- Style --- */
+.highlight .gi { color: $string; } /* inserted */
+.highlight .gd { color: $scoped; } /* deleted */
+.highlight .gh { color: $primary; font-weight: bold; } /* heading */
+.highlight .gu { color: $operator; font-weight: bold; } /* subheading */
