@@ -29,7 +29,7 @@ The installer also prompts for a EULA in `/usr/share/redhat-release/EULA` but th
 > is included with the distribution media.
 
 ## Setup VNC Server
-I followed the guide on [Tutorial: Setup VNC Server CentOS 8 - 100% Working](https://www.golinuxcloud.com/setup-vnc-server-centos-8/). (It is written for CentOS 8 but ) The tutorial is really great and it turns out that setting up VNC on Centos Stream is much more simpler than I think.
+I followed the guide on [Tutorial: Setup VNC Server CentOS 8 - 100% Working](https://www.golinuxcloud.com/setup-vnc-server-centos-8/). (It is written for CentOS 8 but works without change in CentOS Stream 9) The tutorial is really great and it turns out that setting up VNC on Centos Stream is much more simpler than I think.
 
 Note: I didn't choose "Server with GUI" on installation which comes with a GNOME Shell. Although a full desktop environment clearly works, I choose a simple X11 window manager, [icewm](https://ice-wm.org/).
 
@@ -98,11 +98,11 @@ session=icewm-session
 TigerVNC requires a separate vncpasswd. (The system password can be left locked: `passwd -l admin`). Setup vncpasswd. (I don't enable a view-only passwd since I will be the only one using VNC)
 ```sh
 # Root
-su - deepak -s /bin/bash -c /usr/bin/vncpasswd
+su - admin -s /bin/bash -c /usr/bin/vncpasswd
 ```
 
 The TigerVNC service can be started now. The `<i>` in `@\:<i>` should be the display number as in `/etc/tigervnc/vncserver.users`
 ```sh
 # Root
-systemctl enable vncserver@\:1.service
+systemctl start vncserver@\:1.service
 ```
