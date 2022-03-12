@@ -11,7 +11,7 @@ I originally used `remote_theme` but using `remote_theme` is not convenient when
 Github pages can use custom theme in your repository, instead of using a `remote_theme`.  To use a github theme, you can fork the theme to your repository and directly change files in your own repository. If you want to update patches from the original theme simply do a git merge.
 
 ### Heavily changed index page
-I changed the template for index page to my liking. It now includes a category summary, use black links instead of bluish ones, and shows an excerpt for each article.
+I changed the template for index page (home page) to my liking. The home page now includes a category summary, use black links instead of bluish ones, and shows an excerpt for each article.
 
 ### Numerous tweak on css
 I also changed css to my liking, like changed base font size to 16 instead of 18, use standard #0000ee for link color, etc.
@@ -37,7 +37,7 @@ category: admin
 Excerpt is also a jekyll's builtin feature. By default this will be the first paragraph (first `<p>` element) of your post. You can also explicitly designate a post's excerpt using the jekyll `excerpt` variable.
 
 ## Dark mode
-I merged a dark mode designed by Vel-San. Repo: [github.com/Vel-San/moving darkmode](https://github.com/Vel-San/moving/tree/dark-mode), Vel-San's pull request to huangyz0918(unmerged): [UI Full Dark mode](https://github.com/huangyz0918/moving/pull/36)
+I merged a dark mode designed by Vel-San (but changed accent color). Repo: [github.com/Vel-San/moving darkmode](https://github.com/Vel-San/moving/tree/dark-mode), Vel-San's pull request to huangyz0918(unmerged): [UI Full Dark mode](https://github.com/huangyz0918/moving/pull/36)
 
 ### Media query
 Media query is one line away: `@media (prefers-color-scheme: light)`. Sass doesn't implement (re)defining sass variables under media query: you might expect sass to compile it to media queries but sass will simply error out.
