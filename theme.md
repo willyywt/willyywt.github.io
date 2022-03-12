@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "My blog theme: jekyll 'moving' theme with more features"
+last_modified_at: 2022-03-12
 ---
 My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) is forked from the jekkyll theme from [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/). As the time goes I tweak the theme to my liking and add a lot of features to it.
 
@@ -49,3 +50,6 @@ The moving theme uses bitter from google fonts, but I think hosting it locally i
 Article: [How & Why I Host Google Fonts Locally (January 2022)](https://www.wpmediamastery.com/host-google-fonts-locally/)
 
 Download font locally: [Google Webfonts helper](https://google-webfonts-helper.herokuapp.com/fonts)
+
+## Code highlight
+I use kramdown's builtin [rouge](https://kramdown.gettalong.org/syntax_highlighter/rouge.html) instead of [highlight.js](https://highlightjs.org/). A matching highlight css theme is in `/_sass/rouge.scss` and `/_sass/rouge-dark.scss`. (Rouge transform code to html elements, but don't do css stylesheet itself; you have to choose a css theme for rouge.)
