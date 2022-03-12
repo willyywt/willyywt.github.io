@@ -85,3 +85,17 @@ The TigerVNC service can be started now. The `<i>` in `@\:<i>` should be the dis
 # Root
 systemctl start vncserver@\:1.service
 ```
+
+You need to configure your firewall to open the port for tigervnc session:
+```sh
+firewall-cmd --permanent --zone=public --add-port 5901/tcp
+firewall-cmd --reload
+```
+
+On connection a prompt for vnc password will be open:
+
+![password-prompt](/static/2022-03-12/password.png)
+
+Finally, the icewm session!
+
+![icewm-virt-manager](/static/2022-03-12/icewm-virt-manager.png)
