@@ -36,13 +36,43 @@ category: admin
 ### Excerpt
 Excerpt is also a jekyll's builtin feature. By default this will be the first paragraph (first `<p>` element) of your post. You can also explicitly designate a post's excerpt using the jekyll `excerpt` variable.
 
+## Fix for Flash of unstyled content
+According to [What the FOUC is happening: Flash of Unstyled Content](https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j), a trick to hide html can be used to prevent unstyled html to be shown. Because modern browsers load CSS sequentially, i.e. load CSS in the arriving order of html data, I can hide `<html>` at the first CSS stylesheet, load the needed stylesheets, and unhide `<html>` at the last CSS stylesheet:
+```html
+<head>
+	<style>html{visibility: hidden;opacity:0;}</style>
+	<script>
+		/* load CSS here */
+	</script>
+	/* These are CSS loaded by javscript */
+	<link id="maincss" rel="stylesheet" type="text/css" href="/assets/css/main.css" media="all">
+	<link id="maincssshow" rel="stylesheet" type="text/css" href="/assets/css/unhide.css" media="all">
+```
+```css
+// /assets/css/unhide.css
+html {
+    visibility: visible;
+    opacity: 1;
+}
+```
+
 ## Dark mode
 I merged a dark mode designed by Vel-San (but changed accent color). Repo: [github.com/Vel-San/moving darkmode](https://github.com/Vel-San/moving/tree/dark-mode), Vel-San's pull request to huangyz0918(unmerged): [UI Full Dark mode](https://github.com/huangyz0918/moving/pull/36)
+
+Dark mode is enabled only when your browser return true for `window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches`. This basically means dark mode is only provided for modern browsers. Note: As far as I know Windows 7 doesn't have dark mode at all; On Linux, chromium [does not yet respond to gtk dark mode](https://bugs.chromium.org/p/chromium/issues/detail?id=998903). Chromium's commandline option `--force-dark-mode` can be used to force `(prefers-color-scheme: dark)`.
 
 ### Media query
 Media query is one line away: `@media (prefers-color-scheme: light)`. Sass doesn't implement (re)defining sass variables under media query: you might expect sass to compile it to media queries but sass will simply error out.
 
-I turned to a more monolithic approach: load different css stylesheet files depend on media query results. I planned to use `@media (prefers-color-scheme: light)` and `@media (prefers-color-scheme: dark)` for this purpose (it can be added to `<link>` element `media` attribute), but this is not friendly to old browsers which do not support `prefers-color-scheme` at all (those browsers will not use any of these stylesheets), so I changed my plan: now I use javascript to load `<link>` element so that browsers which does not return true for `window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches` can fallback to the light css stylesheet.
+I turned to a more monolithic approach: use javascript load different css stylesheet files depend on media query results. This is not optimal but I value compatibiliy for old browsers and for sass, and other approaches have issues that I can't undertake: I considered to use `@media (prefers-color-scheme: light)` and `@media (prefers-color-scheme: dark)` for this purpose (it can be added to `<link>` element `media` attribute), but this is not friendly to old browsers which do not support `prefers-color-scheme` at all (those browsers will not use any of these stylesheets). I also considered simutaneously loading the light and the dark stylesheet, but the problem is the light stylesheet can have rules not overlapping with the dark one, so I gave up on this approach. I think I should only load one of the light and the dark stylesheet.
+
+### Remedy for white flashing at new page loading
+When new page loads a white background is shown for a short period before the main css stylesheet loads, which is irritating for dark mode users.
+
+Since dark mode is only provided for modern browsers, I can use a media query to (hopefully) remedy the white flashing:
+```html
+<style media="(prefers-color-scheme: dark)">html{background-color: black;}</style>
+``` 
 
 ## Move bitter font to local
 The moving theme uses bitter from google fonts, but I think hosting it locally is better, so I have changed the theme to use local bitter font.
