@@ -26,18 +26,8 @@ This is supposed to be a place where I can say something in this virtual web wor
 
 中文翻译：随性写，技术性的博客一般只写英文，不翻译；非技术性的随缘直接用中文写
 
-## No Comments?
-This is a personal blog, and I don't want to be a moderator for my personal blog.
-
-If you have any suggestions for improvement, send me a pull request: [github.com/willyywt/willyywt.github.io/pulls](https://github.com/willyywt/willyywt.github.io/pulls). Remember I am not always on the mood for reviewing pull requests.
-
 ## Theme
 The site's theme is forked from the jekyll "moving" theme (git repo [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/)). For my additions to the theme, see my blog post [My blog theme: jekyll 'moving' theme with more features](theme.html)
 
 ## Site's git repo
 [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) 
-
-## Hello World announce (First blog)
-The very first "hello world" page: [Github Pages Hello World](2021/10/17/hello-github-pages.html). 
-
-Initially just hello world but has evolved to a meta page now which discusses my motivations and some possible plans behind the blog.
