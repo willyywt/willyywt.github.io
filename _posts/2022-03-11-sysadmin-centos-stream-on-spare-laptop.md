@@ -12,15 +12,9 @@ A spare laptop is pretty suitable for personal long runing tasks like [qbittorre
 ## Installation
 CentOS Stream doesn't work very well with [Ventoy](https://ventoy.net/): it boots and installs but when choosing an software repository it cannot choose an iso file on Ventoy, so I have to use "closest network repository" instead. CentOS Stream only provides a 9GB iso file download and doesn't seem to have a minimal boot iso file, but I guess most of the 9GB iso file is wasted.
 
-The installer suggested me to disable SMT(Simultaneous Multithreading) and give me a link to [rhel-smt](https://red.ht/rhel-smt). My laptop is a Lenovo G580 and SMT seems to causes the weak i5-3230M CPU to heat a lot with little performance boot so I dropped SMT on the grub configuration for kernel command line, ~~as suggested in the RHEL documentation~~
-
-**Update: edit /etc/sysconfig/grub directly because on RHEL >= 8 `grubby` does not persist command line options after a kernel update or `grub2-mkconfig`**
-
-Append **quiet** to `GRUB_CMDLINE_LINUX=`:
-```conf
-# /etc/sysconfig/grub
-#############################
-GRUB_CMDLINE_LINUX="crashkernel=1G-4G:192M,4G-64G:256M,64G-:512M resume=/dev/mapper/cs-swap rd.lvm.lv=cs/root rd.lvm.lv=cs/swap rhgb <strong>quiet</strong>"
+The installer suggested me to disable SMT(Simultaneous Multithreading) and give me a link to [rhel-smt](https://red.ht/rhel-smt). My laptop is a Lenovo G580 and SMT seems to causes the weak i5-3230M CPU to heat a lot with little performance boot so I dropped SMT on the grub configuration for kernel command line, as suggested in the RHEL documentation:
+```sh
+grubby --args=nosmt --update-kernel=DEFAULT
 ```
 
 The installer also prompts for a EULA in `/usr/share/redhat-release/EULA` but the EULA simply says you need to comply to the GPLv2:
