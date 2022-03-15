@@ -12,6 +12,8 @@ permalink: /:year/:month/:day/:title:output_ext
 show_excerpts: true
 search_index: false
 
+# For footnotes
+markdown: kramdown
 kramdown:
   # https://stackoverflow.com/a/25597026/17956106
   smart_quotes: ["apos", "apos", "quot", "quot"]
