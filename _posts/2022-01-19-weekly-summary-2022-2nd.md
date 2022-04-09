@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yang Wentao's weekly summary (2022 2nd)"
-last_modified_at: 2022-03-06
+last_modified_at: 2022-04-09
 categories: weekly-summary
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
@@ -85,4 +85,4 @@ I changed accent color to #EC0101 (light red), which looks much more marrier.
 
 On fedora 35 VNote's QtWebengine always crashes on start, which breaks the HTML preview ("read mode"). I didn't think about it at first and thought it would be resolved soon, but after vnote updated I realized that even the author don't know how to deal with it.
 
-It is a known issue: [1942](https://github.com/vnotex/vnote/issues/1942). It seems to be a Qt issue and nobody including the author has figured this out. Adding command line option `--no-sandbox` work around it: [VNote诡异问题](https://www.usmacd.com/2021/11/29/vnote/) (`no-sandbox` for chromium is known to be insecure, but is applied for all [electron](https://www.electronjs.org/) apps.)
+It is a known issue: [1942](https://github.com/vnotex/vnote/issues/1942). It seems to be a Qt issue and nobody including the author has figured this out. Adding command line option `--no-sandbox` work around it: [VNote诡异问题](https://www.usmacd.com/2022/04/01/vnote/#%E8%AF%A1%E5%BC%82%E9%97%AE%E9%A2%98)(`no-sandbox` for chromium is known to be insecure, but is applied for all [electron](https://www.electronjs.org/) apps.)
