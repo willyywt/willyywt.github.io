@@ -9,7 +9,7 @@ last_modified_at: 2022-04-09
 Some miscellaneous tweaks for [VNote](https://vnotex.github.io/vnote), a comfortable markdown manager.
 
 ## Font size
-VNote have too small font size for me. Fortunately it has a Qt Style Sheet file `interface.qss` to set font size for QtWidgets.
+VNote have too small font size for me. Fortunately it has a Qt Style Sheet file `interface.qss` to set font size for QtWidgets. Reference: [Themes and Styles.md](https://vnotex.github.io/vnote/en_us/#!docs/Users/Themes%20and%20Styles.md)
 
 It's recommended to leave the stock theme `pure` unchanged, copy the contents of its folder to a new folder, and use the new folder as custom theme. The folder that contains themes can be opened at *Settings->Apperance->Theme->Open Location* (should be at `$XDG_DATA_HOME/VNote/VNote/themes/<theme_name>`).
 
@@ -29,7 +29,7 @@ Change the name for custom theme, at file `palette.json`:
 
 ---
 
-VNote的字体大小对我来说太小了，运气好的是它有一个QSS文件`interface.qss`可以改QtWidgets的字体大小。
+VNote的字体大小对我来说太小了，运气好的是它有一个QSS文件`interface.qss`可以改QtWidgets的字体大小。参考：[主题和样式.md](https://vnotex.github.io/vnote/zh_cn/#!docs/用户/主题和样式.md)
 
 建议不修改原装主题`纯净`，把它的内容复制到新的文件夹，并用新文件夹作为自定义主题。存放主题的文件夹可以在`设置->外观->主题->打开路径`(应该在`$XDG_DATA_HOME/VNote/VNote/themes/<主题名称>`)
 
