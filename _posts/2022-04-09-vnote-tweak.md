@@ -18,8 +18,16 @@ Change the font size of all the widgets:
 >   font-size: 12pt;
 >}
 
+Change the font size of hover over text tip:
+> QToolTip
+> {
+>    font-size: 12pt;
+>}
+
 Change the name for custom theme, at file `palette.json`:
 > metadata:display_name: Purity
+
+---
 
 VNote的字体大小对我来说太小了，运气好的是它有一个QSS文件`interface.qss`可以改QtWidgets的字体大小。
 
@@ -27,7 +35,13 @@ VNote的字体大小对我来说太小了，运气好的是它有一个QSS文件
 
 改变所有widgets的字体大小：
 >QWidget {
->   font-size: 12pt;
+>     font-size: 12pt;
+>}
+
+改变悬浮文字提示的字体大小：
+> QToolTip
+> {
+>    font-size: 12pt;
 >}
 
 在文件`palette.json`改变自定义主题的名称：
