@@ -6,7 +6,7 @@ last_modified_at: 2022-05-07
 最近比较颓废，复健做几道网传上海交大五一假期ddl的高数题
 {% raw %}
 ## hw30
-30. $f\left(x,y\right)$是$\mathbf{R}^{2}$上的连续可微函数，记$u\left(x,y\right)=-yf_{x}+xf_{y}$，$I\left(\alpha\right)=\iint_{D_{\alpha}}u\left(x,y\right)\mathrm{d}x\mathrm{\mathrm{d}y}$，其中$D_{\alpha}$：$\left(x-2\cos\alpha\right)^{2}+\left(y-2\sin\alpha\right)^{2}\text{\ensuremath{\leq}}1$，证明：函数$I\left(\alpha\right)$存在零点。
+30. $f\left(x,y\right)$是$\mathbf{R}^{2}$上的连续可微函数，记$u\left(x,y\right)=-yf_{x}+xf_{y}$，$I\left(\alpha\right)=\iint_{D_{\alpha}}u\left(x,y\right)\mathrm{d}x\mathrm{\mathrm{d}y}$，其中$D_{\alpha}$：$\left(x-2\cos\alpha\right)^{2}+\left(y-2\sin\alpha\right)^{2}\leq1$，证明：函数$I\left(\alpha\right)$存在零点。
 
 证明：先证明
 $$
@@ -52,7 +52,7 @@ $$
 
 对于$\Gamma_{1}$，设$x=3\cos\theta,y=3\sin\theta,\theta\in\left[0,2\pi\right]$，则
 $$
-\oint_{\Gamma_{1}}xzf\mathrm{d}x+yzf\mathrm{d}y=\int_{0}^{2\pi}zf\cdot\left(\left(3\cos\theta\right)\left(-3\text{\ensuremath{\sin\theta}}\right)+\left(3\sin\theta\right)\left(3\cos\theta\right)\right)\mathrm{d}\theta=0
+\oint_{\Gamma_{1}}xzf\mathrm{d}x+yzf\mathrm{d}y=\int_{0}^{2\pi}zf\cdot\left(\left(3\cos\theta\right)\left(-3\sin\theta\right)+\left(3\sin\theta\right)\left(3\cos\theta\right)\right)\mathrm{d}\theta=0
 $$
 同理，对于$\Gamma_{2}$有
 $$
