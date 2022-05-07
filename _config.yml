@@ -18,7 +18,7 @@ kramdown:
   # https://stackoverflow.com/a/25597026/17956106
   smart_quotes: ["apos", "apos", "quot", "quot"]
   # Don't do anything at kramdown level
-  math_engine: nil
+  math_engine: +nil+
 
 # Use rouge as syntax highlighter. (The original moving theme use https://highlightjs.org embeded in <head>)
 # See rouge documentation: https://kramdown.gettalong.org/syntax_highlighter/rouge.html
