@@ -19,7 +19,7 @@ last_modified_at: 2022-05-07
 x^{2}+y^{2}+4-4x\cos\alpha-4y\sin\alpha\leq1
 \$\$
 \$\$
-\cos{{\left(\alpha-\phi\right)}\geq\frac{x^{2}+y^{2}-3}{4\sqrt{x^{2}+y^{2}}}}
+\cos{{\left(\alpha-\phi\right)}\geq\frac{x^{2}+y^{2}+3}{4\sqrt{x^{2}+y^{2}}}}
 \$\$
 进而$x^{2}+y^{2}\in\left[1,9\right]$。
 
@@ -30,12 +30,17 @@ x^{2}+y^{2}+4-4x\cos\alpha-4y\sin\alpha\leq1
 其中
 \$\$
 V_{1}:x^{2}+y^{2}\in\left[1,9\right]\text{,}\alpha\in\left[0,2\pi\right],C\left(\alpha\right)=\begin{cases}
-1 & \cos{{\left(\alpha-\phi\right)}\geq\frac{x^{2}+y^{2}-3}{4\sqrt{x^{2}+y^{2}}}}\\
-0 & \text{其他情况}
+1 \& \cos{{\left(\alpha-\phi\right)}\geq\frac{x^{2}+y^{2}+3}{4\sqrt{x^{2}+y^{2}}}}\\
+0 \& \text{其他情况}
 \end{cases}
 \$\$
 
-设$z=\arccos\left(\frac{x^{2}+y^{2}-3}{4\sqrt{x^{2}+y^{2}}}\right)$，由格林公式
+$-yf_{x}+xf_{y}$与$\alpha$无关，对$\alpha$积分可得
+\$\$
+\iiint_{V_{1}}\left(-yf_{x}+xf_{y}\right)C\left(\alpha\right)\mathrm{d}x\mathrm{d}y\mathrm{d}\alpha=\iint_{1\leq x^{2}+y^{2}\leq9}\left(-yf_{x}+xf_{y}\right)\cdot2\arccos\left({\frac{x^{2}+y^{2}+3}{4\sqrt{x^{2}+y^{2}}}}\right)\mathrm{d}x\mathrm{d}y
+\$\$
+
+设$z=2\arccos\left(\frac{x^{2}+y^{2}+3}{4\sqrt{x^{2}+y^{2}}}\right)$，由格林公式
 \$\$
 \oint_{\Gamma_{1}}xzf\mathrm{d}x+yzf\mathrm{d}y=\iint_{x^{2}+y^{2}\leq9}\left(\frac{\partial\left(yzf\right)}{\partial x}-\frac{\partial\left(xzf\right)}{\partial y}\right)\mathrm{d}x\mathrm{d}y
 \$\$
