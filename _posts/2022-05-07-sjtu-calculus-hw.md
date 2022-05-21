@@ -4,6 +4,8 @@ title: "交大五一假期ddl的高数题"
 last_modified_at: 2022-05-07
 ---
 最近比较颓废，复健做几道网传上海交大五一假期ddl的高数题
+
+
 {% raw %}
 ## hw30
 30. $f\left(x,y\right)$是$\mathbf{R}^{2}$上的连续可微函数，记$u\left(x,y\right)=-yf_{x}+xf_{y}$，$I\left(\alpha\right)=\iint_{D_{\alpha}}u\left(x,y\right)\mathrm{d}x\mathrm{\mathrm{d}y}$，其中$D_{\alpha}$：$\left(x-2\cos\alpha\right)^{2}+\left(y-2\sin\alpha\right)^{2}\leq1$，证明：函数$I\left(\alpha\right)$存在零点。
