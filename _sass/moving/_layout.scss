@@ -25,10 +25,17 @@
 }
 
 /**
+ * Aside Book additions
+ */
+.aside-book > h2 > a {
+	color: $text-color;
+}
+
+/**
  * Site footer
  */
 .site-footer {
-  padding: $spacing-unit / 1.5 0;
+  padding: $spacing-unit / 1.5;
 }
 
 .footer-heading {
