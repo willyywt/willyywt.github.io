@@ -69,7 +69,7 @@ figure,
 main {
         max-width: calc(100vw - 36px);
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
-  padding: 0 24px 24px 24px;
+  padding: 0 $spacing-unit $spacing-unit $spacing-unit;
 }
 
 /**
@@ -219,7 +219,7 @@ aside {
         max-width: calc(100vw - 36px);
 }
 .wrapper .aside-toc {
-	padding-left: 24px;
+	padding-left: $spacing-unit;
   @media screen and (min-width: $on-large) {
           grid-column: 1/2;
   }
