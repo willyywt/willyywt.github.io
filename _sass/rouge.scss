@@ -1,7 +1,6 @@
 $primary: #336699;
 $secondary: #0066bb;
 $background: #fff;
-$lineno-background: #193962;
 $selected: #003f8e;
 $operator: #008800;
 $keyword: #008800;
@@ -10,4 +9,6 @@ $comment: #888888;
 $scoped: #336699;
 $numeric: #0000dd;
 $string: #aa6600;
-@import "rouge-template";
+$error: #ff0000;
+$warning: #ffff80;
+@import "rouge-template-v2";
