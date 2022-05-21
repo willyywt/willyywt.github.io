@@ -1,13 +1,13 @@
-$primary: #4d4d4c;
-$secondary: #4271ae;
-$background: #ffffff;
-$lineno-background: #e5e5e5; /* or ffffff */
-$selected: #d6d6d6;
-$operator: #3e999f;
-$keyword: #8959a8;
-$namespace: #eab700;
-$comment: #8e908c;
-$scoped: #c82829;
-$numeric: #f5871f;
-$string: #718c00;
+$primary: #336699;
+$secondary: #0066bb;
+$background: #002451;
+$lineno-background: #193962;
+$selected: #003f8e;
+$operator: #008800;
+$keyword: #008800;
+$namespace: #bb0066;
+$comment: #888888;
+$scoped: #336699;
+$numeric: #0000dd;
+$string: #aa6600;
 @import "rouge-template";
