@@ -23,7 +23,6 @@ kramdown:
 # Use rouge as syntax highlighter. (The original moving theme use https://highlightjs.org embeded in <head>)
 # See rouge documentation: https://kramdown.gettalong.org/syntax_highlighter/rouge.html
 # and jekyll documentation: https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting
-# The CSS stylesheet comes from https://notabug.org/rem/rouge_themes/src/master
 syntax_highlighter: rouge
 
 moving:
