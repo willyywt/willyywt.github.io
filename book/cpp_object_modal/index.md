@@ -1,6 +1,6 @@
 ---
 layout: book_chapter
-navigate_bar: navigate_bar.html
+navigate_index: navigate_index.html
 title: "C++ Object Modal"
 ---
 
