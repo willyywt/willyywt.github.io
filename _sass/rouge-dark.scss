@@ -1,13 +1,14 @@
-$primary: #eaeaea;
-$secondary: #7aa6da;
 $background: #000000;
-$lineno-background: #191919;
-$selected: #424242;
-$operator: #70c0b1;
-$keyword: #c397d8;
-$namespace: #e7c547;
-$comment: #969896;
-$scoped: #d54e53;
-$numeric: #e78c45;
-$string: #b9ca4a;
-@import "rouge-template";
+$selected: #000000;
+$primary: #cccccc;
+$secondary: #ffffff;
+$operator: #3399cc;
+$keyword: #cdcd00;
+$namespace: #00cdcd;
+$comment: #9966cc; //hsv(270, 50%, 100%), cater to purple accent color
+$scoped: #666699;
+$numeric: #cd00cd;
+$string: #cd0000;
+$error: #ff0000;
+$warning: #ffff80;
+@import "rouge-template-v2";
