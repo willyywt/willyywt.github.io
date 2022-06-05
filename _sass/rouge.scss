@@ -1,11 +1,12 @@
 /* https://github.com/jwarby/jekyll-pygments-themes/blob/master/vim.css */
+/* With modifications to compensate contrast */
 $primary: #000;
 $secondary: #000;
 $background: #fff;
 $selected: #000;
-$operator: #39c;
-$keyword: #cdcd00;
-$namespace: #00cd00;
+$operator: #3373cc; /* hsv(215, 75, 80) */
+$keyword: #807719; /* hsv(55, 80, 50) */
+$namespace: #189918; /* hsv(120, 84, 60) */
 $comment: #000080;
 $scoped: #369;
 $numeric: #cd00cd;
