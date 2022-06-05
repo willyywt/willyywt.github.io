@@ -5,7 +5,7 @@
 .highlight .err { color: $scoped; background-color: $error } /* Error */
 .highlight .esc { color: $secondary  } /* Escape */
 .highlight .g { color: $primary } /* Generic */
-.highlight .k { color: $keyword } /* Keyword */
+.highlight .k { color: $keyword; font-weight: bold } /* Keyword */
 .highlight .l { color: $string } /* Literal */
 .highlight .n { color: $primary } /* Name */
 .highlight .o { color: $operator } /* Operator */
@@ -29,23 +29,23 @@
 .highlight .gt { color: $secondary } /* Generic.Traceback */
 .highlight .kc { color: $keyword } /* Keyword.Constant */
 .highlight .kd { color: $keyword } /* Keyword.Declaration */
-.highlight .kn { color: $namespace } /* Keyword.Namespace */
+.highlight .kn { color: $namespace; font-weight: bold } /* Keyword.Namespace */
 .highlight .kp { color: $keyword } /* Keyword.Pseudo */
 .highlight .kr { color: $keyword } /* Keyword.Reserved */
-.highlight .kt { color: $namespace } /* Keyword.Type */
+.highlight .kt { color: $namespace; font-weight: bold } /* Keyword.Type */
 .highlight .ld { color: $string } /* Literal.Date */
 .highlight .m { color: $numeric } /* Literal.Number */
 .highlight .s { color: $string } /* Literal.String */
 .highlight .na { color: $secondary } /* Name.Attribute */
 .highlight .nb { color: $secondary } /* Name.Builtin */
-.highlight .nc { color: $namespace } /* Name.Class */
+.highlight .nc { color: $namespace; font-weight: bold } /* Name.Class */
 .highlight .no { color: $scoped } /* Name.Constant */
 .highlight .nd { color: $operator } /* Name.Decorator */
 .highlight .ni { color: $primary } /* Name.Entity */
 .highlight .ne { color: $scoped; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: $secondary } /* Name.Function */
+.highlight .nf { color: $secondary; font-weight: bold } /* Name.Function */
 .highlight .nl { color: $primary } /* Name.Label */
-.highlight .nn { color: $namespace } /* Name.Namespace */
+.highlight .nn { color: $namespace; font-weight: bold } /* Name.Namespace */
 .highlight .nx { color: $secondary } /* Name.Other */
 .highlight .py { color: $primary } /* Name.Property */
 .highlight .nt { color: $operator } /* Name.Tag */
