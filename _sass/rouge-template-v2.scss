@@ -8,7 +8,7 @@
 .highlight .k { color: $keyword; font-weight: bold } /* Keyword */
 .highlight .l { color: $string } /* Literal */
 .highlight .n { color: $primary } /* Name */
-.highlight .o { color: $operator } /* Operator */
+.highlight .o { color: $operator; font-weight: bold  } /* Operator */
 .highlight .x { color: $secondary } /* Other */
 .highlight .p { color: $secondary } /* Punctuation */
 .highlight .ch { color: $comment; } /* Comment.Hashbang */
@@ -40,7 +40,7 @@
 .highlight .nb { color: $secondary } /* Name.Builtin */
 .highlight .nc { color: $namespace; font-weight: bold } /* Name.Class */
 .highlight .no { color: $scoped } /* Name.Constant */
-.highlight .nd { color: $operator } /* Name.Decorator */
+.highlight .nd { color: $operator; font-weight: bold  } /* Name.Decorator */
 .highlight .ni { color: $primary } /* Name.Entity */
 .highlight .ne { color: $scoped; font-weight: bold } /* Name.Exception */
 .highlight .nf { color: $secondary; font-weight: bold } /* Name.Function */
@@ -48,9 +48,9 @@
 .highlight .nn { color: $namespace; font-weight: bold } /* Name.Namespace */
 .highlight .nx { color: $secondary } /* Name.Other */
 .highlight .py { color: $primary } /* Name.Property */
-.highlight .nt { color: $operator } /* Name.Tag */
+.highlight .nt { color: $operator; font-weight: bold  } /* Name.Tag */
 .highlight .nv { color: $scoped } /* Name.Variable */
-.highlight .ow { color: $operator } /* Operator.Word */
+.highlight .ow { color: $operator; font-weight: bold  } /* Operator.Word */
 .highlight .w { color: $primary } /* Text.Whitespace */
 .highlight .mb { color: $numeric } /* Literal.Number.Bin */
 .highlight .mf { color: $numeric } /* Literal.Number.Float */
