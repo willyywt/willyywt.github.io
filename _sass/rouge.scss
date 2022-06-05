@@ -1,15 +1,15 @@
 /* https://github.com/jwarby/jekyll-pygments-themes/blob/master/vim.css */
-$primary: #336699;
-$secondary: #0066bb;
-$background: #fff;
-$selected: #003f8e;
-$operator: #008800;
-$keyword: #008800;
-$namespace: #bb0066;
-$comment: #888888;
-$scoped: #336699;
-$numeric: #0000dd;
-$string: #aa6600;
+$primary: #ccc;
+$secondary: #ccc;
+$background: #222;
+$selected: #ccc;
+$operator: #39c;
+$keyword: #cdcd00;
+$namespace: #00cd00;
+$comment: #000080;
+$scoped: #369;
+$numeric: #cd00cd;
+$string: #cd0000;
 $error: #ff0000;
 $warning: #8c8c00;
 @import "rouge-template-v2";
