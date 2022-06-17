@@ -1,6 +1,7 @@
 ---
 layout: about
 title: About
+last_modified_at: 2022-06-17
 ---
 ## About me
 I am an undergraduate student at the mechanics department, Peking University. 
@@ -27,7 +28,7 @@ This is supposed to be a place where I can say something in this virtual web wor
 中文翻译：随性写，技术性的博客一般只写英文，不翻译；非技术性的随缘直接用中文写
 
 ## Theme
-The site's theme is forked from the jekyll "moving" theme (git repo [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/)). For my additions to the theme, see my blog post [My blog theme: jekyll 'moving' theme with more features](theme.html)
+The site's theme is forked from the jekyll "moving" theme (git repo [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/)). For my additions to the theme, see my blog post [My blog theme: jekyll 'moving' theme with more features](/article/theme.html)
 
 ## Site's git repo
 [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yang Wentao's weekly summary (2022 3rd)"
-last_modified_at: 2022-03-06
+last_modified_at: 2022-06-17
 categories: weekly-summary
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
@@ -15,4 +15,4 @@ Copied a few lines from [Using openmp with fortran](https://curc.readthedocs.io/
 Currently I only do parallelism to the outermost loop, because the inner loops share a variable (inner loops need to calculate a sum first and keep doing addition to one variable), which, when trivially made parallel, will be slow (because the compiler adds implicit locks to the shared variable).
 
 ## Blog theme
-i summarized my work at [theme.html](/theme.html).
+i summarized my work at [theme.html](/article/theme.html).
