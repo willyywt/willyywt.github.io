@@ -10,11 +10,20 @@ I originally used `remote_theme` but using `remote_theme` is not convenient when
 
 Github pages can use custom theme in your repository, instead of using a `remote_theme`.  To use a github theme, you can fork the theme to your repository and directly change files in your own repository. If you want to update patches from the original theme simply do a git merge.
 
-### Heavily changed index page
+## Heavily changed index page
 I changed the template for index page (home page) to my liking. The home page now includes a category summary, use black links instead of bluish ones, and shows an excerpt for each article.
 
-### Numerous tweak on css
+## Numerous tweak on css
 I also changed css to my liking, like changed base font size to 16 instead of 18, use standard #0000ee for link color, etc.
+
+### @media types
+Some background knowledge of @media types:
+> Media types describe the general category of a device. Except when using the not or only logical operators, the media type is optional and the all type is implied.
+> [Media Query 4](https://drafts.csswg.org/mediaqueries/#media-types) defined three types: *all*, *print*, *screen*. Several additional types were defined in [Media Query 3](https://drafts.csswg.org/mediaqueries-3/#background) but are deprecated in Media Query 4.
+
+Most querys use `@media (max-width: $on-large)`, instead of `@media screen and (max-width: $on-large)`, so such query also apply to print devices, like a PDF generator. However, CSS grid layout is only applied on screen devices.
+
+See MDN [@media - Media Types](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_types).
 
 ## Jekyll post
 I took advantage of many builtin jekyll features (which wasn't in the original "moving" theme). Jekyll's documentation on jekyll post is at [Posts | Jekyll](https://jekyllrb.com/docs/posts/).
