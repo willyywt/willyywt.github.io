@@ -37,7 +37,7 @@ body {
   font-kerning: normal;
   min-height: 100vh;
 
-  @media screen and (min-width: $on-medium) {
+  @media (min-width: $on-medium) {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height}
       $base-font-family;
   }
@@ -69,7 +69,7 @@ figure,
 main {
         max-width: calc(100vw - 36px);
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
-  @media screen and (min-width: $on-large) {
+  @media (min-width: $on-large) {
 	  padding: 0 $spacing-unit $spacing-unit $spacing-unit;
   }
 }
@@ -205,12 +205,12 @@ pre {
   * Wrapper
   */
 .wrapper {
-  display: grid;
-  grid-template-rows: max-content 1fr;
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {
-	  grid-template-columns: minmax(25%,75%) minmax(75%,25%);
+	display: grid;
+	grid-template-rows: max-content 1fr;
+	grid-template-columns: minmax(25%,75%) minmax(75%,25%);
   }
 }
 
@@ -222,9 +222,9 @@ aside {
 }
 .wrapper .aside-toc {
 	padding-left: $spacing-unit;
-  @media screen and (min-width: $on-large) {
-	  grid-column: 1/2;
-  }
+	@media screen and (min-width: $on-large) {
+		grid-column: 1/2;
+	}
 }
 
 /**
