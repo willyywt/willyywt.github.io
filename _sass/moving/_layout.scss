@@ -44,13 +44,13 @@
 }
 
 .p-name {
-  @media (max-width: 500px) {
+  @media (max-width: $on-medium) {
     @include relative-font-size(0.9);
   }
 }
 
 .u-email {
-  @media (max-width: 500px) {
+  @media (max-width: $on-medium) {
     @include relative-font-size(0.9);
   }
 }
@@ -69,7 +69,7 @@
   font-weight: 1000;
   color: lighten($text-color, 15%);
 
-  @media (max-width: 500px) {
+  @media (max-width: $on-medium) {
     margin-top: 20px;
     @include relative-font-size(1.7);
   }
@@ -81,7 +81,7 @@
   margin-top: -0.6rem;
   color: lighten($text-color, 25%);
 
-  @media (max-width: 500px) {
+  @media (max-width: $on-medium) {
     @include relative-font-size(0.8);
   }
 
@@ -104,7 +104,7 @@
   font-weight: 600;
   color: lighten($text-color, 15%);
 
-  @media (max-width: 500px) {
+  @media (max-width: $on-medium) {
     @include relative-font-size(1.2);
   }
 
@@ -115,7 +115,7 @@
   display: inline-block;
   min-width: 100px;
 
-  @media (max-width: 500px) {
+  @media (max-width: $on-medium) {
     @include relative-font-size(0.8);
   }
 
@@ -127,7 +127,7 @@
   margin-left: 10%;
   display: inline;
 
-  @media (max-width: 500px) {
+  @media (max-width: $on-medium) {
     @include relative-font-size(1);
   }
 

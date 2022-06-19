@@ -167,7 +167,7 @@ blockquote {
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1);
 
-@media (max-width: 600px) {
+@media (max-width: $on-medium) {
   @include relative-font-size(0.8);
 }
 
