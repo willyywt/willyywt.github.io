@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My blog theme: jekyll 'moving' theme with more features"
-last_modified_at: 2022-03-12
+last_modified_at: 2022-06-19
 ---
 My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) is forked from the jekkyll theme from [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/). As the time goes I tweak the theme to my liking and add a lot of features to it.
 
@@ -37,6 +37,8 @@ category: admin
 Excerpt is also a jekyll's builtin feature. By default this will be the first paragraph (first `<p>` element) of your post. You can also explicitly designate a post's excerpt using the jekyll `excerpt` variable.
 
 ## Fix for Flash of unstyled content
+**Note: This fix doesn't work well on Firefox.**
+
 According to [What the FOUC is happening: Flash of Unstyled Content](https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j), a trick to hide html can be used to prevent unstyled html to be shown. Because modern browsers load CSS sequentially, i.e. load CSS in the arriving order of html data, I can hide `<html>` at the first CSS stylesheet, load the needed stylesheets, and unhide `<html>` at the last CSS stylesheet:
 ```html
 <head>
@@ -49,7 +51,7 @@ According to [What the FOUC is happening: Flash of Unstyled Content](https://dev
 	<link id="maincssshow" rel="stylesheet" type="text/css" href="/assets/css/unhide.css" media="all">
 ```
 ```css
-// /assets/css/unhide.css
+/* /assets/css/unhide.css */
 html {
     visibility: visible;
     opacity: 1;
