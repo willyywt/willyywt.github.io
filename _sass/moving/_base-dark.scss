@@ -227,9 +227,9 @@ pre {
   * Main
   */
 .wrapper .main-content {
-        @media screen and (min-width: $on-large) {
-                grid-column: 2/3;
-        }
+	@media screen and (min-width: $on-large) {
+		grid-column: 2/3;
+	}
 }
 
 /**
