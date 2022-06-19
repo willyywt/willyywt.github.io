@@ -68,6 +68,7 @@ figure,
   */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+  padding: 0 $spacing-unit / 2 $spacing-unit / 2 $spacing-unit / 2;
   @media (min-width: $on-large) {
 	  padding: 0 $spacing-unit $spacing-unit $spacing-unit;
   }
@@ -217,6 +218,7 @@ pre {
   * Aside: Table of Content
   */
 .wrapper .aside-toc {
+	padding-left: $spacing-unit / 2;
 	@media screen and (min-width: $on-large) {
 		padding-left: $spacing-unit;
 		grid-column: 1/2;
