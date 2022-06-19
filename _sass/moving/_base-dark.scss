@@ -210,7 +210,7 @@ pre {
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {
-        grid-template-columns: minmax(25%,75%) minmax(75%,25%);
+	  grid-template-columns: minmax(25%,75%) minmax(75%,25%);
   }
 }
 
@@ -218,7 +218,7 @@ pre {
   * Aside: Table of Content
   */
 aside {
-        max-width: calc(100vw - 36px);
+	max-width: calc(100vw - 36px);
 }
 .wrapper .aside-toc {
 	padding-left: $spacing-unit;

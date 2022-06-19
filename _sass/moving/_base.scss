@@ -210,7 +210,7 @@ pre {
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {
-  	grid-template-columns: minmax(25%,75%) minmax(75%,25%);
+	  grid-template-columns: minmax(25%,75%) minmax(75%,25%);
   }
 }
 
