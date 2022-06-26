@@ -1,12 +1,14 @@
 ﻿---
 layout: post
 title: "Ambiance GTK theme, modern version"
-last_modified_at: 2022-01-23
+last_modified_at: 2022-06-27
 categories: [awesome, gtk]
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+**Warning: This doesn't really work on GNOME 42, which introduced GTK 4 applications, powered by libadwaita. I believe the UI designs by libadwaita is the right direction, and the ambiance GTK theme start to look weird when compared with libadwaita. (The official GTK 3 Adwaita theme isn't great either, but it looks closer to libadwaita) Even I really like this theme much better than the official one (especially the dark variant), it needs a lot of refreshing to fit the visual designs of libadwaita.**
+
 This modern Ambiance version is a minimal fork of Adwaita that makes me really like GTK theme again.
 
 ## Ambiance GTK Theme
