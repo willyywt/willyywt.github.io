@@ -4,6 +4,9 @@ title: "Preferences"
 last_modified_at: 2022-06-27
 ---
 
+# Preferences
+These are some preference settings that you can tweak for this website. **Requires Javascript and Cookies to work.**
+
 ## Font
 <fieldset>
     <legend>Select font:</legend>
@@ -16,7 +19,7 @@ last_modified_at: 2022-06-27
     <div>
       <input type="radio" id="dewey" name="drone" value="dewey">
       <label for="system-font-stack">System Font Stack</label>
-	<p> A list of brand fonts which comes pre-installed on given platforms. </p>
+	<p> A list of brand fonts which are pre-installed on several platforms. </p>
 	<code>body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}</code>
     </div>
     <div>
