@@ -292,3 +292,13 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+/**
+  * <fieldset>
+  */
+fieldset p {
+  margin: 0
+}
+fieldset > div {
+  margin-bottom: $base-font-size * 2;
+}
