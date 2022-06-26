@@ -292,3 +292,21 @@ table {
     border: 1px solid $background-color;
   }
 }
+
+/**
+  * <fieldset>
+  */
+fieldset p, fieldset code {
+  margin: 0;
+  color: grey; /* __hardcode__ rgb(128, 128, 128) */
+}
+fieldset > div {
+  margin-bottom: $base-font-size;
+}
+label {
+  font-weight: bolder;
+}
+legend {
+  font-weight: bolder;
+  font-size: larger;
+}

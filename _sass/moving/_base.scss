@@ -296,9 +296,17 @@ table {
 /**
   * <fieldset>
   */
-fieldset p {
-  margin: 0
+fieldset p, fieldset code {
+  margin: 0;
+  color: #5f6368; /* __hardcode__ rgb(95, 99, 104), copied from chrome://flags */
 }
 fieldset > div {
-  margin-bottom: $base-font-size * 2;
+  margin-bottom: $base-font-size;
+}
+label {
+  font-weight: bolder;
+}
+legend {
+  font-weight: bolder;
+  font-size: larger;
 }
