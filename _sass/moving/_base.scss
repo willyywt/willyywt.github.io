@@ -297,6 +297,9 @@ table {
 /**
   * <fieldset>
   */
+fieldset {
+	border-width: thin;
+}
 fieldset p, fieldset code {
   margin: 0;
   color: #5f6368; /* __hardcode__ rgb(95, 99, 104), copied from chrome://flags */
