@@ -65,9 +65,9 @@ ol,
 dl,
 figure,
 %vertical-rhythm {
-	margin-bottom: $small-font-size * 2;
+	margin-bottom: $small-font-size;
 	@media (min-width: $on-large) {
-		margin-bottom: $base-font-size * 2;
+		margin-bottom: $base-font-size;
 	}
 }
 
