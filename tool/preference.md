@@ -19,7 +19,7 @@ These are some preference settings that you can tweak for this website. **Requir
     <div>
       <input type="radio" id="pref-font-brand" name="name-pref-font" value="pref-font-brand">
       <label for="pref-font-brand">System Font Stack</label>
-	<p> Brand font that comes pre-installed on the platform. (MacOS, iOS, Windows, Android, Freedesktop/Linux(KDE, GNOME(Ubuntu), GNOME(vanilla))) </p>
+	<p> Brand font that comes pre-installed on the platform. (MacOS, iOS, Windows, Android, ChromeOS, Freedesktop/Linux(KDE, GNOME(Ubuntu), GNOME(vanilla))) </p>
 	<code>body { line-height: 1.5; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}</code>
     </div>
     <div>
