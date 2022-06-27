@@ -191,7 +191,7 @@ blockquote {
 pre,
 code {
   @include relative-font-size(0.9);
-  border: 2px solid lighten($grey-color-dark, 3%);
+  border: 2px solid darken($grey-color-dark, 3%);
 }
 
 code {
