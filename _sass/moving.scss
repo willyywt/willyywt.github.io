@@ -3,13 +3,13 @@
 // Define defaults for each variable.
 
 $base-font-family: 'Bitter', sans;
-$base-font-size: 16px !default;
+$base-font-size: 1rem !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.9 !default;
 $base-line-height: 1.8 !default;
 $small-line-height: 1.6 !default;
 
-$spacing-unit: 32px !default;
+$spacing-unit: 2rem !default;
 
 $text-color: #111 !default;
 $background-color: #fdfdfd !default;
@@ -21,11 +21,8 @@ $grey-color-dark: darken($grey-color, 25%) !default;
 $orange-color: #f66a0a !default;
 $table-text-align: left !default;
 
-// Width of the content area
-$content-width: 800px !default;
-
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
+$on-palm: 37.5rem !default;
+$on-laptop: 50rem !default;
 
 $on-medium: $on-palm !default;
 $on-large: $on-laptop !default;
