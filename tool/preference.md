@@ -19,13 +19,13 @@ These are some preference settings that you can tweak for this website. **Requir
     <div>
       <input type="radio" id="pref-font-brand" name="name-pref-font" value="pref-font-brand">
       <label for="pref-font-brand">System Font Stack</label>
-	<p> A list of brand fonts which are pre-installed on several platforms. </p>
+	<p> Brand font that comes pre-installed on the platform. (MacOS, iOS, Windows, Android, Freedesktop/Linux(KDE, GNOME(Ubuntu), GNOME(vanilla))) </p>
 	<code>body { line-height: 1.5; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}</code>
     </div>
     <div>
       <input type="radio" id="pref-font-system-ui" name="name-pref-font" value="pref-font-system-ui">
       <label for="pref-font-system-ui">system-ui</label>
-	<p> The font for system user interface, using the standard CSS value "system-ui". (Less recommended than the previous option) </p>
+	<p> The font for system user interface, using the standard CSS value "system-ui". (Useful when your system UI use non-generic typographic traditions.) </p>
 	<code>body { line-height: 1.5; font-family: system-ui;}</code>
     </div>
 </fieldset>
