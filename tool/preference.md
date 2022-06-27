@@ -35,7 +35,7 @@ These are some preference settings that you can tweak for this website. **Requir
     <legend>Select theme:</legend>
     <div>
       <input type="radio" id="pref-theme-default" name="name-pref-theme" value="pref-theme-default" checked>
-      <label for="pref-theme-default">Default</label>
+      <label for="pref-theme-default">Follow system (Default)</label>
 	<p> Follow system theme variant. <strong>Dark variant autodetection only supported on modern browsers, see quirks at <a href="/article/theme.html#dark-mode">/article/theme.html#dark-mode</a></strong></p>
     </div>
     <div>
