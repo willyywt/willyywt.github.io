@@ -30,3 +30,24 @@ These are some preference settings that you can tweak for this website. **Requir
     </div>
 </fieldset>
 
+## Theme
+<fieldset>
+    <legend>Select theme:</legend>
+    <div>
+      <input type="radio" id="pref-theme-default" name="name-pref-theme" value="pref-theme-default" checked>
+      <label for="pref-theme-default">Default</label>
+	<p> Follow system theme variant. </p>
+    </div>
+    <div>
+      <input type="radio" id="pref-theme-light" name="name-pref-theme" value="pref-theme-light">
+      <label for="pref-theme-light">Light</label>
+	<p> Light theme. </p>
+	<code>&lt;link id="maincss" rel="stylesheet" type="text/css" href="/assets/css/main.css" media="all"&gt;</code>
+    </div>
+    <div>
+      <input type="radio" id="pref-theme-dark" name="name-pref-theme" value="pref-theme-dark">
+      <label for="pref-theme-dark">Dark</label>
+	<p> Dark theme. </p>
+	<code>&lt;link id="maincss" rel="stylesheet" type="text/css" href="/assets/css/main-dark.css" media="all"&gt;</code>
+    </div>
+</fieldset>
