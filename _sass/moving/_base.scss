@@ -304,8 +304,11 @@ fieldset p, fieldset code {
   margin: 0;
   color: #5f6368; /* __hardcode__ rgb(95, 99, 104), copied from chrome://flags */
 }
-fieldset > div {
-  margin-bottom: $base-font-size * 2;
+fieldset p {
+  display: inline;
+}
+fieldset code {
+  display: none;
 }
 label {
   font-weight: bolder;
