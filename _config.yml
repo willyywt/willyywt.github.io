@@ -33,3 +33,23 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# https://jekyllrb.com/docs/configuration/front-matter-defaults/
+# https://jekyllrb.com/docs/static-files/#add-front-matter-to-static-files
+defaults:
+  - scope:
+      path: "article"
+    values:
+      is_page: true
+  - scope:
+      path: "tool"
+    values:
+      is_page: true
+  - scope:
+      path: "book"
+    values:
+      is_page: true
+  - scope:
+      path: "category"
+    values:
+      is_page: true
