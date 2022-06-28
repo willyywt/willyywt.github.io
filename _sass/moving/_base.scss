@@ -305,8 +305,8 @@ table {
   * <fieldset>
   */
 fieldset {
-	border-width: thin;
-	border-color: black;
+	border: 0;
+	padding: 0;
 }
 fieldset p, fieldset code {
   margin: 0;
