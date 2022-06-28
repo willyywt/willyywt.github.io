@@ -26,7 +26,8 @@ kramdown:
 syntax_highlighter: rouge
 
 moving:
-  back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
+  # Text shown for "return back to home page" link in the header
+  back_to: "<- Willyywt"
 
 plugins:
   - jekyll-feed
