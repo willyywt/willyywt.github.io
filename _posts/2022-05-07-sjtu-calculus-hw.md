@@ -3,6 +3,9 @@ layout: post
 title: "交大五一假期ddl的高数题"
 last_modified_at: 2022-05-07
 ---
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
 最近比较颓废，复健做几道网传上海交大五一假期ddl的高数题
 
 
