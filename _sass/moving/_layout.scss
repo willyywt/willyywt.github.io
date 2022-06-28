@@ -130,22 +130,6 @@
   @include relative-font-size(1.2);
 }
 
-.black-link {
-  color: $text-color;
-  text-decoration: none;
-  font-weight: 600;
-
-  &:hover {
-    color: $text-color;
-    text-decoration: underline;
-  }
-}
-
-.post-back {
-  margin-bottom: 20px;
-  color: lighten($text-color, 25%);
-}
-
 /**
  * Posts
  */
