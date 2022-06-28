@@ -120,6 +120,7 @@
 .post-link-layout {
   margin-left: 10%;
   display: inline;
+  font-weight: 600;
 
   @media (max-width: $on-medium) {
     @include relative-font-size(1);
