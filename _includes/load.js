@@ -44,6 +44,7 @@ function Json2Cookie() {
   for (key in cookie_json) {
     var value = encodeURIComponent(cookie_json[key])
     var cookie_str_1 = key.concat("=", value, "; ")
+    cookie_str_1 += "Path=/; "
     document.cookie = cookie_str_1 + "SameSite=None; Max-Age=851472000; Secure"
   }
 }
