@@ -2,13 +2,24 @@ pref_input_el_arr = document.getElementsByTagName("input");
 function input_changed_cb(ev) {
   var val = ev.target.value
   var name = ev.target.name
-  cookie_json[name] = val
-  Json2Cookie()
   CookieLevelHook(name, val)
 }
 for (var el_index = 0; el_index < pref_input_el_arr.length; el_index += 1) {
   var el = pref_input_el_arr[el_index]
   el.addEventListener('change', input_changed_cb)
+}
+var LegendDefault_map = {
+	"name-pref-font": "pref-font-default",
+	"name-pref-theme": "pref-theme-default"
+}
+function CookieChangeHook(name, value) {
+  CookieLevelHook(name, val)
+  if(LegendDefault_map[name] === val) {
+	  cookie_json[name] = ""
+  } else {
+	  cookie_json[name] = val
+  }
+  Json2Cookie()
 }
 function PrefLegendCheckSync() {
   for (var name_index = 0; name_index < LegendName_arr.length; name_index += 1) {
