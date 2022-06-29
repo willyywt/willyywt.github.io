@@ -51,3 +51,4 @@ These are some preference settings that you can tweak for this website. **Requir
 	<code>&lt;link id="maincss" rel="stylesheet" type="text/css" href="/assets/css/main-dark.css" media="all"&gt;</code>
     </div>
 </fieldset>
+<script type="text/javascript" src="/assets/js/pref.js"></script>

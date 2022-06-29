@@ -1,4 +1,12 @@
 var cookie_json = {}
+var constvals = {
+  "cssdark": '/assets/css/main-dark.css',
+  "csslight": '/assets/css/main.css',
+  "cssunhide": '/assets/css/unhide.css'
+}
+var LegendName_arr = ["name-pref-font", "name-pref-theme"]
+var cssId = 'maincss';
+var csshookId = 'hookcss';
 function CookieParsePair(start) {
   var c_start = start
   var c_end = start
@@ -39,8 +47,7 @@ function Json2Cookie() {
   }
   document.cookie = Array.prototype.concat(cookie_arr)
 }
-var cssId = 'maincss';
-function StyleInsertElement(conf) {
+function StyleInsertLink(conf) {
    var head  = document.getElementsByTagName('head')[0]
    var link  = document.createElement('link')
    link.id   = conf.id
@@ -51,15 +58,88 @@ function StyleInsertElement(conf) {
    link.media = conf.media || 'all'
    head.appendChild(link);
 }
+function StyleInsertStyle(conf) {
+   var head  = document.getElementsByTagName('head')[0]
+   var style = document.createElement('style')
+   style.id = conf.id
+   style.textContent = conf.textContent || ''
+   head.appendChild(style);
+}
+function CookieLevelHook(name, value) {
+  var CookieLevelHookCb_dict = {
+    "name-pref-font": PrefFontCb,
+    "name-pref-theme": PrefThemeCb,
+  }
+  if (name in CookieLevelHookCb_dict) {
+    var cbfunc = CookieLevelHookCb_dict[name]
+    cbfunc(value)
+  }
+}
+function CookieLevelHook_doall() {
+  for (name of LegendName_arr) {
+    var value = cookie_json[name];
+    CookieLevelHook(name, value)
+  }
+}
+function PrefFontCb(value) {
+  var FontFamily_dict = {
+    "pref-font-default": {"lineHeight": "", "fontFamily": ""},
+    "pref-font-brand": {"lineHeight": "1.5", "fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
+    "pref-font-system-ui": {"lineHeight": "1.5", "fontFamily": "system-ui, sans"}
+  }
+  var csshook_el = document.getElementById(csshookId)
+  var css_str = "html body{"
+  if (value in FontFamily_dict) {
+    var lh = FontFamily_dict[value].lineHeight
+    if (lh) {
+      css_str += "line-height: "
+      css_str += lh
+      css_str += ";"
+    }
+    var ff = FontFamily_dict[value].fontFamily
+    if (ff) {
+      css_str += "font-family: "
+      css_str += ff
+      css_str += ";"
+    }
+    css_str += "}"
+  }
+  csshook_el.textContent = css_str
+}
+function PrefThemeCb(value) {
+  var main_el = document.getElementById(cssId)
+  var show_el = document.getElementById(cssId + 'show')
+  if (!main_el || !show_el) {
+    return
+  }
+  var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  show_el.href = ""
+  if (value === "pref-theme-default") {
+    main_el.href = is_dark ? constvals.cssdark : constvals.csslight
+  } else if (value === "pref-theme-dark") {
+    main_el.href = constvals.cssdark
+  } else if (value == "pref-theme-light") {
+    main_el.href = constvals.csslight
+  }
+  show_el.href = constvals.cssunhide
+}
 if (!document.getElementById(cssId))
 {
    var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-   StyleInsertElement({
+   StyleInsertLink({
      "id": cssId,
-     "href": is_dark ? '/assets/css/main-dark.css' : '/assets/css/main.css'
+     "href": is_dark ? constvals.cssdark : constvals.csslight
    })
-   StyleInsertElement({
+   StyleInsertLink({
      "id": cssId + 'show',
-     "href": '/assets/css/unhide.css'
+     "href": constvals.cssunhide
    })
 }
+if (!document.getElementById(csshookId))
+{
+   StyleInsertStyle({
+     "id": csshookId
+   })
+}
+Cookie2Json()
+CookieLevelHook_doall()
