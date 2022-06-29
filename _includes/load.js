@@ -71,10 +71,8 @@ function CookieLevelHook(name, value) {
     "name-pref-font": PrefFontCb,
     "name-pref-theme": PrefThemeCb,
   }
-  if (name in CookieLevelHookCb_dict) {
-    var cbfunc = CookieLevelHookCb_dict[name]
-    cbfunc(value)
-  }
+  var cbfunc = CookieLevelHookCb_dict[name]
+  cbfunc && cbfunc(value)
 }
 function CookieLevelHook_doall() {
   for (name_index in LegendName_arr) {
@@ -92,6 +90,10 @@ function PrefFontCb(value) {
     "pref-font-system-ui": {"lineHeight": "1.5", "fontFamily": "system-ui, sans"}
   }
   var csshook_el = document.getElementById(csshookId)
+  if (value == "pref-font-default") {
+     csshook_el.textContent = ""
+     return
+  }
   var css_str = "html body{"
   if (value in FontFamily_dict) {
     var lh = FontFamily_dict[value].lineHeight
@@ -118,12 +120,16 @@ function PrefThemeCb(value) {
   }
   var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
   show_el.href = ""
+  var target = ""
   if (value === "pref-theme-default") {
-    main_el.href = is_dark ? constvals.cssdark : constvals.csslight
+    target = is_dark ? constvals.cssdark : constvals.csslight
   } else if (value === "pref-theme-dark") {
-    main_el.href = constvals.cssdark
+    target = constvals.cssdark
   } else if (value == "pref-theme-light") {
-    main_el.href = constvals.csslight
+    target = constvals.csslight
+  }
+  if (main_el.href != target) {
+    main_el.href = target;
   }
   show_el.href = constvals.cssunhide
 }
@@ -145,5 +151,7 @@ if (!document.getElementById(csshookId))
      "id": csshookId
    })
 }
+if (document.cookie.length > 0) {
 Cookie2Json()
 CookieLevelHook_doall()
+}
