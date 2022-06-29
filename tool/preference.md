@@ -26,7 +26,7 @@ These are some preference settings that you can tweak for this website. **Requir
       <input type="radio" id="pref-font-system-ui" name="name-pref-font" value="pref-font-system-ui">
       <label for="pref-font-system-ui">system-ui</label>
 	<p> The font for system user interface, using the standard CSS value "system-ui". (Useful when your system UI use non-generic typographic traditions.) </p>
-	<code>body { line-height: 1.5; font-family: system-ui;}</code>
+	<code>body { line-height: 1.5; font-family: system-ui,sans;}</code>
     </div>
 </fieldset>
 
