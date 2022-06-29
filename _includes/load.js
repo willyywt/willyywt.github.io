@@ -75,10 +75,9 @@ function CookieLevelHook(name, value) {
   cbfunc && cbfunc(value)
 }
 function CookieLevelHook_doall() {
-  for (name_index in LegendName_arr) {
-    var name = LegendName_arr[name_index]
-    if (name in cookie_json) {
-      var value = cookie_json[name];
+  for (name in cookie_json) {
+    var value = cookie_json[name]
+    if (value) {
       CookieLevelHook(name, value)
     }
   }
