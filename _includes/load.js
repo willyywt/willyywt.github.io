@@ -42,11 +42,16 @@ function Cookie2Json() {
 }
 function Json2Cookie() {
   for (key in cookie_json) {
-    var value = encodeURIComponent(cookie_json[key])
-    var cookie_str_1 = key.concat("=", value, "; ")
-    cookie_str_1 += "Path=/; "
-    document.cookie = cookie_str_1 + "SameSite=None; Max-Age=851472000; Secure"
+    if (cookie_json[key]) {
+      Json2Cookie_one(key, cookie_json[key])
+    }
   }
+}
+function Json2Cookie_one(key, value_unenc) {
+  var value = encodeURIComponent(value_unenc)
+  var cookie_str_1 = key.concat("=", value, "; ")
+  cookie_str_1 += "Path=/; "
+  document.cookie = cookie_str_1 + "SameSite=None; Max-Age=851472000; Secure"
 }
 function StyleInsertLink(conf) {
    var head  = document.getElementsByTagName('head')[0]
