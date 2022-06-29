@@ -35,17 +35,17 @@ function Cookie2Json() {
       return
     }
     index_start = parse_result.index
-    cookie_json[parse_result.key] = decodeURIComponent(parse_result.value)
+    var key = parse_result.key
+    var val = parse_result.value
+    cookie_json[key] = decodeURIComponent(val)
   }
 }
 function Json2Cookie() {
-  cookie_str_full = ""
   for (key in cookie_json) {
     var value = encodeURIComponent(cookie_json[key])
     var cookie_str_1 = key.concat("=", value, "; ")
-    cookie_str_full += cookie_str_1
+    document.cookie = cookie_str_1 + "SameSite=None; Max-Age=851472000; Secure"
   }
-  document.cookie = cookie_str_full
 }
 function StyleInsertLink(conf) {
    var head  = document.getElementsByTagName('head')[0]
