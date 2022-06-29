@@ -40,24 +40,26 @@ function Json2Cookie() {
   document.cookie = Array.prototype.concat(cookie_arr)
 }
 var cssId = 'maincss';
+function StyleInsertElement(conf) {
+   var head  = document.getElementsByTagName('head')[0]
+   var link  = document.createElement('link')
+   link.id   = conf.id
+   link.rel  = conf.rel || 'stylesheet'
+   link.type = conf.type || 'text/css'
+   if(conf.href) link.href = conf.href
+   link.textContent = conf.textContent || ''
+   link.media = conf.media || 'all'
+   head.appendChild(link);
+}
 if (!document.getElementById(cssId))
 {
-   var head  = document.getElementsByTagName('head')[0];
-   var link  = document.createElement('link');
-   link.id   = cssId;
-   link.rel  = 'stylesheet';
-   link.type = 'text/css';
-   link.href = '/assets/css/main.css';
-   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-     link.href = '/assets/css/main-dark.css';
-   }
-   link.media = 'all';
-   head.appendChild(link);
-   var link2  = document.createElement('link');
-   link2.id   = cssId + 'show';
-   link2.rel  = 'stylesheet';
-   link2.type = 'text/css';
-   link2.href = '/assets/css/unhide.css';
-   link2.media = 'all';
-   head.appendChild(link2);
+   var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+   StyleInsertElement({
+     "id": cssId,
+     "href": is_dark ? '/assets/css/main-dark.css' : '/assets/css/main.css'
+   })
+   StyleInsertElement({
+     "id": cssId + 'show',
+     "href": '/assets/css/unhide.css'
+   })
 }
