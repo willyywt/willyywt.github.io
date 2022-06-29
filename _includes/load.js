@@ -39,13 +39,13 @@ function Cookie2Json() {
   }
 }
 function Json2Cookie() {
-  var cookie_arr = []
+  cookie_str_full = ""
   for (key in cookie_json) {
     var value = encodeURIComponent(cookie_json[key])
     var cookie_str_1 = key.concat("=", value, "; ")
-    cookie_arr.push(cookie_str_1)
+    cookie_str_full += cookie_str_1
   }
-  document.cookie = Array.prototype.concat(cookie_arr)
+  document.cookie = cookie_str_full
 }
 function StyleInsertLink(conf) {
    var head  = document.getElementsByTagName('head')[0]
