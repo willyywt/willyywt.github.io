@@ -194,9 +194,9 @@ blockquote {
   */
 pre,
 code {
-  @include relative-font-size(0.8);
+  @include relative-font-size(0.85);
 	@media (max-width: $on-medium) {
-		@include relative-font-size(0.72);
+		@include relative-font-size(0.75);
 	}
   border: 2px solid darken($grey-color-dark, 3%);
 }
