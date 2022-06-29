@@ -6,11 +6,13 @@ function input_changed_cb(ev) {
   Json2Cookie()
   CookieLevelHook(name, val)
 }
-for (el of pref_input_el_arr) {
+for (var el_index = 0; el_index < pref_input_el_arr.length; el_index++) {
+  var el = pref_input_el_arr[el_index]
   el.addEventListener('change', input_changed_cb)
 }
 function PrefLegendCheckSync() {
-  for (name of LegendName_arr) {
+  for (var name_index = 0; name_index < LegendName_arr.length; name_index++) {
+    var name = LegendName_arr[name_index]
     var value = cookie_json[name]
     console.log(name, value)
     var input_el = document.getElementById(value)
