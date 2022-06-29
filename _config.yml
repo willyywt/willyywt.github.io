@@ -27,7 +27,7 @@ syntax_highlighter: rouge
 
 moving:
   # Text shown for "return back to home page" link in the header
-  back_to: "<- Willyywt"
+  back_to: "&lt;- Willyywt"
 
 plugins:
   - jekyll-feed
