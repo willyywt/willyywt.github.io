@@ -1,46 +1,9 @@
-@charset "utf-8";
-
-// Define defaults for each variable.
-
-$root-font-size: 17px !default;
-$base-font-family: 'Bitter', sans;
-$base-font-size: 1rem !default;
-$base-font-weight: 400 !default;
-$small-font-size: $base-font-size * 0.9 !default;
-$base-line-height: 1.6 !default;
-$small-line-height: 1.5 !default;
-
-$spacing-unit: 2rem !default;
-
 // Dark Mode
 $text-color: #ddd !default;
 $background-color: #111 !default;
-
 // Previously use #9a9af9 which has higher contrast (7.5:1) but less attractive
 $brand-color: #bf4dbf !default;
-
 $grey-color: #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
 $orange-color: #f66a0a !default;
-$table-text-align: left !default;
-
-// rem unit doesn't make sense in @media width
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
-
-$on-medium: $on-palm !default;
-$on-large: $on-laptop !default;
-
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-// Import partials.
-@import "moving/base-dark", "moving/layout-dark";

@@ -1,0 +1,72 @@
+/**
+  * Basic styling
+  */
+body {
+	color: $text-color;
+	background-color: $background-color;
+}
+/**
+  * Images
+  */
+img {
+	background-color: lighten($grey-color-light, 3%);
+}
+/**
+  * Links
+  */
+a {
+	color: $brand-color;
+}
+/**
+  * Blockquotes
+  */
+blockquote {
+	color: $grey-color;
+	border-left: 4px solid $grey-color-light;
+}
+/**
+ * Code formatting
+ */
+pre,
+code {
+	border: 2px solid darken($grey-color-light, 3%);
+}
+/**
+ * Icons
+ */
+.orange {
+	color: $orange-color;
+}
+
+.grey {
+	color: $grey-color;
+}
+/**
+ * Tables
+ */
+table {
+	color: lighten($text-color, 18%);
+	border: 1px solid $grey-color-light;
+	tr {
+		&:nth-child(even) {
+			background-color: lighten($grey-color-light, 6%);
+		}
+	}
+	th {
+		background-color: lighten($grey-color-light, 3%);
+		border: 1px solid darken($grey-color-light, 4%);
+		border-bottom-color: darken($grey-color-light, 12%);
+	}
+	td {
+		border: 1px solid $grey-color-light;
+	}
+}
+/**
+ * <fieldset>
+ */
+fieldset p, fieldset code {
+	color: #5f6368; /* __hardcode__ rgb(95, 99, 104), copied from chrome://flags */
+}
+legend {
+	background-color: #e1f0f0; /* __hardcode__ hsv(180, 6%, 94%) */
+}

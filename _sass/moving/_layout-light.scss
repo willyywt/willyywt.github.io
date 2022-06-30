@@ -1,0 +1,36 @@
+/**
+ * Aside Book additions
+ */
+.aside-book > h2 > a {
+	color: $text-color;
+}
+.home-heading {
+	color: lighten($text-color, 15%);
+}
+.home-sub-heading {
+	color: lighten($text-color, 25%);
+}
+.post-year {
+	color: lighten($text-color, 15%);
+}
+.post-meta {
+	color: lighten($text-color, 25%);
+}
+.black-link {
+	color: $text-color;
+}
+/**
+ * About Page
+ */
+.about-page {
+	.about-header {
+		.about-avatar {
+			border: 1px solid $grey-color-light;
+		}
+		.about-info {
+			.about-description {
+				color: lighten($text-color, 25%);
+			}
+		}
+	}
+}
