@@ -2,7 +2,7 @@ pref_input_el_arr = document.getElementsByTagName("input");
 function input_changed_cb(ev) {
   var val = ev.target.value
   var name = ev.target.name
-  CookieLevelHook(name, val)
+  CookieChangeHook(name, val)
 }
 for (var el_index = 0; el_index < pref_inoput_el_arr.length; el_index += 1) {
   var el = pref_input_el_arr[el_index]
