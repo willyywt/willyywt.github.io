@@ -39,6 +39,6 @@ The installer also prompts for a EULA in `/usr/share/redhat-release/EULA` but th
 > is included with the distribution media.
 
 ## Setup VNC Server
-See [Setup VNC Server on CentOS Stream 9](/2022/03/12/setup-vnc-server-on-centos-stream-9).
+See [Setup VNC Server on CentOS Stream 9](../../../2022/03/12/setup-vnc-server-on-centos-stream-9).
 
 [^note1] RHEL documentation is ambiguous here, it says "may be carried forward with kernel updates", but I think it actually mean "yes on RHEL <= 7 and no on RHEL >= 8". Anyway, on this CentOS Stream 9, `grubby` only changes the current default entry in `/boot/loader/entires` (so if no kernel update is done, after a reboot the `nosmt` parameter is applied) but does not apply to later kernel versions. 
