@@ -34,8 +34,6 @@ body {
 	font-size: $small-font-size;
 	line-height: $small-line-height;
 	font-family: $base-font-family;
-  color: $text-color;
-  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -116,7 +114,6 @@ img {
   margin-top: 5px;
   padding: 2px 2px;
   border-radius: 3px;
-  background-color: lighten($grey-color-light, 3%);
   max-width: 100%;
   vertical-align: middle;
 }
@@ -163,7 +160,6 @@ h6 {
   * Links
   */
 a {
-  color: $brand-color;
   text-decoration: none;
 
   &:hover {
@@ -175,8 +171,6 @@ a {
   * Blockquotes
   */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
   @include relative-font-size(1);
 
@@ -198,7 +192,6 @@ code {
 	@media (max-width: $on-medium) {
 		@include relative-font-size(0.75);
 	}
-  border: 2px solid darken($grey-color-light, 3%);
 }
 
 code {
@@ -262,14 +255,6 @@ pre {
   * Icons
   */
 
-.orange {
-  color: $orange-color;
-}
-
-.grey {
-  color: $grey-color;
-}
-
 .svg-icon {
   width: 16px;
   height: 16px;
@@ -286,25 +271,10 @@ table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
-  color: lighten($text-color, 18%);
   border-collapse: collapse;
-  border: 1px solid $grey-color-light;
-  tr {
-    &:nth-child(even) {
-      background-color: lighten($grey-color-light, 6%);
-    }
-  }
   th,
   td {
     padding: ($spacing-unit / 3) ($spacing-unit / 2);
-  }
-  th {
-    background-color: lighten($grey-color-light, 3%);
-    border: 1px solid darken($grey-color-light, 4%);
-    border-bottom-color: darken($grey-color-light, 12%);
-  }
-  td {
-    border: 1px solid $grey-color-light;
   }
 }
 
@@ -317,7 +287,6 @@ fieldset {
 }
 fieldset p, fieldset code {
   margin: 0;
-  color: #5f6368; /* __hardcode__ rgb(95, 99, 104), copied from chrome://flags */
 }
 fieldset p {
   display: inline;
@@ -327,5 +296,4 @@ fieldset code {
 }
 legend {
   font-size: larger;
-  background-color: #e1f0f0; /* __hardcode__ hsv(180, 6%, 94%) */
 }
