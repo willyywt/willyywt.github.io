@@ -5,7 +5,7 @@ function Json2Cookie_one(key, value_unenc) {
 	cookie_str_1 += "Path=/; "
 	document.cookie = cookie_str_1 + "SameSite=None; Max-Age=851472000; Secure"
 }
-function CookieChangeHook(name, value) {
+function CookieChangeHook(name, val) {
 	var LegendDefault_map = {
 		"name-pref-font": "pref-font-default",
 		"name-pref-theme": "pref-theme-default"
@@ -25,7 +25,7 @@ function input_changed_cb(ev) {
 	var name = ev.target.name
 	CookieChangeHook(name, val)
 }
-for (var el_index = 0; el_index < pref_inoput_el_arr.length; el_index += 1) {
+for (var el_index = 0; el_index < pref_input_el_arr.length; el_index += 1) {
 	var el = pref_input_el_arr[el_index]
 	el.addEventListener('change', input_changed_cb)
 }
