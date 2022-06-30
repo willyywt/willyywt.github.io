@@ -9,7 +9,7 @@
 			{%- include toc.html html=content -%}
 		</aside>
 		<main class="main-content">
-			{{- content -}}
+			{{- content | strip_newlines -}}
 		</main>
         </div>
         {%- include footer.html -%}
