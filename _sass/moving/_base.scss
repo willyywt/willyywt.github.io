@@ -30,7 +30,7 @@ html {
   */
 body {
 	/* IE9-10 doesn't recognize rem in font shorthand */
-	font-weight: $base-font-weight;
+	font-weight: 400;
 	font-size: $small-font-size;
 	line-height: $small-line-height;
 	font-family: $base-font-family;
@@ -43,7 +43,7 @@ body {
   min-height: 100vh;
 
   @media (min-width: $on-medium) {
-	font-weight: $base-font-weight;
+	font-weight: 400;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
 	font-family: $base-font-family;
@@ -154,6 +154,44 @@ h4,
 h5,
 h6 {
   margin-top: 2rem;
+  font-weight: 700;
+}
+.main-content h1 {
+  line-height: 1.3;
+  font-weight: 900;
+  @include relative-font-size(1.5);
+
+  @media screen and (min-width: $on-large) {
+    @include relative-font-size(1.75);
+  }
+}
+.main-content {
+  margin-top: 3.2rem;
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    @include relative-font-size(1.5);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.625);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.375);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.5);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.125);
+
+    @media screen and (min-width: $on-large) {
+      @include relative-font-size(1.25);
+    }
+  }
 }
 
 /**
