@@ -12,6 +12,6 @@ I have learn the web technologies (HTML, CSS and Javascript) since forever from 
 
 In short: the new design make a step down from a serious documentation to some fancy marketing campaign.
 
-[See big picture in standalone window](/static/2022-03-14/mdn-website-design-diff-2.png)
+[See big picture in standalone window](../../../static/2022-03-14/mdn-website-design-diff-2.png)
 
-![mdn-website-design-diff-2](/static/2022-03-14/mdn-website-design-diff-2.png)
+![mdn-website-design-diff-2](../../../static/2022-03-14/mdn-website-design-diff-2.png)
