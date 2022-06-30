@@ -6,10 +6,10 @@
         <div class="wrapper">
 		<aside class="aside-toc">
 			<h2>Table of Contents</h2>
-			{% include toc.html html=content %}
+			{%- include toc.html html=content -%}
 		</aside>
 		<main class="main-content">
-			{{ content }}
+			{{- content -}}
 		</main>
         </div>
         {%- include footer.html -%}
