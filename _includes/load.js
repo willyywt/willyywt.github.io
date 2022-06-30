@@ -1,10 +1,5 @@
 var cookie_json = {}
-var constvals = {
-	"cssdark": '/assets/css/main-dark.css',
-	"csslight": '/assets/css/main.css',
-	"cssunhide": '/assets/css/unhide.css'
-}
-var cssId = 'maincss';
+var cssId = 'csscommon';
 var csshookId = 'hookcss';
 function Cookie2Json() {
 	function CookieParsePair(start) {
@@ -66,36 +61,40 @@ function CookieLevelHook(name, value) {
 				css_str += ";"
 			}
 			css_str += "}"
+		} else {
+			return
 		}
 		csshook_el.textContent = css_str
 	}
 	function PrefThemeCb(value) {
 		var main_el = document.getElementById(cssId)
+		var light_el = document.getElementById('csslight')
+		var dark_el = document.getElementById('cssdark')
 		var show_el = document.getElementById(cssId + 'show')
-		if (!main_el || !show_el) {
+		if (!main_el || !show_el || !dark_el || !light_el) {2
 			return
 		}
 		var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-		show_el.href = ""
-		var target = ""
-		if (value === "pref-theme-default") {
-			target = is_dark ? constvals.cssdark : constvals.csslight
-		} else if (value === "pref-theme-dark") {
-			target = constvals.cssdark
+		show_el.media = "not all"
+		if (value === "pref-theme-dark") {
+			is_dark = true
 		} else if (value == "pref-theme-light") {
-			target = constvals.csslight
+			is_dark = false
+		} else if (value != "pref-theme-default") {
+			return
 		}
-		if (main_el.href != target) {
-			main_el.href = target;
-		}
-		show_el.href = constvals.cssunhide
+		dark_el.media = is_dark ? "all" : "not all";
+		light_el.media = is_dark ? "not all" : "all";
+		show_el.media = "all"
 	}
 	var CookieLevelHookCb_dict = {
 		"name-pref-font": PrefFontCb,
 		"name-pref-theme": PrefThemeCb,
 	}
 	var cbfunc = CookieLevelHookCb_dict[name]
-	cbfunc && cbfunc(value)
+	if (value) {
+		cbfunc && cbfunc(value)
+	}
 }
 (function(){
 function CookieLevelHook_doall() {
@@ -106,17 +105,6 @@ function CookieLevelHook_doall() {
 		}
 	}
 }
-function StyleInsertLink(conf) {
-	var head = document.getElementsByTagName('head')[0]
-	var link = document.createElement('link')
-	link.id	= conf.id
-	link.rel = conf.rel || 'stylesheet'
-	link.type = conf.type || 'text/css'
-	if(conf.href) link.href = conf.href
-	link.textContent = conf.textContent || ''
-	link.media = conf.media || 'all'
-	head.appendChild(link);
-}
 function StyleInsertStyle(conf) {
 	var head = document.getElementsByTagName('head')[0]
 	var style = document.createElement('style')
@@ -124,23 +112,15 @@ function StyleInsertStyle(conf) {
 	style.textContent = conf.textContent || ''
 	head.appendChild(style);
 }
-if (!document.getElementById(cssId))
-{
-	var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-	StyleInsertLink({
-		"id": cssId,
-		"href": is_dark ? constvals.cssdark : constvals.csslight
-	})
-	StyleInsertLink({
-		"id": cssId + 'show',
-		"href": constvals.cssunhide
-	})
-}
 if (!document.getElementById(csshookId))
 {
 	StyleInsertStyle({
 		"id": csshookId
 	})
+}
+var show_el = document.getElementById(cssId + 'show')
+if (show_el) {
+	show_el.media = "all"
 }
 if (document.cookie.length > 0) {
 Cookie2Json()
