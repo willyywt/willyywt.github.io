@@ -35,6 +35,7 @@ var LegendDefault_map = {
   Json2Cookie()
 }
 function PrefLegendCheckSync() {
+  var LegendName_arr = ["name-pref-font", "name-pref-theme"]
   for (var name_index = 0; name_index < LegendName_arr.length; name_index += 1) {
     var name = LegendName_arr[name_index]
     var value = cookie_json[name]

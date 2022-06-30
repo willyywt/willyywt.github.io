@@ -4,7 +4,6 @@ var constvals = {
   "csslight": '/assets/css/main.css',
   "cssunhide": '/assets/css/unhide.css'
 }
-var LegendName_arr = ["name-pref-font", "name-pref-theme"]
 var cssId = 'maincss';
 var csshookId = 'hookcss';
 function CookieParsePair(start) {
