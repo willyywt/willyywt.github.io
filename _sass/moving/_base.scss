@@ -22,7 +22,10 @@ figure {
 }
 
 html {
-	font-size: $root-font-size;
+	font-size: $root-small-font-size;
+	@media (min-width: $on-medium) {
+		font-size: $root-font-size;
+	}
 }
 
 /**
