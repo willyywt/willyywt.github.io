@@ -156,7 +156,7 @@ h6 {
   margin-top: 2rem;
   font-weight: 700;
 }
-.main-content h1 {
+main h1 {
   line-height: 1.3;
   font-weight: 900;
   @include relative-font-size(1.5);
@@ -165,10 +165,7 @@ h6 {
     @include relative-font-size(1.75);
   }
 }
-.main-content {
-  margin-top: 3.2rem;
-  margin-bottom: $spacing-unit;
-
+main {
   h2 {
     @include relative-font-size(1.5);
 
@@ -274,7 +271,7 @@ pre {
 /**
   * Main
   */
-.wrapper .main-content {
+.wrapper main {
 	@media screen and (min-width: $on-large) {
 		grid-column: 2/3;
 	}
