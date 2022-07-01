@@ -31,25 +31,7 @@
   padding: $spacing-unit / 1.5;
 }
 
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
-
-.p-name {
-  @media (max-width: $on-medium) {
-    @include relative-font-size(0.9);
-  }
-}
-
-.u-email {
-  @media (max-width: $on-medium) {
-    @include relative-font-size(0.9);
-  }
-}
-
-.contact-list,
-.social-media-list {
+.contact-list {
   list-style: none;
   margin-left: 0;
 }
@@ -116,18 +98,6 @@
   }
 
   @include relative-font-size(1.2);
-}
-
-.social-media-list {
-  margin-top: -1rem;
-  display: flex;
-  @include relative-font-size(1);
-  li {
-    float: left;
-    a {
-      padding-right: $spacing-unit / 5;
-    }
-  }
 }
 
 /**
