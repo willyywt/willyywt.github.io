@@ -51,7 +51,7 @@ function CookieLevelHook(name, value) {
 			csshook_el.textContent = ""
 			return
 		}
-		var css_str = "html{"
+		var css_str = "html,body{"
 		if (value in FontFamily_dict) {
 			var lh = FontFamily_dict[value].lineHeight
 			if (lh) {
