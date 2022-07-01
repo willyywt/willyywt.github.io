@@ -95,7 +95,7 @@
 
 .post-meta {
   display: inline-block;
-  min-width: 100px;
+  min-width: 6.5rem;
 
   @media (max-width: $on-medium) {
     @include relative-font-size(0.8);
