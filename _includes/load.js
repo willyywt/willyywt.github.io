@@ -51,7 +51,7 @@ function CookieLevelHook(name, value) {
 			csshook_el.textContent = ""
 			return
 		}
-		var css_str = "html body{"
+		var css_str = "html,body{"
 		if (value in FontFamily_dict) {
 			var lh = FontFamily_dict[value].lineHeight
 			if (lh) {
@@ -106,7 +106,7 @@ function CookieLevelHook(name, value) {
 				PrefFontSize_Parse(CookieGetKey("name-pref-fontsize-selectelm")) // Set to custom; Not selecting size
 				: PrefFontSize_Parse(value) //Not setting to custom; Selecting size
 		if (fs) {
-			set_str = "html body{font-size:" + fs + ";}"
+			set_str = "html,body{font-size:" + fs + ";}"
 		}
 		hookfs_el.textContent = set_str
 	}
