@@ -10,6 +10,7 @@ layout: book_default
       {{ page.title | escape }}
     </h1>
     <p class="post-meta">
+{% if page.date %}
       <time
         class="dt-published"
         datetime="{{ page.date | date_to_xmlschema }}"
@@ -18,6 +19,7 @@ layout: book_default
         {%- assign date_format = "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
+{% endif %}
       {%- if page.author -%} •
       <span itemprop="author" itemscope itemtype="http://schema.org/Person"
         ><span class="p-author h-card" itemprop="name">{{
