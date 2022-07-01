@@ -20,6 +20,13 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
 {% endif %}
+{% if page.last_modified_at %}
+{% if page.date %}—{% endif %} Updated 
+	<time class="dt-modifiled" datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
+	{%- assign date_format = "%b %-d, %Y" -%}
+	{{ page.last_modified_at | date: date_format }}
+	</time>
+{% endif %}
       {%- if page.author -%} •
       <span itemprop="author" itemscope itemtype="http://schema.org/Person"
         ><span class="p-author h-card" itemprop="name">{{
