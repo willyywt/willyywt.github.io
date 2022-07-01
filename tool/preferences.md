@@ -9,7 +9,7 @@ These are some preference settings that you can tweak for this website. **Requir
 
 ## Font
 <fieldset>
-    <legend>Select font:</legend>
+    <legend>Select font family:</legend>
     <div>
       <input type="radio" id="pref-font-default" name="name-pref-font" value="pref-font-default" checked>
       <label for="pref-font-default">Bitter (Default)</label>
@@ -28,6 +28,51 @@ These are some preference settings that you can tweak for this website. **Requir
 	<p> The font for system user interface, using the standard CSS value "system-ui". (Useful when your system UI use non-generic typographic traditions.) </p>
 	<code>body { line-height: 1.5; font-family: system-ui,sans;}</code>
     </div>
+</fieldset>
+<fieldset>
+<legend>Select base font size:</legend>
+<div>
+	<input type="radio" id="pref-fontsize-default" name="name-pref-fontsize" value="pref-fontsize-default" checked>
+	<label for="pref-fontsize-default">17px (Default)</label>
+	<code>html { font-size: 17px;}</code>
+</div>
+<div>
+	<input type="radio" id="pref-fontsize-custom" name="name-pref-fontsize" value="pref-fontsize-custom" checked>
+	<label for="pref-fontsize-custom">Custom:</label>
+	<label for="pref-fontsize-selectelm">Select font size...</label>
+	<select name="name-pref-fontsize-selectelm" id="pref-fontsize-selectelm" disabled>
+		<option value="default">Default</option>
+		<option value="9px">9px</option>
+		<option value="10px">10px</option>
+		<option value="11px">11px</option>
+		<option value="12px">12px</option>
+		<option value="13px">13px</option>
+		<option value="14px">14px</option>
+		<option value="15px">15px</option>
+		<option value="16px">16px</option>
+		<option value="17px">17px</option>
+		<option value="18px">18px</option>
+		<option value="19px">19px</option>
+		<option value="20px">20px</option>
+		<option value="21px">21px</option>
+		<option value="22px">22px</option>
+		<option value="23px">23px</option>
+		<option value="24px">24px</option>
+		<option value="26px">26px</option>
+		<option value="28px">28px</option>
+		<option value="30px">30px</option>
+		<option value="32px">32px</option>
+		<option value="34px">34px</option>
+		<option value="36px">36px</option>
+		<option value="40px">40px</option>
+		<option value="44px">44px</option>
+		<option value="48px">48px</option>
+		<option value="56px">56px</option>
+		<option value="64px">64px</option>
+		<option value="72px">72px</option>
+	</select>
+	<code>html { font-size: $value;}</code>
+</div>
 </fieldset>
 
 ## Theme
