@@ -1,3 +1,4 @@
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat License */
 (function(){
 function Json2Cookie_one(key, value_unenc) {
 	var cookie_str_1 = ""
@@ -85,4 +86,4 @@ if (fontsize_select_el) {
 	fontsize_select_el.value = CookieGetKey("name-pref-fontsize-selectelm")
 }
 })()
-
+/* @license-end */
