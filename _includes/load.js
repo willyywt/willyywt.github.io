@@ -1,6 +1,11 @@
 var cookie_json = {}
 var cssId = 'csscommon';
 var csshookId = 'hookcss';
+var csshookId_fs = 'hookcssfs'
+function CookieGetKey(key) {
+	var has_key = (key in cookie_json) ? ((cookie_json[key]) ? true : false): false;
+	return has_key ? cookie_json[key] : ""
+}
 function Cookie2Json() {
 	function CookieParsePair(start) {
 		var c_start = start
@@ -87,9 +92,29 @@ function CookieLevelHook(name, value) {
 		light_el.media = is_dark ? "not all" : "all";
 		show_el.media = "all"
 	}
+	function PrefFontSize_Parse(rawval) {
+		return rawval && rawval !== "default" ? rawval.substring(0, 4) : ""
+	}
+	function PrefFontSizeCb(value) {
+		var hookfs_el = document.getElementById(csshookId_fs)
+		var set_to_default = value === "pref-fontsize-default"
+		var set_to_custom = value === "pref-fontsize-custom"
+		var set_str = ""
+		var fs = set_to_default ?
+				"" // Set to default
+				:set_to_custom ?
+				PrefFontSize_Parse(CookieGetKey("name-pref-fontsize-selectelm")) // Set to custom; Not selecting size
+				: PrefFontSize_Parse(value) //Not setting to custom; Selecting size
+		if (fs) {
+			set_str = "html body{font-size:" + fs + ";}"
+		}
+		hookfs_el.textContent = set_str
+	}
 	var CookieLevelHookCb_dict = {
 		"name-pref-font": PrefFontCb,
 		"name-pref-theme": PrefThemeCb,
+		"name-pref-fontsize": PrefFontSizeCb,
+		"name-pref-fontsize-selectelm": PrefFontSizeCb
 	}
 	var cbfunc = CookieLevelHookCb_dict[name]
 	if (value) {
@@ -117,6 +142,7 @@ if (!document.getElementById(csshookId))
 	StyleInsertStyle({
 		"id": csshookId
 	})
+	StyleInsertStyle({"id": csshookId_fs})
 }
 var show_el = document.getElementById(cssId + 'show')
 if (show_el) {
