@@ -37,7 +37,7 @@ These are some preference settings that you can tweak for this website. **Requir
 	<code>html { font-size: 17px;}</code>
 </div>
 <div>
-	<input type="radio" id="pref-fontsize-custom" name="name-pref-fontsize" value="pref-fontsize-custom" checked>
+	<input type="radio" id="pref-fontsize-custom" name="name-pref-fontsize" value="pref-fontsize-custom">
 	<label for="pref-fontsize-custom">Custom:</label>
 	<label for="pref-fontsize-selectelm">Select font size...</label>
 	<select name="name-pref-fontsize-selectelm" id="pref-fontsize-selectelm" disabled>
