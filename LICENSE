@@ -1,3 +1,8 @@
-All files outside the directory _posts/ are distributed under the MIT License. Individual files can also be distributed with their own licenses. See the file LICENSE-moving for the full license.
-
-All files under the directory _posts/ are Copyright (c) 2021 willywt, under the terms of the Mozilla Public License, v. 2.0. See the file LICENSE-willywt for the full license.
+Copyright (c) the Contributors as noted in the AUTHORS file.
+All files outside these directories: _posts/, article/ and book/ are distributed under the terms of the Expat License (also called the MIT License).
+All files inside these directories: _posts/, article/ and book/ are distributed under the terms of the Create Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). In addition, these files can also be distributed under the terms of the Mozilla Public License, v. 2.0.
+Individual files can also be distributed with their own licenses.
+See AUTHORS for the copyright holders for each file.
+See LICENSE-MIT for the MIT License.
+See LICENSE-CCBYSAv4 for the Create Commons Attribution-ShareAlike 4.0 International License.
+See LICENSE-MPLv2 for the Mozilla Public License, v. 2.0.
