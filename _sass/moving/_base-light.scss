@@ -35,16 +35,6 @@ code {
 	border: 2px solid darken($grey-color-light, 3%);
 }
 /**
- * Icons
- */
-.orange {
-	color: $orange-color;
-}
-
-.grey {
-	color: $grey-color;
-}
-/**
  * Tables
  */
 table {
@@ -72,4 +62,7 @@ fieldset p, fieldset code {
 }
 legend {
 	background-color: #e1f0f0; /* __hardcode__ hsv(180, 6%, 94%) */
+}
+footer hr {
+	background-color: grey;
 }
