@@ -146,7 +146,7 @@ if (!document.getElementById(csshookId))
 }
 var show_el = document.getElementById(cssId + 'show')
 if (show_el) {
-	show_el.media = "all"
+	show_el.textContent = "html{visibility:visible;opacity:1}"
 }
 if (document.cookie.length > 0) {
 Cookie2Json()
