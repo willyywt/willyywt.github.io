@@ -4,7 +4,6 @@ title: "JavaScript in this site"
 last_modified_at: 2022-07-02
 ---
 
-## JavaScript in this site
 Some features require javascript to work:
 - Site Preferences
 - Math (using MathJax)
