@@ -23,6 +23,13 @@
 .aside-toc > ul {
   margin-left: 0px;
 }
+.aside-toc {
+	@media (min-width: $on-medium) {
+		position: sticky;
+		top: -1rem;
+		align-self: start;
+	}
+}
 
 /**
  * Site footer
