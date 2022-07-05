@@ -1,45 +1,13 @@
-var cookie_json = {}
 var cssId = 'csscommon';
 var csshookId = 'hookcss';
 var csshookId_fs = 'hookcssfs'
-function CookieGetKey(key) {
-	var has_key = (key in cookie_json) ? ((cookie_json[key]) ? true : false): false;
-	return has_key ? cookie_json[key] : ""
+var nameDefaults = {
+	"name-pref-font": "pref-font-default",
+	"name-pref-theme": "pref-theme-default",
+	"name-pref-fontsize": "pref-fontsize-default",
+	"name-pref-fontsize-selectelm": "default"
 }
-function Cookie2Json() {
-	function CookieParsePair(start) {
-		var c_start = start
-		var c_end = start
-		var result = {"index": start, "key": "", "value": ""}
-		if (document.cookie.length == 0) {
-			return result
-		}
-		c_start = document.cookie.indexOf("=", start)
-		if (c_start == -1) {
-			return result
-		}
-		c_end = document.cookie.indexOf(";", c_start + 1)
-		if (c_end == -1) {
-			c_end = document.cookie.length
-		}
-		result.index = c_end + 2; // Jump "; "
-		result.key = document.cookie.substring(start, c_start)
-		result.value = document.cookie.substring(c_start + 1, c_end)
-		return result
-	}
-	var index_start = 0;
-	while (index_start < document.cookie.length) {
-		var parse_result = CookieParsePair(index_start)
-		if (parse_result.key.length == 0 || parse_result.index <= index_start) {
-			return
-		}
-		index_start = parse_result.index
-		var key = parse_result.key
-		var val = parse_result.value
-		cookie_json[key] = decodeURIComponent(val)
-	}
-}
-function CookieLevelHook(name, value) {
+function Hook(name, value) {
 	function PrefFontCb(value) {
 		var FontFamily_dict = {
 			"pref-font-default": {"lineHeight": "", "fontFamily": ""},
@@ -103,30 +71,30 @@ function CookieLevelHook(name, value) {
 		var fs = set_to_default ?
 				"" // Set to default
 				:set_to_custom ?
-				PrefFontSize_Parse(CookieGetKey("name-pref-fontsize-selectelm")) // Set to custom; Not selecting size
+				PrefFontSize_Parse(localStorage.getItem("name-pref-fontsize-selectelm")) // Set to custom; Not selecting size
 				: PrefFontSize_Parse(value) //Not setting to custom; Selecting size
 		if (fs) {
 			set_str = "html{font-size:" + fs + ";}"
 		}
 		hookfs_el.textContent = set_str
 	}
-	var CookieLevelHookCb_dict = {
+	var HookCb_dict = {
 		"name-pref-font": PrefFontCb,
 		"name-pref-theme": PrefThemeCb,
 		"name-pref-fontsize": PrefFontSizeCb,
 		"name-pref-fontsize-selectelm": PrefFontSizeCb
 	}
-	var cbfunc = CookieLevelHookCb_dict[name]
+	var cbfunc = HookCb_dict[name]
 	if (value) {
 		cbfunc && cbfunc(value)
 	}
 }
 (function(){
-function CookieLevelHook_doall() {
-	for (name in cookie_json) {
-		var value = cookie_json[name]
+function Hook_doall() {
+	for (name in nameDefaults) {
+		var value = localStorage.getItem(name)
 		if (value) {
-			CookieLevelHook(name, value)
+			Hook(name, value)
 		}
 	}
 }
@@ -148,8 +116,7 @@ var show_el = document.getElementById(cssId + 'show')
 if (show_el) {
 	show_el.textContent = "html{visibility:visible;opacity:1}"
 }
-if (document.cookie.length > 0) {
-Cookie2Json()
-CookieLevelHook_doall()
+if (Modernizr.localstorage) {
+Hook_doall()
 }
 })()
