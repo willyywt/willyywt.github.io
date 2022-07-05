@@ -12,18 +12,18 @@
 }
 
 /**
- * Aside: Table of Contents
+ * nav: Table of Contents
  */
-.aside-toc {
+.nav-toc {
 	position: sticky;
 }
-.aside-toc ul {
+.nav-toc ul {
 	list-style: none;
 }
-.aside-toc > ul {
+.nav-toc > ul {
   margin-left: 0px;
 }
-.aside-toc {
+.nav-toc {
 	@media (min-width: $on-medium) {
 		position: sticky;
 		top: -1rem;
