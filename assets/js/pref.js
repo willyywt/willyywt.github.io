@@ -1,5 +1,7 @@
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat License */
 (function(){
+	window.addEventListener('DOMContentLoaded', l);
+	function l(){
 if (!Modernizr.localstorage) {
 	return
 }
@@ -59,6 +61,7 @@ pf && InputSetEnable(pf)
 var fontsize_select_el = document.getElementById("pref-fontsize-selectelm")
 if (fontsize_select_el) {
 	fontsize_select_el.value = localStorage.getItem("name-pref-fontsize-selectelm")
+}
 }
 })()
 /* @license-end */
