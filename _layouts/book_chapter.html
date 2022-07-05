@@ -6,7 +6,7 @@ layout: book_default
   itemscope
   itemtype="http://schema.org/BlogPosting"
 >
-    <h1 class="post-title" itemprop="name headline">
+    <h1 id="{{ page.title | slugify }}" class="post-title" itemprop="name headline">
       {{ page.title | escape }}
     </h1>
     <p class="post-meta">
