@@ -8,7 +8,7 @@ last_modified_at: 2022-07-06
 <style>#noprefbanner{display: none;} .no-localstorage #noprefbanner,#noscript-noprefbanner {display: unset;color: white; font-size: larger; font-weight: bold; background: red; border-width: 4px; border-style: double; width: fit-content;}</style>
 <div id="noprefbanner"> Preferences are unavaliable because no localStorage support is present in your browser.</div>
 <noscript id="noscript-noprefbanner"> Preferences are unavaliable because no localStorage support is present in your browser.</noscript>
-These are some preference settings that you can tweak for this website. **Requires Javascript and Cookies to work.**
+These are some preference settings that you can tweak for this website. **Requires Javascript to work.**
 
 ## Font
 <fieldset>
