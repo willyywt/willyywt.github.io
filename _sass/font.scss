@@ -1,52 +1,39 @@
-/* bitter-regular - latin_cyrillic */
+/* bitter-regular - latin */
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
   font-weight: 400;
-  src: url('/assets/fonts/bitter-v25-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('/assets/fonts/bitter-v25-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-regular.svg#Bitter') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/bitter-v28-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/assets/fonts/bitter-v28-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* bitter-700 - latin_cyrillic */
+
+/* bitter-700 - latin */
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
   font-weight: 700;
-  src: url('/assets/fonts/bitter-v25-latin_cyrillic-700.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('/assets/fonts/bitter-v25-latin_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-700.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-700.svg#Bitter') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/bitter-v28-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/assets/fonts/bitter-v28-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* bitter-900 - latin_cyrillic */
+
+/* bitter-900 - latin */
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
   font-weight: 900;
-  src: url('/assets/fonts/bitter-v25-latin_cyrillic-900.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('/assets/fonts/bitter-v25-latin_cyrillic-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-900.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-900.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-900.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-900.svg#Bitter') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/bitter-v28-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/assets/fonts/bitter-v28-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* bitter-italic - latin_cyrillic */
+
+/* bitter-italic - latin */
 @font-face {
   font-family: 'Bitter';
   font-style: italic;
   font-weight: 400;
-  src: url('/assets/fonts/bitter-v25-latin_cyrillic-italic.eot'); /* IE9 Compat Modes */
   src: local(''),
-       url('/assets/fonts/bitter-v25-latin_cyrillic-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-italic.woff') format('woff'), /* Modern Browsers */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('/assets/fonts/bitter-v25-latin_cyrillic-italic.svg#Bitter') format('svg'); /* Legacy iOS */
+       url('/assets/fonts/bitter-v28-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/assets/fonts/bitter-v28-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
