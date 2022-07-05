@@ -214,10 +214,12 @@ blockquote {
 @media (max-width: $on-medium) {
   @include relative-font-size(0.8);
 }
-
   > :last-child {
     margin-bottom: 0;
   }
+}
+blockquote p {
+	white-space: pre-line;
 }
 
 /**
