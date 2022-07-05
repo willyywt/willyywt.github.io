@@ -17,19 +17,16 @@ These are some preference settings that you can tweak for this website. **Requir
       <input type="radio" id="pref-font-default" name="name-pref-font" value="pref-font-default" checked>
       <label for="pref-font-default">Bitter (Default)</label>
 	<p> The default Bitter font, from Google Fonts. </p>
-	<code>body { line-height: 1.8; font-family: "Bitter",sans; }</code>
     </div>
     <div>
       <input type="radio" id="pref-font-brand" name="name-pref-font" value="pref-font-brand">
       <label for="pref-font-brand">System Font Stack</label>
 	<p> Brand font that comes pre-installed on the platform. (MacOS, iOS, Windows, Android, ChromeOS, Freedesktop/Linux(KDE, GNOME(Ubuntu), GNOME(vanilla))) </p>
-	<code>body { line-height: 1.5; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}</code>
     </div>
     <div>
       <input type="radio" id="pref-font-system-ui" name="name-pref-font" value="pref-font-system-ui">
       <label for="pref-font-system-ui">system-ui</label>
 	<p> The font for system user interface, using the standard CSS value "system-ui". (Useful when your system UI use non-generic typographic traditions.) </p>
-	<code>body { line-height: 1.5; font-family: system-ui,sans;}</code>
     </div>
 </fieldset>
 <fieldset>
@@ -37,7 +34,6 @@ These are some preference settings that you can tweak for this website. **Requir
 <div>
 	<input type="radio" id="pref-fontsize-default" name="name-pref-fontsize" value="pref-fontsize-default" checked>
 	<label for="pref-fontsize-default">17px (Default)</label>
-	<code>html { font-size: 17px;}</code>
 </div>
 <div>
 	<input type="radio" id="pref-fontsize-custom" name="name-pref-fontsize" value="pref-fontsize-custom">
@@ -74,7 +70,6 @@ These are some preference settings that you can tweak for this website. **Requir
 		<option value="64px">64px</option>
 		<option value="72px">72px</option>
 	</select>
-	<code>html { font-size: $value;}</code>
 </div>
 </fieldset>
 
@@ -90,12 +85,10 @@ These are some preference settings that you can tweak for this website. **Requir
       <input type="radio" id="pref-theme-light" name="name-pref-theme" value="pref-theme-light">
       <label for="pref-theme-light">Light</label>
 	<p> Light theme. </p>
-	<code>&lt;link id="maincss" rel="stylesheet" type="text/css" href="/assets/css/main.css" media="all"&gt;</code>
     </div>
     <div>
       <input type="radio" id="pref-theme-dark" name="name-pref-theme" value="pref-theme-dark">
       <label for="pref-theme-dark">Dark</label>
 	<p> Dark theme. </p>
-	<code>&lt;link id="maincss" rel="stylesheet" type="text/css" href="/assets/css/main-dark.css" media="all"&gt;</code>
     </div>
 </fieldset>
