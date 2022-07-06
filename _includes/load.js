@@ -63,26 +63,28 @@ function Hook(name, value) {
 	function PrefFontSize_Parse(rawval) {
 		return rawval && rawval !== "default" ? rawval.substring(0, 4) : ""
 	}
-	function PrefFontSizeCb(value) {
+	function PrefSetFs(fs) {
 		var hookfs_el = document.getElementById(csshookId_fs)
-		var set_to_default = value === "pref-fontsize-default"
-		var set_to_custom = value === "pref-fontsize-custom"
-		var set_str = ""
-		var fs = set_to_default ?
-				"" // Set to default
-				:set_to_custom ?
-				PrefFontSize_Parse(localStorage.getItem("name-pref-fontsize-selectelm")) // Set to custom; Not selecting size
-				: PrefFontSize_Parse(value) //Not setting to custom; Selecting size
-		if (fs) {
-			set_str = "html{font-size:" + fs + ";}"
-		}
+		var set_str = fs ? ("html{font-size:" + fs + ";}") : ""
 		hookfs_el.textContent = set_str
+	}
+	function PrefFontSizeCb(value) {
+		var set_to_default = value === "pref-fontsize-default" || (!value)
+		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("name-pref-fontsize-selectelm"))
+		PrefSetFs(fs)
+	}
+	function PrefFontSizeSelectCb(value) {
+		if (localStorage.getItem("name-pref-fontsize") != "pref-fontsize-custom") {
+			return
+		}
+		var fs = PrefFontSize_Parse(value)
+		PrefSetFs(fs)
 	}
 	var HookCb_dict = {
 		"name-pref-font": PrefFontCb,
 		"name-pref-theme": PrefThemeCb,
 		"name-pref-fontsize": PrefFontSizeCb,
-		"name-pref-fontsize-selectelm": PrefFontSizeCb
+		"name-pref-fontsize-selectelm": PrefFontSizeSelectCb
 	}
 	var cbfunc = HookCb_dict[name]
 	if (value) {
