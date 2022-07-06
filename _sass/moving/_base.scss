@@ -266,8 +266,10 @@ pre {
   */
 .wrapper .nav-toc {
 	padding-left: $spacing-unit / 2;
+	padding-right: $spacing-unit / 2;
 	@media screen and (min-width: $on-large) {
 		padding-left: $spacing-unit;
+		padding-right: $spacing-unit;
 		grid-column: 1/2;
 	}
 }
