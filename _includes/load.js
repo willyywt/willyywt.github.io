@@ -6,7 +6,7 @@ var nameDefaults = {
 	"name-pref-fontsize-selectelm": "default"
 }
 function Hook(name, value) {
-	var rootElement = document.documentElement
+	var rootElement = document.body
 	function PrefFontCb(value) {
 		var FontFamily_dict = {
 			"pref-font-default": {"lineHeight": "", "fontFamily": ""},
@@ -82,6 +82,8 @@ function Hook(name, value) {
 	}
 }
 (function(){
+	window.addEventListener('DOMContentLoaded', l);
+	function l() {
 function Hook_doall() {
 	for (name in nameDefaults) {
 		var value = localStorage.getItem(name)
@@ -97,4 +99,5 @@ if (show_el) {
 if (Modernizr.localstorage) {
 Hook_doall()
 }
+	}
 })()
