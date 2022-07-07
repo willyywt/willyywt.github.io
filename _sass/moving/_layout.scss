@@ -24,7 +24,7 @@
   margin-left: 0px;
 }
 .nav-toc {
-	@media (min-width: $on-medium) {
+	@media (min-width: $on-large) {
 		position: sticky;
 		top: -1rem;
 		align-self: start;
