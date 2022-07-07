@@ -1,6 +1,4 @@
 var cssId = 'csscommon';
-var csshookId = 'hookcss';
-var csshookId_fs = 'hookcssfs'
 var nameDefaults = {
 	"name-pref-font": "pref-font-default",
 	"name-pref-theme": "pref-theme-default",
@@ -8,36 +6,30 @@ var nameDefaults = {
 	"name-pref-fontsize-selectelm": "default"
 }
 function Hook(name, value) {
+	var rootElement = document.documentElement
 	function PrefFontCb(value) {
 		var FontFamily_dict = {
 			"pref-font-default": {"lineHeight": "", "fontFamily": ""},
 			"pref-font-brand": {"lineHeight": "1.5", "fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
 			"pref-font-system-ui": {"lineHeight": "1.5", "fontFamily": "system-ui, sans"}
 		}
-		var csshook_el = document.getElementById(csshookId)
 		if (value == "pref-font-default") {
-			csshook_el.textContent = ""
+			rootElement.style.lineHeight = ""
+			rootElement.style.fontFamily = ""
 			return
 		}
-		var css_str = "html,body{"
 		if (value in FontFamily_dict) {
 			var lh = FontFamily_dict[value].lineHeight
 			if (lh) {
-				css_str += "line-height: "
-				css_str += lh
-				css_str += ";"
+				rootElement.style.lineHeight = lh
 			}
 			var ff = FontFamily_dict[value].fontFamily
 			if (ff) {
-				css_str += "font-family: "
-				css_str += ff
-				css_str += ";"
+				rootElement.style.fontFamily = ff
 			}
-			css_str += "}"
 		} else {
 			return
 		}
-		csshook_el.textContent = css_str
 	}
 	function PrefThemeCb(value) {
 		var main_el = document.getElementById(cssId)
@@ -64,9 +56,7 @@ function Hook(name, value) {
 		return rawval && rawval !== "default" ? rawval.substring(0, 4) : ""
 	}
 	function PrefSetFs(fs) {
-		var hookfs_el = document.getElementById(csshookId_fs)
-		var set_str = fs ? ("html{font-size:" + fs + ";}") : ""
-		hookfs_el.textContent = set_str
+		rootElement.style.fontSize = fs
 	}
 	function PrefFontSizeCb(value) {
 		var set_to_default = value === "pref-fontsize-default" || (!value)
@@ -99,20 +89,6 @@ function Hook_doall() {
 			Hook(name, value)
 		}
 	}
-}
-function StyleInsertStyle(conf) {
-	var head = document.getElementsByTagName('head')[0]
-	var style = document.createElement('style')
-	style.id = conf.id
-	style.textContent = conf.textContent || ''
-	head.appendChild(style);
-}
-if (!document.getElementById(csshookId))
-{
-	StyleInsertStyle({
-		"id": csshookId
-	})
-	StyleInsertStyle({"id": csshookId_fs})
 }
 var show_el = document.getElementById(cssId + 'show')
 if (show_el) {
