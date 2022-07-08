@@ -82,6 +82,11 @@ These are some preference settings that you can tweak for this website. **Requir
 		<p> The Source Code Pro font, from Adobe. </p>
 	</div>
 	<div>
+		<input type="radio" id="pref-monofont-brand" name="name-pref-monofont" value="pref-monofont-brand">
+		<label for="pref-monofont-brand">System Font Stack</label>
+		<p> Brand font that comes pre-installed on the platform. (MacOS, Windows, Freedesktop/Linux, ChromeOS) </p>
+	</div>
+	<div>
 		<input type="radio" id="pref-monofont-fallback" name="name-pref-monofont" value="pref-monofont-fallback">
 		<label for="pref-monofont-fallback">Fallback Monospace font</label>
 		<p> Fallback monospace font installed on the system.</p>

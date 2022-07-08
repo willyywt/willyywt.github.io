@@ -54,7 +54,8 @@ function Hook(name_full, value) {
 	function PrefMonoFontCb(value) {
 		var MonoFontFamily_dict = {
 			"pref-monofont-default": "",
-			"pref-monofont-fallback": "ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace"
+			"pref-monofont-brand": "SFMono-Regular,SF Mono,Menlo,Consolas,Monaco,Lucida Console,Liberation Mono,Cousine,monospace",
+			"pref-monofont-fallback": "ui-monospace,monospace"
 		}
 		if (value in MonoFontFamily_dict) {
 			var ff = MonoFontFamily_dict[value]
