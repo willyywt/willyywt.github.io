@@ -14,20 +14,21 @@
 /**
  * nav: Table of Contents
  */
-.nav-toc {
-	position: sticky;
-}
 .nav-toc ul {
 	list-style: none;
 }
 .nav-toc > ul {
   margin-left: 0px;
 }
+.nav-toc > ul > li > ul {
+  margin-left: 0px
+}
 .nav-toc {
 	@media (min-width: $on-large) {
 		position: sticky;
 		top: -1rem;
 		align-self: start;
+    max-height: calc(100vh - 2.6rem);
 	}
 }
 
