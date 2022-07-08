@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My blog theme: jekyll 'moving' theme with more features"
-last_modified_at: 2022-06-19
+last_modified_at: 2022-07-08
 ---
 My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) is forked from the jekkyll theme from [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/). As the time goes I tweak the theme to my liking and add a lot of features to it.
 
