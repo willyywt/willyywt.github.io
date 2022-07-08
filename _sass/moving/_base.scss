@@ -23,6 +23,7 @@ figure {
 
 html {
 	font-size: $root-small-font-size;
+  font-family: $base-font-family;
 	@media (min-width: $on-medium) {
 		font-size: $root-font-size;
 	}
@@ -36,7 +37,6 @@ body {
 	font-weight: 400;
 	font-size: $small-font-size;
 	line-height: $small-line-height;
-	font-family: $base-font-family;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -49,7 +49,6 @@ body {
 	font-weight: 400;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
-	font-family: $base-font-family;
   }
 }
 
