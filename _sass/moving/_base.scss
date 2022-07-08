@@ -271,6 +271,7 @@ pre {
 		padding-left: $spacing-unit;
 		padding-right: $spacing-unit;
 		grid-column: 1/2;
+    overflow: auto;
 	}
 }
 
