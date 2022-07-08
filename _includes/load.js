@@ -1,12 +1,32 @@
 var cssId = 'csscommon';
 var nameDefaults = {
-	"name-pref-font": "pref-font-default",
-	"name-pref-theme": "pref-theme-default",
-	"name-pref-fontsize": "pref-fontsize-default",
-	"name-pref-fontsize-selectelm": "default"
+	"font": "pref-font-default",
+	"monofont": "pref-monofont-default",
+	"theme": "pref-theme-default",
+	"fontsize": "pref-fontsize-default",
+	"fontsize-selectelm": "default",
+	"monofontsize": "pref-monofontsize-default",
+	"monofontsize-selectelm": "default"
 }
-function Hook(name, value) {
-	var rootElement = document.body
+var hookJson = {
+	"ff": "",
+	"fs": ""
+}
+function Hook(name_full, value) {
+	var rootElement = document.documentElement
+	var hookElement = document.getElementById('csshook')
+	function Json2CSSHook() {
+		var fontFamily = hookJson.ff
+		var fontSize = hookJson.fs
+		var str = ""
+		if (fontFamily) {
+			str += 'pre,code{font-family:' + fontFamily + ';}'
+		}
+		if (fontSize) {
+			str += 'pre,code{font-size:' + fontSize + ';}'
+		}
+		hookElement.textContent = str
+	}
 	function PrefFontCb(value) {
 		var FontFamily_dict = {
 			"pref-font-default": {"lineHeight": "", "fontFamily": ""},
@@ -30,6 +50,19 @@ function Hook(name, value) {
 		} else {
 			return
 		}
+	}
+	function PrefMonoFontCb(value) {
+		var MonoFontFamily_dict = {
+			"pref-monofont-default": "",
+			"pref-monofont-fallback": "ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Monaco,Liberation Mono,Lucida Console,monospace"
+		}
+		if (value in MonoFontFamily_dict) {
+			var ff = MonoFontFamily_dict[value]
+			hookJson.ff = ff
+		} else {
+			return
+		}
+		Json2CSSHook()
 	}
 	function PrefThemeCb(value) {
 		var main_el = document.getElementById(cssId)
@@ -58,6 +91,10 @@ function Hook(name, value) {
 	function PrefSetFs(fs) {
 		rootElement.style.fontSize = fs
 	}
+	function PrefMonoSetFs(fs) {
+		hookJson.fs = fs
+		Json2CSSHook()
+	}
 	function PrefFontSizeCb(value) {
 		var set_to_default = value === "pref-fontsize-default" || (!value)
 		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("name-pref-fontsize-selectelm"))
@@ -70,13 +107,29 @@ function Hook(name, value) {
 		var fs = PrefFontSize_Parse(value)
 		PrefSetFs(fs)
 	}
-	var HookCb_dict = {
-		"name-pref-font": PrefFontCb,
-		"name-pref-theme": PrefThemeCb,
-		"name-pref-fontsize": PrefFontSizeCb,
-		"name-pref-fontsize-selectelm": PrefFontSizeSelectCb
+	function PrefMonoFontSizeCb(value) {
+		var set_to_default = value === "pref-monofontsize-default" || (!value)
+		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("name-pref-monofontsize-selectelm"))
+		PrefMonoSetFs(fs)
 	}
-	var cbfunc = HookCb_dict[name]
+	function PrefMonoFontSizeSelectCb(value) {
+		if (localStorage.getItem("name-pref-monofontsize") != "pref-monofontsize-custom") {
+			return
+		}
+		var fs = PrefFontSize_Parse(value)
+		PrefMonoSetFs(fs)
+	}
+	var HookCb_dict = {
+		"font": PrefFontCb,
+		"monofont": PrefMonoFontCb,
+		"theme": PrefThemeCb,
+		"fontsize": PrefFontSizeCb,
+		"fontsize-selectelm": PrefFontSizeSelectCb,
+		"monofontsize": PrefMonoFontSizeCb,
+		"monofontsize-selectelm": PrefMonoFontSizeSelectCb
+	}
+	var name_trunc = name_full.substring(10)
+	var cbfunc = HookCb_dict[name_trunc]
 	if (value) {
 		cbfunc && cbfunc(value)
 	}
@@ -85,10 +138,11 @@ function Hook(name, value) {
 	window.addEventListener('DOMContentLoaded', l);
 	function l() {
 function Hook_doall() {
-	for (name in nameDefaults) {
-		var value = localStorage.getItem(name)
+	for (name_trunc in nameDefaults) {
+		var name_full = "name-pref-" + name_trunc
+		var value = localStorage.getItem(name_full)
 		if (value) {
-			Hook(name, value)
+			Hook(name_full, value)
 		}
 	}
 }
