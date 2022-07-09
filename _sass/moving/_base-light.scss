@@ -24,7 +24,7 @@ a {
   * Blockquotes
   */
 blockquote {
-	color: $grey-color;
+	color: darken($grey-color, 7%);
 	border-left: 4px solid $grey-color-light;
 }
 /**
