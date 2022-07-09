@@ -1,9 +1,23 @@
 ---
 layout: post
 title: "My blog theme: jekyll 'moving' theme with more features"
-last_modified_at: 2022-07-08
+last_modified_at: 2022-07-09
 ---
 My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) is forked from the jekkyll theme from [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/). As the time goes I tweak the theme to my liking and add a lot of features to it.
+
+## Features
+* A custom template forked from [huangyz0918/moving](https://github.com/huangyz0918/moving), heavily modified and enhanced
+* Improved support for valid HTML 5 and several W3C standards, like [minimum contrast ratio](https://www.w3.org/TR/WCAG21/#contrast-minimum)
+* Site viewable without JavaScript
+* Code highlight statically rendered with [rouge](https://kramdown.gettalong.org/syntax_highlighter/rouge.html)
+* Code highlight use a custom CSS theme, inspired by the pygments vim theme
+* Excerpt (first paragraph) shown for each post on home page
+* Dark theme support
+* Mobile devices support
+* A custom "Site Preferences" page, using [modernizer.js](https://modernizr.com/) to do feature detection
+* Font: Bitter (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
+* A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
+* Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
 
 ## Simplify usage - fork your own
 I originally used `remote_theme` but using `remote_theme` is not convenient when you need to override the original files: you cannot use git to view differences because `remote_theme` is not merged to your own repository.
