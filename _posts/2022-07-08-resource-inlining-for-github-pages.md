@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Resource inlining for github pages"
-last_modified_at: 2022-07-08
+last_modified_at: 2022-07-09
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -11,13 +11,54 @@ Github pages comes with 10 minute cache time, which makes the [Render Blocking](
 ## TL;DR
 The major motivation is to **reduce network delay**, measured in terms of RTT (Round Trip Time) to the server. For now: **Inlining css and js reduces one RTT in the critical rendering path.**
 
+## What is resource inlining
+CSS and JavaScript resource inlining is including the style and script text content directly inside `<style>` and `<script>` element of HTML, instead of using a `href` and a `src` attribute to give a link to the original `.css` and `.js` files. In this way, css and js are downloaded as part of the HTML (for valid HTML 5 `<style>` should entirely be in `<head>`; `<script>` has no such requirement, although it can also entirely in `<head>`).
+
+Before inlining
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  ...
+</html>
+```
+```css
+/* https://fonts.googleapis.com/icon?family=Material+Icons */
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/font.woff2) format('woff2');
+}
+
+.material-icons {
+  /*...*/
+}
+```
+
+After inlining
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+  <style type="text/css">
+  @font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/font.woff2) format('woff2');}.material-icons{/*...*/}</style>
+  ...
+</html>
+```
+
 ## Motivation for resource inlining
 ### Resource inlining reduce one RTT
 The major motivation is to **reduce network delay**, measured in terms of RTT (Round Trip Time) to the server. With resource inlining only *one* RTT is spent to download resources for rendering the web page (this doesn't count the RTTs spent on establishing a TCP and a TLS connection; with TLS 1.3 it typically spend one RTT for TCP and another RTT for TLS).
 
-The common practice is to use `<link href="/main.css">` to load CSS in `/main.css` and use `<script src="/main.js">` to load JavaScript in `/main.js`. The browser must ensure that these resources are downloaded before rendering the HTML page (most css and js resources are [Render Blocking](https://web.dev/render-blocking-resources/)). If the resources are not cached (e.g. on first visit to this website), the browser will have to spent another RTT to download the resources, so it takes *two* RTT to render a web page on first visit to this site; if the resources are cached, the browsers can use cached resources to render web page, and doesn't need to wait for an additional RTT.
+The common practice of using `<link href="/main.css">` to load CSS in `/main.css` and using `<script src="/main.js">` to load JavaScript in `/main.js`. Under such practice, after downloading the initial HTML, the browser must in addition to download these css and js files before rendering the HTML page -- most css and js resources are [Render Blocking](https://web.dev/render-blocking-resources/). (unless these files failed to download due to network errors, in which the browser will render raw HTML directly)
 
-If the css and js resource is put inside the <head> element of the HTML page (instead of given a link to download with), then all requests will only take one RTT, since the css and js is downloaded together with the HTML.
+If the resources are not cached (e.g. on first visit to this website), the browser will have to spent another RTT to download the resources, so it takes *two* RTT to render a web page on first visit to this site; if the resources are cached, the browsers can use cached resources to render web page, and doesn't need to wait for an additional RTT.
+
+If the css and js resource is inlined in HTML (instead of given a link to download with), then all requests will only take one RTT, since the css and js is downloaded together with the HTML.
 
 The `<link>` and `<script>` approach is pretty ideal enough for most sites with long caching time: almost all visits are one RTT, except the initial visit and the visits that expired the cache (for example cdnjs have cache age for 355 days: `cache-control: public, max-age=30672000`).
 
