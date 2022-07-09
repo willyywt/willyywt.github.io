@@ -7,6 +7,8 @@ Public key: RWSVADkxkRruodtZOCHC0ym+ANlFDgx9UdCnseqWXzO0SvZgF+IP6kl+
 Also see [minisign-1.pub](minisign-1.pub) (the same key as above)
 
 ## Download this site locally
+Note: Artifacts are preserved for only latest 24 hours!
+
 From "[Actions](https://github.com/willyywt/willyywt.github.io/actions/)", click the first line of "pages build and deployment" (the latest git commit), from the "Artifacts" section, click "github-pages" which gives you an .tar.zip file.
 
 ## Serve this site
