@@ -6,7 +6,7 @@
         <div class="wrapper">
 		<nav class="nav-toc">
 			<h2>Table of Contents</h2>
-			{%- include toc.html html=content -%}
+			{%- include toc.html html=content item_class='nav-item%level%' submenu_class='nav-submenu%level%' -%}
 		</nav>
 		<main class="main-content">
 			{{- content -}}
