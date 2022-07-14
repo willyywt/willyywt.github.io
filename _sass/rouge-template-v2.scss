@@ -29,7 +29,7 @@
 .highlight .gt { color: $secondary } /* Generic.Traceback */
 .highlight .kc { color: $keyword } /* Keyword.Constant */
 .highlight .kd { color: $keyword } /* Keyword.Declaration */
-.highlight .kn { color: $namespace; font-weight: bold } /* Keyword.Namespace */
+.highlight .kn { color: $keyword; font-weight: bold } /* Keyword.Namespace */
 .highlight .kp { color: $keyword } /* Keyword.Pseudo */
 .highlight .kr { color: $keyword } /* Keyword.Reserved */
 .highlight .kt { color: $namespace; font-weight: bold } /* Keyword.Type */
@@ -37,7 +37,7 @@
 .highlight .m { color: $numeric } /* Literal.Number */
 .highlight .s { color: $string } /* Literal.String */
 .highlight .na { color: $secondary } /* Name.Attribute */
-.highlight .nb { color: $secondary } /* Name.Builtin */
+.highlight .nb { color: $secondary; font-weight: bold } /* Name.Builtin */
 .highlight .nc { color: $namespace; font-weight: bold } /* Name.Class */
 .highlight .no { color: $scoped } /* Name.Constant */
 .highlight .nd { color: $operator; font-weight: bold  } /* Name.Decorator */
