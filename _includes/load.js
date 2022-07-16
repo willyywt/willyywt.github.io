@@ -154,5 +154,6 @@ if (show_el) {
 if (Modernizr.localstorage) {
 Hook_doall()
 }
+document.getElementsByClassName('search-wrapper')[0].style.display=""
 	}
 })()
