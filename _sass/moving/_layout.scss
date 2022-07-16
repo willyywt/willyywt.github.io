@@ -13,14 +13,30 @@
 /**
  * Search Box
  */
-#search {
+.search-wrapper {
   border-style: solid;
   border-width: 2px;
-  float: right;
   margin-left: auto;
   font-size: inherit;
   padding: 0;
   background-color: inherit;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#search1 {
+  background-color: inherit;
+  border: 0;
+  padding: 2px 0 2px 2rem;
+  font-size: inherit;
+  display: inline;
+  max-width: 100%;
+}
+#search1-icon {
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: 0.5rem;
 }
 
 /**
