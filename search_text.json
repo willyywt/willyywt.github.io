@@ -5,7 +5,7 @@ layout: search_index
 [{% if site.search_index %}{% for post in site.posts %}{
 	"title": {{ post.title | jsonify }},
 	"category": {{ post.category | jsonify }},
-	"link": {{ post.url | jsonify }},
+	"url": {{ post.url | jsonify }},
 	"date": {{ post.date | jsonify }},
 	"excerpt": {{ post.excerpt | strip_html | jsonify }},
 	"content": {{ post.content | strip_html | jsonify }}
@@ -14,7 +14,7 @@ layout: search_index
 {% for page in page_files %}{
 	"title": {{ page.title | jsonify }},
 	"category": {{ page.category | jsonify }},
-	"link": {{ page.url | jsonify }},
+	"url": {{ page.url | jsonify }},
 	"date": {{ page.date | jsonify }},
 	"excerpt": {{ page.excerpt | strip_html | jsonify }},
 	"content": {{ page.content | strip_html | jsonify }}
