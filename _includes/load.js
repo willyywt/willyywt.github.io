@@ -136,8 +136,25 @@ function Hook(name_full, value) {
 	}
 }
 (function(){
-	window.addEventListener('DOMContentLoaded', l);
-	function l() {
+var l1 = window.location.href
+var query_index = l1.indexOf('?')
+var querys = l1.substring(query_index + 1)
+var ftel = undefined
+var log = ""
+var a = query_index && querys.indexOf('debug=true') != -1
+if (a) {
+	window.addEventListener('error', function(e) {
+		log = log + e.type + ':' + e.message + '\n'
+		log = log + (e.target && e.target.outerHTML ? e.target.outerHTML : "")  + '\n'
+		if(ftel) ftel.textContent = log
+	})
+}
+window.addEventListener('DOMContentLoaded', l);
+function l() {
+if (a) {
+	ftel = document.getElementById('debug-log')
+	ftel.textContent = log
+}
 function Hook_doall() {
 	for (name_trunc in nameDefaults) {
 		var name_full = "name-pref-" + name_trunc
