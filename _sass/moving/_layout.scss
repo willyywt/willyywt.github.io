@@ -4,34 +4,51 @@
 .site-header {
   display: flex;
   align-items: center;
-	padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem;
 }
 .site-header-back-to {
-	margin-right: 2rem;
+  margin-right: 2rem;
+}
+
+/**
+ * Search Box
+ */
+#search {
+  border-style: solid;
+  border-width: 2px;
+  float: right;
+  margin-left: auto;
+  font-size: inherit;
+  padding: 0;
+  background-color: inherit;
 }
 
 /**
  * nav: Table of Contents
  */
 .nav-toc ul {
-	list-style: none;
+  list-style: none;
 }
-.nav-toc > ul {
+
+.nav-toc>ul {
   margin-left: 0px;
 }
+
 .nav-toc {
-	@media (min-width: $on-large) {
-		position: sticky;
-		top: -1rem;
-		align-self: start;
+  @media (min-width: $on-large) {
+    position: sticky;
+    top: -1rem;
+    align-self: start;
     max-height: calc(100vh - 2.6rem);
-	}
+  }
 }
+
 .nav-submenu1 {
   margin-top: 1rem;
   margin-left: 0rem;
   font-weight: normal;
 }
+
 .nav-item1 {
   font-weight: bold;
 }
@@ -92,8 +109,9 @@
 .post-meta {
   display: inline-block;
   min-width: 11rem;
+
   @media (max-width: $on-medium) {
-	  min-width: 7rem;
+    min-width: 7rem;
     @include relative-font-size(0.8);
   }
 
@@ -160,7 +178,8 @@
     margin-top: 2rem;
   }
 }
+
 .legal-note {
-	@include relative-font-size(0.7);
-	margin-right: 1rem;
+  @include relative-font-size(0.7);
+  margin-right: 1rem;
 }
