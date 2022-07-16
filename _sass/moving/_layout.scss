@@ -31,12 +31,23 @@
   font-size: inherit;
   display: inline;
   max-width: 100%;
+  line-height: $base-line-height; /* To make #search1-result `top` predictable */
 }
 #search1-icon {
   width: 1rem;
   height: 1rem;
   position: absolute;
   left: 0.5rem;
+}
+#search1-result {
+  position: absolute;
+  border-width: 2px;
+  border-style: solid;
+  left: -2px;
+  right: -2px;
+  margin: 0;
+  top: 2rem; /* Fallback */
+  top: calc(1.5rem + 8px);
 }
 
 /**
