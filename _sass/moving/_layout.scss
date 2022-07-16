@@ -2,13 +2,12 @@
  * Site header
  */
 .site-header {
-	padding-left: 2rem;
+  display: flex;
+  align-items: center;
+	padding: 0.5rem 2rem;
 }
 .site-header-back-to {
-	margin-top: 0.5rem;
-	margin-bottom: 0.5rem;
-	padding-right: 2rem;
-	display: inline-block;
+	margin-right: 2rem;
 }
 
 /**
