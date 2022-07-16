@@ -26,6 +26,10 @@
   display: flex;
   align-items: center;
   position: relative;
+  width: 100%;
+  @media (min-width: $on-large) {
+    width: 22rem;
+  }
 }
 #search1 {
   background-color: inherit;
