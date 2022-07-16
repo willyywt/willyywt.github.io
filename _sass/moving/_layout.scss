@@ -2,9 +2,12 @@
  * Site header
  */
 .site-header {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem $spacing-unit / 2;
+  @media (min-width: $on-large) {
+    display: flex;
+    align-items: center;
+	  padding: 0.5rem $spacing-unit;
+  }
 }
 .site-header-back-to {
   margin-right: 2rem;
@@ -30,7 +33,7 @@
   padding: 2px 0 2px 2rem;
   font-size: inherit;
   display: inline;
-  max-width: 100%;
+  width: 100%;
   line-height: $base-line-height; /* To make #search1-result `top` predictable */
 }
 #search1-icon {
