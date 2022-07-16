@@ -38,7 +38,7 @@
   font-size: inherit;
   display: inline;
   width: 100%;
-  line-height: $base-line-height; /* To make #search1-result `top` predictable */
+  line-height: $small-line-height; /* To make #search1-result `top` predictable */
 }
 #search1-icon {
   width: 1rem;
@@ -54,7 +54,9 @@
   right: -2px;
   margin: 0;
   top: 2rem; /* Fallback */
-  top: calc(1.5rem + 8px);
+  top: calc(1.5rem + 8px); /* __hardcode__ $small-line-height * $base-font-size */
+  overflow: scroll;
+  max-height: 20 * $small-line-height * $base-font-size;
 }
 
 /**
