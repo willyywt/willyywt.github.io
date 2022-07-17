@@ -4,6 +4,11 @@
 	<script>!function(){
 		var jss = document.getElementById("js-simple-search")
 		var s1 = document.getElementById("search1")
+		var ss = document.querySelector('.search-wrapper')
+		if (window.matchMedia && window.matchMedia('(max-width: 849px)').matches) {
+			s1.addEventListener('focus', function(){ss.style.zIndex = 2; ss.style.position = 'absolute'; ss.style.width = '100%'; ss.style.left = 0; ss.style.boxSizing = 'border-box'})
+			s1.addEventListener('blur', function(){ss.style.zIndex = ''; ss.style.position = ''; ss.style.width = ''; ss.style.left = ''; ss.style.boxSizing = ''})
+		}
 		var compat_done = false
 		function compat(e) {
 			if (compat_done) return

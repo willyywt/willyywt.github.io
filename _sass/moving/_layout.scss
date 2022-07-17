@@ -2,10 +2,11 @@
  * Site header
  */
 .site-header {
+  display: flex;
+  align-items: center;
+  height: 2rem;
   padding: 0.5rem $spacing-unit / 2;
   @media (min-width: $on-large) {
-    display: flex;
-    align-items: center;
 	  padding: 0.5rem $spacing-unit;
   }
 }
@@ -26,7 +27,10 @@
   display: flex;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: 6rem;
+  @media (min-width: $on-medium) {
+    width: 10rem;
+  }
   @media (min-width: $on-large) {
     width: 22rem;
   }
