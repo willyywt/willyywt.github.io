@@ -7,6 +7,9 @@
 			document.getElementById("search1").setAttribute("placeholder", "Search...")
 		} catch (e) {
 			document.getElementById("search1").setAttribute("placeholder", e.toString() + '\n' + e.fileName + ':' + e.lineNumber + ',' + e.columnNumber)
+			var compat = document.createElement('script')
+			compat.setAttribute('src', '/assets/js/sjs_compat.js')
+			document.getElementsByTagName('footer')[0].appendChild(compat)
 		}
 	});</script>
 	<data class="u-url" value="{{ "/" | relative_url }}"></data>
