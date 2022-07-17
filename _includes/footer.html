@@ -7,7 +7,7 @@
 		var ss = document.querySelector('.search-wrapper')
 		if (window.matchMedia && window.matchMedia('(max-width: 849px)').matches) {
 			s1.addEventListener('focus', function(){ss.style.zIndex = 2; ss.style.position = 'absolute'; ss.style.width = 'calc(100% - 2rem)'; ss.style.left = '1rem'; ss.style.boxSizing = 'border-box'})
-			s1.addEventListener('blur', function(){ss.style.zIndex = ''; ss.style.position = ''; ss.style.width = ''; ss.style.left = ''; ss.style.boxSizing = ''})
+			s1.addEventListener('blur', function(){if(s1.value) return; ss.style.zIndex = ''; ss.style.position = ''; ss.style.width = ''; ss.style.left = ''; ss.style.boxSizing = ''})
 		}
 		var compat_done = false
 		function compat(e) {
