@@ -1,17 +1,27 @@
 <footer class="site-footer">
 	<script id="js-simple-search" async src="https://unpkg.com/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"
 	integrity="sha384-UN+lyciv8Ta643YxZ9sY2tdTSmk3KE61Qq84ZIXG9NRTbD9+NFXy38m9h6Exxx3n" crossorigin="anonymous"></script>
-	<script>document.getElementById("js-simple-search").addEventListener("load",function(){
-		try {
-			window.sjs=SimpleJekyllSearch({searchInput:document.getElementById("search1"),resultsContainer:document.getElementById("search1-result"),json:"/search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
-			document.getElementById("search1").setAttribute("placeholder", "Search...")
-		} catch (e) {
-			document.getElementById("search1").setAttribute("placeholder", e.toString() + '\n' + e.fileName + ':' + e.lineNumber + ',' + e.columnNumber)
+	<script>!function(){
+		var jss = document.getElementById("js-simple-search")
+		var s1 = document.getElementById("search1")
+		var compat_done = false
+		function compat(e) {
+			if (compat_done) return
+			s1.setAttribute("placeholder", e.toString() + '\n' + e.fileName + ':' + e.lineNumber + ',' + e.columnNumber)
 			var compat = document.createElement('script')
 			compat.setAttribute('src', '/assets/js/sjs_compat.js')
 			document.getElementsByTagName('footer')[0].appendChild(compat)
+			compat_done = true
 		}
-	});</script>
+		jss.addEventListener("load",function(ev){
+		try {
+			window.sjs=SimpleJekyllSearch({searchInput:s1,resultsContainer:document.getElementById("search1-result"),json:"/search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
+			s1.setAttribute("placeholder", "Search...")
+		} catch (e) {
+			compat(e)
+		}});
+		jss.addEventListener("error",function(e){compat(e)})
+	}()</script>
 	<data class="u-url" value="{{ "/" | relative_url }}"></data>
 	<hr/>
 	{% unless post.no_ccbysav4 or page.no_ccbysav4 %}
