@@ -74,7 +74,6 @@ function Hook(name_full, value) {
 			return
 		}
 		var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-		show_el.media = "not all"
 		if (value === "pref-theme-dark") {
 			is_dark = true
 		} else if (value == "pref-theme-light") {
@@ -84,7 +83,6 @@ function Hook(name_full, value) {
 		}
 		dark_el.media = is_dark ? "all" : "not all";
 		light_el.media = is_dark ? "not all" : "all";
-		show_el.media = "all"
 	}
 	function PrefFontSize_Parse(rawval) {
 		return rawval && rawval !== "default" ? rawval.substring(0, 4) : ""
