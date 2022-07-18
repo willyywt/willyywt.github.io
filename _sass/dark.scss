@@ -8,6 +8,8 @@ $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
 
 @import "moving/commondef";
+.dark {
 @import "moving/base-dark";
 @import "moving/layout-dark";
 @import "rouge-dark"
+}

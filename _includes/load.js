@@ -81,8 +81,11 @@ function Hook(name_full, value) {
 		} else if (value != "pref-theme-default") {
 			return
 		}
-		dark_el.media = is_dark ? "all" : "not all";
-		light_el.media = is_dark ? "not all" : "all";
+		if (is_dark) {
+			rootElement.classList.add('dark')
+		} else {
+			rootElement.classList.remove('dark')
+		}
 	}
 	function PrefFontSize_Parse(rawval) {
 		return rawval && rawval !== "default" ? rawval.substring(0, 4) : ""
@@ -159,6 +162,8 @@ function Hook_doall() {
 		var value = localStorage.getItem(name_full)
 		if (value) {
 			Hook(name_full, value)
+		} else if (name_trunc == 'theme') { /* Hook for theme is mandatory */
+			Hook(name_full, nameDefaults[name_trunc])
 		}
 	}
 }
