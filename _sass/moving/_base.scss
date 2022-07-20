@@ -231,6 +231,9 @@ font-family: "Source Code Pro", monospace;
 	@media (max-width: $on-medium) {
 		@include relative-font-size(0.8);
 	}
+  @media print {
+    white-space: pre-wrap ;
+  }
 }
 
 code {
