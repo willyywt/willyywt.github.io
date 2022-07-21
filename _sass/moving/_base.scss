@@ -243,6 +243,8 @@ code {
 pre {
   padding: 2px 2px;
   overflow-x: auto;
+  border-width: 2px;
+  border-style: solid;
 
   > code {
     border: 0;
