@@ -80,9 +80,11 @@ figure,
   */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
-  padding: 0 $spacing-unit / 2 $spacing-unit / 2 $spacing-unit / 2;
+  margin-left: $spacing-unit / 2;
+  margin-right: $spacing-unit / 2;
   @media (min-width: $on-large) {
-	  padding: 0 $spacing-unit $spacing-unit $spacing-unit;
+    margin-left: 0;
+    margin-right: $spacing-unit;
   }
 }
 
@@ -269,11 +271,11 @@ pre {
   * nav: Table of Content
   */
 .wrapper .nav-toc {
-	padding-left: $spacing-unit / 2;
-	padding-right: $spacing-unit / 2;
+	margin-left: $spacing-unit / 2;
+	margin-right: $spacing-unit / 2;
 	@media screen and (min-width: $on-large) {
-		padding-left: $spacing-unit;
-		padding-right: $spacing-unit;
+		margin-left: $spacing-unit;
+		margin-right: $spacing-unit;
 		grid-column: 1/2;
     overflow: auto;
 	}
