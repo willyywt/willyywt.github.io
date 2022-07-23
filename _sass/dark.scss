@@ -15,5 +15,5 @@ html.dark { /* html is not a descend child of .dark */
 .dark {
 @import "moving/base-dark";
 @import "moving/layout-dark";
-@import "rouge-dark"
+@import "rouge-dark";
 }
