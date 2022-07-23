@@ -185,8 +185,8 @@ function set() {
 	nv.style.display = "block"
 	nv.style.position = "fixed"
 	nv.style.top = 0
-	nv.style.height = "100%"
-	nv.style.width = "80%"
+	nv.style.height = "100vh" /* __hardcode__ nav height */
+	nv.style.width = "80vw" /* __hardcode__ nav width */
 	nv.style.zIndex = 3
 	nv.style.backgroundColor = current_dark() ? "#111" : "#fafafa" /* __hardcode__ background color */
 	nv.style.overflow = "scroll"
