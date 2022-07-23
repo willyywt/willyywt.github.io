@@ -175,5 +175,37 @@ if (Modernizr.localstorage) {
 Hook_doall()
 }
 document.getElementsByClassName('search-wrapper')[0].style.display=""
+var ov = document.getElementById("overlay")
+var nv = document.querySelector(".wrapper nav.nav-toc")
+var lt = document.getElementById("list")
+function current_dark() {
+	return document.documentElement.classList.contains("dark")
+}
+function set() {
+	nv.style.position = "fixed"
+	nv.style.top = 0
+	nv.style.height = "100%"
+	nv.style.width = "80%"
+	nv.style.zIndex = 3
+	nv.style.backgroundColor = current_dark() ? "#111" : "#fafafa" /* __hardcode__ background color */
+	nv.style.overflow = "scroll"
+	nv.style.marginLeft = 0
+	nv.style.paddingLeft = "1rem"
+	ov.style.visibility = ""
+}
+function unset() {
+	nv.style.position = ""
+	nv.style.top = ""
+	nv.style.height = ""
+	nv.style.width = ""
+	nv.style.zIndex = ""
+	nv.style.backgroundColor = ""
+	nv.style.overflow = ""
+	nv.style.marginLeft = ""
+	nv.style.paddingLeft = ""
+	ov.style.visibility = "hidden"
+}
+lt.addEventListener("click", set)
+ov.addEventListener("click", unset)
 	}
 })()
