@@ -8,6 +8,10 @@ $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
 
 @import "moving/commondef";
+html {
+	color-scheme: light;
+	background-color: white; /* Needed for overflows */
+}
 @import "moving/base-light";
 @import "moving/layout-light";
 @import "rouge"
