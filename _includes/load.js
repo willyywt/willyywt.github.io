@@ -182,6 +182,7 @@ function current_dark() {
 	return document.documentElement.classList.contains("dark")
 }
 function set() {
+	nv.style.display = "block"
 	nv.style.position = "fixed"
 	nv.style.top = 0
 	nv.style.height = "100%"
@@ -194,6 +195,7 @@ function set() {
 	ov.style.visibility = ""
 }
 function unset() {
+	nv.style.display = ""
 	nv.style.position = ""
 	nv.style.top = ""
 	nv.style.height = ""

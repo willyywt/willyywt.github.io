@@ -268,20 +268,6 @@ pre {
 }
 
 /**
-  * nav: Table of Content
-  */
-.wrapper .nav-toc {
-	margin-left: $spacing-unit / 2;
-	margin-right: $spacing-unit / 2;
-	@media screen and (min-width: $on-large) {
-		margin-left: $spacing-unit;
-		margin-right: $spacing-unit;
-		grid-column: 1/2;
-    overflow: auto;
-	}
-}
-
-/**
   * Main
   */
 .wrapper main {

@@ -106,11 +106,20 @@ $site-header-height: 3rem !default;
 }
 
 .nav-toc {
-  @media (min-width: $on-large) {
+  margin-left: $spacing-unit / 2;
+  margin-right: $spacing-unit / 2;
+  overflow: auto;
+  @media screen and (min-width: $on-large) {
+    margin-left: $spacing-unit;
+    margin-right: $spacing-unit;
+    grid-column: 1/2;
     position: sticky;
     top: -1rem;
     align-self: start;
     max-height: calc(100vh - 2.6rem);
+  }
+  @media (max-width: ($on-large - 1)) {
+    display: none;
   }
 }
 
