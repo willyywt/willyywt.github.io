@@ -1,9 +1,6 @@
 .site-header {
 	background-color: #051428; //hsv(0, 100, 33)
 }
-.site-header-back-to {
-	color: wheat; //#F5DEB3 hsv(39, 27, 96)
-}
 .search-wrapper {
 	border-color: white;
 }
@@ -20,9 +17,6 @@
 /**
  * nav Book additions
  */
-.nav-book > h2 > a {
-	color: $text-color;
-}
 .home-heading {
 	color: lighten($text-color, 15%);
 }
