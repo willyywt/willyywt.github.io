@@ -15,4 +15,4 @@ Copied a few lines from [Using openmp with fortran](https://curc.readthedocs.io/
 Currently I only do parallelism to the outermost loop, because the inner loops share a variable (inner loops need to calculate a sum first and keep doing addition to one variable), which, when trivially made parallel, will be slow (because the compiler adds implicit locks to the shared variable).
 
 ## Blog theme
-i summarized my work at [theme.html](../../../article/theme.html).
+i summarized my work at [theme.html](../../../../article/theme.html).

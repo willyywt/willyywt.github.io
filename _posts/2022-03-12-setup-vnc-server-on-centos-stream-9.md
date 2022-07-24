@@ -94,8 +94,8 @@ firewall-cmd --reload
 
 On connection a prompt for vnc password will be open:
 
-![password-prompt](../../../static/2022-03-12/password.png)
+![password-prompt](../../../../static/2022-03-12/password.png)
 
 Finally, the icewm session!
 
-![icewm-virt-manager](../../../static/2022-03-12/icewm-virt-manager.png)
+![icewm-virt-manager](../../../../static/2022-03-12/icewm-virt-manager.png)

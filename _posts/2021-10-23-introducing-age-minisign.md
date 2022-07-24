@@ -23,7 +23,7 @@ I am now migrating to new cryptography tools and stop using the broken PGP.
 ## Minisign
 My minisign public key: **RWSVADkxkRruodtZOCHC0ym+ANlFDgx9UdCnseqWXzO0SvZgF+IP6kl+**
 
-Download the public key file (the same key as the above string): [minisign public key](../../../minisign-1.pub)
+Download the public key file (the same key as the above string): [minisign public key](../../../../minisign-1.pub)
 
 As usual, real-world folks can challenge this key's authority by requiring me to sign arbitary files.
 

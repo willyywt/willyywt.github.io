@@ -68,7 +68,7 @@ QToolTip
 metadata:display_name_zh_CN: 纯净（复件）
 ```
 
-![](../../../static/2022-04-09/theme-folder.png)
+![](../../../../static/2022-04-09/theme-folder.png)
 
 ## QtWebengine crash
 QtWebengine crashes on >=Fedora 35, whose reason is still unknown. It seems to be a Qt issue, and even the developer doesn't really understand the problem. It affects the "preview" function of VNote: preview rendered html of markdown file will only show a blank page. Adding `--no-sandbox` to the command line option works around it. 

@@ -24,20 +24,20 @@ The revived ambiance theme is very greyish and not flat (looks like a revival of
 *Update 2022-01-23: changed accent color to #EC0101 (light red), which looks much more marrier. See new screen shots below*
 
 Light blue:
-![ambiance-gtk-theme-screenshot-1](../../../static/2021-12-02/ambiance-gtk-theme-screenshot-1.png)
+![ambiance-gtk-theme-screenshot-1](../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-1.png)
 *From the top to bottom: [xournalpp](https://xournalpp.github.io/), [goldendict](http://goldendict.org/)*
 
-![ambiance-gtk-theme-screenshot-2](../../../static/2021-12-02/ambiance-gtk-theme-screenshot-2.png)
+![ambiance-gtk-theme-screenshot-2](../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-2.png)
 *From the top to bottom:[GNOME Control Center](https://gitlab.gnome.org/GNOME/gnome-control-center), [Lyx](https://www.lyx.org/), [GNOME Files](https://wiki.gnome.org/Apps/Files), [Firewalld](https://firewalld.org/)*
 
-![ambiance-gtk-theme-screenshot-3](../../../static/2021-12-02/ambiance-gtk-theme-screenshot-3.png)
+![ambiance-gtk-theme-screenshot-3](../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-3.png)
 *From the top to bottom:[GNOME Files](https://wiki.gnome.org/Apps/Files), [Firefox](https://www.mozilla.org/firefox/), [Evolution](https://wiki.gnome.org/Apps/Evolution)*
 
 Light red:
-![ambiance-gtk-theme-screenshot-4](../../../static/2022-01-23/ambiance-gtk-theme-screenshot-4.png)
+![ambiance-gtk-theme-screenshot-4](../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-4.png)
 *Evince with light red*
 
-![ambiance-gtk-theme-screenshot-5](../../../static/2022-01-23/ambiance-gtk-theme-screenshot-5.png)
+![ambiance-gtk-theme-screenshot-5](../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-5.png)
 *Firefox, evolution, GNOME Files*
 
 ### Note
