@@ -1,9 +1,14 @@
 {% capture rootdirWorkspace %}
         {% assign tokens = include.path | split: "/" %}
         {% assign parent_levels = -2 %}
+        {% assign trailing = include.path | split: "" | last %}
         {% for token in tokens %}
                 {% assign parent_levels = parent_levels | plus: 1 %}
         {% endfor %}
+        {% comment %} Ending slash does NOT split an ending empty string in jekyll! {% endcomment %}
+        {% if trailing == "/" %}
+                {% assign parent_levels = parent_levels | plus: 1 %}
+        {% endif %}
         {% assign rootdir = "./" %}
         {% if parent_levels > 0 %}
                 {% assign rootdir = "" %}
