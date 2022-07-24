@@ -7,8 +7,6 @@ description: > # description of the site (multiple lines allowed)
 favicon: "favicon.ico" # name+extension of favicon (which must be put on the root folder)
 # goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
 
-permalink: /:year/:month/:day/:title:output_ext
-
 show_excerpts: true
 search_index: true
 
@@ -36,7 +34,13 @@ plugins:
 
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
 # https://jekyllrb.com/docs/static-files/#add-front-matter-to-static-files
+# Different permanlink value for pages and posts: https://stackoverflow.com/questions/41631082/can-jekyll-3-0-x-include-the-index-html-in-page-url/41632373#41632373
+permalink: /:path/:title:output_ext
 defaults:
+  - scope:
+      type: posts
+    values:
+      permalink: /posts/:year/:month/:day/:title:output_ext
   - scope:
       path: "article"
     values:
