@@ -76,7 +76,7 @@ LBM deals with real physics model, so even in the simple and classical lid drive
 ## Some fiddling around
 
 ### Changed accent color of ambiance gtk theme
-Previous post: I changed my gtk theme to [a modern vesion of ambiance](../../../../2021/12/02/ambiance-gtk-theme-modern-version.html).
+Previous post: I changed my gtk theme to [a modern vesion of ambiance](../../../../posts/2021/12/02/ambiance-gtk-theme-modern-version.html).
 
 I changed accent color to #EC0101 (light red), which looks much more marrier.
 

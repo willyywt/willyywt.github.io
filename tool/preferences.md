@@ -142,7 +142,7 @@ These are some preference settings that you can tweak for this website. **Requir
     <div>
       <input type="radio" id="pref-theme-default" name="name-pref-theme" value="pref-theme-default" checked>
       <label for="pref-theme-default">Follow system (Default)</label>
-	<p> Follow system theme variant. <strong>Dark variant autodetection only supported on modern browsers, see quirks at</strong><a href="/article/theme.html#dark-mode">/article/theme.html#dark-mode</a></p>
+	<p> Follow system theme variant. <strong>Dark variant autodetection only supported on modern browsers, see quirks at</strong><a href="../article/theme.html#dark-mode">../article/theme.html#dark-mode</a></p>
     </div>
     <div>
       <input type="radio" id="pref-theme-light" name="name-pref-theme" value="pref-theme-light">

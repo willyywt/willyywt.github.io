@@ -7,7 +7,7 @@ categories: admin
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
-[Yggdrasil](http://drasil-network.github.io/) is a easy way to connect different devices together. Each device has IPV6 address generated from their cryptographic keys, connect to known nodes on their configuration file, and use a tree-like routing scheme. Yggdrasil is also a superior TCP-over-TCP implementation [suppressing traditional OpenVPN and SSH forwarding](https://yggdrasil-network.github.io/2018/07/15/remote-access.html). Currently I use yggdrasil with several network applications, most notabaly [KDEConnect](https://kdeconnect.kde.org/) and [Syncthing](https://syncthing.net/).
+[Yggdrasil](http://yggdrasil-network.github.io/) is a easy way to connect different devices together. Each device has IPV6 address generated from their cryptographic keys, connect to known nodes on their configuration file, and use a tree-like routing scheme. Yggdrasil is also a superior TCP-over-TCP implementation [suppressing traditional OpenVPN and SSH forwarding](https://yggdrasil-network.github.io/2018/07/15/remote-access.html). Currently I use yggdrasil with several network applications, most notabaly [KDEConnect](https://kdeconnect.kde.org/) and [Syncthing](https://syncthing.net/).
 
 ## Yggdrasil Network
 The yggdrasil network is a virtual, layered mesh IPV6 network with a special routing scheme for mesh network.

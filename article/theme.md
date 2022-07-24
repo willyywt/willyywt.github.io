@@ -54,7 +54,7 @@ Excerpt is also a jekyll's builtin feature. By default this will be the first pa
 ## Resource inlining
 I inlined most CSS and JavaScript files to reduce the critical rendering path. All render-blocking resources are bundled in the `<head>` element of the HTML page, so the web browser can immediately start rendering after the HTML page is downloaded. (I include MathJax with the [`async`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async) attribute and its loading will be defered by the browser.)
 
-For the motivation behind resource inlining, see [Resource inling for github pages](../../2022/07/08/resource-inlining-for-github-pages.html).
+For the motivation behind resource inlining, see [Resource inling for github pages](../posts/2022/07/08/resource-inlining-for-github-pages.html).
 
 ## Fix for Flash of unstyled content
 Update 2022/07/19: Due to [Resource inlining](#resource-inlining) this fix is unused and removed.
