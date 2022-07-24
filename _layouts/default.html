@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-        {%- include head.html -%}
+	{% assign realpath = page.url | default: post.url | default: "" %}
+	{% capture rootdir %}{% include rootdir.txt path=realpath %}{% endcapture %}
+	{%- include head.html rootdir=rootdir -%}
     <body>
-	{%- include header.html -%}
+	{%- include header.html rootdir=rootdir -%}
 	<label id="overlay" style="visibility: hidden;"></label>
         <div class="wrapper">
 		<nav class="nav-toc">
@@ -13,6 +15,6 @@
 			{{- content -}}
 		</main>
         </div>
-        {%- include footer.html -%}
+        {%- include footer.html rootdir=rootdir -%}
     </body>
 </html>
