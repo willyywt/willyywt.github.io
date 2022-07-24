@@ -2,7 +2,7 @@
 layout: default
 title: "Preferences"
 last_modified_at: 2022-07-08
-customHeadHTML: '<style>#noprefbanner{display: none;} .no-localstorage #noprefbanner,#noscript-noprefbanner {display: unset;color: white; font-size: larger; font-weight: bold; background: red; border-width: 4px; border-style: double; width: fit-content;}</style><script src="/assets/js/pref.js"></script>'
+customHeadHTML: '<style>#noprefbanner{display: none;} .no-localstorage #noprefbanner,#noscript-noprefbanner {display: unset;color: white; font-size: larger; font-weight: bold; background: red; border-width: 4px; border-style: double; width: fit-content;}</style><script src="../assets/js/pref.js"></script>'
 ---
 
 # Preferences

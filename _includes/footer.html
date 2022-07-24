@@ -14,13 +14,13 @@
 			if (compat_done) return
 			s1.setAttribute("placeholder", e.toString() + '\n' + e.fileName + ':' + e.lineNumber + ',' + e.columnNumber)
 			var compat = document.createElement('script')
-			compat.setAttribute('src', '/assets/js/sjs_compat.js')
+			compat.setAttribute('src', ROOTDIR + 'assets/js/sjs_compat.js')
 			document.getElementsByTagName('footer')[0].appendChild(compat)
 			compat_done = true
 		}
 		jss.addEventListener("load",function(ev){
 		try {
-			window.sjs=SimpleJekyllSearch({searchInput:s1,resultsContainer:document.getElementById("search1-result"),json:"/search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
+			window.sjs=SimpleJekyllSearch({searchInput:s1,resultsContainer:document.getElementById("search1-result"),json:ROOTDIR+"search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="'+ROOTDIR.substring(0,ROOTDIR.length-1)+'{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
 			s1.setAttribute("placeholder", "Search...")
 		} catch (e) {
 			compat(e)
