@@ -6,10 +6,10 @@
 	<label id="overlay" style="visibility: hidden;"></label>
         <div class="wrapper">
 		<nav class="nav-toc nav-book">
-			{% if page.navigate_index %}
+			{% if page.navigate_index %}{% comment %}
 			  <!-- https://jekyllrb.com/docs/includes/#including-files-relative-to-another-file -->
 			  <!-- https://jekyllrb.com/docs/includes/#using-variables-names-for-the-include-file -->
-			  {% include_relative {{ page.navigate_index }} %}
+			{% endcomment %}{% include_relative {{ page.navigate_index }} %}
 			{% endif %}
 		</nav>
 		<main class="main-content">
