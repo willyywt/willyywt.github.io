@@ -173,6 +173,13 @@ if (show_el) {
 }
 if (Modernizr.localstorage) {
 Hook_doall()
+window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function(e) {
+	var theme = localStorage.getItem("name-pref-theme")
+	var theme_default = nameDefaults["theme"]
+	if (!theme || theme == theme_default) {
+		Hook("name-pref-theme", theme_default)
+	}
+})
 }
 document.getElementsByClassName('search-wrapper')[0].style.display=""
 var ov = document.getElementById("overlay")
