@@ -19,6 +19,7 @@ Also see [minisign-1.pub](minisign-1.pub) (the same key as above)
 * Font: Bitter (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
 * A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
 * Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
+* Website can also be hosted at a URL subdirectory, i.e. at a sub folder of a domain
 
 ## Download this site locally
 Note: Artifacts are preserved for only latest 24 hours!
@@ -26,9 +27,7 @@ Note: Artifacts are preserved for only latest 24 hours!
 From "[Actions](https://github.com/willyywt/willyywt.github.io/actions/)", click the first line of "pages build and deployment" (the latest git commit), from the "Artifacts" section, click "github-pages" which gives you an .tar.zip file.
 
 ## Serve this site
-Recently this site removed absolute reference to the domain name [willyangywt.cc](https://willyangywt.cc) (this site's domain), so this site can be served in another location like `http://127.0.0.1:8000`.
-
-**Warning**: This site **must be served at the top most folder**, i.e. if you extracted this file to the directory "~/Download/github-pages/artifact/" then you must start a http server like `python3 -m http.server --bind :: --directory ~/Download/github-pages/artifact/ 8000`.
+Recently this site removed absolute reference to the domain name [willyangywt.cc](https://willyangywt.cc) (this site's domain) and to the root directory '/' (all in-site links are relative), so this site can be served in another location like `http://127.0.0.1:8000/site/`.
 
 ## Build the site locally
 Install the [dependency](https://pages.github.com/versions/) and run `jekyll build`.

@@ -18,6 +18,7 @@ My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/will
 * Font: Bitter (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
 * A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
 * Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
+* Website can also be hosted at a URL subdirectory, i.e. at a sub folder of a domain
 
 ## Simplify usage - fork your own
 I originally used `remote_theme` but using `remote_theme` is not convenient when you need to override the original files: you cannot use git to view differences because `remote_theme` is not merged to your own repository.
