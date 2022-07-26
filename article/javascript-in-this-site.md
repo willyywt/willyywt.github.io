@@ -7,6 +7,8 @@ last_modified_at: 2022-07-02
 Some features require javascript to work:
 - Site Preferences
 - Math (using MathJax)
+- Dark theme
+- Search
 
 If javascript is disabled, these features will not work properly, but other features are unaffected.
 
