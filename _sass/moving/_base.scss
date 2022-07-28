@@ -80,12 +80,6 @@ figure,
   */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
-  margin-left: $spacing-unit / 2;
-  margin-right: $spacing-unit / 2;
-  @media (min-width: $on-large) {
-    margin-left: 0;
-    margin-right: $spacing-unit;
-  }
 }
 
 /**
@@ -252,37 +246,6 @@ pre {
     border: 0;
     padding: 0;
   }
-}
-
-/**
-  * Wrapper
-  */
-.wrapper {
-  @extend %clearfix;
-
-  @media screen and (min-width: $on-large) {
-	display: grid;
-	grid-template-rows: max-content 1fr;
-	grid-template-columns: minmax(25%,75%) minmax(75%,25%);
-  }
-}
-
-/**
-  * Main
-  */
-.wrapper main {
-	@media screen and (min-width: $on-large) {
-		grid-column: 2/3;
-	}
-}
-
-/**
-  * Clearfix
-  */
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 /**

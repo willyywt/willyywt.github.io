@@ -30,3 +30,12 @@ $on-large: $on-laptop !default;
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
 }
+
+/**
+  * Clearfix
+  */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

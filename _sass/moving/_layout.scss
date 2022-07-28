@@ -95,6 +95,30 @@ $site-header-height: 3rem !default;
 }
 
 /**
+  * Wrapper
+  */
+.wrapper {
+  @extend %clearfix;
+  margin-left: $spacing-unit / 2;
+  margin-right: $spacing-unit / 2;
+  @media screen and (min-width: $on-large) {
+    display: grid;
+    margin-left: $spacing-unit;
+    margin-right: $spacing-unit;
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+/**
+  * Main
+  */
+.wrapper main {
+  @media screen and (min-width: $on-large) {
+    grid-column: 2/3;
+  }
+}
+
+/**
  * nav: Table of Contents
  */
 .nav-toc ul {
@@ -106,11 +130,8 @@ $site-header-height: 3rem !default;
 }
 
 .nav-toc {
-  margin-left: $spacing-unit / 2;
-  margin-right: $spacing-unit / 2;
   overflow: auto;
   @media screen and (min-width: $on-large) {
-    margin-left: $spacing-unit;
     margin-right: $spacing-unit;
     grid-column: 1/2;
     position: sticky;
