@@ -177,7 +177,10 @@ window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventL
 	}
 })
 }
-document.getElementsByClassName('search-wrapper')[0].style.display=""
+var sw = document.querySelector('.search-wrapper')
+if (sw) {
+	sw.style.display = ""
+}
 var ov = document.getElementById("overlay")
 var nv = document.querySelector(".wrapper nav.nav-toc")
 var lt = document.getElementById("list")
