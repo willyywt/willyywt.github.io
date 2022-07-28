@@ -29,9 +29,9 @@ function Hook(name_full, value) {
 	}
 	function PrefFontCb(value) {
 		var FontFamily_dict = {
-			"pref-font-default": {"lineHeight": "", "fontFamily": ""},
-			"pref-font-brand": {"lineHeight": "1.5", "fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
-			"pref-font-system-ui": {"lineHeight": "1.5", "fontFamily": "system-ui, sans"}
+			"pref-font-default": {"fontFamily": ""},
+			"pref-font-brand": {"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
+			"pref-font-system-ui": {"fontFamily": "system-ui, sans"}
 		}
 		if (value == "pref-font-default") {
 			rootElement.style.lineHeight = ""
@@ -39,10 +39,6 @@ function Hook(name_full, value) {
 			return
 		}
 		if (value in FontFamily_dict) {
-			var lh = FontFamily_dict[value].lineHeight
-			if (lh) {
-				rootElement.style.lineHeight = lh
-			}
 			var ff = FontFamily_dict[value].fontFamily
 			if (ff) {
 				rootElement.style.fontFamily = ff
