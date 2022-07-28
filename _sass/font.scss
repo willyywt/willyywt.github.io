@@ -1,3 +1,13 @@
+.note.info::before {
+  mask-image: url('{{ include.rootdir }}assets/img/info-circle-fill.svg');
+}
+.note.warning::before {
+  mask-image: url('{{ include.rootdir }}assets/img/exclamation-triangle-fill.svg');
+}
+.note.error::before {
+  mask-image: url('{{ include.rootdir }}assets/img/dash-circle-fill.svg');
+}
+
 /* bitter-regular - latin */
 @font-face {
   font-family: 'Bitter';

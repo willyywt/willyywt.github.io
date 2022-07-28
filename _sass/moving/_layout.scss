@@ -229,7 +229,32 @@ $site-header-height: 3rem !default;
 
   @include relative-font-size(1.2);
 }
-
+/**
+* Notes
+*/
+.note {
+  margin-bottom: 1rem;
+  contain: content;
+  position: relative; 
+  padding: 0.5rem;
+}
+.note p {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+.note b, .note p {
+  padding-right: 1rem
+}
+.note:before {
+  height: 1rem;
+  width: 1rem;
+  content: "";
+  float: left;
+  top: 0.25rem;
+  position: relative;
+  margin-right: 0.5rem
+}
 /**
  * Grid helpers
  */

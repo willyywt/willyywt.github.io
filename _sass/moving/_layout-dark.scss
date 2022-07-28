@@ -1,37 +1,75 @@
 .site-header {
 	background-color: #051428; //hsv(0, 100, 33)
 }
+
 .search-wrapper {
 	border-color: white;
 }
+
 #search1 {
 	color: white;
 }
+
 #search1-result {
 	background-color: #09252e;
 	border-color: lightblue;
 }
+
 #list {
 	color: $brand-color;
 }
+.note.info {
+	background-color: #0b2a34;
+}
+.note.info b {
+	color: #5e9eff;
+}
+.note.info::before {
+	background-color: #5e9eff;
+}
+.note.warning {
+	background-color: #321d21;
+}
+.note.warning b {
+	color: #afa100
+}
+.note.warning::before {
+	background-color: #afa100;
+}
+.note.error {
+	background-color: darkred;
+	/*#2e181e;*/
+}
+.note.error b {
+	color: #ff707f
+}
+.note.error::before {
+	background-color: #ff707f;
+}
+
 /**
  * nav Book additions
  */
 .home-heading {
 	color: lighten($text-color, 15%);
 }
+
 .home-sub-heading {
 	color: lighten($grey-color-dark, 25%);
 }
+
 .post-year {
 	color: lighten($text-color, 15%);
 }
+
 .post-meta {
 	color: lighten($grey-color-dark, 25%);
 }
+
 .black-link {
 	color: $text-color;
 }
+
 /**
  * About Page
  */
@@ -40,6 +78,7 @@
 		.about-avatar {
 			border: 1px solid $grey-color-dark;
 		}
+
 		.about-info {
 			.about-description {
 				color: lighten($grey-color-dark, 25%);
