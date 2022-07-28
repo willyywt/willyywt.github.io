@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My blog theme: jekyll 'moving' theme with more features"
-last_modified_at: 2022-07-19
+last_modified_at: 2022-07-29
 ---
 My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) is forked from the jekkyll theme from [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/). As the time goes I tweak the theme to my liking and add a lot of features to it.
 
@@ -58,7 +58,9 @@ I inlined most CSS and JavaScript files to reduce the critical rendering path. A
 For the motivation behind resource inlining, see [Resource inling for github pages](../posts/2022/07/08/resource-inlining-for-github-pages.html).
 
 ## Fix for Flash of unstyled content
-Update 2022/07/19: Due to [Resource inlining](#resource-inlining) this fix is unused and removed.
+<div class="note warning"><b>Warning: </b>
+Update 2022/07/19: Due to <a href="#resource-inlining">Resource inlining</a> this fix is unused and removed.
+</div>
 
 According to [What the FOUC is happening: Flash of Unstyled Content](https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j), a trick to hide html can be used to prevent unstyled html to be shown. Because modern browsers load CSS sequentially, i.e. load CSS in the arriving order of html data, I can hide `<html>` at the first CSS stylesheet, load the needed stylesheets, and unhide `<html>` at the last CSS stylesheet:
 ```html
@@ -86,7 +88,9 @@ Automatic detection of dark mode is enabled only when your browser return true f
 
 You can manually select dark mode at the "Site Preferences" link given at the header on the top. Not all browsers properly support this; for requirements see the [Preferences](#preferences) section below.
 
-Note: As far as I know Windows 7 doesn't have dark mode at all; On Linux, chromium [does not yet respond to gtk dark mode](https://bugs.chromium.org/p/chromium/issues/detail?id=998903). Chromium's commandline option `--force-dark-mode` can be used to force `(prefers-color-scheme: dark)`.
+<div class="note warning"><b>Warning: </b>
+As far as I know Windows 7 doesn't have dark mode at all; On Linux, chromium <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=998903">does not yet respond to gtk dark mode</a>. Chromium's commandline option <code>--force-dark-mode</code> can be used to force <code>(prefers-color-scheme: dark)</code> .
+</div>
 
 ### Media query
 Media query is one line away: `@media (prefers-color-scheme: light)`. Sass doesn't implement (re)defining sass variables under media query: you might expect sass to compile it to media queries but sass will simply error out.
@@ -94,8 +98,6 @@ Media query is one line away: `@media (prefers-color-scheme: light)`. Sass doesn
 I turned to a more monolithic approach: use javascript load different css stylesheet files depend on media query results. This is not optimal but I value compatibiliy for old browsers and for sass, and other approaches have issues that I can't undertake: I considered to use `@media (prefers-color-scheme: light)` and `@media (prefers-color-scheme: dark)` for this purpose (it can be added to `<link>` element `media` attribute), but this is not friendly to old browsers which do not support `prefers-color-scheme` at all (those browsers will not use any of these stylesheets). I also considered simutaneously loading the light and the dark stylesheet, but the problem is the light stylesheet can have rules not overlapping with the dark one, so I gave up on this approach. I think I should only load one of the light and the dark stylesheet.
 
 ### Remedy for white flashing at new page loading
-Update 2022/07/19: Due to [Resource inlining](#resource-inlining) this fix is unused and removed.
-
 When new page loads a white background is shown for a short period before the main css stylesheet loads, which is irritating for dark mode users.
 
 Since dark mode is only provided for modern browsers, I can use a media query to (hopefully) remedy the white flashing:
@@ -126,4 +128,4 @@ I added a "Site Preferences" page (a link is given at the header on the top), wh
 Font family and font size can be tweaked at the preferences page. This site features the "Bitter" font for sans-serif fonts and "Source Code Pro" for monospace fonts, but a few system font fallback options are also provided. For advanced tweaks, you should look for some kind of WebExtensions instead, like [Stylus](https://github.com/openstyles/stylus).
 
 ### Manually selecting dark mode
-This requires your browser to respond to changes to the `media` attribute of `<style>` elements. Many outdated browsers don't do this correctly: it will respond to `media` setting from `all` to `not all`, but not from `not all` to `all`. (Strangely, IE 9 does it correctly)
+You can manually select dark mode or light mode in the preferences page.

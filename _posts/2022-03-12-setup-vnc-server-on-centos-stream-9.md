@@ -10,7 +10,9 @@ categories: admin
 I followed the guide on [Tutorial: Setup VNC Server CentOS 8 - 100% Working](https://www.golinuxcloud.com/setup-vnc-server-centos-8/). (It is written for CentOS 8 but works unchanged in CentOS Stream 9). It turns out that setting up VNC Server is simpler than I think. The primary use case is GUI administration tools like [Virt Manager](https://virt-manager.org/). **Warning: Only works for tigervnc-server version >= `1.10.1-7.el8`.**
 
 ## Setup VNC Server
-Note: I didn't choose "Server with GUI" on installation which comes with a GNOME Shell. Although a full desktop environment clearly works, I only uses a simple X11 window manager, [icewm](https://ice-wm.org/). If desired you can choose an X session other than icewm.
+<div class="note info"><b>Note:</b>
+I didn't choose "Server with GUI" on installation which comes with a GNOME Shell. Although a full desktop environment clearly works, I only uses a simple X11 window manager, <a href="https://ice-wm.org/">icewm</a>. If desired you can choose an X session other than icewm.
+</div>
 
 Install EPEL. EPEL installation command comes from [Fedora Docs - EPEL#_centos_stream_9](https://docs.fedoraproject.org/en-US/epel/#_centos_stream_9)
 ```sh
