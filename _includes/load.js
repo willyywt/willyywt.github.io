@@ -188,6 +188,7 @@ function set() {
 	nv.style.display = "block"
 	nv.style.position = "fixed"
 	nv.style.top = 0
+	nv.style.left = 0
 	nv.style.height = "100vh" /* __hardcode__ nav height */
 	nv.style.width = "80vw" /* __hardcode__ nav width */
 	nv.style.zIndex = 3
@@ -201,6 +202,7 @@ function unset() {
 	nv.style.display = ""
 	nv.style.position = ""
 	nv.style.top = ""
+	nv.style.left = ""
 	nv.style.height = ""
 	nv.style.width = ""
 	nv.style.zIndex = ""
