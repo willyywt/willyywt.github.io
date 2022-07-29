@@ -92,6 +92,7 @@ $site-header-height: 3rem !default;
   top: calc((#{$small-line-height} * #{$base-font-size}) + 8px);
   overflow: scroll;
   max-height: 20 * $small-line-height * $base-font-size;
+  z-index: 2;
 }
 
 /**
