@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "嵌入式软件工程师技能树"
+lang: zh-CN
 last_modified_at: 2022-07-05
 author: togo.huang (zhihu.com)
 no_ccbysav4: true

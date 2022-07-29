@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Windows ameliorated 21H1 安装教程（超级详细）"
+lang: zh-CN
 last_modified_at: 2021-11-27
 categories: anti-spyware
 ---

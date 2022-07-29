@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "（萌新向）1st PKU GeekGame writeup - By willyywt"
+lang: zh-CN
 last_modified_at: 2021-11-28
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
