@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ site.lang | default: "en" }}">
 	{% assign realpath = page.url | default: post.url | default: "" %}
 	{% capture rootdir %}{% include rootdir.txt path=realpath %}{% endcapture %}
 	{%- include head.html rootdir=rootdir -%}
     <body>
 	{%- include header.html rootdir=rootdir -%}
 	<label id="overlay" style="visibility: hidden;"></label>
-        <div class="wrapper">
+        <div class="wrapper" lang="{{ page.lang | default: site.lang | default: "en" }}">
 		<nav class="nav-toc">
 			<h2>Table of Contents</h2>
 			{%- include toc.html html=content item_class='nav-item%level%' submenu_class='nav-submenu%level%' -%}
 		</nav>
-		<main class="main-content">
+		<main class="main-content" lang="{{ page.lang | default: site.lang | default: "en" }}">
 			{{- content -}}
 		</main>
         </div>
