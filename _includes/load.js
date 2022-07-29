@@ -79,8 +79,10 @@ function Hook(name_full, value) {
 		}
 		if (is_dark) {
 			rootElement.classList.add('dark')
+			rootElement.style.colorScheme = 'dark'
 		} else {
 			rootElement.classList.remove('dark')
+			rootElement.style.colorScheme = 'light'
 		}
 	}
 	function PrefFontSize_Parse(rawval) {

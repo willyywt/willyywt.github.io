@@ -9,7 +9,6 @@ $grey-color-dark: darken($grey-color, 25%) !default;
 
 @import "moving/commondef";
 html.dark { /* html is not a descend child of .dark */
-        color-scheme: dark;
         background-color: black; /* Needed for overflows */
 }
 .dark {
