@@ -1,10 +1,13 @@
 .note.info::before {
+  -webkit-mask-image: url('{{ include.rootdir }}assets/img/info-circle-fill.svg');
   mask-image: url('{{ include.rootdir }}assets/img/info-circle-fill.svg');
 }
 .note.warning::before {
+  -webkit-mask-image: url('{{ include.rootdir }}assets/img/exclamation-triangle-fill.svg');
   mask-image: url('{{ include.rootdir }}assets/img/exclamation-triangle-fill.svg');
 }
 .note.error::before {
+  -webkit-mask-image: url('{{ include.rootdir }}assets/img/exclamation-triangle-fill.svg');
   mask-image: url('{{ include.rootdir }}assets/img/dash-circle-fill.svg');
 }
 
