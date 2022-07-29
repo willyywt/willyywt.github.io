@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Vnote tweak"
-last_modified_at: 2022-07-21
+last_modified_at: 2022-07-29
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
-Some miscellaneous tweaks for [VNote](https://vnotex.github.io/vnote), a comfortable markdown manager.
+Some miscellaneous tweaks for [VNote](https://vnotex.github.io/vnote), a comfortable Markdown manager.
 
 <div class="note info"><b>Note: </b>
 Chinese version of this article: <a href="../../../../posts/2022/04/09/vnote-%E5%BE%AE%E8%B0%83.html">VNote 微调</a>
