@@ -26,6 +26,10 @@ syntax_highlighter: rouge
 moving:
   # Text shown for "return back to home page" link in the header
   back_to: "&lt;- Willyywt"
+  # Source code link, used to display each page's source file. This link must have trailing slash '/'
+  # Each page's source file link: {{ site.moving.source_url }}{{ page.path }}. page.path is overridable in front matter.
+  # If page.moving_path_full is set then {{ page.moving_path_full }} is used instead  
+  source_url: "https://github.com/willyywt/willyywt.github.io/tree/main/"
 
 plugins:
   - jekyll-feed

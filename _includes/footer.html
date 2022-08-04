@@ -34,5 +34,13 @@
 	<a class="legal-note" href="{{ include.rootdir }}article/about.html">{{ site.author | escape }}</a>
 	<a class="legal-note" href="{{ include.rootdir }}article/theme.html">Theme powered by jekyll "moving"</a>
 	<a class="legal-note" href="{{ include.rootdir }}article/javascript-in-this-site.html">JavaScript in this site</a>
+	{% if page.moving_path_full %}
+	{% assign src_url = page.moving_path_full %}
+	{% elsif site.moving.source_url %}
+	{% capture src_url %}{{ site.moving.source_url }}{{ page.path }}{% endcapture %}
+	{% endif %}
+	{% if src_url %}
+	<a class="legal-note" href="{{ src_url }}">Source code for this page: {{ src_url }}</a>
+	{% endif %}
 	<div id="debug-log"></div>
 </footer>

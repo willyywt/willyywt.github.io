@@ -20,6 +20,7 @@ Also see [minisign-1.pub](minisign-1.pub) (the same key as above)
 * A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
 * Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
 * Website can also be hosted at a URL subdirectory, i.e. at a sub folder of a domain
+* Link to source code file at page footer
 
 ## Download this site locally
 Note: Artifacts are preserved for only latest 24 hours!
