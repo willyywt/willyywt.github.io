@@ -11,6 +11,8 @@
   "feature-detects": [
     "css/mediaqueries",
     "dom/classlist",
+    "es6/object",
+    "json",
     "storage/localstorage",
     "url/urlsearchparams"
   ]
