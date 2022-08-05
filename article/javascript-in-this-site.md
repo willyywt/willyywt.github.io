@@ -9,6 +9,7 @@ Some features require javascript to work:
 - Math (using MathJax)
 - Dark theme
 - Search
+- Comments (using giscus)
 
 If javascript is disabled, these features will not work properly, but other features are unaffected.
 
