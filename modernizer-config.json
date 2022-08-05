@@ -1,0 +1,17 @@
+{
+  "classPrefix": "",
+  "enableClasses": true,
+  "enableJSClass": false,
+  "scriptGlobalName": "window",
+  "usePrefixes": true,
+  "minify": false,
+  "options": [
+    "addTest"
+  ],
+  "feature-detects": [
+    "css/mediaqueries",
+    "dom/classlist",
+    "storage/localstorage",
+    "url/urlsearchparams"
+  ]
+}
