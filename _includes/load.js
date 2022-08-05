@@ -30,6 +30,13 @@ var hookJson = {
 	"ff": "",
 	"fs": ""
 }
+function NoteEl(level, message) {
+	var notice_el = document.createElement('div')
+	var class_str ="note " + level
+	notice_el.setAttribute("class", class_str)
+	notice_el.textContent = message
+	return notice_el
+}
 function Hook(name_full, value) {
 	var rootElement = document.documentElement
 	var hookElement = document.getElementById('csshook')
