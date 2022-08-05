@@ -1,5 +1,6 @@
 Modernizr.addTest('cssvar_1', 'CSS' in window && 'supports' in window.CSS && window.CSS.supports('(--foo: red)'))
 Modernizr.addTest('mediaqueryevent_1', MediaQueryList && MediaQueryList.prototype instanceof EventTarget)
+Modernizr.addTest('es6_object_entries_1', 'entries' in Object)
 var gcs_deps = {
 	"cssvar_1": "",
 	"mediaqueryevent_1": "",
@@ -7,6 +8,7 @@ var gcs_deps = {
 	"localstorage": "",
 	"urlsearchparams": "",
 	"es6object": "",
+	"es6_object_entries_1": "",
 	"json": ""
 }
 var gcs_missing = ""
