@@ -61,6 +61,20 @@ fieldset p, fieldset code {
 legend {
 	background-color: darkred; /* __hardcode__ #8b0000 */
 }
+hr {
+	background: -webkit-linear-gradient(
+		left,
+		transparent,
+		rgba(255, 255, 255, 0.5),
+		transparent
+	      );
+	background: linear-gradient(
+		to left,
+		transparent,
+		rgba(255, 255, 255, 0.5),
+		transparent
+	);
+}
 footer hr {
 	background: grey;
 }
