@@ -177,15 +177,26 @@ var querys = l1.substring(query_index + 1)
 var ftel = undefined
 var log = ""
 var a = query_index && querys.indexOf('debug=true') != -1
+function ftel_set() { if(ftel) ftel.textContent = log }
 if (a) {
 	window.addEventListener('error', function(e) {
 		log = log + e.type + ':' + e.message + '\n'
 		log = log + (e.target && e.target.outerHTML ? e.target.outerHTML : "")  + '\n'
-		if(ftel) ftel.textContent = log
-	})
+		ftel_set()
+	}); /* This semicolon is REQUIRED */
+	/* https://stackoverflow.com/a/43725214 */
+	['log','debug','info','warn','error'].forEach(function (verb) {
+		console[verb] = (function (method, verb) {
+		    return function () {
+			method.apply(console, arguments);
+			log = log + "CONSOLE:" + verb + ': ' + Array.prototype.slice.call(arguments).join(' ');
+			ftel_set()
+		};
+		})(console[verb], verb);
+	});
 }
-window.addEventListener('DOMContentLoaded', l);
-function l() {
+window.addEventListener('DOMContentLoaded', dom_loader);
+function dom_loader() {
 if (a) {
 	ftel = document.getElementById('debug-log')
 	ftel.textContent = log
