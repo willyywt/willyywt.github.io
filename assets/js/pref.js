@@ -5,6 +5,17 @@
 if (!Modernizr.localstorage) {
 	return
 }
+function GCSReload() {
+	/* Try reloading giscus iframe. Due to XSS related restrictions we cannot modify anything in iframe. */
+	var ifel = document.querySelector(".giscus iframe")
+	if (!ifel) {
+		return
+	}
+	var urlobj = new URL(ifel.src)
+	urlobj.searchParams.set("theme", gcs_theme())
+	ifel.src = ""
+	ifel.src = urlobj.toString()
+}
 function InputHook(name, val) {
 	Hook(name, val)
 	var name_trunc = name.substring(10)
@@ -12,7 +23,10 @@ function InputHook(name, val) {
 		localStorage.removeItem(name)
 	} else {
 		localStorage.setItem(name, val)
-	}	
+	}
+	if (name_trunc == "theme") {
+		GCSReload()
+	}
 }
 /* PrefSetCb() */
 pref_input_el_arr = document.getElementsByTagName("input");

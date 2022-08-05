@@ -134,6 +134,21 @@ function Hook(name_full, value) {
 		cbfunc && cbfunc(value)
 	}
 }
+function gcs_theme() {
+	var use_prefered = true;
+	var no_prefered_use_light = true;
+	if (Modernizr.localstorage) {
+		var th = localStorage.getItem("name-pref-theme")
+		if (th == "pref-theme-light") {
+			use_prefered = false;
+			use_light = true;
+		} else if (th == "pref-theme-dark") {
+			use_prefered = false;
+			no_prefered_use_light = false;
+		}
+	}
+	return use_prefered ? "preferred_color_scheme" : no_prefered_use_light ? "light" : "dark"
+}
 (function(){
 var l1 = window.location.href
 var query_index = l1.indexOf('?')

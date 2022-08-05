@@ -40,19 +40,7 @@
 		gs.setAttribute("data-input-position", "{{ site.giscus.input_position }}")
 		gs.setAttribute("crossorigin", "anonymous")
 		gs.setAttribute("async", true)
-		var use_prefered = true;
-		var no_prefered_use_light = true;
-		if (Modernizr.localstorage) {
-			var th = localStorage.getItem("name-pref-theme")
-			if (th == "pref-theme-light") {
-				use_prefered = false;
-				use_light = true;
-			} else if (th == "pref-theme-dark") {
-				use_prefered = false;
-				no_prefered_use_light = false;
-			}
-		}
-		gs.setAttribute("data-theme", use_prefered ? "preferred_color_scheme" : no_prefered_use_light ? "light" : "dark")
+		gs.setAttribute("data-theme", gcs_theme())
 		gs.setAttribute("data-lang", "{{ page.lang | default: site.lang | default: "en" }}")
 		ft.appendChild(gs)
 	}()/* @license-end */</script>
