@@ -80,17 +80,10 @@ function Hook(name_full, value) {
 		Json2CSSHook()
 	}
 	function PrefThemeCb(value) {
-		if (!Modernizr.classlist) {
+		if (!Modernizr.classlist || !Modernizr.mediaqueries) {
 			return
 		}
-		var main_el = document.getElementById(cssId)
-		var light_el = document.getElementById('csslight')
-		var dark_el = document.getElementById('cssdark')
-		var show_el = document.getElementById(cssId + 'show')
-		if (!main_el || !show_el || !dark_el || !light_el) {2
-			return
-		}
-		var is_dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+		var is_dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 		if (value === "pref-theme-dark") {
 			is_dark = true
 		} else if (value == "pref-theme-light") {
@@ -191,13 +184,14 @@ if (a) {
 	ftel.textContent = log
 }
 function Hook_doall() {
-	for (name_trunc in nameDefaults) {
-		var name_full = "name-pref-" + name_trunc
+	/* JSCompress don't compress variable name in for (xxx in yyy). Use very short name here */
+	for (n in nameDefaults) {
+		var name_full = "name-pref-" + n
 		var value = localStorage.getItem(name_full)
 		if (value) {
 			Hook(name_full, value)
-		} else if (name_trunc == 'theme') { /* Hook for theme is mandatory */
-			Hook(name_full, nameDefaults[name_trunc])
+		} else if (n == 'theme') { /* Hook for theme is mandatory */
+			Hook(name_full, nameDefaults[n])
 		}
 	}
 }
