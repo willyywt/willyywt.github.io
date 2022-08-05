@@ -5,7 +5,9 @@ var gcs_deps = {
 	"mediaqueryevent_1": "",
 	"classlist": "",
 	"localstorage": "",
-	"urlsearchparams": ""
+	"urlsearchparams": "",
+	"es6object": "",
+	"json": ""
 }
 var gcs_missing = ""
 for (i in gcs_deps) {
