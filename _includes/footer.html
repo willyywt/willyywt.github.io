@@ -44,6 +44,10 @@
 		gs.setAttribute("data-theme", gcs_theme())
 		gs.setAttribute("data-lang", "{{ page.lang | default: site.lang | default: "en" }}")
 		ft.appendChild(gs)
+		} else {
+			var gcs = document.querySelector('.giscus')
+			var warnel = NoteEl("error", "Comments not loaded, because your browser doesn't support: " + gcs_missing)
+			gcs.appendChild(warnel)
 		}
 	}()/* @license-end */</script>
 	<hr/>
