@@ -16,6 +16,9 @@
 		</nav>
 		<main class="main-content" lang="{{ page.lang | default: site.lang | default: "en" }}">
 			{{ content }}
+			<hr/>
+			<h2 id="comments">Comments</h2>
+			<div id="comments-ref" class="giscus"></div>
 		</main>
         </div>
         {%- include footer.html rootdir=rootdir -%}

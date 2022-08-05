@@ -26,6 +26,35 @@
 			compat(e)
 		}});
 		jss.addEventListener("error",function(e){compat(e)})
+		var ft = document.querySelector('footer')
+		var gs = document.createElement('script');
+		gs.setAttribute("src", "{{ site.giscus.clientjs_url }}")
+		gs.setAttribute("data-repo", "{{ site.giscus.repo }}")
+		gs.setAttribute("data-repo-id", "{{ site.giscus.repo_id }}")
+		gs.setAttribute("data-category", "{{ site.giscus.category }}")
+		gs.setAttribute("data-category-id", "{{ site.giscus.category_id }}")
+		gs.setAttribute("data-mapping", "{{ site.giscus.mapping }}")
+		gs.setAttribute("data-strict", "{{ site.giscus.strict }}")
+		gs.setAttribute("data-reactions-enabled", {{ site.giscus.reactions_enabled }})
+		gs.setAttribute("data-emit-metadata", "{{ site.giscus.emit_metadata }}")
+		gs.setAttribute("data-input-position", "{{ site.giscus.input_position }}")
+		gs.setAttribute("crossorigin", "anonymous")
+		gs.setAttribute("async", true)
+		var use_prefered = true;
+		var no_prefered_use_light = true;
+		if (Modernizr.localstorage) {
+			var th = localStorage.getItem("name-pref-theme")
+			if (th == "pref-theme-light") {
+				use_prefered = false;
+				use_light = true;
+			} else if (th == "pref-theme-dark") {
+				use_prefered = false;
+				no_prefered_use_light = false;
+			}
+		}
+		gs.setAttribute("data-theme", use_prefered ? "preferred_color_scheme" : no_prefered_use_light ? "light" : "dark")
+		gs.setAttribute("data-lang", "{{ page.lang | default: site.lang | default: "en" }}")
+		ft.appendChild(gs)
 	}()</script>
 	<hr/>
 	{% unless post.no_ccbysav4 or page.no_ccbysav4 %}
