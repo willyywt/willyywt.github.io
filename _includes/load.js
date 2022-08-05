@@ -169,15 +169,17 @@ var show_el = document.getElementById(cssId + 'show')
 if (show_el) {
 	show_el.textContent = "html{visibility:visible;opacity:1}"
 }
+var theme_default = nameDefaults["theme"]
 if (Modernizr.localstorage) {
 Hook_doall()
 window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function(e) {
 	var theme = localStorage.getItem("name-pref-theme")
-	var theme_default = nameDefaults["theme"]
 	if (!theme || theme == theme_default) {
 		Hook("name-pref-theme", theme_default)
 	}
 })
+} else {
+	Hook("name-pref-theme", theme_default)
 }
 var sw = document.querySelector('.search-wrapper')
 if (sw) {
