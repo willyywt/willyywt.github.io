@@ -7,7 +7,7 @@ customHeadHTML: '<style>#noprefbanner{display: none;} .no-localstorage #noprefba
 
 # Preferences
 <div id="noprefbanner"> Preferences are unavaliable because no localStorage support is present in your browser.</div>
-<noscript id="noscript-noprefbanner"> Preferences are unavaliable because no localStorage support is present in your browser.</noscript>
+<noscript id="noscript-noprefbanner"> Preferences requires JavaScript to work. </noscript>
 These are some preference settings that you can tweak for this website. **Requires Javascript to work.**
 
 ## Font
