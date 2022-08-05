@@ -1,3 +1,21 @@
+Modernizr.addTest('cssvar_1', 'CSS' in window && 'supports' in window.CSS && window.CSS.supports('(--foo: red)'))
+Modernizr.addTest('mediaqueryevent_1', MediaQueryList && MediaQueryList.prototype instanceof EventTarget)
+var gcs_deps = {
+	"cssvar_1": "",
+	"mediaqueryevent_1": "",
+	"classlist": "",
+	"localstorage": "",
+	"urlsearchparams": ""
+}
+var gcs_missing = ""
+for (i in gcs_deps) {
+	if (!Modernizr[i]) {
+		if (gcs_missing) {
+			gcs_missing += ","
+		}
+		gcs_missing += i
+	}
+}
 var cssId = 'csscommon';
 var nameDefaults = {
 	"font": "pref-font-default",
@@ -62,6 +80,9 @@ function Hook(name_full, value) {
 		Json2CSSHook()
 	}
 	function PrefThemeCb(value) {
+		if (!Modernizr.classlist) {
+			return
+		}
 		var main_el = document.getElementById(cssId)
 		var light_el = document.getElementById('csslight')
 		var dark_el = document.getElementById('cssdark')
@@ -186,13 +207,15 @@ if (show_el) {
 }
 var theme_default = nameDefaults["theme"]
 if (Modernizr.localstorage) {
-Hook_doall()
-window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function(e) {
-	var theme = localStorage.getItem("name-pref-theme")
-	if (!theme || theme == theme_default) {
-		Hook("name-pref-theme", theme_default)
+	Hook_doall()
+	if (Modernizr.mediaqueryevent_1) {
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function(e) {
+			var theme = localStorage.getItem("name-pref-theme")
+			if (!theme || theme == theme_default) {
+				Hook("name-pref-theme", theme_default)
+			}
+		})
 	}
-})
 } else {
 	Hook("name-pref-theme", theme_default)
 }

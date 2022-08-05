@@ -24,7 +24,7 @@ function InputHook(name, val) {
 	} else {
 		localStorage.setItem(name, val)
 	}
-	if (name_trunc == "theme") {
+	if (name_trunc === "theme" && gcs_missing === "") {
 		GCSReload()
 	}
 }

@@ -26,6 +26,7 @@
 			compat(e)
 		}});
 		jss.addEventListener("error",function(e){compat(e)})
+		if (!gcs_missing) {
 		var ft = document.querySelector('footer')
 		var gs = document.createElement('script');
 		gs.setAttribute("src", "{{ site.giscus.clientjs_url }}")
@@ -43,6 +44,7 @@
 		gs.setAttribute("data-theme", gcs_theme())
 		gs.setAttribute("data-lang", "{{ page.lang | default: site.lang | default: "en" }}")
 		ft.appendChild(gs)
+		}
 	}()/* @license-end */</script>
 	<hr/>
 	{% unless post.no_ccbysav4 or page.no_ccbysav4 %}
