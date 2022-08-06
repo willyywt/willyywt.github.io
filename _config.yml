@@ -40,8 +40,8 @@ giscus:
   mapping: "pathname"
   strict: "1"
   reactions_enabled: "0"
-  emit-metadata: "0"
-  input-position: "top"
+  emit_metadata: "0"
+  input_position: "top"
   # theme set by preferences, lang by page.lang | default: site.lang | default: "en"
 
 plugins:
