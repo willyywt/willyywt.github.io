@@ -1,5 +1,5 @@
 Modernizr.addTest('cssvar_1', 'CSS' in window && 'supports' in window.CSS && window.CSS.supports('(--foo: red)'))
-Modernizr.addTest('mediaqueryevent_1', MediaQueryList && MediaQueryList.prototype instanceof EventTarget)
+Modernizr.addTest('mediaqueryevent_1', function(){ var res = false; try {res = MediaQueryList && MediaQueryList.prototype instanceof EventTarget} catch(e) {} return res})
 Modernizr.addTest('es6_object_entries_1', 'entries' in Object)
 var gcs_deps = {
 	"cssvar_1": "",
