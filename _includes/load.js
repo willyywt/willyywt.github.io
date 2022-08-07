@@ -6,7 +6,7 @@ var gcs_deps = {
 	"mediaqueryevent_1": "",
 	"classlist": "",
 	"localstorage": "",
-	"urlsearchparams": "",
+	"urlparser": "",
 	"es6object": "",
 	"es6_object_entries_1": "",
 	"json": ""

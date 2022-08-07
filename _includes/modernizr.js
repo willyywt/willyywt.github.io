@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.12.0
- * Build https://modernizr.com/download?-classlist-es6object-json-localstorage-mediaqueries-urlsearchparams-addtest-dontmin
+ * Build https://modernizr.com/download?-classlist-es6object-json-localstorage-mediaqueries-urlparser-addtest-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -818,25 +818,31 @@ Detects native support for JSON handling functions.
 
 /*!
 {
-  "property": "urlsearchparams",
-  "caniuse": "urlsearchparams",
-  "tags": ["querystring", "url"],
-  "authors": ["Cătălin Mariș"],
-  "name": "URLSearchParams API",
+  "name": "URL parser",
+  "property": "urlparser",
   "notes": [{
     "name": "WHATWG Spec",
-    "href": "https://url.spec.whatwg.org/#interface-urlsearchparams"
-  }, {
-    "name": "MDN Docs",
-    "href": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams"
-  }]
+    "href": "https://url.spec.whatwg.org/"
+  }],
+  "polyfills": ["urlparser"],
+  "authors": ["Ron Waldon (@jokeyrhyme)"],
+  "tags": ["url"]
 }
 !*/
 /* DOC
-Detects support for an API that provides utility methods for working with the query string of a URL.
+Check if browser implements the URL constructor for parsing URLs.
 */
 
-  Modernizr.addTest('urlsearchparams', 'URLSearchParams' in window);
+  Modernizr.addTest('urlparser', function() {
+    var url;
+    try {
+      // have to actually try use it, because Safari defines a dud constructor
+      url = new URL('http://modernizr.com/');
+      return url.href === 'http://modernizr.com/';
+    } catch (e) {
+      return false;
+    }
+  });
 
 
   // Run each test
