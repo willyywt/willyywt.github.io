@@ -6,7 +6,7 @@ customHeadHTML: '<script>var mel = document.querySelector("main");var mel_h1 = d
 ---
 
 # Preferences
-<noscript id="noscript-noprefbanner"> Preferences requires JavaScript to work. </noscript>
+<noscript id="noscript-noprefbanner"> Preferences require JavaScript to work. </noscript>
 These are some preference settings that you can tweak for this website.
 
 ## Font
