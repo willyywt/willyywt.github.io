@@ -7,14 +7,18 @@ if (!Modernizr.localstorage) {
 }
 function GCSReload() {
 	/* Try reloading giscus iframe. Due to XSS related restrictions we cannot modify anything in iframe. */
-	var ifel = document.querySelector(".giscus iframe")
+	var ifel = document.querySelector("iframe.giscus-frame")
 	if (!ifel) {
 		return
 	}
 	var urlobj = new URL(ifel.src)
-	urlobj.searchParams.set("theme", gcs_theme())
-	ifel.src = ""
-	ifel.src = urlobj.toString()
+	ifel.contentWindow.postMessage({
+		giscus: {
+			setConfig: {
+				theme: gcs_theme()
+			}
+		}
+	}, urlobj.origin)
 }
 function InputHook(name, val) {
 	Hook(name, val)
