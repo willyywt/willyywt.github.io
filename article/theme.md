@@ -9,12 +9,13 @@ My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/will
 * A custom template forked from [huangyz0918/moving](https://github.com/huangyz0918/moving), heavily modified and enhanced
 * Improved support for valid HTML 5 and several W3C standards, like [minimum contrast ratio](https://www.w3.org/TR/WCAG21/#contrast-minimum)
 * Site viewable without JavaScript
+* Using [modernizer.js](https://github.com/Modernizr/Modernizr) to do feature detection. **Warning: modernizr.com website is outdated, see github repo directly**
 * Code highlight statically rendered with [rouge](https://kramdown.gettalong.org/syntax_highlighter/rouge.html)
 * Code highlight use a custom CSS theme, inspired by the pygments vim theme
 * Excerpt (first paragraph) shown for each post on home page
 * Dark theme support
 * Mobile devices support
-* A custom "Site Preferences" page, using [modernizer.js](https://modernizr.com/) to do feature detection
+* A custom "Site Preferences" page
 * Font: Bitter (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
 * A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
 * Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
@@ -120,7 +121,7 @@ The moving theme uses bitter from google fonts, but I think hosting it locally i
 I use kramdown's builtin [rouge](https://kramdown.gettalong.org/syntax_highlighter/rouge.html) instead of [highlight.js](https://highlightjs.org/). A matching highlight css theme is in `/_sass/rouge.scss` and `/_sass/rouge-dark.scss`. (Rouge transform code to html elements, but don't do css stylesheet itself; you have to choose a css theme for rouge.)
 
 ## Feature tests
-Feature tests are with [modernizr.js](https://modernizr.com/), which is more robust and doesn't discriminate users by their 'User Agent' String. Users don't need to fake a `User Agent` string to get modern features; support for modern features are done with basic sanity checks instead. (These are really basic; if you don't pass these checks you are sure to not properly support such feature)
+Feature tests are with [modernizr.js](https://github.com/Modernizr/Modernizr), which is more robust and doesn't discriminate users by their 'User Agent' String. Users don't need to fake a `User Agent` string to get modern features; support for modern features are done with basic sanity checks instead. (These are really basic; if you don't pass these checks you are sure to not properly support such feature)
 
 ## Preferences
 I added a "Site Preferences" page (a link is given at the header on the top), which lists some settings that can be tweaked. Site preferences requires support for `localStorage`; a big fat red warning will be shown if support for `localStorage` is not found.

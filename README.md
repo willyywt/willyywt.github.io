@@ -10,12 +10,13 @@ Also see [minisign-1.pub](minisign-1.pub) (the same key as above)
 * A custom template forked from [huangyz0918/moving](https://github.com/huangyz0918/moving), heavily modified and enhanced
 * Improved support for valid HTML 5 and several W3C standards, like [minimum contrast ratio](https://www.w3.org/TR/WCAG21/#contrast-minimum)
 * Site viewable without JavaScript
+* Using [modernizer.js](https://github.com/Modernizr/Modernizr) to do feature detection. **Warning: modernizr.com website is outdated, see github repo directly**
 * Code highlight statically rendered with [rouge](https://kramdown.gettalong.org/syntax_highlighter/rouge.html)
 * Code highlight use a custom CSS theme, inspired by the pygments vim theme
 * Excerpt (first paragraph) shown for each post on home page
 * Dark theme support
 * Mobile devices support
-* A custom "Site Preferences" page, using [modernizer.js](https://modernizr.com/) to do feature detection
+* A custom "Site Preferences" page
 * Font: Bitter (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
 * A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
 * Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
