@@ -2,15 +2,17 @@
 layout: default
 title: "Preferences"
 last_modified_at: 2022-07-08
-customHeadHTML: '<style>#noprefbanner{display: none;} .no-localstorage #noprefbanner,#noscript-noprefbanner {display: unset;color: white; font-size: larger; font-weight: bold; background: red; border-width: 4px; border-style: double; width: fit-content;}</style><script src="../assets/js/pref.js"></script>'
+customHeadHTML: '<script>var mel = document.querySelector("main");var mel_h1 = document.querySelector("main h1");if(!Modernizr.localstorage){var errlocalel = NoteEl("error", "Preferences are unavaliable because your browser does not support localSstorage.");mel.insertBefore(errlocalel, mel_h1.nextSibling)}if(!Modernizr.classlist){var mel_th = document.getElementById("theme");var errclst = NoteEl("error", "Theme cannot be changed because your browser does not support classList.");mel.insertBefore(errclst, mel_th.nextSibling)}</script><script src="../assets/js/pref.js"></script>'
 ---
 
 # Preferences
-<div id="noprefbanner"> Preferences are unavaliable because no localStorage support is present in your browser.</div>
 <noscript id="noscript-noprefbanner"> Preferences requires JavaScript to work. </noscript>
-These are some preference settings that you can tweak for this website. **Requires Javascript to work.**
+These are some preference settings that you can tweak for this website.
 
 ## Font
+<div class="note warning"><b>Warning: </b>
+Font changes cannot be applied to comments due to cross-site scripting restrictions in browsers.
+</div>
 ### Sans-Serif Font
 <fieldset>
     <legend>Select sans-serif font family:</legend>
