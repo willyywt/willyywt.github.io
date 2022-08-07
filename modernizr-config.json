@@ -6,7 +6,8 @@
   "usePrefixes": true,
   "minify": false,
   "options": [
-    "addTest"
+    "addTest",
+    "setClasses"
   ],
   "feature-detects": [
     "css/mediaqueries",
