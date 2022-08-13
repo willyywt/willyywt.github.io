@@ -49,6 +49,9 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+feed:
+  posts_limit: 50
+
 # https://jekyllrb.com/docs/configuration/front-matter-defaults/
 # https://jekyllrb.com/docs/static-files/#add-front-matter-to-static-files
 # Different permanlink value for pages and posts: https://stackoverflow.com/questions/41631082/can-jekyll-3-0-x-include-the-index-html-in-page-url/41632373#41632373
