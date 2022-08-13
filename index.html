@@ -7,6 +7,11 @@ layout: default
     <h1 class="home-heading">{{ site.title }}</h1>
     <h2 class="home-sub-heading">{{- site.description | escape -}}</h2>
   </div>
+  <h2 id="featured-articles">Featured articles</h2>
+  <ul><li><a href="./article/awesome-apps.html">Awesome Apps</a>: my collection of awesome computer software:
+RSSHub, Xournalpp, LDOCE5++ dictionary, Tauon Music Box, VSCodium, GNU Octave
+  </li></ul>
+  <h2 id="post-index">Post Index</h2>
   <div class="note info">For articles written in Chinese (Simplified) see <a href="./index_zh-CN.html">index_zh-CN.html</a></div>
   {%- if site.posts.size > 0 -%}
   <ul class="post-list">
