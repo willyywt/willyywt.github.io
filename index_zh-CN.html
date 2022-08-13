@@ -1,13 +1,13 @@
 ---
 layout: default
+lang: zh-CN
 ---
 
-<div class="home">
-  <div class="home-title">
-    <h1 class="home-heading">{{ site.title }}</h1>
-    <h2 class="home-sub-heading">{{- site.description | escape -}}</h2>
+<div>
+  <div>
+    <h1>中文文章</h1>
   </div>
-  <div class="note info">For articles written in Chinese (Simplified) see <a href="./index_zh-CN.html">index_zh-CN.html</a></div>
+  <div class="note info">英文写的文章见 <a href="./index.html">index.html</a></div>
   {%- if site.posts.size > 0 -%}
   <ul class="post-list">
     {% for post in site.posts  %}
@@ -23,7 +23,7 @@ layout: default
       {% endif %}
       {% assign post_lang = post.lang | default: site.lang | default: "en" %}
       {% assign post_lang_2 = post_lang | slice: 0, 2 %}
-      {% if post_lang_2 == "en" %}
+      {% if post_lang_2 == "zh" %}
       <li>
           {%- assign date_format = site.moving.date_format | default: "%b %-d, %Y" -%}
           <span class="post-meta">
