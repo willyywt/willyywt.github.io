@@ -2,6 +2,7 @@
 layout: post
 title: "交大五一假期ddl的高数题"
 last_modified_at: 2022-05-07
+lang: zh-CN
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
