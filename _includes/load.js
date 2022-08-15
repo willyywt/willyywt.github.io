@@ -21,7 +21,6 @@ for (i in gcs_deps) {
 		gcs_missing += i
 	}
 }
-var cssId = 'csscommon';
 var nameDefaults = {
 	"font": "pref-font-default",
 	"monofont": "pref-monofont-default",
@@ -183,12 +182,13 @@ var ftel = undefined
 var log = ""
 var a = query_index && querys.indexOf('debug=true') != -1
 function ftel_set() { if(ftel) ftel.textContent = log }
+function ftel_log(e) {
+	log = log + e.type + ':' + e.message + '\n'
+	log = log + (e.target && e.target.outerHTML ? e.target.outerHTML : "")  + '\n'
+	ftel_set()
+}
 if (a) {
-	window.addEventListener('error', function(e) {
-		log = log + e.type + ':' + e.message + '\n'
-		log = log + (e.target && e.target.outerHTML ? e.target.outerHTML : "")  + '\n'
-		ftel_set()
-	}); /* This semicolon is REQUIRED */
+	window.addEventListener('error', ftel_log); /* This semicolon is REQUIRED */
 	/* https://stackoverflow.com/a/43725214 */
 	['log','debug','info','warn','error'].forEach(function (verb) {
 		console[verb] = (function (method, verb) {
@@ -205,10 +205,7 @@ var css_common = "common.css"
 var css_layout = "layout.css"
 var css_dark = "dark.css"
 var css_light = "light.css"
-var csspath_common = ROOTDIR + css_dir + css_common
-var csspath_layout = ROOTDIR + css_dir + css_layout
-var csspath_light = ROOTDIR + css_dir + css_light 
-var csspath_dark = ROOTDIR + css_dir + css_dark
+var csspaths = [ROOTDIR + css_dir + css_common, ROOTDIR + css_dir + css_layout, ROOTDIR + css_dir + css_light, ROOTDIR + css_dir + css_dark]
 
 var head = document.querySelector('head')
 var hookElement = document.getElementById('csshook')
@@ -219,17 +216,63 @@ function head_add_link(url) {
 	el.setAttribute("href", url)
 	head.insertBefore(el, hookElement);
 }
+function head_add_style(str) {
+	var el = document.createElement('style')
+	el.textContent = str
+	head.insertBefore(el, hookElement)
+}
 function load_css_link_element() {
-	head_add_link(csspath_common)
-	head_add_link(csspath_layout)
-	head_add_link(csspath_light)
-	head_add_link(csspath_dark)
+	for (i in csspaths) {
+		head_add_link(csspaths[i])
+	}
 }
 function load_css_cache() {
-	
+	caches.open('v1')
+	.then((cache) => {
+		var cssver_prev = localStorage.getItem("CSSVER")
+		var pm = Promise.resolve("")
+		var pm_arr = []
+		if (!cssver_prev || parseInt(cssver_prev) !== parseInt(CSSVER)) {
+			for (i in csspaths) {
+				pm_arr.push(cache.delete(csspaths[i]))
+			}
+			pm = Promise.all(pm_arr).then(() => localStorage.setItem("CSSVER", CSSVER))
+			pm_arr = []
+		}
+		for (i in csspaths) {
+			pm_arr.push(cache.match(csspaths[i]))
+		}
+		pm = Promise.all(pm_arr)
+		.then((res_arr) => {
+			var has_cache_all = true
+			for (i in res_arr) {
+				var res = res_arr[i]
+				if (!res || !res.ok) {
+					has_cache_all = false
+					break
+				}
+			}
+			for (i in res_arr) {
+				var res = res_arr[i]
+				if (!has_cache_all) {
+					head_add_link(csspaths[i])
+					cache.add(csspaths[i])
+				} else {
+					res.text().then((str) => head_add_style(str))
+				}
+			}			
+		}).catch((e) => {
+			/* This path should not be reachable! */ 
+			return Promise.reject(e)
+		})
+	})
+	.catch((e) => {
+		load_css_link_element()
+		ftel_log(e)
+	})
 }
 function load_css() {
-	if (Modernizr.promises && Modernizr.cache_1) {
+	if (Modernizr.promises && Modernizr.cache_1 && Modernizr.arrow && Modernizr.localstorage) {
 		load_css_cache()
 	} else {
 		load_css_link_element()
@@ -255,7 +298,7 @@ function Hook_doall() {
 		}
 	}
 }
-var show_el = document.getElementById(cssId + 'show')
+var show_el = document.getElementById('csscommonshow')
 if (show_el) {
 	show_el.textContent = "html{visibility:visible;opacity:1}"
 }
