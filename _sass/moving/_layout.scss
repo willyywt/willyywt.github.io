@@ -8,6 +8,7 @@ $site-header-height: 3rem !default;
   height: 2rem;
   padding: (($site-header-height - 2rem) / 2) ($spacing-unit / 2)
   (($site-header-height - 2rem) / 2) 0;
+  z-index: 2;
   @media (min-width: $on-large) {
 	  padding: (($site-header-height - 2rem) / 2) $spacing-unit;
   }
