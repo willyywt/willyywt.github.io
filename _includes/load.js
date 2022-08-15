@@ -205,7 +205,8 @@ var css_common = "common.css"
 var css_layout = "layout.css"
 var css_dark = "dark.css"
 var css_light = "light.css"
-var csspaths = [ROOTDIR + css_dir + css_common, ROOTDIR + css_dir + css_layout, ROOTDIR + css_dir + css_light, ROOTDIR + css_dir + css_dark]
+var css_unhide = "unhide.css"
+var csspaths = [ROOTDIR + css_dir + css_common, ROOTDIR + css_dir + css_layout, ROOTDIR + css_dir + css_light, ROOTDIR + css_dir + css_dark, ROOTDIR + css_dir + css_unhide]
 
 var head = document.querySelector('head')
 var hookElement = document.getElementById('csshook')
@@ -297,10 +298,6 @@ function Hook_doall() {
 			Hook(name_full, nameDefaults[n])
 		}
 	}
-}
-var show_el = document.getElementById('csscommonshow')
-if (show_el) {
-	show_el.textContent = "html{visibility:visible;opacity:1}"
 }
 var theme_default = nameDefaults["theme"]
 if (Modernizr.localstorage) {
