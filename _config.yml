@@ -18,6 +18,9 @@ kramdown:
   # Don't do anything at kramdown level
   # math_engine: +nil+
 
+sass:
+  style: compressed
+
 # Use rouge as syntax highlighter. (The original moving theme use https://highlightjs.org embeded in <head>)
 # See rouge documentation: https://kramdown.gettalong.org/syntax_highlighter/rouge.html
 # and jekyll documentation: https://jekyllrb.com/docs/liquid/tags/#code-snippet-highlighting
