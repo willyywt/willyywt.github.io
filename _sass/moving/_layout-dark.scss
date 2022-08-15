@@ -1,5 +1,5 @@
 .site-header {
-	background-color: #051428; //hsv(0, 100, 33)
+	background-color: #041020;
 }
 
 .search-wrapper {
@@ -11,8 +11,8 @@
 }
 
 #search1-result {
-	background-color: #09252e;
-	border-color: lightblue;
+	background-color: #071e25;
+	border-color: #1f5567;
 }
 
 #list {
@@ -51,19 +51,19 @@
  * nav Book additions
  */
 .home-heading {
-	color: lighten($text-color, 15%);
+	color: $text-color-light;
 }
 
 .home-sub-heading {
-	color: lighten($grey-color-dark, 25%);
+	color: $grey-color;
 }
 
 .post-year {
-	color: lighten($text-color, 15%);
+	color: $text-color-light;
 }
 
 .post-meta {
-	color: lighten($grey-color-dark, 25%);
+	color: $grey-color;
 }
 
 .black-link {
@@ -81,7 +81,7 @@
 
 		.about-info {
 			.about-description {
-				color: lighten($grey-color-dark, 25%);
+				color: $grey-color-dark;
 			}
 		}
 	}
