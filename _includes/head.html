@@ -3,19 +3,18 @@
   <meta name="referrer" content="no-referrer" />
   <style>html{visibility: hidden;opacity:0;}</style>
   <style media="(prefers-color-scheme: dark)">html{background-color: black;}</style>
-  <style id="csscommon">{%- include common.css -%}</style>
-  <style id="csslayout">{%- include layout.css -%}</style>
   <style id="cssfont">{%- include font.css rootdir=include.rootdir -%}</style>
-  <style id="csslight">{%- include light.css -%}</style>
-  <style id="cssdark">{%- include dark.css -%}</style>
-  <style id="csscommonshow"></style>
   <style id="csshook"></style>
+  <style id="csscommonshow"></style>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   {%- seo -%}
   <link rel="shortcut icon" type="image/x-icon" href="{{ include.rootdir }}{{ site.favicon }}?" />
   <noscript>
-    <style>{%- include unhide.css -%}</style>
+    <link href="{{ include.rootdir }}assets/css/common.css" rel="stylesheet" />
+    <link href="{{ include.rootdir }}assets/css/layout.css" rel="stylesheet" />
+    <link href="{{ include.rootdir }}assets/css/light.css" rel="stylesheet" />
+    <link href="{{ include.rootdir }}assets/css/unhide.css" rel="stylesheet" />
   </noscript>
   <script>/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat License */
     var ROOTDIR="{{ include.rootdir }}"; var CSSVER="{{ site.moving.cssver }}";
