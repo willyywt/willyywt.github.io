@@ -1,6 +1,6 @@
 /*!
  * modernizr v3.12.0
- * Build https://modernizr.com/download?-classlist-es6object-json-localstorage-mediaqueries-urlparser-addtest-dontmin
+ * Build https://modernizr.com/download?-arrow-classlist-es6object-json-localstorage-mediaqueries-promises-urlparser-addtest-setclasses-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -172,39 +172,6 @@
   ;
 
   /**
-   * hasOwnProp is a shim for hasOwnProperty that is needed for Safari 2.0 support
-   *
-   * @author kangax
-   * @access private
-   * @function hasOwnProp
-   * @param {object} object - The object to check for a property
-   * @param {string} property - The property to check for
-   * @returns {boolean}
-   */
-
-  // hasOwnProperty shim by kangax needed for Safari 2.0 support
-  var hasOwnProp;
-
-  (function() {
-    var _hasOwnProperty = ({}).hasOwnProperty;
-    /* istanbul ignore else */
-    /* we have no way of testing IE 5.5 or safari 2,
-     * so just assume the else gets hit */
-    if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
-      hasOwnProp = function(object, property) {
-        return _hasOwnProperty.call(object, property);
-      };
-    }
-    else {
-      hasOwnProp = function(object, property) { /* yes, this can give false positives/negatives, but most of the time we don't care about those */
-        return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
-      };
-    }
-  })();
-
-  
-
-  /**
    * docElement is a convenience wrapper to grab the root element of the document
    *
    * @access private
@@ -261,6 +228,39 @@
   }
 
   ;
+
+  /**
+   * hasOwnProp is a shim for hasOwnProperty that is needed for Safari 2.0 support
+   *
+   * @author kangax
+   * @access private
+   * @function hasOwnProp
+   * @param {object} object - The object to check for a property
+   * @param {string} property - The property to check for
+   * @returns {boolean}
+   */
+
+  // hasOwnProperty shim by kangax needed for Safari 2.0 support
+  var hasOwnProp;
+
+  (function() {
+    var _hasOwnProperty = ({}).hasOwnProperty;
+    /* istanbul ignore else */
+    /* we have no way of testing IE 5.5 or safari 2,
+     * so just assume the else gets hit */
+    if (!is(_hasOwnProperty, 'undefined') && !is(_hasOwnProperty.call, 'undefined')) {
+      hasOwnProp = function(object, property) {
+        return _hasOwnProperty.call(object, property);
+      };
+    }
+    else {
+      hasOwnProp = function(object, property) { /* yes, this can give false positives/negatives, but most of the time we don't care about those */
+        return ((property in object) && is(object.constructor.prototype[property], 'undefined'));
+      };
+    }
+  })();
+
+  
 
 
   // _l tracks listeners for async tests, as well as tests that execute after the initial run
@@ -728,6 +728,28 @@
 
 /*!
 {
+  "name": "ES6 Arrow Functions",
+  "property": "arrow",
+  "authors": ["Vincent Riemer"],
+  "tags": ["es6"]
+}
+!*/
+/* DOC
+Check if browser implements ECMAScript 6 Arrow Functions per specification.
+*/
+
+  Modernizr.addTest('arrow', function() {
+    try {
+      // eslint-disable-next-line
+      eval('()=>{}');
+    } catch (e) {
+      return false;
+    }
+    return true;
+  });
+
+/*!
+{
   "name": "ES6 Object",
   "property": "es6object",
   "notes": [{
@@ -747,6 +769,47 @@ Check if browser implements ECMAScript 6 Object per specification.
   Modernizr.addTest('es6object', !!(Object.assign &&
     Object.is &&
     Object.setPrototypeOf));
+
+/*!
+{
+  "name": "ES6 Promises",
+  "property": "promises",
+  "caniuse": "promises",
+  "polyfills": ["es6promises"],
+  "authors": ["Krister Kari", "Jake Archibald"],
+  "tags": ["es6"],
+  "notes": [{
+    "name": "The ES6 promises spec",
+    "href": "https://github.com/domenic/promises-unwrapping"
+  }, {
+    "name": "Chromium dashboard - ES6 Promises",
+    "href": "https://www.chromestatus.com/features/5681726336532480"
+  }, {
+    "name": "JavaScript Promises: an Introduction",
+    "href": "https://developers.google.com/web/fundamentals/primers/promises/"
+  }]
+}
+!*/
+/* DOC
+Check if browser implements ECMAScript 6 Promises per specification.
+*/
+
+  Modernizr.addTest('promises', function() {
+    return 'Promise' in window &&
+    // Some of these methods are missing from
+    // Firefox/Chrome experimental implementations
+    'resolve' in window.Promise &&
+    'reject' in window.Promise &&
+    'all' in window.Promise &&
+    'race' in window.Promise &&
+    // Older version of the spec had a resolver object
+    // as the arg rather than a function
+    (function() {
+      var resolve;
+      new window.Promise(function(r) { resolve = r; });
+      return typeof resolve === 'function';
+    }());
+  });
 
 /*!
 {
@@ -847,6 +910,9 @@ Check if browser implements the URL constructor for parsing URLs.
 
   // Run each test
   testRunner();
+
+  // Remove the "no-js" class if it exists
+  setClasses(classes);
 
   delete ModernizrProto.addTest;
   delete ModernizrProto.addAsyncTest;

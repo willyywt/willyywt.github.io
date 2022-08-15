@@ -12,7 +12,9 @@
   "feature-detects": [
     "css/mediaqueries",
     "dom/classlist",
+    "es6/arrow",
     "es6/object",
+    "es6/promises",
     "json",
     "storage/localstorage",
     "url/parser"
