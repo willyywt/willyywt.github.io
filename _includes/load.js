@@ -1,7 +1,7 @@
 Modernizr.addTest('cssvar_1', 'CSS' in window && 'supports' in window.CSS && window.CSS.supports('(--foo: red)'))
 Modernizr.addTest('mediaqueryevent_1', function(){ var res = false; try {res = MediaQueryList && MediaQueryList.prototype instanceof EventTarget} catch(e) {} return res})
 Modernizr.addTest('es6_object_entries_1', 'entries' in Object)
-Modernizr.addTest('cache_1', 'caches' in window)
+Modernizr.addTest('cache_1', 'Cache' in window && 'CacheStorage' in window && 'caches' in window)
 var gcs_deps = {
 	"cssvar_1": "",
 	"mediaqueryevent_1": "",
@@ -200,6 +200,43 @@ if (a) {
 		})(console[verb], verb);
 	});
 }
+var css_dir = "assets/css/"
+var css_common = "common.css"
+var css_layout = "layout.css"
+var css_dark = "dark.css"
+var css_light = "light.css"
+var csspath_common = ROOTDIR + css_dir + css_common
+var csspath_layout = ROOTDIR + css_dir + css_layout
+var csspath_light = ROOTDIR + css_dir + css_light 
+var csspath_dark = ROOTDIR + css_dir + css_dark
+
+var head = document.querySelector('head')
+var hookElement = document.getElementById('csshook')
+
+function head_add_link(url) {
+	var el = document.createElement('link')
+	el.setAttribute("rel", "stylesheet")
+	el.setAttribute("href", url)
+	head.insertBefore(el, hookElement);
+}
+function load_css_link_element() {
+	head_add_link(csspath_common)
+	head_add_link(csspath_layout)
+	head_add_link(csspath_light)
+	head_add_link(csspath_dark)
+}
+function load_css_cache() {
+	
+}
+function load_css() {
+	if (Modernizr.promises && Modernizr.cache_1) {
+		load_css_cache()
+	} else {
+		load_css_link_element()
+	}
+}
+load_css();
+
 window.addEventListener('DOMContentLoaded', dom_loader);
 function dom_loader() {
 if (a) {
