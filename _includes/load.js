@@ -253,15 +253,24 @@ function load_css_cache() {
 					break
 				}
 			}
-			for (i in res_arr) {
-				var res = res_arr[i]
-				if (!has_cache_all) {
-					head_add_link(csspaths[i])
-					cache.add(csspaths[i])
-				} else {
-					res.text().then((str) => head_add_style(str))
+			if (has_cache_all) {
+				var pm_css_text = []
+				for (i in res_arr) {
+					var res = res_arr[i]
+					pm_css_text.push(res.text())
 				}
-			}			
+				Promise.all(pm_css_text)
+				.then((css_text_arr) => {
+					for (i in res_arr) {
+						head_add_style(css_text_arr[i])
+					}
+				})
+			} else {
+				load_css_link_element()
+				for (i in csspaths) {
+					cache.add(csspaths[i])
+				}
+			}
 		}).catch((e) => {
 			/* This path should not be reachable! */ 
 			return Promise.reject(e)
