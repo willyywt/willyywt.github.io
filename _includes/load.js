@@ -288,14 +288,6 @@ function load_css() {
 		load_css_link_element()
 	}
 }
-load_css();
-
-window.addEventListener('DOMContentLoaded', dom_loader);
-function dom_loader() {
-if (a) {
-	ftel = document.getElementById('debug-log')
-	ftel.textContent = log
-}
 function Hook_doall() {
 	/* JSCompress don't compress variable name in for (xxx in yyy). Use very short name here */
 	for (n in nameDefaults) {
@@ -321,6 +313,14 @@ if (Modernizr.localstorage) {
 	}
 } else {
 	Hook("name-pref-theme", theme_default)
+}
+load_css();
+
+window.addEventListener('DOMContentLoaded', dom_loader);
+function dom_loader() {
+if (a) {
+	ftel = document.getElementById('debug-log')
+	ftel.textContent = log
 }
 var sw = document.querySelector('.search-wrapper')
 if (sw) {
