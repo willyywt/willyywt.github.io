@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Awesome applications"
-last_modified_at: 2022-08-15
+last_modified_at: 2022-08-19
 ---
 Some applications (computer software) I feel so awesome that I wanted to share here.
 
@@ -19,7 +19,7 @@ RSSHub has support for a very wide range of websites, listed in "Routes" column 
 <div class="note info"><b>Note: </b> To use Atom format, suffix URL with '.atom', for example: https://rsshub.app/reuters/world/reuters-next.atom. </div>
 
 ### RSSHub Radar
-[RSSHub Radar](https://github.com/DIYgod/RSSHub-Radar)(WebExtension), [RSSAid](https://github.com/LeetaoGoooo/RSSAid)(Android), [RSSBud](iOS) are cousin projects of RSSHub that automatically detect whether a website has official RSS, and whether a RSSHub route is written for it.
+[RSSHub Radar](https://github.com/DIYgod/RSSHub-Radar)(WebExtension), [RSSAid](https://github.com/LeetaoGoooo/RSSAid)(Android), [RSSBud](https://github.com/Cay-Zhang/RSSBud)(iOS) are cousin projects of RSSHub that automatically detect whether a website has official RSS, and whether a RSSHub route is written for it.
 
 Some examples of automatic detection:
 * A wordpress website: [https://www.csslayer.info/wordpress/feed](https://www.csslayer.info/wordpress/feed) (CSSlayer is the maintainer of fcitx5)
