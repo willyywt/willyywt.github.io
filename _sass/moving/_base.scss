@@ -211,7 +211,7 @@ blockquote p {
 pre,
 code {
 font-family: "Source Code Pro", monospace;
-  @include relative-font-size(0.9);
+  @include relative-font-size(0.93);
 	@media (max-width: $on-medium) {
 		@include relative-font-size(0.8);
 	}
