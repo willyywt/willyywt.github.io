@@ -258,10 +258,6 @@ table {
   width: 100%;
   text-align: $table-text-align;
   border-collapse: collapse;
-  th,
-  td {
-    padding: ($spacing-unit / 3) ($spacing-unit / 2);
-  }
 }
 
 /**
