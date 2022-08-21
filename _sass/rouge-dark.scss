@@ -1,14 +1,14 @@
-$background: #000000;
+$background: #111;
 $selected: #000000;
 $primary: #ffffff;
 $secondary: #ffffff;
 $operator: #3399cc;
 $keyword: #ffc0cb;
 $namespace: #00cd00;
-$comment: #9966cc; //hsv(270, 50%, 100%), cater to purple accent color
+$comment: #c6c;
 $scoped: #8080bf;
-$numeric: #d400d4;
-$string: #eb0000;
+$numeric: #ff40ff;
+$string: #ffb22e;
 $error: #ff0000;
 $warning: #ffff80;
 @import "rouge-template-v2";
