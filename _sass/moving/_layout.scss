@@ -117,6 +117,7 @@ $site-header-height: 3rem !default;
 .wrapper main {
   @media screen and (min-width: $on-large) {
     grid-column: 2/3;
+    padding: 0 1rem;
   }
 }
 

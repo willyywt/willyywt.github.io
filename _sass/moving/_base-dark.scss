@@ -29,7 +29,7 @@ blockquote {
  */
 pre,
 code {
-	border-color: darken($grey-color-dark, 3%);
+	border-color: $grey-color-dark;
 }
 /**
  * Tables
@@ -55,7 +55,10 @@ table {
  * <fieldset>
  */
 fieldset p, fieldset code {
-	color: grey; /* __hardcode__ rgb(128, 128, 128) */
+	color: $grey-color;
+}
+fieldset > div {
+	background-color: $background-color-2;
 }
 legend {
 	background-color: darkred; /* __hardcode__ #8b0000 */

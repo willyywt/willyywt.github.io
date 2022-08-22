@@ -11,6 +11,12 @@
 	border-color: blue;
 }
 
+.wrapper main {
+	@media screen and (min-width: $on-large) {
+		background-color: $background-color-1;
+	}
+}
+
 #list {
 	color: $brand-color;
 }
@@ -42,23 +48,13 @@
 .note.error::before {
 	background-color: #d30038;
 }
-/**
- * nav Book additions
- */
-.home-heading {
-	color: lighten($text-color, 15%);
-}
 
 .home-sub-heading {
-	color: lighten($text-color, 25%);
-}
-
-.post-year {
-	color: lighten($text-color, 15%);
+	color: $grey-color;
 }
 
 .post-meta {
-	color: lighten($text-color, 25%);
+	color: $grey-color;
 }
 
 .black-link {

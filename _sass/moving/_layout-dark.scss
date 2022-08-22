@@ -15,6 +15,12 @@
 	border-color: #1f5567;
 }
 
+.wrapper main {
+	@media screen and (min-width: $on-large) {
+		background-color: $background-color-1;
+	}
+}
+
 #list {
 	color: $brand-color;
 }
@@ -47,19 +53,8 @@
 	background-color: #ff707f;
 }
 
-/**
- * nav Book additions
- */
-.home-heading {
-	color: $text-color-light;
-}
-
 .home-sub-heading {
 	color: $grey-color;
-}
-
-.post-year {
-	color: $text-color-light;
 }
 
 .post-meta {
