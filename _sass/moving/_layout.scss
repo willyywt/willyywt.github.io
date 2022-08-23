@@ -134,7 +134,7 @@ $site-header-height: 3rem !default;
 .nav-toc {
   overflow: auto;
   @media screen and (min-width: $on-large) {
-    margin-right: $spacing-unit;
+    padding-right: 1rem;
     grid-column: 1/2;
     position: sticky;
     top: -1rem;
