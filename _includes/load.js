@@ -233,7 +233,7 @@ function load_css_cache() {
 		var cssver_prev = localStorage.getItem("CSSVER")
 		var pm = Promise.resolve("")
 		var pm_arr = []
-		if (!cssver_prev || parseInt(cssver_prev) !== parseInt(CSSVER)) {
+		if (!cssver_prev || cssver_prev !== CSSVER) {
 			for (i in csspaths) {
 				pm_arr.push(cache.delete(csspaths[i]))
 			}
@@ -282,7 +282,7 @@ function load_css_cache() {
 	})
 }
 function load_css() {
-	if (Modernizr.promises && Modernizr.cache_1 && Modernizr.arrow && Modernizr.localstorage) {
+	if (CSSVER !== "-1" && Modernizr.promises && Modernizr.cache_1 && Modernizr.arrow && Modernizr.localstorage) {
 		load_css_cache()
 	} else {
 		load_css_link_element()
