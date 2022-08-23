@@ -5,10 +5,13 @@
 		var jss = document.getElementById("js-simple-search")
 		var s1 = document.getElementById("search1")
 		var ss = document.querySelector('.search-wrapper')
+		var res1 = document.getElementById("search1-result")
 		if (window.matchMedia && window.matchMedia('(max-width: 849px)').matches) {
 			s1.addEventListener('focus', function(){ss.style.zIndex = 2; ss.style.position = 'absolute'; ss.style.width = 'calc(100% - 2rem)'; ss.style.left = '1rem'; ss.style.boxSizing = 'border-box'})
 			s1.addEventListener('blur', function(){if(s1.value) return; ss.style.zIndex = ''; ss.style.position = ''; ss.style.width = ''; ss.style.left = ''; ss.style.boxSizing = ''})
 		}
+		s1.addEventListener('focus', function(){res1.style.display = ''})
+		s1.addEventListener('blur', function(){if(s1.value) return; res1.style.display = 'none';})
 		var compat_done = false
 		function compat(e) {
 			if (compat_done) return
@@ -20,7 +23,7 @@
 		}
 		jss.addEventListener("load",function(ev){
 		try {
-			window.sjs=SimpleJekyllSearch({searchInput:s1,resultsContainer:document.getElementById("search1-result"),json:ROOTDIR+"search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="'+ROOTDIR.substring(0,ROOTDIR.length-1)+'{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
+			window.sjs=SimpleJekyllSearch({searchInput:s1,resultsContainer:res1,json:ROOTDIR+"search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="'+ROOTDIR.substring(0,ROOTDIR.length-1)+'{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
 			s1.setAttribute("placeholder", "Search...")
 		} catch (e) {
 			compat(e)
