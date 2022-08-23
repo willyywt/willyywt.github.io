@@ -23,10 +23,10 @@ $site-header-height: 3rem !default;
 
 #list {
   display: none;
-  width: $base-font-size * 1.5;
-  height: $base-font-size * 1.5;
-  padding: (($site-header-height - $base-font-size * 1.5) / 2) ($base-font-size * 2)
-  (($site-header-height - $base-font-size * 1.5) / 2) $small-font-size;
+  width: $base-font-size * 1.2;
+  height: $base-font-size * 1.2;
+  padding: (($site-header-height - $base-font-size * 1.2) / 2) ($base-font-size * 2)
+  (($site-header-height - $base-font-size * 1.2) / 2) $small-font-size;
   @media (max-width: ($on-large - 1)) {
     display: block;
   }
