@@ -54,15 +54,7 @@ I took advantage of many builtin jekyll features (which wasn't in the original "
 ### Excerpt
 Excerpt is also a jekyll's builtin feature. By default this will be the first paragraph (first `<p>` element) of your post. You can also explicitly designate a post's excerpt using the jekyll `excerpt` variable.
 
-## Resource inlining
-I inlined most CSS and JavaScript files to reduce the critical rendering path. All render-blocking resources are bundled in the `<head>` element of the HTML page, so the web browser can immediately start rendering after the HTML page is downloaded. (I include MathJax with the [`async`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-async) attribute and its loading will be defered by the browser.)
-
-For the motivation behind resource inlining, see [Resource inling for github pages](../posts/2022/07/08/resource-inlining-for-github-pages.html).
-
 ## Fix for Flash of unstyled content
-<div class="note warning"><b>Warning: </b>
-Update 2022/07/19: Due to <a href="#resource-inlining">Resource inlining</a> this fix is unused and removed.
-</div>
 
 According to [What the FOUC is happening: Flash of Unstyled Content](https://dev.to/lyqht/what-the-fouc-is-happening-flash-of-unstyled-content-413j), a trick to hide html can be used to prevent unstyled html to be shown. Because modern browsers load CSS sequentially, i.e. load CSS in the arriving order of html data, I can hide `<html>` at the first CSS stylesheet, load the needed stylesheets, and unhide `<html>` at the last CSS stylesheet:
 ```html

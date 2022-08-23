@@ -6,10 +6,12 @@ last_modified_at: 2022-07-09
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at https://mozilla.org/MPL/2.0/. -->
+**Warning: Resource inlining is removed in favor of Cache API, since CSS gets a lot bigger than I wish and cannot fit in 17kb download size.**
+
 Github pages comes with 10 minute cache time, which makes the [Render Blocking](https://web.dev/render-blocking-resources/) resources takes *two* RTT to load almost everytime. Resource inlining shortens the [Critical Rendering Path](https://web.dev/critical-rendering-path-page-speed-rules-and-recommendations/): only *one* RTT is spent to load a web page. Reducing RTTs helps shortening network delays: one RTT can takes more than 150ms (or even larger on unstable networks). 
 
 ## TL;DR
-The major motivation is to **reduce network delay**, measured in terms of RTT (Round Trip Time) to the server. For now: **Inlining css and js reduces one RTT in the critical rendering path.**
+The major motivation is to **reduce network delay**, measured in terms of RTT (Round Trip Time) to the server.
 
 ## What is resource inlining
 CSS and JavaScript resource inlining is including the style and script text content directly inside `<style>` and `<script>` element of HTML, instead of using a `href` and a `src` attribute to give a link to the original `.css` and `.js` files. In this way, css and js are downloaded as part of the HTML (for valid HTML 5 `<style>` should entirely be in `<head>`; `<script>` has no such requirement, although it can also entirely in `<head>`).
@@ -99,12 +101,6 @@ For http without TLS, only 10 segments which is about 13.6kb can be downloaded d
 
 ### HTTP Compression
 We can assume gzip compression for most cases (the brotili compression is not provided by Github Pages). For legacy clients that do not does gzip compression, the best we can do is to suggest them use a new browser.
-
-### Current HTML size
-Currently this site's `<head>` element is 5.3kb under gzip compression, so we still have a little room to spend for HTML `<body>` under the poor 17.7kb initial RTT download size. If the css and js gets very bloated and much larger than 5.3kb (hopefully not), I will have to consider moving them back to `<link>` and `<script>` again, because inlining them no longer reduces RTT.
-
-## The conclusion
-For now: **Inlining css and js reduces one RTT in the critical rendering path.**
 
 ## Some reference links
 [Networking 101: Transport Layer Security (TLS)](https://hpbn.co/transport-layer-security-tls/)
