@@ -229,7 +229,7 @@ function load_css_link_element() {
 }
 function load_css_cache() {
 	caches.open('v1')
-	.then((cache) => {
+	.then(function(cache) {
 		var cssver_prev = localStorage.getItem("CSSVER")
 		var pm = Promise.resolve("")
 		var pm_arr = []
@@ -237,14 +237,14 @@ function load_css_cache() {
 			for (i in csspaths) {
 				pm_arr.push(cache.delete(csspaths[i]))
 			}
-			pm = Promise.all(pm_arr).then(() => localStorage.setItem("CSSVER", CSSVER))
+			pm = Promise.all(pm_arr).then(function(){localStorage.setItem("CSSVER", CSSVER)})
 			pm_arr = []
 		}
 		for (i in csspaths) {
 			pm_arr.push(cache.match(csspaths[i]))
 		}
 		pm = Promise.all(pm_arr)
-		.then((res_arr) => {
+		.then(function(res_arr) {
 			var has_cache_all = true
 			for (i in res_arr) {
 				var res = res_arr[i]
@@ -260,7 +260,7 @@ function load_css_cache() {
 					pm_css_text.push(res.text())
 				}
 				Promise.all(pm_css_text)
-				.then((css_text_arr) => {
+				.then(function(css_text_arr) {
 					for (i in res_arr) {
 						head_add_style(css_text_arr[i])
 					}
@@ -271,12 +271,12 @@ function load_css_cache() {
 					cache.add(csspaths[i])
 				}
 			}
-		}).catch((e) => {
+		}).catch(function(e) {
 			/* This path should not be reachable! */ 
 			return Promise.reject(e)
 		})
 	})
-	.catch((e) => {
+	.catch(function(e) {
 		load_css_link_element()
 		ftel_log(e)
 	})
