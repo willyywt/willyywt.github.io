@@ -259,6 +259,9 @@ table {
   text-align: $table-text-align;
   border-collapse: collapse;
 }
+th,td {
+  padding: 0.5rem;
+}
 
 /**
   * <fieldset>
