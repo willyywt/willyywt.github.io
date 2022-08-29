@@ -22,11 +22,8 @@ figure {
 }
 
 html {
-	font-size: $root-small-font-size;
+	font-size: $root-font-size;
   font-family: $base-font-family;
-	@media (min-width: $on-medium) {
-		font-size: $root-font-size;
-	}
 }
 
 /**
