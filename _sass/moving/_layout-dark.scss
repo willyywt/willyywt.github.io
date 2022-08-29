@@ -34,13 +34,13 @@
 	background-color: #5e9eff;
 }
 .note.warning {
-	background-color: #282017;
+	background-color: #1D1809;
 }
 .note.warning b {
-	color: #afa100
+	color: #d7af37
 }
 .note.warning::before {
-	background-color: #afa100;
+	background-color: #d7af37;
 }
 .note.error {
 	background-color: darkred;
