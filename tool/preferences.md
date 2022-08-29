@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Preferences"
-last_modified_at: 2022-07-08
+last_modified_at: 2022-08-29
 customHeadHTML: '<script>window.addEventListener("DOMContentLoaded",function(){var mel = document.querySelector("main");var mel_h1 = document.querySelector("main h1");if(!Modernizr.localstorage){var errlocalel = NoteEl("error", "Preferences are unavaliable because your browser does not support localStorage.");mel.insertBefore(errlocalel, mel_h1.nextSibling)}if(!Modernizr.classlist){var mel_th = document.getElementById("theme");var errclst = NoteEl("error", "Theme cannot be changed because your browser does not support classList.");mel.insertBefore(errclst, mel_th.nextSibling)}})</script><script src="../assets/js/pref.js"></script>'
 ---
 
@@ -36,7 +36,7 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 <legend>Select base font size:</legend>
 <div>
 	<input type="radio" id="pref-fontsize-default" name="name-pref-fontsize" value="pref-fontsize-default" checked>
-	<label for="pref-fontsize-default">17px (Default)</label>
+	<label for="pref-fontsize-default">16px (Default)</label>
 </div>
 <div>
 	<input type="radio" id="pref-fontsize-custom" name="name-pref-fontsize" value="pref-fontsize-custom">
