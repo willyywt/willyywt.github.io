@@ -66,9 +66,9 @@ ol,
 dl,
 figure,
 %vertical-rhythm {
-	margin-bottom: $small-font-size;
+	margin-bottom: abs-small-line-height(1);
 	@media (min-width: $on-large) {
-		margin-bottom: $base-font-size;
+		margin-bottom: abs-base-line-height(1);
 	}
 }
 
@@ -142,33 +142,41 @@ main h1 {
   line-height: 1.3;
   font-weight: 900;
   @include relative-font-size(1.6);
+  line-height: abs-small-line-height(2);
 
   @media screen and (min-width: $on-large) {
     @include relative-font-size(1.8);
+    line-height: abs-base-line-height(2);
   }
 }
 main {
   h2 {
     @include relative-font-size(1.5);
+    line-height: abs-small-line-height(2);
 
     @media screen and (min-width: $on-large) {
       @include relative-font-size(1.625);
+      line-height: abs-base-line-height(2);
     }
   }
 
   h3 {
     @include relative-font-size(1.2);
+    line-height: abs-small-line-height(1);
 
     @media screen and (min-width: $on-large) {
       @include relative-font-size(1.3);
+      line-height: abs-base-line-height(1);
     }
   }
 
   h4 {
     @include relative-font-size(1.125);
+    line-height: abs-small-line-height(1);
 
     @media screen and (min-width: $on-large) {
       @include relative-font-size(1.25);
+      line-height: abs-base-line-height(1);
     }
   }
 }

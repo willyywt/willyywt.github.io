@@ -30,6 +30,14 @@ $on-large: $on-laptop !default;
   font-size: $base-font-size * $ratio;
 }
 
+@function abs-base-line-height($ratio) {
+  @return $base-font-size * $base-line-height * $ratio;
+}
+
+@function abs-small-line-height($ratio) {
+  @return $small-font-size * $small-line-height * $ratio;
+}
+
 /**
   * Clearfix
   */
