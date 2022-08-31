@@ -169,27 +169,14 @@ $site-header-height: 3rem !default;
   margin-left: 0;
 }
 
-.page-heading {
-  font-size: abs-base-font-size(2);
-}
-
-.home-heading {
-  @media (max-width: $on-medium) {
-    margin-top: 20px;
-    font-size: abs-base-font-size(1.7);
-  }
-
-  font-size: abs-base-font-size(2.2);
+.page-heading,.home-heading {
+  @include set-font-size(1.8);
+  @include set-line-height(2);
 }
 
 .home-sub-heading {
-  margin-top: -0.6rem;
-
-  @media (max-width: $on-medium) {
-    font-size: abs-base-font-size(0.8);
-  }
-
-  font-size: abs-base-font-size(1);
+  @include set-font-size(1);
+  @include set-line-height(1);
 }
 
 .post-list {
@@ -202,12 +189,8 @@ $site-header-height: 3rem !default;
   margin-top: 2rem;
   margin-bottom: 0.25rem;
   font-weight: 700;
-
-  @media (max-width: $on-medium) {
-    font-size: abs-base-font-size(1.2);
-  }
-
-  font-size: abs-base-font-size(1.5);
+  @include set-font-size(1.5);
+  @include inherit-line-height();
 }
 
 .post-meta {
@@ -216,21 +199,14 @@ $site-header-height: 3rem !default;
 
   @media (max-width: $on-medium) {
     min-width: 7rem;
-    font-size: abs-base-font-size(0.8);
   }
-
-  font-size: abs-base-font-size(1);
 }
 
 .post-link-layout {
   display: inline;
   font-weight: 700;
-
-  @media (max-width: $on-medium) {
-    font-size: abs-base-font-size(1);
-  }
-
-  font-size: abs-base-font-size(1.2);
+  @include set-font-size(1.2);
+  @include inherit-line-height();
 }
 /**
 * Notes
@@ -314,6 +290,6 @@ $site-header-height: 3rem !default;
 }
 
 .legal-note {
-  font-size: abs-base-font-size(0.7);
+  @include set-font-size(0.7);
   margin-right: 1rem;
 }

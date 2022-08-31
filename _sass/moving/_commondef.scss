@@ -42,6 +42,24 @@ $on-large: $on-laptop !default;
   @return $small-font-size * $small-line-height * $ratio;
 }
 
+@mixin set-font-size($ratio) {
+  font-size: abs-small-font-size($ratio);
+  @media (min-width: $on-palm) {
+    font-size: abs-base-font-size($ratio);
+  }
+}
+
+@mixin set-line-height($ratio) {
+  line-height: abs-small-line-height($ratio);
+  @media (min-width: $on-palm) {
+    line-height: abs-base-line-height($ratio);
+  }
+}
+
+@mixin inherit-line-height() {
+  line-height: inherit;
+}
+
 /**
   * Clearfix
   */
