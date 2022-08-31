@@ -187,17 +187,16 @@ $site-header-height: 3rem !default;
 }
 
 .post-list {
-  margin-top: 2.5rem;
   margin-left: 0;
   list-style: none;
 }
 
 .post-year {
-  margin-top: 2rem;
-  margin-bottom: 0.25rem;
   font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
   @include set-font-size(1.5);
-  @include inherit-line-height();
+  @include set-line-height(2);
 }
 
 .post-meta {
@@ -213,7 +212,7 @@ $site-header-height: 3rem !default;
   display: inline;
   font-weight: 700;
   @include set-font-size(1.2);
-  @include inherit-line-height();
+  @include set-line-height(1);
 }
 /**
 * Notes
