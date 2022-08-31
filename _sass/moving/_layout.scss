@@ -175,6 +175,7 @@ $site-header-height: 3rem !default;
 }
 
 .home-sub-heading {
+  margin-top: 0;
   @include set-font-size(1);
   @include set-line-height(1);
 }
