@@ -16,7 +16,7 @@ My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/will
 * Dark theme support
 * Mobile devices support
 * A custom "Site Preferences" page
-* Font: Bitter (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
+* Font: Open Sans (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
 * A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
 * Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
 * Website can also be hosted at a URL subdirectory, i.e. at a sub folder of a domain
@@ -106,8 +106,8 @@ Some hints for performance and user experience are provided by the LightHouse in
 ### Tested browsers
 Mostly I will just test on latest Firefox and Chromium. Occasionally I test on a few obsolete browsers: an IE 9 on Windows 7, a Safari on an iPad 2, and a proprietary browser on Android 4.2.
 
-## Move bitter font to local
-The moving theme uses bitter from google fonts, but I think hosting it locally is better, so I have changed the theme to use local bitter font. Download font locally: [Google Webfonts helper](https://google-webfonts-helper.herokuapp.com/fonts)
+## Move font to local
+Download font locally: [Google Webfonts helper](https://google-webfonts-helper.herokuapp.com/fonts)
 
 ## Code highlight
 I use kramdown's builtin [rouge](https://kramdown.gettalong.org/syntax_highlighter/rouge.html) instead of [highlight.js](https://highlightjs.org/). A matching highlight css theme is in `/_sass/rouge.scss` and `/_sass/rouge-dark.scss`. (Rouge transform code to html elements, but don't do css stylesheet itself; you have to choose a css theme for rouge.)

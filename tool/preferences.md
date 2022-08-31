@@ -18,8 +18,8 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
     <legend>Select sans-serif font family:</legend>
     <div>
       <input type="radio" id="pref-font-default" name="name-pref-font" value="pref-font-default" checked>
-      <label for="pref-font-default">Bitter (Default)</label>
-	<p> The default Bitter font, from Google Fonts. </p>
+      <label for="pref-font-default">Open Sans (Default)</label>
+	<p> The Open Sans font, from Google Fonts. </p>
     </div>
     <div>
       <input type="radio" id="pref-font-brand" name="name-pref-font" value="pref-font-brand">

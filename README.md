@@ -17,7 +17,7 @@ Also see [minisign-1.pub](minisign-1.pub) (the same key as above)
 * Dark theme support
 * Mobile devices support
 * A custom "Site Preferences" page
-* Font: Bitter (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
+* Font: Open Sans (sans-serif), Source Code Pro (monospace); can also replace with system font in "Site Preferences".
 * A "Table of Contents" powered by [jekyll-toc](https://github.com/allejo/jekyll-toc/), written in pure [liquid](https://jekyllrb.com/docs/liquid/) syntax (no additional jekyll plugins required)
 * Plugins included: [jekyll-feed](https://github.com/jekyll/jekyll-feed/), [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag), [jekyll-sitemap](https://github.com/jekyll/jekyll-sitemap)
 * Website can also be hosted at a URL subdirectory, i.e. at a sub folder of a domain
