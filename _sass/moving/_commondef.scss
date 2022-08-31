@@ -26,8 +26,12 @@ $on-large: $on-laptop !default;
   }
 }
 
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
+@function abs-base-font-size($ratio) {
+  @return $base-font-size * $ratio;
+}
+
+@function abs-small-font-size($ratio) {
+  @return $small-font-size * $ratio;
 }
 
 @function abs-base-line-height($ratio) {

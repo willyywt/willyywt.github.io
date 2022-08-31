@@ -170,26 +170,26 @@ $site-header-height: 3rem !default;
 }
 
 .page-heading {
-  @include relative-font-size(2);
+  font-size: abs-base-font-size(2);
 }
 
 .home-heading {
   @media (max-width: $on-medium) {
     margin-top: 20px;
-    @include relative-font-size(1.7);
+    font-size: abs-base-font-size(1.7);
   }
 
-  @include relative-font-size(2.2);
+  font-size: abs-base-font-size(2.2);
 }
 
 .home-sub-heading {
   margin-top: -0.6rem;
 
   @media (max-width: $on-medium) {
-    @include relative-font-size(0.8);
+    font-size: abs-base-font-size(0.8);
   }
 
-  @include relative-font-size(1);
+  font-size: abs-base-font-size(1);
 }
 
 .post-list {
@@ -204,10 +204,10 @@ $site-header-height: 3rem !default;
   font-weight: 700;
 
   @media (max-width: $on-medium) {
-    @include relative-font-size(1.2);
+    font-size: abs-base-font-size(1.2);
   }
 
-  @include relative-font-size(1.5);
+  font-size: abs-base-font-size(1.5);
 }
 
 .post-meta {
@@ -216,10 +216,10 @@ $site-header-height: 3rem !default;
 
   @media (max-width: $on-medium) {
     min-width: 7rem;
-    @include relative-font-size(0.8);
+    font-size: abs-base-font-size(0.8);
   }
 
-  @include relative-font-size(1);
+  font-size: abs-base-font-size(1);
 }
 
 .post-link-layout {
@@ -227,10 +227,10 @@ $site-header-height: 3rem !default;
   font-weight: 700;
 
   @media (max-width: $on-medium) {
-    @include relative-font-size(1);
+    font-size: abs-base-font-size(1);
   }
 
-  @include relative-font-size(1.2);
+  font-size: abs-base-font-size(1.2);
 }
 /**
 * Notes
@@ -298,12 +298,12 @@ $site-header-height: 3rem !default;
         display: flex;
         flex-direction: row;
         margin-top: 1rem;
-        @include relative-font-size(1.5);
+        font-size: abs-base-font-size(1.5);
       }
 
       .about-description {
         margin-top: -0.6rem;
-        @include relative-font-size(1);
+        font-size: abs-base-font-size(1);
       }
     }
   }
@@ -314,6 +314,6 @@ $site-header-height: 3rem !default;
 }
 
 .legal-note {
-  @include relative-font-size(0.7);
+  font-size: abs-base-font-size(0.7);
   margin-right: 1rem;
 }
