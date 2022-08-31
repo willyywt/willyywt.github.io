@@ -169,9 +169,15 @@ $site-header-height: 3rem !default;
   margin-left: 0;
 }
 
-.page-heading,.home-heading {
+.page-heading {
   @include set-font-size(1.8);
   @include set-line-height(2);
+}
+
+.home-heading {
+  @include set-font-size(2);
+  @include set-line-height(2);
+  margin-bottom: 0;
 }
 
 .home-sub-heading {
