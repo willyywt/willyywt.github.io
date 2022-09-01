@@ -1,17 +1,6 @@
 ---
 sitemap: false
 ---
-// Light mode
-$text-color: #111 !default;
-$background-color: #fafafa !default;
-$background-color-1: #fff !default;
-$brand-color: #8b0000 !default; // anchor color
-
-$grey-color: #727272 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark: darken($grey-color, 25%) !default;
-
-@import "moving/commondef";
 html {
 	background-color: white; /* Needed for overflows */
 }

@@ -1,18 +1,6 @@
 ---
 sitemap: false
 ---
-// Dark Mode
-$text-color: #eee !default;
-$background-color: #121212 !default;
-$background-color-1: #1d1d1d !default;
-$background-color-2: #2c2c2c !default;
-
-$brand-color: #f2d49d !default;
-$grey-color: #999084 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark: darken($grey-color, 25%) !default;
-
-@import "moving/commondef";
 html.dark { /* html is not a descend child of .dark */
         background-color: black; /* Needed for overflows */
 }
