@@ -40,6 +40,16 @@ $site-header-height: 3rem !default;
     (($site-header-height - $small-font-size * 1.5) / 2) $small-font-size;
   }
 }
+#list-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#list-close > svg {
+  padding: 0.4rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
 #overlay {
   position: fixed;
   top: 0;
