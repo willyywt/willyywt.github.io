@@ -24,7 +24,6 @@
   @include set-width-2($sfull, $sinner);
 }
 
-
 /**
  * Site header
  */
@@ -33,12 +32,12 @@ $site-header-height: 3rem !default;
   display: flex;
   align-items: center;
   @include set-height($site-header-height);
-  padding-right: $spacing-unit / 2;
-  padding-left: 0;
+  @include pr1;
+  @include pl0;
   z-index: 2;
   @media (min-width: $on-large) {
-	  padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
+    @include pl2;
+    @include pr2;
   }
   @media (max-width: ($on-large - 1)) {
     position: sticky;
@@ -54,7 +53,7 @@ $site-header-height: 3rem !default;
 
 #list {
   @include set-height($site-header-height);
-  padding-right: $spacing-unit / 2;
+  @include pr1;
   display: none;
   @media screen and (max-width: ($on-large - 1)) {
     display: block;
@@ -88,11 +87,10 @@ $site-header-height: 3rem !default;
  * Search Box
  */
 .search-wrapper {
-  border-style: solid;
-  border-width: 2px;
+  @include p0;
+  @include b2s;
   margin-left: auto;
   font-size: inherit;
-  padding: 0;
   background-color: inherit;
   display: flex;
   align-items: center;
@@ -107,8 +105,9 @@ $site-header-height: 3rem !default;
 }
 #search1 {
   background-color: inherit;
-  border: 0;
-  padding: 2px 0 2px 2rem;
+  @include b0;
+  @include m0;
+  padding-left: 2rem;
   font-size: inherit;
   display: inline;
   width: 100%;
@@ -121,11 +120,10 @@ $site-header-height: 3rem !default;
 }
 #search1-result {
   position: absolute;
-  border-width: 2px;
-  border-style: solid;
+  @include b2s;
+  @include mp0;
   left: -2px;
   right: -2px;
-  margin: 0;
   top: 2rem; /* Fallback */
   top: calc((#{$small-line-height} * #{$base-font-size}) + 8px);
   overflow: scroll;
@@ -138,12 +136,12 @@ $site-header-height: 3rem !default;
   */
 .wrapper {
   @extend %clearfix;
-  margin-left: $spacing-unit / 2;
-  margin-right: $spacing-unit / 2;
+  @include ml1;
+  @include mr1;
   @media screen and (min-width: $on-large) {
     display: grid;
-    margin-left: $spacing-unit;
-    margin-right: $spacing-unit;
+    @include ml2;
+    @include mr2;
     grid-template-columns: 22% 78%;
   }
 }
@@ -186,7 +184,7 @@ $site-header-height: 3rem !default;
 
 .nav-submenu1 {
   margin-top: 1rem;
-  margin-left: 0rem;
+  @include ml0;
   font-weight: normal;
 }
 
@@ -198,7 +196,13 @@ $site-header-height: 3rem !default;
  * Site footer
  */
 .site-footer {
-  padding: $spacing-unit / 1.5;
+  @include pl1;
+  @include pr1;
+  @media (min-width: $on-palm) {
+    @include pl2;
+    @include pr2;
+  }
+  padding-bottom: $spacing-unit;
 }
 
 .page-heading {

@@ -65,6 +65,61 @@ $on-large: $on-laptop !default;
   line-height: inherit;
 }
 
+@mixin b2s {
+  border-width: 2px;
+  border-style: solid;
+}
+@mixin b0 {
+  border: 0;
+}
+@mixin p0 {
+  padding: 0;
+}
+@mixin m0 {
+  margin: 0;
+}
+@mixin mp0 {
+  @include m0;
+  @include p0;
+}
+
+@mixin pl0 {
+  padding-left: 0;
+}
+@mixin pl1 {
+  padding-left: $spacing-unit / 2;
+}
+@mixin pl2 {
+  padding-left: $spacing-unit;
+}
+@mixin pr0 {
+  padding-right: 0;
+}
+@mixin pr1 {
+  padding-right: $spacing-unit / 2;
+}
+@mixin pr2 {
+  padding-right: $spacing-unit;
+}
+@mixin ml0 {
+  margin-left: 0;
+}
+@mixin ml1 {
+  margin-left: $spacing-unit / 2;
+}
+@mixin ml2 {
+  margin-left: $spacing-unit;
+}
+@mixin mr0 {
+  margin-right: 0;
+}
+@mixin mr1 {
+  margin-right: $spacing-unit / 2;
+}
+@mixin mr2 {
+  margin-right: $spacing-unit;
+}
+
 /**
   * Clearfix
   */
