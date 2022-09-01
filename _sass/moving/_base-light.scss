@@ -22,7 +22,7 @@ a {
   */
 blockquote {
 	color: darken($grey-color, 7%);
-	border-left: 4px solid $grey-color-light;
+	border-left-color: $grey-color-light;
 }
 /**
  * Code formatting
@@ -42,10 +42,10 @@ table {
 	}
 	th {
 		background-color: $background-color;
-		border: 1px solid $grey-color-light;
+		border-color: $grey-color-light;
 	}
 	td {
-		border: 1px solid $grey-color-light;
+		border-color: $grey-color-light;
 	}
 }
 /**

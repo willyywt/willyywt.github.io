@@ -172,6 +172,8 @@ a {
   * Blockquotes
   */
 blockquote {
+  border-left-width: 4px;
+  border-left-style: solid;
   padding-left: $spacing-unit / 2;
   > :last-child {
     margin-bottom: 0;
@@ -233,6 +235,8 @@ table {
   border-collapse: collapse;
 }
 th,td {
+  border-width: 2px;
+  border-style: solid;
   padding: 0.5rem;
 }
 

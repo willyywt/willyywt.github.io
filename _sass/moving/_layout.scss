@@ -282,6 +282,8 @@ $site-header-height: 3rem !default;
     flex-wrap: wrap;
 
     .about-avatar {
+      border-width: 1px;
+      border-style: solid;
       padding: 1px;
       width: 10rem;
       height: 10rem;
