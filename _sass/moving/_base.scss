@@ -180,7 +180,7 @@ blockquote {
   border-left-style: solid;
   padding-left: $spacing-unit / 2;
   > :last-child {
-    margin-bottom: 0;
+    @include mb0;
   }
 }
 blockquote p {

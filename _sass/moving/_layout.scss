@@ -213,13 +213,13 @@ $site-header-height: 3rem !default;
 .home-heading {
   @include set-font-size(2);
   @include set-line-height(2);
-  margin-bottom: 0;
+  @include mb0;
 }
 
 .home-sub-heading {
-  margin-top: 0;
   @include set-font-size(1);
   @include set-line-height(1);
+  @include mt0;
 }
 
 .post-list {
@@ -229,10 +229,10 @@ $site-header-height: 3rem !default;
 
 .post-year {
   font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0;
   @include set-font-size(1.5);
   @include set-line-height(2);
+  @include mb0;
+  @include mt0;
 }
 
 .post-meta {
@@ -260,8 +260,7 @@ $site-header-height: 3rem !default;
   padding: 0.5rem;
 }
 .note p {
-  padding: 0;
-  margin: 0;
+  @include m0;
   display: inline-block;
 }
 .note b, .note p {
