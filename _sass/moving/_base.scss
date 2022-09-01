@@ -16,8 +16,11 @@ dl,
 dd,
 ol,
 ul,
-figure {
+figure,
+fieldset,
+%mbp-clean {
   margin: 0;
+  border: 0;
   padding: 0;
 }
 
@@ -213,19 +216,6 @@ pre {
 }
 
 /**
-  * Icons
-  */
-
-.svg-icon {
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  fill: currentColor;
-  padding: 5px 3px 2px 5px;
-  vertical-align: text-bottom;
-}
-
-/**
   * Tables
   */
 table {
@@ -243,18 +233,11 @@ th,td {
 /**
   * <fieldset>
   */
-fieldset {
-	border: 0;
-	padding: 0;
-}
 fieldset p, fieldset code {
   margin: 0;
 }
 fieldset p {
   display: inline;
-}
-fieldset code {
-  display: none;
 }
 legend {
   font-size: larger;

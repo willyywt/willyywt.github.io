@@ -179,11 +179,6 @@ $site-header-height: 3rem !default;
   padding: $spacing-unit / 1.5;
 }
 
-.contact-list {
-  list-style: none;
-  margin-left: 0;
-}
-
 .page-heading {
   @include set-font-size(1.8);
   @include set-line-height(2);
@@ -259,57 +254,6 @@ $site-header-height: 3rem !default;
   float: left;
   position: relative;
   margin-right: 0.5rem
-}
-/**
- * Grid helpers
- */
-@media screen and (min-width: $on-large) {
-  .one-half {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width: calc(50% - (#{$spacing-unit} / 2));
-  }
-}
-
-/**
- * About Page
- */
-.about-page {
-  display: inline-block;
-
-  .about-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    .about-avatar {
-      border-width: 1px;
-      border-style: solid;
-      padding: 1px;
-      width: 10rem;
-      height: 10rem;
-      margin: 0 2rem 0 0;
-    }
-
-    .about-info {
-      align-self: center;
-
-      .about-your-name {
-        display: flex;
-        flex-direction: row;
-        margin-top: 1rem;
-        font-size: abs-base-font-size(1.5);
-      }
-
-      .about-description {
-        margin-top: -0.6rem;
-        font-size: abs-base-font-size(1);
-      }
-    }
-  }
-
-  .about-content {
-    margin-top: 2rem;
-  }
 }
 
 .legal-note {

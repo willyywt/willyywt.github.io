@@ -61,22 +61,6 @@
 	color: $text-color;
 }
 
-/**
- * About Page
- */
-.about-page {
-	.about-header {
-		.about-avatar {
-			border-color: $grey-color-light;
-		}
-
-		.about-info {
-			.about-description {
-				color: lighten($text-color, 25%);
-			}
-		}
-	}
-}
 #MathJax_MenuFrame a {
 	color: blue;
 }
