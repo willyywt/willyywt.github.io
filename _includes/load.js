@@ -329,6 +329,7 @@ if (sw) {
 var ov = document.getElementById("overlay")
 var nv = document.querySelector(".wrapper nav.nav-toc")
 var lt = document.getElementById("list")
+var ltc = document.getElementById("list-close")
 function current_dark() {
 	return document.documentElement.classList.contains("dark")
 }
@@ -345,6 +346,7 @@ function set() {
 	nv.style.marginLeft = 0
 	nv.style.paddingLeft = "1rem"
 	ov.style.visibility = ""
+	ltc.style.display = ""
 }
 function unset() {
 	nv.style.display = ""
@@ -359,8 +361,26 @@ function unset() {
 	nv.style.marginLeft = ""
 	nv.style.paddingLeft = ""
 	ov.style.visibility = "hidden"
+	ltc.style.display = "none"
+}
+function enter_cb(event, func) {
+	if (event.isComposing || event.keyCode == 223) {
+		return;
+	}
+	if (event.keyCode == 13) {
+		func()
+	}
+}
+function enter_cb_set(event) {
+	enter_cb(event, set)
+}
+function enter_cb_unset(event) {
+	enter_cb(event, unset)
 }
 lt.addEventListener("click", set)
 ov.addEventListener("click", unset)
+lt.addEventListener("keydown", enter_cb_set)
+ltc.addEventListener("click", unset)
+ltc.addEventListener("keydown", enter_cb_unset)
 	}
 })()
