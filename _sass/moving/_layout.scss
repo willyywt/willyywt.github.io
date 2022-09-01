@@ -25,6 +25,7 @@ $site-header-height: 3rem !default;
 }
 
 #list {
+  height: 3rem;
   display: none;
   @media screen and (max-width: ($on-large - 1)) {
     display: block;
@@ -46,6 +47,7 @@ $site-header-height: 3rem !default;
   position: absolute;
   top: 0;
   right: 0;
+  height: 2rem;
 }
 #list-close > svg {
   padding: 0.4rem;
