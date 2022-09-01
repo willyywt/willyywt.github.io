@@ -1,4 +1,30 @@
 @import "commondef";
+@mixin set-height($height) {
+  height: $height;
+}
+@mixin set-width($width) {
+  width: $width;
+}
+@mixin set-size($size) {
+  @include set-height($size);
+  @include set-width($size);
+}
+@mixin set-height-2($hfull, $hinner) {
+  height: $hinner;
+  padding-top: ($hfull - $hinner) / 2;
+  padding-bottom: ($hfull - $hinner) / 2;
+}
+@mixin set-width-2($wfull, $winner) {
+  width: $winner;
+  padding-left: ($wfull - $winner) / 2;
+  padding-right: ($wfull - $winner) / 2;
+}
+@mixin set-size-2($sfull, $sinner) {
+  @include set-height-2($sfull, $sinner);
+  @include set-width-2($sfull, $sinner);
+}
+
+
 /**
  * Site header
  */
@@ -6,12 +32,13 @@ $site-header-height: 3rem !default;
 .site-header {
   display: flex;
   align-items: center;
-  height: 2rem;
-  padding: (($site-header-height - 2rem) / 2) ($spacing-unit / 2)
-  (($site-header-height - 2rem) / 2) 0;
+  @include set-height($site-header-height);
+  padding-right: $spacing-unit / 2;
+  padding-left: 0;
   z-index: 2;
   @media (min-width: $on-large) {
-	  padding: (($site-header-height - 2rem) / 2) $spacing-unit;
+	  padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
   }
   @media (max-width: ($on-large - 1)) {
     position: sticky;
@@ -26,34 +53,27 @@ $site-header-height: 3rem !default;
 }
 
 #list {
-  height: 3rem;
+  @include set-height($site-header-height);
+  padding-right: $spacing-unit / 2;
   display: none;
   @media screen and (max-width: ($on-large - 1)) {
     display: block;
   }
 }
 #list > svg {
-  width: $base-font-size * 1.2;
-  height: $base-font-size * 1.2;
-  padding: (($site-header-height - $base-font-size * 1.2) / 2) ($base-font-size * 2)
-  (($site-header-height - $base-font-size * 1.2) / 2) $small-font-size;
+  @include set-size-2($site-header-height, $base-font-size * 1.2);
   @media (max-width: ($on-medium - 1)) {
-    width: $small-font-size * 1.5;
-    height: $small-font-size * 1.5;
-    padding: (($site-header-height - $small-font-size * 1.5) / 2) ($small-font-size * 2)
-    (($site-header-height - $small-font-size * 1.5) / 2) $small-font-size;
+    @include set-size-2($site-header-height, $small-font-size * 1.5);
   }
 }
 #list-close {
   position: absolute;
   top: 0;
   right: 0;
-  height: 2rem;
+  @include set-height(2rem);
 }
 #list-close > svg {
-  padding: 0.4rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  @include set-size-2(2rem, 1.2rem);
 }
 #overlay {
   position: fixed;
@@ -95,8 +115,7 @@ $site-header-height: 3rem !default;
   line-height: $small-line-height; /* To make #search1-result `top` predictable */
 }
 #search1-icon {
-  width: 1rem;
-  height: 1rem;
+  @include set-size(1rem);
   position: absolute;
   left: 0.5rem;
 }
@@ -245,12 +264,10 @@ $site-header-height: 3rem !default;
   padding-right: 1rem
 }
 .note:before {
-  height: $small-font-size;
-  width: $small-font-size;
+  @include set-size($small-font-size);
   top: ($small-font-size * $small-line-height - $small-font-size) / 2;
   @media screen and (min-width: $on-medium) {
-    height: $base-font-size;
-    width: $base-font-size;
+    @include set-size($base-font-size);
     top: ($base-font-size * $base-line-height - $base-font-size) / 2;
   }
   content: "";
