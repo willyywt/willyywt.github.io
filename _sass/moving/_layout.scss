@@ -211,7 +211,7 @@ $site-header-height: 3rem !default;
 .post-link-layout {
   display: inline;
   font-weight: 700;
-  @include set-font-size(1.2);
+  @include set-font-size-2(1.1, 1.2);
   @include set-line-height(1);
 }
 /**

@@ -49,6 +49,13 @@ $on-large: $on-laptop !default;
   }
 }
 
+@mixin set-font-size-2($ratio1, $ratio2) {
+  font-size: abs-small-font-size($ratio1);
+  @media (min-width: $on-palm) {
+    font-size: abs-base-font-size($ratio2);
+  }
+}
+
 @mixin set-line-height($ratio) {
   line-height: abs-small-line-height($ratio);
   @media (min-width: $on-palm) {
