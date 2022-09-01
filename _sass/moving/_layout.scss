@@ -16,6 +16,9 @@ $site-header-height: 3rem !default;
     position: sticky;
     top: 0;
   }
+  @media print {
+    display: none;
+  }
 }
 .site-header-back-to {
   margin-right: 2rem;
@@ -27,7 +30,7 @@ $site-header-height: 3rem !default;
   height: $base-font-size * 1.2;
   padding: (($site-header-height - $base-font-size * 1.2) / 2) ($base-font-size * 2)
   (($site-header-height - $base-font-size * 1.2) / 2) $small-font-size;
-  @media (max-width: ($on-large - 1)) {
+  @media screen and (max-width: ($on-large - 1)) {
     display: block;
   }
   @media (max-width: ($on-medium - 1)) {
@@ -142,7 +145,7 @@ $site-header-height: 3rem !default;
     align-self: start;
     max-height: calc(100vh - 2.6rem);
   }
-  @media (max-width: ($on-large - 1)) {
+  @media screen and (max-width: ($on-large - 1)) {
     display: none;
   }
 }
