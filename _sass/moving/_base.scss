@@ -1,32 +1,5 @@
 @import "commondef";
-/**
- * Utility CSS in HTML Class
- */
-.font-s-1-3 {
-  @include font_s_1_3;
-}
-.mt-lh-1 {
-  @include mt_lh_1;
-}
-.mb-lh-1 {
-  @include mb_lh_1;
-}
-.font-400 {
-  @include font_400;
-}
-.font-700 {
-  @include font_700;
-}
-.font-900 {
-  @include font_900;
-}
-.font-italic {
-  @include font_italic;
-}
-.list-none {
-  @include list_none;
-}
-
+@import "htmlclass";
 /**
  * Reset some basic elements
  */
