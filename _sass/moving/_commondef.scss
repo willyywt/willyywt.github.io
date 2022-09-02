@@ -177,6 +177,10 @@ $on-large: $on-laptop !default;
   font-style: italic;
 }
 
+@mixin list_none {
+  list-style-type: none;
+}
+
 /**
   * Clearfix
   */

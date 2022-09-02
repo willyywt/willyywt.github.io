@@ -12,16 +12,19 @@
   @include mb_lh_1;
 }
 .font-400 {
-  font-weight: 400;
+  @include font_400;
 }
 .font-700 {
-  font-weight: 700;
+  @include font_700;
 }
 .font-900 {
-  font-weight: 900;
+  @include font_900;
 }
 .font-italic {
-  font-style: italic;
+  @include font_italic;
+}
+.list-none {
+  @include list_none;
 }
 
 /**

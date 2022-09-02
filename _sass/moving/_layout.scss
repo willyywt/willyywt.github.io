@@ -160,7 +160,7 @@ $site-header-height: 3rem !default;
  * nav: Table of Contents
  */
 #nav-toc ul {
-  list-style: none;
+  @include list_none;
 }
 
 #nav-toc>ul {
@@ -223,12 +223,12 @@ $site-header-height: 3rem !default;
 }
 
 .post-list {
-  margin-left: 0;
-  list-style: none;
+  @include ml0;
+  @include list_none;
 }
 
 .post-year {
-  font-weight: 700;
+  @include font_700;
   @include set-font-size(1.5);
   @include set-line-height(2);
   @include mb0;
@@ -246,7 +246,7 @@ $site-header-height: 3rem !default;
 
 .post-link-layout {
   display: inline;
-  font-weight: 700;
+  @include font_700;
   @include set-font-size-2(1.1, 1.2);
   @include set-line-height(1);
 }
