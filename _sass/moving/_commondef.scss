@@ -127,6 +127,19 @@ $on-large: $on-laptop !default;
   margin-right: $spacing-unit;
 }
 
+@mixin mt_lh_1 {
+  margin-top: abs-small-line-height(1);
+  @media (min-width: $on-palm) {
+    margin-top: abs-base-line-height(1);
+  }
+}
+@mixin mb_lh_1 {
+  margin-bottom: abs-small-line-height(1);
+  @media (min-width: $on-palm) {
+    margin-bottom: abs-base-line-height(1);
+  }
+}
+
 @mixin font_s_2 {
   @include set-font-size(2);
   @include set-line-height(2); 

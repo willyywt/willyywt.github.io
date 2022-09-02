@@ -159,18 +159,18 @@ $site-header-height: 3rem !default;
 /**
  * nav: Table of Contents
  */
-.nav-toc ul {
+#nav-toc ul {
   list-style: none;
 }
 
-.nav-toc>ul {
+#nav-toc>ul {
   margin-left: 0px;
 }
 
-.nav-toc {
+#nav-toc {
   overflow: auto;
   @media screen and (min-width: $on-large) {
-    padding-right: 1rem;
+    @include pr1;
     grid-column: 1/2;
     position: sticky;
     top: -1rem;
@@ -183,13 +183,13 @@ $site-header-height: 3rem !default;
 }
 
 .nav-submenu1 {
-  margin-top: 1rem;
+  @include mt_lh_1;
   @include ml0;
-  font-weight: normal;
+  @include font_400;
 }
 
 .nav-item1 {
-  font-weight: bold;
+  @include font_700;
 }
 
 /**
