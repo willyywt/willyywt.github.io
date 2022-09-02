@@ -1,4 +1,5 @@
 @import "commondef";
+
 /**
  * Reset some basic elements
  */
@@ -35,7 +36,6 @@ html {
   */
 body {
 	/* IE9-10 doesn't recognize rem in font shorthand */
-	font-weight: 400;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -43,6 +43,7 @@ body {
   font-feature-settings: "kern" 1;
   font-kerning: normal;
   min-height: 100vh;
+  @include font_400;
   @include set-font-size(1);
   @include set-line-height(1);
 }
@@ -105,10 +106,6 @@ figure > img {
   display: block;
 }
 
-figcaption {
-  font-size: $small-font-size;
-}
-
 /**
   * Lists
   */
@@ -137,27 +134,23 @@ h6 {
 	@media (min-width: $on-large) {
 		margin-top: abs-base-line-height(1);
 	}
-  font-weight: 700;
+  @include font_700;
 }
 main h1 {
-  font-weight: 900;
-  @include set-font-size(1.8);
-  @include set-line-height(2);
+  @include font_900;
+  @include font_s_1_8;
 }
 main {
   h2 {
-    @include set-font-size(1.6);
-    @include set-line-height(2);
+    @include font_s_1_6;
   }
 
   h3 {
-    @include set-font-size(1.3);
-    @include set-line-height(1);
+    @include font_s_1_3;
   }
 
   h4 {
-    @include set-font-size(1.125);
-    @include set-line-height(1);
+    @include font_s_1_4;
   }
 }
 
@@ -241,5 +234,5 @@ fieldset p {
   display: inline;
 }
 legend {
-  font-size: larger;
+  @include font_s_1_2;
 }

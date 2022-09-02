@@ -127,6 +127,43 @@ $on-large: $on-laptop !default;
   margin-right: $spacing-unit;
 }
 
+@mixin font_s_2 {
+  @include set-font-size(2);
+  @include set-line-height(2); 
+}
+@mixin font_s_1_8 {
+  @include set-font-size(1.8);
+  @include set-line-height(2);
+}
+@mixin font_s_1_6 {
+  @include set-font-size(1.6);
+  @include set-line-height(2);
+}
+@mixin font_s_1_3 {
+  @include set-font-size(1.3);
+  @include set-line-height(1);
+}
+@mixin font_s_1_2 {
+  @include set-font-size(1.2);
+  @include set-line-height(1);
+}
+@mixin font_s_1_1 {
+  @include set-font-size(1.1);
+  @include set-line-height(1);
+}
+@mixin font_400 {
+  font-weight: 400;
+}
+@mixin font_700 {
+  font-weight: 700;
+}
+@mixin font_900 {
+  font-weight: 900;
+}
+@mixin font_italic {
+  font-style: italic;
+}
+
 /**
   * Clearfix
   */
