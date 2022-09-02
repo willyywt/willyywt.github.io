@@ -1,0 +1,11 @@
+@import "commondef";
+@import "darkdef";
+.text-grey {
+  @include dark_text_grey;
+}
+.text-tcolor {
+  @include dark_text_tcolor;
+}
+.text-brand {
+  @include dark_text_brand;
+}

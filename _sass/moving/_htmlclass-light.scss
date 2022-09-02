@@ -1,0 +1,11 @@
+@import "commondef";
+@import "lightdef";
+.text-grey {
+  @include light_text_grey;
+}
+.text-tcolor {
+  @include light_text_tcolor;
+}
+.text-brand {
+  @include light_text_brand;
+}

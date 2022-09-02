@@ -161,6 +161,10 @@ $on-laptop: 850px !default;
   @include set-font-size(1.1);
   @include set-line-height(1);
 }
+@mixin font_s_1 {
+  @include set-font-size(1);
+  @include set-line-height(1);
+}
 @mixin font_400 {
   font-weight: 400;
 }
@@ -176,6 +180,13 @@ $on-laptop: 850px !default;
 
 @mixin list_none {
   list-style-type: none;
+}
+
+@mixin inline {
+  display: inline;
+}
+@mixin inline-block {
+  display: inline-block;
 }
 
 /**

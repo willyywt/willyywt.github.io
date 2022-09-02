@@ -322,12 +322,12 @@ if (a) {
 	ftel = document.getElementById('debug-log')
 	ftel.textContent = log
 }
-var sw = document.querySelector('.search-wrapper')
+var sw = document.getElementById('search-wrapper')
 if (sw) {
 	sw.style.display = ""
 }
 var ov = document.getElementById("overlay")
-var nv = document.querySelector(".wrapper nav.nav-toc")
+var nv = document.getElementById("nav-toc")
 var lt = document.getElementById("list")
 var ltc = document.getElementById("list-close")
 function current_dark() {

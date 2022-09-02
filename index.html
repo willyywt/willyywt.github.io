@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="home">
-  <div class="home-title">
-    <h1 class="home-heading">{{ site.title }}</h1>
-    <h2 class="home-sub-heading">{{- site.description | escape -}}</h2>
+  <div>
+    <h1 class="mb0 font-s-2">{{ site.title }}</h1>
+    <h2 class="mt0 font-s-1 text-grey">{{- site.description | escape -}}</h2>
   </div>
   <h2 id="featured-articles">Featured articles</h2>
   <ul><li><a href="./article/awesome-apps.html">Awesome Apps</a>: my collection of awesome computer software:
@@ -13,14 +13,14 @@ RSSHub, Xournalpp, Tauon Music Box, VSCodium, GNU Octave
   </li></ul>
   <div class="note info">For articles written in Chinese (Simplified) see <a href="./index_zh-CN.html">index_zh-CN.html</a></div>
   {%- if site.posts.size > 0 -%}
-  <ul class="post-list">
+  <ul class="ml0 list-none">
     {% for post in site.posts  %}
       {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
       {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
   
       {% if forloop.first %}
       <li>
-      <h2 id="{{ this_year }}-ref" class="post-year">{{this_year}}</h2>
+      <h2 id="{{ this_year }}-ref" class="font-s-1-5 mb0">{{this_year}}</h2>
       </li>
       <li>
       <ul>
@@ -30,10 +30,10 @@ RSSHub, Xournalpp, Tauon Music Box, VSCodium, GNU Octave
       {% if post_lang_2 == "en" %}
       <li>
           {%- assign date_format = site.moving.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">
+          <span class="post-meta text-grey inline-block">
             {{ post.date | date: date_format }}
           </span>
-          <a class="post-link-layout black-link" href="{{ post.url | prepend: "." }}">
+          <a class="post-link-layout inline font-700 text-tcolor" href="{{ post.url | prepend: "." }}">
             {{ post.title | escape }}
           </a>
 	  {% if site.show_excerpts %}
@@ -49,7 +49,7 @@ RSSHub, Xournalpp, Tauon Music Box, VSCodium, GNU Octave
           </ul>
 	  </li>
       <li>
-          <h2 id="{{ next_year }}-ref" class="post-year">{{next_year}}</h2>
+          <h2 id="{{ next_year }}-ref" class="font-s-1-5 mt0 mb0">{{next_year}}</h2>
       </li>
 	  <li>
           <ul>

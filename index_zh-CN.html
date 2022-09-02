@@ -9,14 +9,14 @@ lang: zh-CN
   </div>
   <div class="note info">英文写的文章见 <a href="./index.html">index.html</a></div>
   {%- if site.posts.size > 0 -%}
-  <ul class="post-list">
+  <ul class="ml0 list-none">
     {% for post in site.posts  %}
       {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
       {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
   
       {% if forloop.first %}
       <li>
-      <h2 id="{{ this_year }}-ref" class="post-year">{{this_year}}</h2>
+      <h2 id="{{ this_year }}-ref" class="font-s-1-5 mb0">{{this_year}}</h2>
       </li>
       <li>
       <ul>
@@ -26,10 +26,10 @@ lang: zh-CN
       {% if post_lang_2 == "zh" %}
       <li>
           {%- assign date_format = site.moving.date_format | default: "%b %-d, %Y" -%}
-          <span class="post-meta">
+          <span class="post-meta inline-block">
             {{ post.date | date: date_format }}
           </span>
-          <a class="post-link-layout black-link" href="{{ post.url | prepend: "." }}">
+          <a class="post-link-layout inline font-700 text-tcolor" href="{{ post.url | prepend: "." }}">
             {{ post.title | escape }}
           </a>
 	  {% if site.show_excerpts %}
@@ -45,7 +45,7 @@ lang: zh-CN
           </ul>
 	  </li>
       <li>
-          <h2 id="{{ next_year }}-ref" class="post-year">{{next_year}}</h2>
+          <h2 id="{{ next_year }}-ref" class="font-s-1-5 mt0 mb0">{{next_year}}</h2>
       </li>
 	  <li>
           <ul>

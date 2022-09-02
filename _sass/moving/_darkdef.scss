@@ -8,3 +8,13 @@ $brand-color: #f2d49d !default;
 $grey-color: #999084 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
+
+@mixin dark_text_grey {
+  color: $grey-color;
+}
+@mixin dark_text_tcolor {
+  color: $text-color;
+}
+@mixin dark_text_brand {
+  color: $brand-color;
+}

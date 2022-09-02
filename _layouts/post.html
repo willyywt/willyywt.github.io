@@ -2,14 +2,14 @@
 layout: default
 ---
 <article
-  class="post h-entry"
+  class="h-entry"
   itemscope
   itemtype="http://schema.org/BlogPosting"
 >
-    <h1 id="{{ page.title | slugify }}" class="post-title" itemprop="name headline">
+    <h1 id="{{ page.title | slugify }}" itemprop="name headline">
       {{ page.title | escape }}
     </h1>
-    <p class="post-meta">
+    <p>
 {% if page.date %}
       <time
         class="dt-published"
@@ -36,7 +36,7 @@ layout: default
       {%- endif -%}
     </p>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="e-content" itemprop="articleBody">
     {{ content }}
   </div>
 

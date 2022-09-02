@@ -1,10 +1,10 @@
 @import "commondef";
 @import "lightdef";
-.site-header {
+#site-header {
 	background-color: aliceblue; //#f0f8ff hsv(208, 6, 100)
 }
 
-.search-wrapper {
+#search-wrapper {
 	border-color: black;
 }
 
@@ -13,7 +13,7 @@
 	border-color: blue;
 }
 
-.wrapper main {
+#wrapper main {
 	@media screen and (min-width: $on-laptop) {
 		background-color: $background-color-1;
 	}
@@ -49,18 +49,6 @@
 }
 .note.error::before {
 	background-color: #d30038;
-}
-
-.home-sub-heading {
-	color: $grey-color;
-}
-
-.post-meta {
-	color: $grey-color;
-}
-
-.black-link {
-	color: $text-color;
 }
 
 #MathJax_MenuFrame a {

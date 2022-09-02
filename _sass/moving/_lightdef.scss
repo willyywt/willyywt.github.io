@@ -7,3 +7,13 @@ $brand-color: #8b0000 !default; // anchor color
 $grey-color: #727272 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark: darken($grey-color, 25%) !default;
+
+@mixin light_text_grey {
+  color: $grey-color;
+}
+@mixin light_text_tcolor {
+  color: $text-color;
+}
+@mixin light_text_brand {
+  color: $brand-color;
+}

@@ -1,10 +1,10 @@
 @import "commondef";
 @import "darkdef";
-.site-header {
+#site-header {
 	background-color: #041020;
 }
 
-.search-wrapper {
+#search-wrapper {
 	border-color: white;
 }
 
@@ -17,7 +17,7 @@
 	border-color: #1f5567;
 }
 
-.wrapper main {
+#wrapper main {
 	@media screen and (min-width: $on-laptop) {
 		background-color: $background-color-1;
 	}
@@ -53,18 +53,6 @@
 }
 .note.error::before {
 	background-color: #ff707f;
-}
-
-.home-sub-heading {
-	color: $grey-color;
-}
-
-.post-meta {
-	color: $grey-color;
-}
-
-.black-link {
-	color: $text-color;
 }
 
 #MathJax_MenuFrame a {
