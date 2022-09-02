@@ -5,6 +5,7 @@ mkrelease.sh
 .jekyll-cache
 .sass-cache
 _site
+.vscode
 Gemfile.lock
 .DS_Store
 node_modules/
