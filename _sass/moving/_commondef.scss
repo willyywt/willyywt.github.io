@@ -15,9 +15,6 @@ $table-text-align: left !default;
 $on-palm: 600px !default;
 $on-laptop: 850px !default;
 
-$on-medium: $on-palm !default;
-$on-large: $on-laptop !default;
-
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;

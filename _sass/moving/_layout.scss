@@ -35,11 +35,11 @@ $site-header-height: 3rem !default;
   @include pr1;
   @include pl0;
   z-index: 2;
-  @media (min-width: $on-large) {
+  @media (min-width: $on-laptop) {
     @include pl2;
     @include pr2;
   }
-  @media (max-width: ($on-large - 1)) {
+  @media (max-width: ($on-laptop - 1)) {
     position: sticky;
     top: 0;
   }
@@ -55,13 +55,13 @@ $site-header-height: 3rem !default;
   @include set-height($site-header-height);
   @include pr1;
   display: none;
-  @media screen and (max-width: ($on-large - 1)) {
+  @media screen and (max-width: ($on-laptop - 1)) {
     display: block;
   }
 }
 #list > svg {
   @include set-size-2($site-header-height, $base-font-size * 1.2);
-  @media (max-width: ($on-medium - 1)) {
+  @media (max-width: ($on-palm - 1)) {
     @include set-size-2($site-header-height, $small-font-size * 1.5);
   }
 }
@@ -96,10 +96,10 @@ $site-header-height: 3rem !default;
   align-items: center;
   position: relative;
   width: 6rem;
-  @media (min-width: $on-medium) {
+  @media (min-width: $on-palm) {
     width: 10rem;
   }
-  @media (min-width: $on-large) {
+  @media (min-width: $on-laptop) {
     width: 22rem;
   }
 }
@@ -138,7 +138,7 @@ $site-header-height: 3rem !default;
   @extend %clearfix;
   @include ml1;
   @include mr1;
-  @media screen and (min-width: $on-large) {
+  @media screen and (min-width: $on-laptop) {
     display: grid;
     @include ml2;
     @include mr2;
@@ -150,7 +150,7 @@ $site-header-height: 3rem !default;
   * Main
   */
 .wrapper main {
-  @media screen and (min-width: $on-large) {
+  @media screen and (min-width: $on-laptop) {
     grid-column: 2/3;
     padding: 0 1rem;
   }
@@ -169,7 +169,7 @@ $site-header-height: 3rem !default;
 
 #nav-toc {
   overflow: auto;
-  @media screen and (min-width: $on-large) {
+  @media screen and (min-width: $on-laptop) {
     @include pr1;
     grid-column: 1/2;
     position: sticky;
@@ -177,7 +177,7 @@ $site-header-height: 3rem !default;
     align-self: start;
     max-height: calc(100vh - 2.6rem);
   }
-  @media screen and (max-width: ($on-large - 1)) {
+  @media screen and (max-width: ($on-laptop - 1)) {
     display: none;
   }
 }
@@ -239,7 +239,7 @@ $site-header-height: 3rem !default;
   display: inline-block;
   min-width: 11rem;
 
-  @media (max-width: $on-medium) {
+  @media (max-width: $on-palm) {
     min-width: 7rem;
   }
 }
@@ -269,7 +269,7 @@ $site-header-height: 3rem !default;
 .note:before {
   @include set-size($small-font-size);
   top: ($small-font-size * $small-line-height - $small-font-size) / 2;
-  @media screen and (min-width: $on-medium) {
+  @media screen and (min-width: $on-palm) {
     @include set-size($base-font-size);
     top: ($base-font-size * $base-line-height - $base-font-size) / 2;
   }
