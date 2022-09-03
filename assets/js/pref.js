@@ -36,8 +36,8 @@ function GCSReload() {
 	}, urlobj.origin)
 }
 /* PrefSetCb() */
-pref_input_el_arr = document.getElementsByTagName("input");
-pref_select_el_arr = document.getElementsByTagName("select");
+pref_input_el_arr = document.querySelectorAll("#wrapper input");
+pref_select_el_arr = document.querySelectorAll("#wrapper select");
 function InputSetEnable(value) {
 	var fontsize_select_el = document.getElementById("id--fontsize-selectelm")
 	if(!fontsize_select_el) {
