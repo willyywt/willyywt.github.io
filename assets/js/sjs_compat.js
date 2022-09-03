@@ -15,7 +15,62 @@ if (window.matchMedia && window.matchMedia('(max-width: 849px)').matches) {
 }
 s1.addEventListener('focus', function(){res1.style.display = ''})
 s1.addEventListener('blur', function(){if(s1.value) return; res1.style.display = 'none';})
-window.sjs=SimpleJekyllSearch({searchInput:document.getElementById("search1"),resultsContainer:document.getElementById("search1-result"),json:"/search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
-s1.setAttribute("placeholder", "Search...")
 
+var stj_str = ROOTDIR + "search_text.json"
+var search_json_or_url = stj_str
+if (Modernizr.promises && Modernizr.cache_1 && Modernizr.arrow && Modernizr.json && Modernizr.localstorage) {
+  caches.open('v1').then(function (cache) {
+    if (localStorage.getItem("TEXTVER") === DATE) {
+      cache.match(stj_str).then(function (res) {
+        if (!res || !res.ok) {
+          /* This means the cache is corrupted. */
+          localStorage.removeItem("TEXTVER")
+          sjs()
+        } else {
+          res.text().then(function (str) {
+            search_json_or_url = JSON.parse(str)
+            sjs()
+          }).catch(function (e) {
+            throw e
+          })
+        }
+      }).catch(function (e) {
+        throw e
+      })
+    } else {
+      fetch(stj_str).then(function (response) {
+        if (!response.ok) {
+          throw new TypeError("Bad response")
+        }
+        localStorage.setItem("TEXTVER", DATE)
+        var res_backup = response.clone()
+        cache.put(stj_str, response)
+        res_backup.text().then(function (str) {
+          search_json_or_url = JSON.parse(str)
+          sjs()
+        }).catch(function (e) {
+          throw e
+        }).catch(function (e) {
+          throw e
+        })
+      }).catch(function (e) {
+        throw e
+      })
+    }
+  }).catch(function (e) {
+    throw e
+  })
+} else {
+  sjs()
+}
+function sjs() {
+window.sjs = SimpleJekyllSearch({
+  searchInput: document.getElementById("search1"),
+  resultsContainer: document.getElementById("search1-result"),
+  json: search_json_or_url,
+  limit: 999,
+  searchResultTemplate: '<li><a class="search-url" href="{url}"><b>{title}</b><br/><small>{url}</small></a></li>'
+})
+s1.setAttribute("placeholder", "Search...")
+}
 /* @license-end */
