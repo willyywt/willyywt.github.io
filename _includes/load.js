@@ -21,7 +21,7 @@ for (i in gcs_deps) {
 		gcs_missing += i
 	}
 }
-var nameDefaults = {
+var PrefDefaults = {
 	"font": "default",
 	"monofont": "default",
 	"theme": "default",
@@ -41,7 +41,10 @@ function NoteEl(level, message) {
 	notice_el.textContent = message
 	return notice_el
 }
-function Hook(name_full, value) {
+function PrefGet(name) {
+  return localStorage.getItem("pref-" + name)
+}
+function Hook(name, value) {
 	var rootElement = document.documentElement
 	var hookElement = document.getElementById('csshook')
 	function Json2CSSHook() {
@@ -121,24 +124,24 @@ function Hook(name_full, value) {
 		Json2CSSHook()
 	}
 	function PrefFontSizeCb(value) {
-		var set_to_default = value === "pref-fontsize-default" || (!value)
-		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("pref-fontsize-selectelm"))
+		var set_to_default = value === "default" || (!value)
+		var fs = set_to_default ? "" : PrefFontSize_Parse(PrefGet("fontsize-selectelm"))
 		PrefSetFs(fs)
 	}
 	function PrefFontSizeSelectCb(value) {
-		if (localStorage.getItem("pref-fontsize") != "pref-fontsize-custom") {
+		if (PrefGet("fontsize") != "custom") {
 			return
 		}
 		var fs = PrefFontSize_Parse(value)
 		PrefSetFs(fs)
 	}
 	function PrefMonoFontSizeCb(value) {
-		var set_to_default = value === "pref-monofontsize-default" || (!value)
-		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("pref-monofontsize-selectelm"))
+		var set_to_default = value === "default" || (!value)
+		var fs = set_to_default ? "" : PrefFontSize_Parse(PrefGet("monofontsize-selectelm"))
 		PrefMonoSetFs(fs)
 	}
 	function PrefMonoFontSizeSelectCb(value) {
-		if (localStorage.getItem("pref-monofontsize") != "pref-monofontsize-custom") {
+		if (PrefGet("monofontsize") != "custom") {
 			return
 		}
 		var fs = PrefFontSize_Parse(value)
@@ -153,8 +156,7 @@ function Hook(name_full, value) {
 		"monofontsize": PrefMonoFontSizeCb,
 		"monofontsize-selectelm": PrefMonoFontSizeSelectCb
 	}
-	var name_trunc = name_full.substring(5)
-	var cbfunc = HookCb_dict[name_trunc]
+	var cbfunc = HookCb_dict[name]
 	if (value) {
 		cbfunc && cbfunc(value)
 	}
@@ -163,7 +165,7 @@ function gcs_theme() {
 	var use_prefered = true;
 	var no_prefered_use_light = true;
 	if (Modernizr.localstorage) {
-		var th = localStorage.getItem("pref-theme")
+		var th = PrefGet("theme")
 		if (th == "light") {
 			use_prefered = false;
 			use_light = true;
@@ -290,29 +292,28 @@ function load_css() {
 }
 function Hook_doall() {
 	/* JSCompress don't compress variable name in for (xxx in yyy). Use very short name here */
-	for (n in nameDefaults) {
-		var name_full = "pref-" + n
-		var value = localStorage.getItem(name_full)
+	for (n in PrefDefaults) {
+		var value = PrefGet(n)
 		if (value) {
-			Hook(name_full, value)
+			Hook(n, value)
 		} else if (n == 'theme') { /* Hook for theme is mandatory */
-			Hook(name_full, nameDefaults[n])
+			Hook(n, PrefDefaults[n])
 		}
 	}
 }
-var theme_default = nameDefaults["theme"]
+var theme_default = PrefDefaults["theme"]
 if (Modernizr.localstorage) {
 	Hook_doall()
 	if (Modernizr.mediaqueryevent_1) {
 		window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function(e) {
-			var theme = localStorage.getItem("pref-theme")
+			var theme = PrefGet("theme")
 			if (!theme || theme == theme_default) {
-				Hook("pref-theme", theme_default)
+				Hook("theme", theme_default)
 			}
 		})
 	}
 } else {
-	Hook("pref-theme", theme_default)
+	Hook("theme", theme_default)
 }
 load_css();
 

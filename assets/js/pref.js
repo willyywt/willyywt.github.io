@@ -1,5 +1,11 @@
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat License */
 (function(){
+  function PrefSet(name, value) {
+    return localStorage.setItem("pref-" + name, value)
+  }
+  function PrefRemove(name, value) {
+    return localStorage.removeItem("pref-" + name, value)
+  }
 window.addEventListener('DOMContentLoaded', l);
 function l() {
 var mel = document.querySelector("main")
@@ -29,18 +35,6 @@ function GCSReload() {
 		}
 	}, urlobj.origin)
 }
-function InputHook(name, val) {
-	Hook(name, val)
-	var name_trunc = name.substring(4)
-	if(nameDefaults[name_trunc] === val || !val) {
-		localStorage.removeItem(name)
-	} else {
-		localStorage.setItem(name, val)
-	}
-	if (name_trunc === "theme" && gcs_missing === "") {
-		GCSReload()
-	}
-}
 /* PrefSetCb() */
 pref_input_el_arr = document.getElementsByTagName("input");
 pref_select_el_arr = document.getElementsByTagName("select");
@@ -67,15 +61,26 @@ function MonoSetEnable(value) {
 	}	
 }
 function input_changed_cb(ev) {
+  /* PreHook */
 	var val = ev.target.value
 	var name = ev.target.name
 	console.log(name, val)
-	if(name === "pref-fontsize") {
+	if(name === "fontsize") {
 		InputSetEnable(val)
-	} else if (name == "pref-monofontsize") {
+	} else if (name == "monofontsize") {
 		MonoSetEnable(val)
 	}
-	InputHook(name, val)
+  /* Hook */
+  Hook(name, val)
+  /* PostHook */
+  if(PrefDefaults[name] === val || !val) {
+		PrefRemove(name)
+	} else {
+    PrefSet(name, val)
+	}
+	if (name === "theme" && gcs_missing === "") {
+		GCSReload()
+	}
 }
 for (var el_index = 0; el_index < pref_input_el_arr.length; el_index += 1) {
 	var el = pref_input_el_arr[el_index]
@@ -86,29 +91,28 @@ for (var el_index = 0; el_index < pref_select_el_arr.length; el_index += 1) {
 	el.addEventListener('change', input_changed_cb)
 }
 /* PrefLegendCheckSync() */
-for (name_trunc in nameDefaults) {
-	var name_full = "pref-" + name_trunc
-	var value = localStorage.getItem(name_full)
+for (n in PrefDefaults) {
+	var value = PrefGet(n)
 	if (value) {
-		var input_el = document.getElementById("id--" + name_trunc + value)
+		var input_el = document.getElementById("id--" + n + "-" + value)
 		if (input_el) {
 			input_el.checked = true
 		}
 	}
 }
 /* InputCheckSync() */
-var pf = localStorage.getItem("pref-fontsize")
+var pf = PrefGet("fontsize")
 pf && InputSetEnable(pf)
-var mnpf = localStorage.getItem("pref-monofontsize")
+var mnpf = PrefGet("monofontsize")
 mnpf && MonoSetEnable(mnpf)
 /* SelectCheckSync() */
 var fontsize_select_el = document.getElementById("id--fontsize-selectelm")
 if (fontsize_select_el) {
-	fontsize_select_el.value = localStorage.getItem("pref-fontsize-selectelm")
+	fontsize_select_el.value = PrefGet("fontsize-selectelm")
 }
 var monofontsize_select_el = document.getElementById("id--monofontsize-selectelm")
 if (monofontsize_select_el) {
-	monofontsize_select_el.value = localStorage.getItem("pref-monofontsize-selectelm")
+	monofontsize_select_el.value = PrefGet("monofontsize-selectelm")
 }
 }
 })()
