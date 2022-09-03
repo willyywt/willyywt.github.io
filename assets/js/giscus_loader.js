@@ -18,7 +18,7 @@ if (!gcs_missing) {
   gs.setAttribute("crossorigin", "anonymous")
   gs.setAttribute("async", true)
   gs.setAttribute("data-theme", gcs_theme())
-  gs.setAttribute("data-lang", "{{ page.lang | default: site.lang | default: "en" }}")
+  gs.setAttribute("data-lang", PAGE_LANG)
   ft.appendChild(gs)
 } else {
     var gcs = document.querySelector('.giscus')

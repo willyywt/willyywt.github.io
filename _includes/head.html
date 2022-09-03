@@ -18,6 +18,7 @@
   </noscript>
   <script>/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat License */
     var ROOTDIR="{{ include.rootdir }}"; var DATE = "{{ site.time }}"; var CSSVER="{{ site.moving.cssver | default: site.time }}"; if (CSSVER == "0") {CSSVER = DATE}
+    var PAGE_LANG="{{ page.lang | default: site.lang | default: "en" }}";
   {%- include load-compress.js -%}
 /* @license-end */
   </script>
