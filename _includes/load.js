@@ -253,56 +253,58 @@ function load_css_link_element() {
 function load_css_cache() {
 	caches.open('v1')
 	.then(function(cache) {
-		var cssver_prev = localStorage.getItem("CSSVER")
-		var pm = Promise.resolve("")
 		var pm_arr = []
-		if (!cssver_prev || cssver_prev !== CSSVER) {
+		if (localStorage.getItem("CSSVER") !== CSSVER) {
 			for (i in csspaths) {
 				pm_arr.push(cache.delete(csspaths[i]))
 			}
-			pm = Promise.all(pm_arr).then(function(){localStorage.setItem("CSSVER", CSSVER)})
-			pm_arr = []
 		}
-		for (i in csspaths) {
-			pm_arr.push(cache.match(csspaths[i]))
-		}
-		pm = Promise.all(pm_arr)
-		.then(function(res_arr) {
-			var has_cache_all = true
-			for (i in res_arr) {
-				var res = res_arr[i]
-				if (!res || !res.ok) {
-					has_cache_all = false
-					break
-				}
-			}
-			if (has_cache_all) {
-				var pm_css_text = []
-				for (i in res_arr) {
-					var res = res_arr[i]
-					pm_css_text.push(res.text())
-				}
-				Promise.all(pm_css_text)
-				.then(function(css_text_arr) {
-					for (i in res_arr) {
-						head_add_style(css_text_arr[i])
-					}
-				})
-			} else {
-				load_css_link_element()
-				for (i in csspaths) {
-					cache.add(csspaths[i])
-				}
-			}
-		}).catch(function(e) {
-			/* This path should not be reachable! */ 
-			return Promise.reject(e)
-		})
-	})
-	.catch(function(e) {
-		load_css_link_element()
-		ftel_log(e)
-	})
+    Promise.all(pm_arr).then(function(){
+      localStorage.setItem("CSSVER", CSSVER)
+      load_css_cache_2(cache)
+    })
+  }).catch(function(e) {
+    load_css_link_element()
+    ftel_log(e)
+  })
+}
+function load_css_cache_2(cache) {
+  var pm_arr = []
+  for (i in csspaths) {
+    pm_arr.push(cache.match(csspaths[i]))
+  }
+  Promise.all(pm_arr)
+  .then(function(res_arr) {
+    var has_cache_all = true
+    for (i in res_arr) {
+      var res = res_arr[i]
+      if (!res || !res.ok) {
+        has_cache_all = false
+        break
+      }
+    }
+    if (has_cache_all) {
+      var pm_css_text = []
+      for (i in res_arr) {
+        var res = res_arr[i]
+        pm_css_text.push(res.text())
+      }
+      Promise.all(pm_css_text)
+      .then(function(css_text_arr) {
+        for (i in res_arr) {
+          head_add_style(css_text_arr[i])
+        }
+      })
+    } else {
+      load_css_link_element()
+      for (i in csspaths) {
+        cache.add(csspaths[i])
+      }
+    }
+  }).catch(function(e) {
+    /* This path should not be reachable! */ 
+    return Promise.reject(e)
+  })
 }
 function load_css() {
 	if (CSSVER !== "-1" && Modernizr.promises && Modernizr.cache_1 && Modernizr.arrow && Modernizr.localstorage) {
