@@ -1,58 +1,6 @@
 <footer class="site-footer">
-	<script id="js-simple-search" async src="https://unpkg.com/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"
-	integrity="sha384-UN+lyciv8Ta643YxZ9sY2tdTSmk3KE61Qq84ZIXG9NRTbD9+NFXy38m9h6Exxx3n" crossorigin="anonymous"></script>
-	<script>/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat License */!function(){
-		var jss = document.getElementById("js-simple-search")
-		var s1 = document.getElementById("search1")
-		var ss = document.getElementById('search-wrapper')
-		var res1 = document.getElementById("search1-result")
-		if (window.matchMedia && window.matchMedia('(max-width: 849px)').matches) {
-			s1.addEventListener('focus', function(){ss.style.zIndex = 2; ss.style.position = 'absolute'; ss.style.width = 'calc(100% - 2rem)'; ss.style.left = '1rem'; ss.style.boxSizing = 'border-box'})
-			s1.addEventListener('blur', function(){if(s1.value) return; ss.style.zIndex = ''; ss.style.position = ''; ss.style.width = ''; ss.style.left = ''; ss.style.boxSizing = ''})
-		}
-		s1.addEventListener('focus', function(){res1.style.display = ''})
-		s1.addEventListener('blur', function(){if(s1.value) return; res1.style.display = 'none';})
-		var compat_done = false
-		function compat(e) {
-			if (compat_done) return
-			s1.setAttribute("placeholder", e.toString() + '\n' + e.fileName + ':' + e.lineNumber + ',' + e.columnNumber)
-			var compat = document.createElement('script')
-			compat.setAttribute('src', ROOTDIR + 'assets/js/sjs_compat.js')
-			document.getElementsByTagName('footer')[0].appendChild(compat)
-			compat_done = true
-		}
-		jss.addEventListener("load",function(ev){
-		try {
-			window.sjs=SimpleJekyllSearch({searchInput:s1,resultsContainer:res1,json:ROOTDIR+"search_text.json",limit:999,searchResultTemplate:'<li><a class="search-url" href="'+ROOTDIR.substring(0,ROOTDIR.length-1)+'{url}"><b>{title}</b><br/><small>{url}</small></a></li>'})
-			s1.setAttribute("placeholder", "Search...")
-		} catch (e) {
-			compat(e)
-		}});
-		jss.addEventListener("error",function(e){compat(e)})
-		if (!gcs_missing) {
-		var ft = document.querySelector('footer')
-		var gs = document.createElement('script');
-		gs.setAttribute("src", "{{ site.giscus.clientjs_url }}")
-		gs.setAttribute("data-repo", "{{ site.giscus.repo }}")
-		gs.setAttribute("data-repo-id", "{{ site.giscus.repo_id }}")
-		gs.setAttribute("data-category", "{{ site.giscus.category }}")
-		gs.setAttribute("data-category-id", "{{ site.giscus.category_id }}")
-		gs.setAttribute("data-mapping", "{{ site.giscus.mapping }}")
-		gs.setAttribute("data-strict", "{{ site.giscus.strict }}")
-		gs.setAttribute("data-reactions-enabled", {{ site.giscus.reactions_enabled }})
-		gs.setAttribute("data-emit-metadata", "{{ site.giscus.emit_metadata }}")
-		gs.setAttribute("data-input-position", "{{ site.giscus.input_position }}")
-		gs.setAttribute("crossorigin", "anonymous")
-		gs.setAttribute("async", true)
-		gs.setAttribute("data-theme", gcs_theme())
-		gs.setAttribute("data-lang", "{{ page.lang | default: site.lang | default: "en" }}")
-		ft.appendChild(gs)
-		} else {
-			var gcs = document.querySelector('.giscus')
-			var warnel = NoteEl("error", "Comments not loaded, because your browser doesn't support: " + gcs_missing)
-			gcs.appendChild(warnel)
-		}
-	}()/* @license-end */</script>
+	<script async src="{{ include.rootdir }}assets/js/sjs_compat.js"></script>
+	<script async src="{{ include.rootdir }}assets/js/giscus_loader.js"></script>
 	<hr/>
 	{% unless post.no_ccbysav4 or page.no_ccbysav4 %}
 	<div class="legal-note">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
