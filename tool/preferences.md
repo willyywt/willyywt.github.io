@@ -17,32 +17,32 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 <fieldset>
     <legend>Select sans-serif font family:</legend>
     <div>
-      <input type="radio" id="pref-font-default" name="name-pref-font" value="pref-font-default" checked>
-      <label for="pref-font-default">Open Sans (Default)</label>
+      <input type="radio" id="id--font-default" name="font" value="default" checked>
+      <label for="id--font-default">Open Sans (Default)</label>
 	<p> The Open Sans font, from Google Fonts. </p>
     </div>
     <div>
-      <input type="radio" id="pref-font-brand" name="name-pref-font" value="pref-font-brand">
-      <label for="pref-font-brand">System Font Stack</label>
+      <input type="radio" id="id--font-brand" name="font" value="brand">
+      <label for="id--font-brand">System Font Stack</label>
 	<p> Brand font that comes pre-installed on the platform. (MacOS, iOS, Windows, Android, ChromeOS, Freedesktop/Linux(KDE, GNOME(Ubuntu), GNOME(vanilla))) </p>
     </div>
     <div>
-      <input type="radio" id="pref-font-system-ui" name="name-pref-font" value="pref-font-system-ui">
-      <label for="pref-font-system-ui">system-ui</label>
+      <input type="radio" id="id--font-system-ui" name="font" value="system-ui">
+      <label for="id--font-system-ui">system-ui</label>
 	<p> The font for system user interface, using the standard CSS value "system-ui". (Useful when your system UI use non-generic typographic traditions.) </p>
     </div>
 </fieldset>
 <fieldset>
 <legend>Select base font size:</legend>
 <div>
-	<input type="radio" id="pref-fontsize-default" name="name-pref-fontsize" value="pref-fontsize-default" checked>
-	<label for="pref-fontsize-default">16px (Default)</label>
+	<input type="radio" id="id--fontsize-default" name="fontsize" value="default" checked>
+	<label for="id--fontsize-default">16px (Default)</label>
 </div>
 <div>
-	<input type="radio" id="pref-fontsize-custom" name="name-pref-fontsize" value="pref-fontsize-custom">
-	<label for="pref-fontsize-custom">Custom:</label>
-	<label for="pref-fontsize-selectelm">Select font size...</label>
-	<select name="name-pref-fontsize-selectelm" id="pref-fontsize-selectelm" disabled>
+	<input type="radio" id="id--fontsize-custom" name="fontsize" value="custom">
+	<label for="id--fontsize-custom">Custom:</label>
+	<label for="id--fontsize-selectelm">Select font size...</label>
+	<select name="fontsize-selectelm" id="id--fontsize-selectelm" disabled>
 		<option value="default">Default</option>
 		<option value="9px">9px</option>
 		<option value="10px">10px</option>
@@ -79,32 +79,32 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 <fieldset>
 	<legend>Select monospace font family:</legend>
 	<div>
-		<input type="radio" id="pref-monofont-default" name="name-pref-monofont" value="pref-monofont-default" checked>
-		<label for="pref-monofont-default">Source Code Pro (Default)</label>
+		<input type="radio" id="id--monofont-default" name="monofont" value="default" checked>
+		<label for="id--monofont-default">Source Code Pro (Default)</label>
 		<p> The Source Code Pro font, from Adobe. </p>
 	</div>
 	<div>
-		<input type="radio" id="pref-monofont-brand" name="name-pref-monofont" value="pref-monofont-brand">
-		<label for="pref-monofont-brand">System Font Stack</label>
+		<input type="radio" id="id--monofont-brand" name="monofont" value="brand">
+		<label for="id--monofont-brand">System Font Stack</label>
 		<p> Brand font that comes pre-installed on the platform. (MacOS, Windows, Freedesktop/Linux, ChromeOS) </p>
 	</div>
 	<div>
-		<input type="radio" id="pref-monofont-fallback" name="name-pref-monofont" value="pref-monofont-fallback">
-		<label for="pref-monofont-fallback">Fallback Monospace font</label>
+		<input type="radio" id="id--monofont-fallback" name="monofont" value="fallback">
+		<label for="id--monofont-fallback">Fallback Monospace font</label>
 		<p> Fallback monospace font installed on the system.</p>
 	</div>
 </fieldset>
 <fieldset>
 	<legend>Select monospace font size:</legend>
 	<div>
-		<input type="radio" id="pref-monofontsize-default" name="name-pref-monofontsize" value="pref-monofontsize-default" checked>
-		<label for="pref-monofontsize-default">0.9rem (&gt;=850px), 0.8rem (&lt;850px) (Default)</label>
+		<input type="radio" id="id--monofontsize-default" name="monofontsize" value="default" checked>
+		<label for="id--monofontsize-default">0.9rem (&gt;=850px), 0.8rem (&lt;850px) (Default)</label>
 	</div>
 	<div>
-		<input type="radio" id="pref-monofontsize-custom" name="name-pref-monofontsize" value="pref-monofontsize-custom">
-		<label for="pref-monofontsize-custom">Custom:</label>
-		<label for="pref-monofontsize-selectelm">Select font size...</label>
-		<select name="name-pref-monofontsize-selectelm" id="pref-monofontsize-selectelm" disabled>
+		<input type="radio" id="id--monofontsize-custom" name="monofontsize" value="custom">
+		<label for="id--monofontsize-custom">Custom:</label>
+		<label for="id--monofontsize-selectelm">Select font size...</label>
+		<select name="monofontsize-selectelm" id="id--monofontsize-selectelm" disabled>
 			<option value="default">Default</option>
 			<option value="9px">9px</option>
 			<option value="10px">10px</option>
@@ -142,18 +142,18 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 <fieldset>
     <legend>Select theme:</legend>
     <div>
-      <input type="radio" id="pref-theme-default" name="name-pref-theme" value="pref-theme-default" checked>
-      <label for="pref-theme-default">Follow system (Default)</label>
+      <input type="radio" id="id--theme-default" name="theme" value="default" checked>
+      <label for="id--theme-default">Follow system (Default)</label>
 	<p> Follow system theme variant. <strong>Dark variant autodetection only supported on modern browsers, see quirks at</strong><a href="../article/theme.html#dark-mode">../article/theme.html#dark-mode</a></p>
     </div>
     <div>
-      <input type="radio" id="pref-theme-light" name="name-pref-theme" value="pref-theme-light">
-      <label for="pref-theme-light">Light</label>
+      <input type="radio" id="id--theme-light" name="theme" value="light">
+      <label for="id--theme-light">Light</label>
 	<p> Light theme. </p>
     </div>
     <div>
-      <input type="radio" id="pref-theme-dark" name="name-pref-theme" value="pref-theme-dark">
-      <label for="pref-theme-dark">Dark</label>
+      <input type="radio" id="id--theme-dark" name="theme" value="dark">
+      <label for="id--theme-dark">Dark</label>
 	<p> Dark theme. </p>
     </div>
 </fieldset>

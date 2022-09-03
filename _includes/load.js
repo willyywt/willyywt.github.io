@@ -22,12 +22,12 @@ for (i in gcs_deps) {
 	}
 }
 var nameDefaults = {
-	"font": "pref-font-default",
-	"monofont": "pref-monofont-default",
-	"theme": "pref-theme-default",
-	"fontsize": "pref-fontsize-default",
+	"font": "default",
+	"monofont": "default",
+	"theme": "default",
+	"fontsize": "default",
 	"fontsize-selectelm": "default",
-	"monofontsize": "pref-monofontsize-default",
+	"monofontsize": "default",
 	"monofontsize-selectelm": "default"
 }
 var hookJson = {
@@ -58,11 +58,11 @@ function Hook(name_full, value) {
 	}
 	function PrefFontCb(value) {
 		var FontFamily_dict = {
-			"pref-font-default": {"fontFamily": ""},
-			"pref-font-brand": {"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
-			"pref-font-system-ui": {"fontFamily": "system-ui, sans"}
+			"default": {"fontFamily": ""},
+			"brand": {"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
+			"system-ui": {"fontFamily": "system-ui, sans"}
 		}
-		if (value == "pref-font-default") {
+		if (value == "default") {
 			rootElement.style.lineHeight = ""
 			rootElement.style.fontFamily = ""
 			return
@@ -78,9 +78,9 @@ function Hook(name_full, value) {
 	}
 	function PrefMonoFontCb(value) {
 		var MonoFontFamily_dict = {
-			"pref-monofont-default": "",
-			"pref-monofont-brand": "SFMono-Regular,SF Mono,Menlo,Consolas,Monaco,Lucida Console,Liberation Mono,Cousine,monospace",
-			"pref-monofont-fallback": "ui-monospace,monospace"
+			"default": "",
+			"brand": "SFMono-Regular,SF Mono,Menlo,Consolas,Monaco,Lucida Console,Liberation Mono,Cousine,monospace",
+			"fallback": "ui-monospace,monospace"
 		}
 		if (value in MonoFontFamily_dict) {
 			var ff = MonoFontFamily_dict[value]
@@ -95,11 +95,11 @@ function Hook(name_full, value) {
 			return
 		}
 		var is_dark = window.matchMedia('(prefers-color-scheme: dark)').matches
-		if (value === "pref-theme-dark") {
+		if (value === "dark") {
 			is_dark = true
-		} else if (value == "pref-theme-light") {
+		} else if (value == "light") {
 			is_dark = false
-		} else if (value != "pref-theme-default") {
+		} else if (value != "default") {
 			return
 		}
 		if (is_dark) {
@@ -122,11 +122,11 @@ function Hook(name_full, value) {
 	}
 	function PrefFontSizeCb(value) {
 		var set_to_default = value === "pref-fontsize-default" || (!value)
-		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("name-pref-fontsize-selectelm"))
+		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("pref-fontsize-selectelm"))
 		PrefSetFs(fs)
 	}
 	function PrefFontSizeSelectCb(value) {
-		if (localStorage.getItem("name-pref-fontsize") != "pref-fontsize-custom") {
+		if (localStorage.getItem("pref-fontsize") != "pref-fontsize-custom") {
 			return
 		}
 		var fs = PrefFontSize_Parse(value)
@@ -134,11 +134,11 @@ function Hook(name_full, value) {
 	}
 	function PrefMonoFontSizeCb(value) {
 		var set_to_default = value === "pref-monofontsize-default" || (!value)
-		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("name-pref-monofontsize-selectelm"))
+		var fs = set_to_default ? "" : PrefFontSize_Parse(localStorage.getItem("pref-monofontsize-selectelm"))
 		PrefMonoSetFs(fs)
 	}
 	function PrefMonoFontSizeSelectCb(value) {
-		if (localStorage.getItem("name-pref-monofontsize") != "pref-monofontsize-custom") {
+		if (localStorage.getItem("pref-monofontsize") != "pref-monofontsize-custom") {
 			return
 		}
 		var fs = PrefFontSize_Parse(value)
@@ -153,7 +153,7 @@ function Hook(name_full, value) {
 		"monofontsize": PrefMonoFontSizeCb,
 		"monofontsize-selectelm": PrefMonoFontSizeSelectCb
 	}
-	var name_trunc = name_full.substring(10)
+	var name_trunc = name_full.substring(5)
 	var cbfunc = HookCb_dict[name_trunc]
 	if (value) {
 		cbfunc && cbfunc(value)
@@ -163,11 +163,11 @@ function gcs_theme() {
 	var use_prefered = true;
 	var no_prefered_use_light = true;
 	if (Modernizr.localstorage) {
-		var th = localStorage.getItem("name-pref-theme")
-		if (th == "pref-theme-light") {
+		var th = localStorage.getItem("pref-theme")
+		if (th == "light") {
 			use_prefered = false;
 			use_light = true;
-		} else if (th == "pref-theme-dark") {
+		} else if (th == "dark") {
 			use_prefered = false;
 			no_prefered_use_light = false;
 		}
@@ -291,7 +291,7 @@ function load_css() {
 function Hook_doall() {
 	/* JSCompress don't compress variable name in for (xxx in yyy). Use very short name here */
 	for (n in nameDefaults) {
-		var name_full = "name-pref-" + n
+		var name_full = "pref-" + n
 		var value = localStorage.getItem(name_full)
 		if (value) {
 			Hook(name_full, value)
@@ -305,14 +305,14 @@ if (Modernizr.localstorage) {
 	Hook_doall()
 	if (Modernizr.mediaqueryevent_1) {
 		window.matchMedia('(prefers-color-scheme: dark)').addEventListener("change", function(e) {
-			var theme = localStorage.getItem("name-pref-theme")
+			var theme = localStorage.getItem("pref-theme")
 			if (!theme || theme == theme_default) {
-				Hook("name-pref-theme", theme_default)
+				Hook("pref-theme", theme_default)
 			}
 		})
 	}
 } else {
-	Hook("name-pref-theme", theme_default)
+	Hook("pref-theme", theme_default)
 }
 load_css();
 
