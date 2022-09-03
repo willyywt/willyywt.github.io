@@ -35,41 +35,32 @@ function GCSReload() {
 		}
 	}, urlobj.origin)
 }
-/* PrefSetCb() */
-pref_input_el_arr = document.querySelectorAll("#wrapper input");
-pref_select_el_arr = document.querySelectorAll("#wrapper select");
-function InputSetEnable(value) {
-	var fontsize_select_el = document.getElementById("id--fontsize-selectelm")
-	if(!fontsize_select_el) {
-		return
-	}
-	if (value === "default") {
-		fontsize_select_el.disabled = true;
-	} else {
-		fontsize_select_el.disabled = false;
-	}		
+function id_str(name, value) {
+  return "id--" + name + "-" + value;
 }
-function MonoSetEnable(value) {
-	var monofontsize_select_el = document.getElementById("id--monofontsize-selectelm")
-	if(!monofontsize_select_el) {
-		return
-	}
-	if (value === "default") {
-		monofontsize_select_el.disabled = true;
-	} else {
-		monofontsize_select_el.disabled = false;
-	}	
+var selectelm_name = {
+  "fontsize": "",
+  "monofontsize": ""
+}
+function Select_Enable_2(name, value) {
+  var select_el = document.getElementById(id_str(name, "selectelm"));
+  if (!select_el) {
+    return
+  }
+  if (value === "custom") {
+    select_el.disabled = false;
+  } else {
+    select_el.disabled = true;
+  }
 }
 function input_changed_cb(ev) {
   /* PreHook */
 	var val = ev.target.value
 	var name = ev.target.name
 	console.log(name, val)
-	if(name === "fontsize") {
-		InputSetEnable(val)
-	} else if (name == "monofontsize") {
-		MonoSetEnable(val)
-	}
+  if(name in selectelm_name) {
+    Select_Enable_2(name, val)
+  }
   /* Hook */
   Hook(name, val)
   /* PostHook */
@@ -82,38 +73,53 @@ function input_changed_cb(ev) {
 		GCSReload()
 	}
 }
-for (var el_index = 0; el_index < pref_input_el_arr.length; el_index += 1) {
-	var el = pref_input_el_arr[el_index]
-	el.addEventListener('change', input_changed_cb)
+function SetCb() {
+  pref_input_el_arr = document.querySelectorAll("#wrapper input");
+  pref_select_el_arr = document.querySelectorAll("#wrapper select");
+  for (var el_index = 0; el_index < pref_input_el_arr.length; el_index += 1) {
+    var el = pref_input_el_arr[el_index]
+    el.addEventListener('change', input_changed_cb)
+  }
+  for (var el_index = 0; el_index < pref_select_el_arr.length; el_index += 1) {
+    var el = pref_select_el_arr[el_index]
+    el.addEventListener('change', input_changed_cb)
+  }
 }
-for (var el_index = 0; el_index < pref_select_el_arr.length; el_index += 1) {
-	var el = pref_select_el_arr[el_index]
-	el.addEventListener('change', input_changed_cb)
+function Radio() {
+  var radio_names = {
+    "font": "",
+    "fontsize": "",
+    "monofont": "",
+    "monofontsize": "",
+    "theme": ""
+  }
+  for (n in radio_names) {
+    var value = PrefGet(n)
+    if (value) {
+      var input_el = document.getElementById(id_str(n, value))
+      if (input_el) {
+        input_el.checked = true
+      }
+    }
+  }
 }
-/* PrefLegendCheckSync() */
-for (n in PrefDefaults) {
-	var value = PrefGet(n)
-	if (value) {
-		var input_el = document.getElementById("id--" + n + "-" + value)
-		if (input_el) {
-			input_el.checked = true
-		}
-	}
+function Select_Enable() {
+  for (n in selectelm_name) {
+    Select_Enable_2(n, PrefGet(n))
+  }
 }
-/* InputCheckSync() */
-var pf = PrefGet("fontsize")
-pf && InputSetEnable(pf)
-var mnpf = PrefGet("monofontsize")
-mnpf && MonoSetEnable(mnpf)
-/* SelectCheckSync() */
-var fontsize_select_el = document.getElementById("id--fontsize-selectelm")
-if (fontsize_select_el) {
-	fontsize_select_el.value = PrefGet("fontsize-selectelm")
+function Select_Value() {
+  for (n in selectelm_name) {
+    var select_el = document.getElementById(id_str(n, "selectelm"))
+    if (select_el) {
+      select_el.value = PrefGet(n + "-selectelm")
+    }
+  }
 }
-var monofontsize_select_el = document.getElementById("id--monofontsize-selectelm")
-if (monofontsize_select_el) {
-	monofontsize_select_el.value = PrefGet("monofontsize-selectelm")
-}
+SetCb()
+Radio();
+Select_Enable();
+Select_Value();
 }
 })()
 /* @license-end */
