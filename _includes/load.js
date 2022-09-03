@@ -44,6 +44,19 @@ function NoteEl(level, message) {
 function PrefGet(name) {
   return localStorage.getItem("pref-" + name)
 }
+/** 
+ * Hook(name, value): Apply preference settings. Automatically called at page load and at preference change.
+ * This function do not write to localStorage in anyway: localStorage is read-only to Hook().
+ * This function is idempotent: calling it with the same parameter will achieve the same result.
+ * @name
+ * The preference name. Passing an unrecognized name will do nothing.
+ * @value
+ * The value. Calling Hook() with default value causes the default setting to be immediately applied
+ * (which means to clear any previous user settings). This is different from calling Hook() with value===null which does nothing.
+ * Passing an unrecognized value will also do nothing. (Check for "unrecognized value" not yet implemented for font size and font name)
+ * @returns
+ * undefined
+ */
 function Hook(name, value) {
 	var rootElement = document.documentElement
 	var hookElement = document.getElementById('csshook')
@@ -65,19 +78,18 @@ function Hook(name, value) {
 			"brand": {"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
 			"system-ui": {"fontFamily": "system-ui, sans"}
 		}
+    if (!(value in FontFamily_dict)) {
+      return
+    } 
 		if (value == "default") {
 			rootElement.style.lineHeight = ""
 			rootElement.style.fontFamily = ""
 			return
 		}
-		if (value in FontFamily_dict) {
-			var ff = FontFamily_dict[value].fontFamily
-			if (ff) {
-				rootElement.style.fontFamily = ff
-			}
-		} else {
-			return
-		}
+    var ff = FontFamily_dict[value].fontFamily
+    if (ff) {
+      rootElement.style.fontFamily = ff
+    }
 	}
 	function PrefMonoFontCb(value) {
 		var MonoFontFamily_dict = {
@@ -85,12 +97,11 @@ function Hook(name, value) {
 			"brand": "SFMono-Regular,SF Mono,Menlo,Consolas,Monaco,Lucida Console,Liberation Mono,Cousine,monospace",
 			"fallback": "ui-monospace,monospace"
 		}
-		if (value in MonoFontFamily_dict) {
-			var ff = MonoFontFamily_dict[value]
-			hookJson.ff = ff
-		} else {
-			return
-		}
+    if (!(value in MonoFontFamily_dict)) {
+      return
+    }
+    var ff = MonoFontFamily_dict[value]
+    hookJson.ff = ff
 		Json2CSSHook()
 	}
 	function PrefThemeCb(value) {
@@ -100,9 +111,9 @@ function Hook(name, value) {
 		var is_dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 		if (value === "dark") {
 			is_dark = true
-		} else if (value == "light") {
+		} else if (value === "light") {
 			is_dark = false
-		} else if (value != "default") {
+		} else if (value !== "default") {
 			return
 		}
 		if (is_dark) {
@@ -124,7 +135,12 @@ function Hook(name, value) {
 		Json2CSSHook()
 	}
 	function PrefFontSizeCb(value) {
-		var set_to_default = value === "default" || (!value)
+		var set_to_default = true;
+    if (value === "custom") {
+      set_to_default = false;
+    } else if (value !== "default") {
+      return
+    }
 		var fs = set_to_default ? "" : PrefFontSize_Parse(PrefGet("fontsize-selectelm"))
 		PrefSetFs(fs)
 	}
@@ -136,7 +152,12 @@ function Hook(name, value) {
 		PrefSetFs(fs)
 	}
 	function PrefMonoFontSizeCb(value) {
-		var set_to_default = value === "default" || (!value)
+    var set_to_default = true;
+    if (value === "custom") {
+      set_to_default = false;
+    } else if (value !== "default") {
+      return;
+    }
 		var fs = set_to_default ? "" : PrefFontSize_Parse(PrefGet("monofontsize-selectelm"))
 		PrefMonoSetFs(fs)
 	}
