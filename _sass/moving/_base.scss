@@ -178,7 +178,7 @@ blockquote p {
   * Code formatting
   */
 pre,
-code {
+code,.text-monospace {
 font-family: "Source Code Pro", monospace;
   @include set-font-size(0.93);
   @media print {

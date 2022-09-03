@@ -49,10 +49,10 @@ function Hook(name_full, value) {
 		var fontSize = hookJson.fs
 		var str = ""
 		if (fontFamily) {
-			str += 'pre,code{font-family:' + fontFamily + ';}'
+			str += 'pre,code,.text-monospace{font-family:' + fontFamily + ';}'
 		}
 		if (fontSize) {
-			str += 'pre,code{font-size:' + fontSize + ';}'
+			str += 'pre,code,.text-monospace{font-size:' + fontSize + ';}'
 		}
 		hookElement.textContent = str
 	}
