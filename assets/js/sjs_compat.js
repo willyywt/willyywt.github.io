@@ -69,7 +69,7 @@ window.sjs = SimpleJekyllSearch({
   resultsContainer: document.getElementById("search1-result"),
   json: search_json_or_url,
   limit: 999,
-  searchResultTemplate: '<li><a class="search-url" href="{url}"><b>{title}</b><br/><small>{url}</small></a></li>'
+  searchResultTemplate: '<li><a class="search-url" href="' + ROOTDIR.substring(0,ROOTDIR.length-1) + '{url}"><b>{title}</b><br/><small>{url}</small></a></li>'
 })
 s1.setAttribute("placeholder", "Search...")
 }
