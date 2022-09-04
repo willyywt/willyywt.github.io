@@ -23,45 +23,48 @@ if (Modernizr.promises && Modernizr.cache_1 && Modernizr.arrow && Modernizr.json
     if (localStorage.getItem("TEXTVER") === DATE) {
       cache.match(stj_str).then(function (res) {
         if (!res || !res.ok) {
-          /* This means the cache is corrupted. */
+          /* This means the cache is corrupted, i.e. user abruptly close browser. */
           localStorage.removeItem("TEXTVER")
-          sjs()
+          return load_and_sjs(cache)
         } else {
-          res.text().then(function (str) {
+          return res.text().then(function (str) {
             search_json_or_url = JSON.parse(str)
             sjs()
           }).catch(function (e) {
-            throw e
+            return Promise.reject(e)
           })
         }
       }).catch(function (e) {
-        throw e
+        return Promise.reject(e)
       })
     } else {
-      fetch(stj_str).then(function (response) {
-        if (!response.ok) {
-          throw new TypeError("Bad response")
-        }
-        localStorage.setItem("TEXTVER", DATE)
-        var res_backup = response.clone()
-        cache.put(stj_str, response)
-        res_backup.text().then(function (str) {
-          search_json_or_url = JSON.parse(str)
-          sjs()
-        }).catch(function (e) {
-          throw e
-        }).catch(function (e) {
-          throw e
-        })
-      }).catch(function (e) {
-        throw e
-      })
+      return load_and_sjs(cache)
     }
   }).catch(function (e) {
     throw e
   })
 } else {
   sjs()
+}
+function load_and_sjs(cache) {
+  return fetch(stj_str).then(function (response) {
+    if (!response.ok) {
+      return Promise.reject("Bad response")
+    }
+    var res_backup = response.clone()
+    /* Make sure TEXTVER only updated after writing to cache. */
+    cache.put(stj_str, response).then(function() {
+      localStorage.setItem("TEXTVER", DATE)
+    })
+    res_backup.text().then(function (str) {
+      search_json_or_url = JSON.parse(str)
+      sjs()
+    }).catch(function (e) {
+      return Promise.reject(e)
+    })
+  }).catch(function (e) {
+    return Promise.reject(e)
+  })
 }
 function sjs() {
 window.sjs = SimpleJekyllSearch({

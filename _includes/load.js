@@ -259,9 +259,9 @@ function load_css_cache() {
 				pm_arr.push(cache.delete(csspaths[i]))
 			}
 		}
-    Promise.all(pm_arr).then(function(){
-      localStorage.setItem("CSSVER", CSSVER)
-      load_css_cache_2(cache)
+    /* Ensure outdated CSS is invalidated ahead of checking. */
+    return Promise.all(pm_arr).then(function(){
+      return load_css_cache_2(cache)
     })
   }).catch(function(e) {
     load_css_link_element()
@@ -273,12 +273,13 @@ function load_css_cache_2(cache) {
   for (i in csspaths) {
     pm_arr.push(cache.match(csspaths[i]))
   }
-  Promise.all(pm_arr)
+  return Promise.all(pm_arr)
   .then(function(res_arr) {
     var has_cache_all = true
     for (i in res_arr) {
       var res = res_arr[i]
       if (!res || !res.ok) {
+        /* This means the cache is corrupted, i.e. user abruptly close browser. */
         has_cache_all = false
         break
       }
@@ -296,14 +297,18 @@ function load_css_cache_2(cache) {
         }
       })
     } else {
+      /* Prioritize loading CSS: <link> load at priority "highest" while fetch() load at priority "high". */
       load_css_link_element()
+      /* Make sure CSSVER updated only after writing to cache. */
+      var pm_cache_arr = []
       for (i in csspaths) {
-        cache.add(csspaths[i])
+        pm_cache_arr.push(cache.add(csspaths[i]))
       }
+      Promise.all(pm_cache_arr).then(function() {
+        localStorage.setItem("CSSVER", CSSVER)
+      })
     }
-  }).catch(function(e) {
-    /* This path should not be reachable! */ 
-    return Promise.reject(e)
+    return Promise.resolve()
   })
 }
 function load_css() {
