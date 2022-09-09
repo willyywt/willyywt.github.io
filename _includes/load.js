@@ -189,7 +189,7 @@ function gcs_theme() {
 		var th = PrefGet("theme")
 		if (th == "light") {
 			use_prefered = false;
-			use_light = true;
+			no_prefered_use_light = true;
 		} else if (th == "dark") {
 			use_prefered = false;
 			no_prefered_use_light = false;
