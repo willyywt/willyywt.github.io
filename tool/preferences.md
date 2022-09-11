@@ -19,17 +19,15 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
     <div>
       <input type="radio" id="id--font-default" name="font" value="default" checked>
       <label for="id--font-default">Open Sans (Default)</label>
-	<p> The Open Sans font, from Google Fonts. </p>
     </div>
     <div>
       <input type="radio" id="id--font-brand" name="font" value="brand">
-      <label for="id--font-brand">System Font Stack</label>
+      <label for="id--font-brand">System font stack</label>
 	<p> Brand font that comes pre-installed on the platform. (MacOS, iOS, Windows, Android, ChromeOS, Freedesktop/Linux(KDE, GNOME(Ubuntu), GNOME(vanilla))) </p>
     </div>
     <div>
       <input type="radio" id="id--font-system-ui" name="font" value="system-ui">
-      <label for="id--font-system-ui">system-ui</label>
-	<p> The font for system user interface, using the standard CSS value "system-ui". (Useful when your system UI use non-generic typographic traditions.) </p>
+      <label for="id--font-system-ui">Fallback sans-serif font</label>
     </div>
 </fieldset>
 <fieldset>
@@ -81,24 +79,22 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 	<div>
 		<input type="radio" id="id--monofont-default" name="monofont" value="default" checked>
 		<label for="id--monofont-default">Source Code Pro (Default)</label>
-		<p> The Source Code Pro font, from Adobe. </p>
 	</div>
 	<div>
 		<input type="radio" id="id--monofont-brand" name="monofont" value="brand">
-		<label for="id--monofont-brand">System Font Stack</label>
+		<label for="id--monofont-brand">System font stack</label>
 		<p> Brand font that comes pre-installed on the platform. (MacOS, Windows, Freedesktop/Linux, ChromeOS) </p>
 	</div>
 	<div>
 		<input type="radio" id="id--monofont-fallback" name="monofont" value="fallback">
-		<label for="id--monofont-fallback">Fallback Monospace font</label>
-		<p> Fallback monospace font installed on the system.</p>
+		<label for="id--monofont-fallback">Fallback monospace font</label>
 	</div>
 </fieldset>
 <fieldset>
 	<legend>Select monospace font size:</legend>
 	<div>
 		<input type="radio" id="id--monofontsize-default" name="monofontsize" value="default" checked>
-		<label for="id--monofontsize-default">0.9rem (&gt;=850px), 0.8rem (&lt;850px) (Default)</label>
+		<label for="id--monofontsize-default">0.93rem (&gt;=850px), 0.865rem (&lt;850px) (Default)</label>
 	</div>
 	<div>
 		<input type="radio" id="id--monofontsize-custom" name="monofontsize" value="custom">
@@ -144,16 +140,13 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
     <div>
       <input type="radio" id="id--theme-default" name="theme" value="default" checked>
       <label for="id--theme-default">Follow system (Default)</label>
-	<p> Follow system theme variant. <strong>Dark variant autodetection only supported on modern browsers, see quirks at</strong><a href="../article/theme.html#dark-mode">../article/theme.html#dark-mode</a></p>
     </div>
     <div>
       <input type="radio" id="id--theme-light" name="theme" value="light">
       <label for="id--theme-light">Light</label>
-	<p> Light theme. </p>
     </div>
     <div>
       <input type="radio" id="id--theme-dark" name="theme" value="dark">
       <label for="id--theme-dark">Dark</label>
-	<p> Dark theme. </p>
     </div>
 </fieldset>

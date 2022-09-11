@@ -224,9 +224,6 @@ th,td {
 fieldset p, fieldset code {
   margin: 0;
 }
-fieldset p {
-  display: inline;
-}
 legend {
   @include font_s_1_2;
 }
