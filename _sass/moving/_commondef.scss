@@ -153,10 +153,6 @@ $on-laptop: 850px !default;
   @include set-font-size(1.3);
   @include set-line-height(1);
 }
-@mixin font_s_1_2 {
-  @include set-font-size(1.2);
-  @include set-line-height(1);
-}
 @mixin font_s_1_1 {
   @include set-font-size(1.1);
   @include set-line-height(1);
