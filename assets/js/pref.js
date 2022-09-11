@@ -42,6 +42,12 @@ var selectelm_name = {
   "fontsize": "",
   "monofontsize": ""
 }
+var textelm_name = {
+  "font": "",
+  "fontsize": "",
+  "monofont": "",
+  "monofontsize": ""
+}
 function Select_Enable_2(name, value) {
   var select_el = document.getElementById(id_str(name, "selectelm"));
   if (!select_el) {
@@ -53,35 +59,65 @@ function Select_Enable_2(name, value) {
     select_el.disabled = true;
   }
 }
+function Text_Enable_2(name, value) {
+  var text_el = document.getElementById(id_str(name, "textelm"))
+  if (!text_el) {
+    return
+  }
+  if (value == "custom-text") {
+    text_el.disabled = false
+  } else {
+    text_el.disabled = true
+  }
+}
 function input_changed_cb(ev) {
-  /* PreHook */
-	var val = ev.target.value
+	var value = ev.target.value
 	var name = ev.target.name
-	console.log(name, val)
+  console.log(name, value)
+  /* PreHook */
   if(name in selectelm_name) {
-    Select_Enable_2(name, val)
+    Select_Enable_2(name, value)
+  }
+  if (name in textelm_name) {
+    Text_Enable_2(name, value)
   }
   /* Hook */
-  Hook(name, val)
+  Hook(name, value)
   /* PostHook */
-  if(PrefDefaults[name] === val || !val) {
+  if(PrefDefaults[name] === value || !value) {
 		PrefRemove(name)
 	} else {
-    PrefSet(name, val)
+    PrefSet(name, value)
 	}
 	if (name === "theme" && gcs_missing === "") {
 		GCSReload()
 	}
 }
+function text_blur_cb(ev) {
+  var value = ev.target.value
+	var name = ev.target.name
+  console.log(name, value)
+  if (!name.endsWith("-textelm")) {
+    return 
+  }
+  PrefSet(name, value)
+  var name_trunc = name.substring(0, name.length - "-textelm".length)
+  Hook(name_trunc, PrefGet(name_trunc))
+}
 function SetCb() {
-  pref_input_el_arr = document.querySelectorAll("#wrapper input");
-  pref_select_el_arr = document.querySelectorAll("#wrapper select");
-  for (var el_index = 0; el_index < pref_input_el_arr.length; el_index += 1) {
-    var el = pref_input_el_arr[el_index]
+  var radio_el = document.querySelectorAll("#wrapper input[type=radio]");
+  var text_el = document.querySelectorAll("#wrapper input[type=text]");
+  var select_el = document.querySelectorAll("#wrapper select");
+  for (var el_index = 0; el_index < radio_el.length; el_index += 1) {
+    var el = radio_el[el_index]
     el.addEventListener('change', input_changed_cb)
   }
-  for (var el_index = 0; el_index < pref_select_el_arr.length; el_index += 1) {
-    var el = pref_select_el_arr[el_index]
+  for (var el_index = 0; el_index < text_el.length; el_index += 1) {
+    var el = text_el[el_index]
+    el.addEventListener('blur', text_blur_cb)
+  }
+  for (var el_index = 0; el_index < select_el.length; el_index += 1) {
+    var el = select_el[el_index]
     el.addEventListener('change', input_changed_cb)
   }
 }
@@ -108,6 +144,11 @@ function Select_Enable() {
     Select_Enable_2(n, PrefGet(n))
   }
 }
+function Text_Enable() {
+  for (n in textelm_name) {
+    Text_Enable_2(n, PrefGet(n))
+  }
+}
 function Select_Value() {
   for (n in selectelm_name) {
     var select_el = document.getElementById(id_str(n, "selectelm"))
@@ -116,10 +157,20 @@ function Select_Value() {
     }
   }
 }
+function Text_Value() {
+  for (n in textelm_name) {
+    var text_el = document.getElementById(id_str(n, "textelm"))
+    if (text_el) {
+      text_el.value = PrefGet(n + "-textelm")
+    }
+  }
+}
 SetCb()
-Radio();
-Select_Enable();
-Select_Value();
+Radio()
+Select_Enable()
+Text_Enable()
+Select_Value()
+Text_Value()
 }
 })()
 /* @license-end */

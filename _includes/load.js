@@ -74,28 +74,23 @@ function Hook(name, value) {
 	}
 	function PrefFontCb(value) {
 		var FontFamily_dict = {
-			"default": {"fontFamily": ""},
-			"brand": {"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
-			"system-ui": {"fontFamily": "system-ui, sans-serif"}
+			"default": "",
+			"brand": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+			"system-ui": "system-ui, sans-serif",
+      "custom-text": PrefGet("font-textelm")
 		}
     if (!(value in FontFamily_dict)) {
       return
     } 
-		if (value == "default") {
-			rootElement.style.lineHeight = ""
-			rootElement.style.fontFamily = ""
-			return
-		}
-    var ff = FontFamily_dict[value].fontFamily
-    if (ff) {
-      rootElement.style.fontFamily = ff
-    }
+    var ff = FontFamily_dict[value]
+    rootElement.style.fontFamily = ff
 	}
 	function PrefMonoFontCb(value) {
 		var MonoFontFamily_dict = {
 			"default": "",
 			"brand": "SFMono-Regular,SF Mono,Menlo,Consolas,Monaco,Lucida Console,Liberation Mono,Cousine,monospace",
-			"fallback": "ui-monospace,monospace"
+			"fallback": "ui-monospace,monospace",
+      "custom-text": PrefGet("monofont-textelm")
 		}
     if (!(value in MonoFontFamily_dict)) {
       return
@@ -124,6 +119,7 @@ function Hook(name, value) {
 			rootElement.style.colorScheme = 'light'
 		}
 	}
+  /* Treat "default" as "" */
 	function PrefFontSize_Parse(rawval) {
 		return rawval && rawval !== "default" ? rawval.substring(0, 4) : ""
 	}
@@ -135,13 +131,15 @@ function Hook(name, value) {
 		Json2CSSHook()
 	}
 	function PrefFontSizeCb(value) {
-		var set_to_default = true;
-    if (value === "custom") {
-      set_to_default = false;
-    } else if (value !== "default") {
+    var FontSize_dict = {
+      "default": "",
+      "custom": PrefFontSize_Parse(PrefGet("fontsize-selectelm")),
+      "custom-text": PrefGet("fontsize-textelm")
+    }
+    if (!(value in FontSize_dict)) {
       return
     }
-		var fs = set_to_default ? "" : PrefFontSize_Parse(PrefGet("fontsize-selectelm"))
+		var fs = FontSize_dict[value]; 
 		PrefSetFs(fs)
 	}
 	function PrefFontSizeSelectCb(value) {
@@ -152,13 +150,15 @@ function Hook(name, value) {
 		PrefSetFs(fs)
 	}
 	function PrefMonoFontSizeCb(value) {
-    var set_to_default = true;
-    if (value === "custom") {
-      set_to_default = false;
-    } else if (value !== "default") {
-      return;
+    var MonoFontSize_dict = {
+      "default": "",
+      "custom": PrefFontSize_Parse(PrefGet("monofontsize-selectelm")),
+      "custom-text": PrefGet("monofontsize-textelm")
     }
-		var fs = set_to_default ? "" : PrefFontSize_Parse(PrefGet("monofontsize-selectelm"))
+    if (!(value in MonoFontSize_dict)){ 
+      return
+    }
+		var fs = MonoFontSize_dict[value]; 
 		PrefMonoSetFs(fs)
 	}
 	function PrefMonoFontSizeSelectCb(value) {

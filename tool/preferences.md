@@ -29,6 +29,12 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
       <input type="radio" id="id--font-system-ui" name="font" value="system-ui">
       <label for="id--font-system-ui">Fallback sans-serif font</label>
     </div>
+    <div>
+      <input type="radio" id="id--font-custom-text" name="font" value="custom-text">
+      <label for="id--font-custom-text">Custom: </label>
+      <label for="id--font-textelm">Input font family name...</label>
+      <input type="text" id="id--font-textelm" name="font-textelm" value="" disabled>
+    </div>
 </fieldset>
 <fieldset>
 <legend>Select base font size:</legend>
@@ -72,6 +78,12 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 		<option value="72px">72px</option>
 	</select>
 </div>
+  <div>
+    <input type="radio" id="id--fontsize-custom-text" name="fontsize" value="custom-text">
+    <label for="id--fontsize-custom-text">Custom: </label>
+    <label for="id--fontsize-textelm">Input font size...</label>
+    <input type="text" id="id--fontsize-textelm" name="fontsize-textelm" value="" disabled>
+  </div>
 </fieldset>
 ### Monospace Font
 <fieldset>
@@ -89,6 +101,12 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 		<input type="radio" id="id--monofont-fallback" name="monofont" value="fallback">
 		<label for="id--monofont-fallback">Fallback monospace font</label>
 	</div>
+  <div>
+    <input type="radio" id="id--monofont-custom-text" name="monofont" value="custom-text">
+    <label for="id--monofont-custom-text">Custom: </label>
+    <label for="id--monofont-textelm">Input monospace font family name...</label>
+    <input type="text" id="id--monofont-textelm" name="monofont-textelm" value="" disabled>
+  </div>
 </fieldset>
 <fieldset>
 	<legend>Select monospace font size:</legend>
@@ -132,6 +150,12 @@ Font changes cannot be applied to comments due to cross-site scripting restricti
 			<option value="72px">72px</option>
 		</select>
 	</div>
+  <div>
+    <input type="radio" id="id--monofontsize-custom-text" name="monofontsize" value="custom-text">
+    <label for="id--monofontsize-custom-text">Custom: </label>
+    <label for="id--monofontsize-textelm">Input font size...</label>
+    <input type="text" id="id--monofontsize-textelm" name="monofontsize-textelm" value="" disabled>
+  </div>
 </fieldset>
 
 ## Theme
