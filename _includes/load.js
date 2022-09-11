@@ -76,7 +76,7 @@ function Hook(name, value) {
 		var FontFamily_dict = {
 			"default": {"fontFamily": ""},
 			"brand": {"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif"},
-			"system-ui": {"fontFamily": "system-ui, sans"}
+			"system-ui": {"fontFamily": "system-ui, sans-serif"}
 		}
     if (!(value in FontFamily_dict)) {
       return
