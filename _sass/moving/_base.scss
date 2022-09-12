@@ -88,12 +88,15 @@ hr {
   * Images
   */
 img {
-  margin-bottom: 5px;
-  margin-top: 5px;
   padding: 2px 2px;
   border-radius: 3px;
   max-width: 100%;
-  vertical-align: middle;
+  max-width: #{"min(100%, 60rem)"}; // Use CSS native min(): https://github.com/sass/sass/issues/2849
+  box-sizing: border-box;
+  width: 100%;
+  width: max-content;
+  height: 100%;
+  height: max-content;
 }
 
 /**
@@ -101,6 +104,11 @@ img {
   */
 figure > img {
   display: block;
+}
+figcaption {
+  max-width: 100%;
+  max-width: #{"min(100%, 60rem)"}; // Use CSS native min(): https://github.com/sass/sass/issues/2849
+  font-style: italic;
 }
 
 /**
