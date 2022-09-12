@@ -14,7 +14,10 @@ Pretty bad at sports.
 
 A fan of singer [Zhou Shen](https://en.wikipedia.org/wiki/Zhou_Shen). Best known for "Big Fish", he has a tender and translucent voice and have crystal clear powers. He is also talented in imitating various voices ranging from little girls to old witches. He is silent and calm for most times just as his songs presents but sometimes becomes funny or bizarre when he finds it intersting to do so.
 
-![Zhou Shen at his first series of concerts, 深空间](../static/20190709_075450_007.jpg "Zhou Shen at his first series of concerts, 深空间")
+<figure>
+  <img src="../static/20190709_075450_007.jpg" width="2000" height="1333" alt="Zhou Shen put his mouth on microphone"/>
+  <figcaption>Zhou Shen at his first series of concerts, 深空间</figcaption>
+</figure>
 
 Also interested in various other singers like utaite singer [Jayn](https://utaite.fandom.com/wiki/Jayn) ("littlejayneycakes" on youtube) ("utaite" probably means "anime and Vocaloid")
 

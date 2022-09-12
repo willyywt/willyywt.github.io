@@ -11,7 +11,10 @@ categories: awesome
 
 TODO: work with other desktop environments other than GNOME
 
-![gromit mpx on GNOME with VSCodium and appindicator extension](../../../../static/2021-10-24-1.png "gromit mpx on GNOME with VSCodium and appindicator extension")
+<figure>
+  <img src="../../../../static/2021-10-24-1.png" width="1920" height="1080" alt="A screenshot of VSCodium and GNOME"/>
+  <figcaption>gromit mpx on GNOME with VSCodium and appindicator extension</figcaption>
+</figure>
 
 ## Graphics tablets
 Magically, it works with graphics tablets, although the developer did not primary aim at tablets. 

@@ -24,7 +24,8 @@ last_modified_at: 2021-11-28
 
 当然不是所有软件都直接支持复制粘贴显示区域以外的文字，比如evince就不行（evince复制粘贴本身就有bug）。当然喜闻乐见的Firefox是可以的：（`<div class="textlayer">`）
 
-![pdfjs](../../../../static/2021-11-21/pdfjs.png)
+<img src="../../../../static/2021-11-21/pdfjs.png" width="1386" height="876" alt="pdfjs" />
+
 整理之后得到一堆字符`fa{aeAGetTm@ekaev!lgHv__ra_ieGeGm_1}`（一共36个字符，注意中间第三个`<span>`的`!`）。
 
 然后要猜解密方法，上一届已经考过移位加密了，所以大概率不是。观察字符串发现似乎`GeekGame`藏在里面（发现`GetTm`的怕不是超级难用的Win32API写多了，想骂人来一个`Tm`），于是进一步肯定字符串本身没有移位，只需要重新排列即可。（公告里也说签到题的flag在英语里是有意义的，大概率就是`GeekGame`）
@@ -135,10 +136,11 @@ wireshark怎么使用曾经看过手册，然而基本上都忘记了（话说�
 然而这个信息量太小，继续加载几个信息量也不够，最后快到底了才发现有点意思的东西
 （做flag2的时候发现另一处websocket流直接有输入python代码的完整历史，然而对第一个flag只要找到这一个就够了)
 
-![wireshark1](../../../../static/2021-11-21/wireshark1.png)
+<img src="../../../../static/2021-11-21/wireshark1.png" width="1301" height="1044" alt="wireshark1" />
 
 发现一大堆疑似python代码的内容，然而在wireshark里面不好阅读，所以单独复制到VSCodium里面格式化（vim试过了，格式化json显然不如VSCodium可靠，毕竟VSCode是为web开发而生）
-![Ctrl-Shift-I格式化](../../../../static/2021-11-21/wireshark2.png)
+
+<img src="../../../../static/2021-11-21/wireshark2.png" width="1920" height="1080" alt="Ctrl-Shift-I格式化" />
 
 剩下就很好分析了。观察到Jupyter输出命令的运行结果了，得到xor的key，在python里面重现之（注意json对反斜杠的转义，话说转义规则又是各大编程环境之间完全不规律的一个东西，和regex一样标准化程度很低）。
 {% raw %}
@@ -197,10 +199,12 @@ b'flag{9d9a9d92dcb1363c26a0c29fda2edfb6}'
 之前比赛的时候在追踪http流的窗口中转换成hex存储，然后用xxd,vim搞搞居然搞出来了，现在复现的时候发现怎么都不对，总之本不应该这样搞的，wireshark会自动分析tcp流并把收到的原始包重组，所以找到重组后的包并另存为即可
 
 这里第47097个包Wireshark分析了"Response in frame: 47395"，双击敲进去
-![wireshark-47097](../../../../static/2021-11-21/wireshark-47097.png)
+
+<img src="../../../../static/2021-11-21/wireshark-47097.png" width="1920" height="1080" alt="wireshark-47097" />
 
 然后在47395这个包里面在Wireshark的分析里面鼠标左键选中"File data"一栏，然后再选择*文件*->*导出分组字节流*
-![wireshark-47395](../../../../static/2021-11-21/wireshark-47395.png)
+
+<img src="../../../../static/2021-11-21/wireshark-47395.png" width="1920" height="1080" alt="wireshark-47395" />
 
 保存的文件就是需要的flag2.7z文件了。
 
@@ -239,7 +243,7 @@ Blocks = 1
 
 然后需要找到flag2.7z的密码，追踪第11个tcp流，websocket不懂，但是服务器的输出看上去就是终端的输出（并且一开始的Http请求`GET /terminals/websocket/3`也能证实这个猜测）
 
- ![wireshark-43936](../../../../static/2021-11-21/wireshark-43936.png)
+<img src="../../../../static/2021-11-21/wireshark-43936.png" width="1920" height="1080" alt="wireshark-43936" />
 
 最后一段是7z的stdout输出，并且没有提示密码的部分，说明You酱前面已经通过`-p`选项指定了密码，发现果然如此
 
@@ -309,7 +313,7 @@ curl不会严格检查'.'的转义，所以`GET /api/%2e%2e/package.json`，然�
 
 后来选择最暴力的读内存，选择sysinternals的procexp.exe读字符串，（幸好没有额外的编码，直接就是明文，要是混杂汉字+utf16之类的真要吐血）把百分号编码的转义即可
 
-![procexp](../../../../static/2021-11-21/procexp.png)
+<img src="../../../../static/2021-11-21/procexp.png" width="1920" height="1080" alt="procexp" />
 
 ## 最强大脑
 这个题的第一个flag简直就是嘲讽geekgame的小白玩家们，我伤心了
