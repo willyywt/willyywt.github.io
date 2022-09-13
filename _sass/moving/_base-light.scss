@@ -19,6 +19,9 @@ img {
   */
 a {
 	color: $brand-color;
+  &:hover, &:focus {
+    color: $hover-color;
+  }
 }
 /**
   * Blockquotes
