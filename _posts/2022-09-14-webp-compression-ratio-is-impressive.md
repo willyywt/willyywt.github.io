@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Webp compression ratio is impressive"
-last_modified_at: 2022-09-14
+last_modified_at: 2022-09-15
 ---
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -18,8 +18,12 @@ Use `<picture>` and `<source>` for such purpose. Example:
 </picture>
 ```
 
-## Convertion CLI program
+## Convertion program
+### CLI
 I use `img2webp` for webp convertion. It defaults to lossless compression but you can also use `-lossy` to use lossy compression. (You probably don't want to use lossless compression for JPEG since the resulting webp image may grow size instead.) On linux distributions it is packaged as name `webp` or `libwebp-tools` or `libwebp`. You can also download prebuilt binaries from [https://developers.google.com/speed/webp/download](https://developers.google.com/speed/webp/download).
+
+### Website
+The [squoosh](https://squoosh.app/) web page can do compresson between image formats. The source code is licensed under Apache License v2.
 
 ## JPEG and PNG lossless compress
 If you do not wish to use webp for any reason, try JPEG and PNG lossless compress CLI tools `jpegoptim` and `optipng`.
