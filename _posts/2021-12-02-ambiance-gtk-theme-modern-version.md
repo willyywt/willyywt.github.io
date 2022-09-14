@@ -26,17 +26,17 @@ The revived ambiance theme is very greyish and not flat (looks like a revival of
 Light blue:
 
 <figure>
-  <img src="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-1.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-1" />
+<picture><source srcset="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-1.webp" type="image/webp"><img src="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-1.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-1" /></picture>
   <figcaption><b>From the top to bottom: <a href="https://xournalpp.github.io/">xournalpp</a>, <a href="http://goldendict.org/">goldendict</a></b>
   </figcaption>
 </figure>
 <figure>
-  <img src="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-2.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-2" />
+<picture><source srcset="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-2.webp" type="image/webp"><img src="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-2.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-2" /></picture>
   <figcaption><b>From the top to bottom: <a href="https://gitlab.gnome.org/GNOME/gnome-control-center/">GNOME Control Center</a>, <a href="https://www.lyx.org/">Lyx</a>, <a href="https://wiki.gnome.org/Apps/Files/">GNOME Files</a>, <a href="https://firewalld.org/">Firewalld</a></b>
   </figcaption>
 </figure>
 <figure>
-  <img src="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-3.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-3" />
+<picture><source srcset="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-3.webp" type="image/webp"><img src="../../../../static/2021-12-02/ambiance-gtk-theme-screenshot-3.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-3" /></picture>
   <figcaption><b>From the top to bottom: <a href="https://wiki.gnome.org/Apps/Files/">GNOME Files</a>, <a href="https://www.mozilla.org/firefox">Firefox</a>, <a href="https://wiki.gnome.org/Apps/Evolution/">Evolution</a>, <a href="https://firewalld.org/">Firewalld</a></b>
   </figcaption>
 </figure>
@@ -44,12 +44,12 @@ Light blue:
 Light red:
 
 <figure>
-  <img src="../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-4.png" width="1409" height="997" alt="ambiance-gtk-theme-screenshot-4" />
+<picture><source srcset="../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-4.webp" type="image/webp"><img src="../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-4.png" width="1409" height="997" alt="ambiance-gtk-theme-screenshot-4" /></picture>
   <figcaption><b>Evince with light red</b>
   </figcaption>
 </figure>
 <figure>
-  <img src="../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-5.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-5" />
+<picture><source srcset="../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-5.webp" type="image/webp"><img src="../../../../static/2022-01-23/ambiance-gtk-theme-screenshot-5.png" width="1920" height="1080" alt="ambiance-gtk-theme-screenshot-5" /></picture>
   <figcaption><b>Firefox, evolution, GNOME Files</b>
   </figcaption>
 </figure>

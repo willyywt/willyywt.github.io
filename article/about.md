@@ -15,7 +15,7 @@ Pretty bad at sports.
 A fan of singer [Zhou Shen](https://en.wikipedia.org/wiki/Zhou_Shen). Best known for "Big Fish", he has a tender and translucent voice and have crystal clear powers. He is also talented in imitating various voices ranging from little girls to old witches. He is silent and calm for most times just as his songs presents but sometimes becomes funny or bizarre when he finds it intersting to do so.
 
 <figure>
-  <img src="../static/20190709_075450_007.jpg" width="2000" height="1333" alt="Zhou Shen put his mouth on microphone"/>
+<picture><source srcset="../static/20190709_075450_007.webp" type="image/webp"><img src="../static/20190709_075450_007.jpg" width="2000" height="1333" alt="Zhou Shen put his mouth on microphone"/></picture>
   <figcaption>Zhou Shen at his first series of concerts, 深空间</figcaption>
 </figure>
 

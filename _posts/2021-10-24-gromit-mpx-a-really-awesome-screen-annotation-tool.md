@@ -12,7 +12,7 @@ categories: awesome
 TODO: work with other desktop environments other than GNOME
 
 <figure>
-  <img src="../../../../static/2021-10-24-1.png" width="1920" height="1080" alt="A screenshot of VSCodium and GNOME"/>
+<picture><source srcset="../../../../static/2021-10-24-1.webp" type="image/webp"><img src="../../../../static/2021-10-24-1.png" width="1920" height="1080" alt="A screenshot of VSCodium and GNOME"/></picture>
   <figcaption>gromit mpx on GNOME with VSCodium and appindicator extension</figcaption>
 </figure>
 

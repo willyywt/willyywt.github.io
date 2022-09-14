@@ -14,4 +14,4 @@ In short: the new design make a step down from a serious documentation to some f
 
 [See big picture in standalone window](../../../../static/2022-03-14/mdn-website-design-diff-2.png)
 
-<img src="../../../../static/2022-03-14/mdn-website-design-diff-2.png" width="2600" height="1071" alt="mdn-website-design-diff-2" />
+<picture><source srcset="../../../../static/2022-03-14/mdn-website-design-diff-2.webp" type="image/webp"><img src="../../../../static/2022-03-14/mdn-website-design-diff-2.png" width="2600" height="1071" alt="mdn-website-design-diff-2" /></picture>
