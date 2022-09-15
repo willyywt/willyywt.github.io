@@ -57,7 +57,6 @@ h3,
 h4,
 h5,
 h6,
-p,
 blockquote,
 pre,
 ul,
@@ -68,6 +67,12 @@ figure,
   @include mb_lh_1;
 }
 
+p {
+  text-indent: $spacing-unit / 2;
+  @media (min-width: $on-palm) {
+    text-indent: $spacing-unit;
+  }
+}
 /**
   * `main` element
   */
@@ -114,13 +119,18 @@ figcaption {
   */
 ul,
 ol {
-  margin-left: $spacing-unit;
+  margin-left: $spacing-unit / 2;
+  @media (min-width: $on-palm) {
+    margin-left: $spacing-unit;
+  }
+  @include mt_lh_1;
 }
 
 li {
   > ul,
   > ol {
-    margin-bottom: 0;
+    @include mt0;
+    @include mb0;
   }
 }
 
@@ -175,6 +185,10 @@ blockquote {
   > :last-child {
     @include mb0;
   }
+  > p {
+    @include ti0;
+  }
+  @include mt_lh_1;
 }
 blockquote p {
 	white-space: pre-line;
@@ -207,6 +221,12 @@ pre {
     border: 0;
     padding: 0;
   }
+}
+
+/* Cannot use pre.highlight because background-color is set for div.highlight. */
+div.highlight {
+  @include mt_lh_1;
+  @include mb_lh_1;
 }
 
 /**

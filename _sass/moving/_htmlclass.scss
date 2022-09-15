@@ -41,6 +41,9 @@
 .font-italic {
   @include font_italic;
 }
+.ti0 {
+  text-indent: 0;
+}
 .list-none {
   @include list_none;
 }
