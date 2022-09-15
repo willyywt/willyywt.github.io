@@ -24,7 +24,7 @@ lang: zh-CN
       {% assign post_lang = post.lang | default: site.lang | default: "en" %}
       {% assign post_lang_2 = post_lang | slice: 0, 2 %}
       {% if post_lang_2 == "zh" %}
-      <li>
+      <li class="li-post">
           {%- assign date_format = site.moving.date_format | default: "%b %-d, %Y" -%}
           <span class="post-meta inline-block">
             {{ post.date | date: date_format }}

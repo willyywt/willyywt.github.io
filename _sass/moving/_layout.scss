@@ -218,6 +218,7 @@ $site-header-height: 3rem !default;
 * Notes
 */
 .note {
+  margin-top: 1rem;
   margin-bottom: 1rem;
   contain: content;
   position: relative; 
@@ -246,4 +247,11 @@ $site-header-height: 3rem !default;
 .legal-note {
   @include set-font-size(0.7);
   margin-right: 1rem;
+}
+
+.li-post {
+  @include mb-lh-1;
+  > p {
+    @include ti0;
+  }
 }
