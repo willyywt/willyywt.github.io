@@ -9,7 +9,7 @@
 var s1 = document.getElementById("search1")
 var ss = document.getElementById('search-wrapper')
 var res1 = document.getElementById("search1-result")
-if (window.matchMedia && window.matchMedia('(max-width: 849px)').matches) {
+if (window.matchMedia && window.matchMedia('(max-width: 849px)').matches) { /* __hardcode__ header bar z-index stack max-width */
   s1.addEventListener('focus', function(){ss.style.zIndex = 2; ss.style.position = 'absolute'; ss.style.width = 'calc(100% - 2rem)'; ss.style.left = '1rem'; ss.style.boxSizing = 'border-box'})
   s1.addEventListener('blur', function(){if(s1.value) return; ss.style.zIndex = ''; ss.style.position = ''; ss.style.width = ''; ss.style.left = ''; ss.style.boxSizing = ''})
 }

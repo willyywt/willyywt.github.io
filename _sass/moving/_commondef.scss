@@ -14,6 +14,7 @@ $table-text-align: left !default;
 // rem unit doesn't make sense in @media width
 $on-palm: 600px !default;
 $on-laptop: 850px !default;
+$on-large: 1200px !default;
 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
