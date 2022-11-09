@@ -166,7 +166,7 @@ $site-header-height: 3rem !default;
 }
 
 #nav-toc>ul {
-  margin-left: 0px;
+  @include ml0;
 }
 
 #nav-toc {
@@ -184,13 +184,19 @@ $site-header-height: 3rem !default;
   }
 }
 
-.nav-submenu1 {
+#nav-toc li, #nav-toc ul {
+  @include mt_custom(0.25);
+  @include mb_custom(0.25);
+}
+#nav-toc ul.nav-submenu1 {
   @include mt_lh_1;
+}
+#nav-toc .nav-submenu1 {
   @include ml0;
   @include font_400;
 }
 
-.nav-item1 {
+#nav-toc .nav-item1 {
   @include font_700;
 }
 

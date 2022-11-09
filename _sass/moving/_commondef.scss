@@ -138,6 +138,20 @@ $on-large: 1200px !default;
   }
 }
 
+@mixin mt_custom($ratio) {
+  margin-top: abs-small-font-size($ratio);
+  @media (min-width: $on-palm) {
+    margin-top: abs-base-font-size($ratio);
+  }
+}
+
+@mixin mb_custom($ratio) {
+  margin-bottom: abs-small-font-size($ratio);
+  @media (min-width: $on-palm) {
+    margin-bottom: abs-base-font-size($ratio);
+  }
+}
+
 @mixin font_s_2 {
   @include set-font-size(2);
   @include set-line-height(2); 
