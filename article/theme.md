@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "My blog theme: jekyll 'moving' theme with more features"
-last_modified_at: 2022-07-29
+last_modified_at: 2022-11-23
 ---
 My blog's repo: [github.com/willyywt/willyywt.github.io](https://github.com/willyywt/willyywt.github.io/) is forked from the jekkyll theme from [github.com/huangyz0918/moving](https://github.com/huangyz0918/moving/). As the time goes I tweak the theme to my liking and add a lot of features to it.
 
@@ -92,6 +92,11 @@ Media query is one line away: `@media (prefers-color-scheme: light)`. Sass doesn
 I turned to a more monolithic approach: use javascript load different css stylesheet files depend on media query results. This is not optimal but I value compatibiliy for old browsers and for sass, and other approaches have issues that I can't undertake: I considered to use `@media (prefers-color-scheme: light)` and `@media (prefers-color-scheme: dark)` for this purpose (it can be added to `<link>` element `media` attribute), but this is not friendly to old browsers which do not support `prefers-color-scheme` at all (those browsers will not use any of these stylesheets). I also considered simutaneously loading the light and the dark stylesheet, but the problem is the light stylesheet can have rules not overlapping with the dark one, so I gave up on this approach. I think I should only load one of the light and the dark stylesheet.
 
 ### Remedy for white flashing at new page loading
+<div class="note warning"><b>Warning: (Update 20221113)</b>
+The correct way is to use <code>color-scheme</code> to silently pick up <code>@media (prefers-color-scheme)</code>:
+<div><code>&lt;meta name="color-scheme" content="light dark" /&gt;</code></div>
+</div>
+
 When new page loads a white background is shown for a short period before the main css stylesheet loads, which is irritating for dark mode users.
 
 Since dark mode is only provided for modern browsers, I can use a media query to (hopefully) remedy the white flashing:
