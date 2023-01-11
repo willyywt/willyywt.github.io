@@ -73,6 +73,10 @@ p {
     text-indent: $spacing-unit;
   }
 }
+li > p {
+	text-indent: 0;
+}
+
 /**
   * `main` element
   */
