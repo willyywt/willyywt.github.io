@@ -80,8 +80,42 @@ See:
 ## Account
 TODO
 
-## USB Guard
-TODO
+## USBGuard
+USB device is not authenticated device in general, but you can smaller the kernel attach surface by restricting the vendor id and product id that the kernel recognizes (the kernel automatically loads drivers according to vendor id and product id; Chrome OS only blocks device class which is not secure enough: [ChromeOS usbguard bypass](https://packetstormsecurity.com/files/167269/ChromeOS-usbguard-Bypass.html)).
+
+USBGuard is a software framework enforcing USB device policy.
+
+### Initial configuration
+It ships an empty configuration on installation, but this can be automatically generated for the current USB devices that you plug in. Generate an initial policy list and install it (RHEL 9 documentation recommends `--no-hashes` so I followed it)
+```sh
+usbguard generate-policy --no-hashes > ./rules.conf
+install -m 0600 -o root -g root ./rules.conf /etc/usbguard/rules.conf
+```
+
+<div class="note warning"><b>Warning: </b>USBGuard will block all devices by default. Make sure you configured <code>/etc/usbguard/rules.conf</code> before you start the daemon.</div>
+
+Start the daemon with `systemctl enable --now usbguard`. It will start to reject new USB devices.
+
+### IPC interface 
+USBGuard daemon provides an IPC interface, and the `usbguard` command use it to interact with the daemon. The IPC interface is restricted to root and group wheel with `IPCAllowedUsers=root` and `IPCAllowedGroups=wheel`, but more granular policies (most likely read-only) can be set with `IPCAccessControlFiles`.
+
+You can see a list of all devices with the command `usbguard list-devices`. This will list all currently plugged USB devices's status: "allow" means the USB devices is allowed, "block" means the kernel will probe the device but not interact with it, and "reject" means the kernel will remove the device node from the system.
+
+You can additionally grant access by using `usbguard allow-device <id>` where `<id>` is the device id seen in `usbguard list-devices`. This is temporary which will lose affect after a reboot; if you want to include the grant into the rules file `rules.conf`, use `usbguard allow-device <id> -p`.
+
+### DBus interface
+<div class="note warning"><b>Warning: </b>DBus interface can be used to allow additional USB device permissions. If you install the USBGuard DBus package, make sure you correctly configure your desktop environment settings.</div>
+
+If you install the package `usbguard-dbus` it will also provides a dbus interface for desktop environments.
+
+#### GNOME
+GNOME will silently detect USBGuard and pickup support for it. It doesn't yet have GUI application to control it but will show notification for rejected USB devices.
+
+By default it will allow any device if the screen is unlocked. The gsettings `org.gnome.desktop.privacy usb-protection-level` can be used to control this behavior: `lockscreen` means USBGuard policy is only honored when your screen is locked, while `always` means it will be always honored. `always` will also cause the screen to be immediately locked for ANY USB device plugged in, including allowed devices. (This makes sense, since USB devices are unauthenticated in general; any new plug in can be potentially dangerous)
+
+See: 
+* [RHEL 9 documentation "Protecting systems against intrusive USB devices"](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/security_hardening/protecting-systems-against-intrusive-usb-devices_security-hardening)
+* [USBGuard Rule Language](https://usbguard.github.io/documentation/rule-language.html)
 
 ## References
 [Madaidan insecurities - Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
