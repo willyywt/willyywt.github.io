@@ -51,7 +51,31 @@ See kernel documentation at https://www.kernel.org/doc/html/latest/admin-guide/s
 TODO
 
 ## GRUB password
-TODO
+Distributions don't set GRUB password by default, which is insane because this means everyone that can reach your computer can just reboot to GRUB commandline, edit the kernel commandline parameters and hence start to elevate to root priviledges. This is way too cheap because crackers don't even have to remove your hard disk from your computer to escalate root. (On Windows if crackers can't direcly modify your disk, it is impossible to edit boot parameters before you login)
+
+You can set a GRUB password and request the correct password for the GRUB commandline.
+
+1. Run the command `grub-mkpasswd-pbkdf2` (on Fedora run the command `grub2-mkpasswd-pbkdf2`) and enter your desired GRUB password. This won't change any grub config; it's meant to generate a PBDF2 hash. Please remember the password you entered, because once you lost this it will require either root privilege, starting from usb drive or taking out your disk to change it. After you enter your desired GRUB password (twice, because you need to confirm your password), it will show a string starting with `grub.pbkdf2.sha512`. You should copy this `<hash>` later; DO include the starting `grub.pbkdf2.sha512`, but DON'T include the prompt `PBKDF2 hash of your password is `.
+
+2. Edit the file `/etc/grub.d/40_custom` and append the following content:
+```
+set superusers="root"
+password_pbkdf2 root <hash>
+```
+Replace `<hash>` with the above `grub-mkpasswd-pbkdf2` output. If you see something like `exec tail -n +3 $0` above, leave it as-is, don't change it.
+
+3. As root run the command (on Fedora use `grub2-mkconfig` instead)
+```
+grub-mkconfig -o <path_to_grub_config>
+```
+Replace `<path_to_grub_config>` with the grub config file on your distribution, most likely `/boot/grub/grub.cfg` (on Fedora it's `/boot/grub2/grub.cfg`).
+Alternatively, on Debian or Ubuntu, you can use `update-grub` instead.
+
+You want to verify your GRUB settings. Reboot your computer; once GRUB screen starts, instead of picking an entry and booting the computer, press the key 'c' instead. This should require a GRUB username and a GRUB password; first enter "root" and then the password you give to `grub-mkpasswd-pbkdf2` (but not the PBKDF2 `<hash>` sum). If you successfully entered the GRUB commandline, you can press the key `<ESC>` to quit the GRUB commandline.
+
+See:
+* [GRUB command list](https://www.gnu.org/software/grub/manual/grub/html_node/Commands.html)
+* [Authentication and authorisation in GRUB](https://www.gnu.org/software/grub/manual/grub/html_node/Authentication-and-authorisation.html#Authentication-and-authorisation)
 
 ## Account
 TODO
