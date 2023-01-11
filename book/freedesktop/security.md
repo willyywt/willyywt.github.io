@@ -4,7 +4,7 @@ navigate_index: navigate_index.html
 title: "Security Notes"
 ---
 
-Freedesktop/Linux distributions usually ships with insane settings that voids your security. Although the desktop security model is largely broken compared to mobile platforms, as dear users of a libre desktop platform, we at least can make the job of security crackers somewhat more difficult and expensive.
+Freedesktop/Linux distributions usually ships with insane settings that void your security. Although the desktop security model is largely broken compared to mobile platforms, as dear users of a libre desktop platform, we at least can make the job of security crackers somewhat more difficult and expensive.
 
 ## Kernel
 
@@ -76,7 +76,7 @@ You want to verify your GRUB settings. Reboot your computer; once GRUB screen st
 TODO
 
 ## USBGuard
-USB device is not authenticated device in general, but you can smaller the kernel attach surface by restricting the vendor id and product id that the kernel recognizes (the kernel automatically loads drivers according to vendor id and product id; Chrome OS only blocks device class which is not secure enough: [ChromeOS usbguard bypass](https://packetstormsecurity.com/files/167269/ChromeOS-usbguard-Bypass.html)).
+USB device is not authenticated device in general, but you can smaller the kernel attack surface by restricting the vendor id and product id that the kernel recognizes (the kernel automatically loads drivers according to vendor id and product id; Chrome OS only blocks device class which is not secure enough: [ChromeOS usbguard bypass](https://packetstormsecurity.com/files/167269/ChromeOS-usbguard-Bypass.html)).
 
 USBGuard is a software framework enforcing USB device policy.
 
@@ -130,7 +130,7 @@ By default it will allow any device if the screen is unlocked. The gsettings `or
 [Madaidan insecurities - Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
 
 ### Kernel Documentation:
-* [/admin-guide/LSM/Yama.html](https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html#ptrace-scope
+* [/admin-guide/LSM/Yama.html](https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html#ptrace-scope)
 * [/admin-guide/sysctl/fs.html](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/fs.html)
 
 ### GRUB
