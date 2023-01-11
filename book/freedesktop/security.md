@@ -23,8 +23,8 @@ The above sysctl can restrict the relations of processes that uses ptrace. Setti
 
 #### fs
 ```conf
-fs.protected_fifos = 2
-fs.protected_regular = 2
+fs.protected_fifos=2
+fs.protected_regular=2
 ```
 Privileged process sometimes need to write temporary files. On sticky directories, it is only wise when the file don't exist at all (hense the usage of `O_CREAT`), so that the kernel will create one with the same uid and gid, which is secure. However, if the privileged process naively use `access()` to first and use `open(O_CREAT)` to create one later, then at the exact time gap between `access()` and `open()`, a malicious process can sneakily create one with the same filename, so that later call to `open(O_CREAT)` will not create one, but instead reuse existing file owned by the malicious process, so that the malicious can silently change the file's content without notice. Due to how the operating system schedule processes, this is not as uncommon as one might think. (This is known as the classi TOCTOU race condition, Time-of-check_to_time-of-use)
 
@@ -34,8 +34,8 @@ The above sysctl will tell the kernel to make `open()` fail for files that the p
 
 ```conf
 # These are already systemd default.
-fs.protected_hardlinks = 1
-fs.protected_symlinks = 1
+fs.protected_hardlinks=1
+fs.protected_symlinks=1
 ```
 These are also intended to prevent incorrect file checking with potential TOCTOU race condition, but this time with symlink and hardlink. 
 These are more concerned with existing files, rather than creating a new temporary file, and are even more dangerous because symlink and hardlink are more frequently used as a dangerous interface that unprivileged process present to privileged process. (In other worlds, privileged process more frequently attempt to read them without sanitizing.)
@@ -50,17 +50,21 @@ Distributions don't set GRUB password by default, which is insane because this m
 
 You can set a GRUB password and request the correct password for the GRUB commandline.
 
-1. Run the command `grub-mkpasswd-pbkdf2` (on Fedora run the command `grub2-mkpasswd-pbkdf2`) and enter your desired GRUB password. This won't change any grub config; it's meant to generate a PBKDF2 hash. Please remember the password you entered, because once you lost this it will require either root privilege, starting from usb drive or taking out your disk to change it. After you enter your desired GRUB password (twice, because you need to confirm your password), it will show a string starting with `grub.pbkdf2.sha512`. You should copy this `<hash>` later; DO include the starting "`grub.pbkdf2.sha512`", but DON'T include the prompt "`PBKDF2 hash of your password is `".
+1. Run the following command (on Fedora run the command `grub2-mkpasswd-pbkdf2`):
+```sh
+grub-mkpasswd-pbkdf2
+```
+and enter your desired GRUB password. This won't change any grub config; it's meant to generate a PBKDF2 hash. Please remember the password you entered, because once you lost this it will require either root privilege, starting from usb drive or taking out your disk to change it. After you enter your desired GRUB password (twice, because you need to confirm your password), it will show a string starting with `grub.pbkdf2.sha512`. You should copy this `<hash>` later; DO include the starting "`grub.pbkdf2.sha512`", but DON'T include the prompt "`PBKDF2 hash of your password is `".
 
 2. Edit the file `/etc/grub.d/40_custom` and append the following content:
-```
+```sh
 set superusers="root"
 password_pbkdf2 root <hash>
 ```
 Replace `<hash>` with the above `grub-mkpasswd-pbkdf2` output. If you see something like `exec tail -n +3 $0` above, leave it as-is, don't change it.
 
 3. As root run the command (on Fedora use `grub2-mkconfig` instead)
-```
+```sh
 grub-mkconfig -o <path_to_grub_config>
 ```
 Replace `<path_to_grub_config>` with the grub config file on your distribution, most likely `/boot/grub/grub.cfg` (on Fedora it's `/boot/grub2/grub.cfg`).
@@ -88,11 +92,28 @@ install -m 0600 -o root -g root ./rules.conf /etc/usbguard/rules.conf
 Start the daemon with `systemctl enable --now usbguard`. It will start to reject new USB devices.
 
 ### IPC interface 
-USBGuard daemon provides an IPC interface, and the `usbguard` command use it to interact with the daemon. The IPC interface is restricted to root and group wheel with `IPCAllowedUsers=root` and `IPCAllowedGroups=wheel`, but more granular policies (most likely read-only) can be set with `IPCAccessControlFiles`.
+USBGuard daemon provides an IPC interface, and the `usbguard` command use it to interact with the daemon. The interact permission can be configured in the file `/etc/usbguard/usbguard-daemon.conf` :
+```conf
+IPCAllowedUsers=root
+IPCAllowedGroups=wheel
+```
+This will restrict the IPC interface to root and group wheel. More granular policies (I haven't figured this out yet) can be set with `IPCAccessControlFiles`.
 
-You can see a list of all devices with the command `usbguard list-devices`. This will list all currently plugged USB devices's status: "allow" means the USB devices is allowed, "block" means the kernel will probe the device but not interact with it, and "reject" means the kernel will remove the device node from the system.
+You can see a list of all devices with the command
+```sh
+usbguard list-devices
+```
+This will list all currently plugged USB devices's status: "allow" means the USB devices is allowed, "block" means the kernel will probe the device but not interact with it, and "reject" means the kernel will remove the device node from the system.
 
-You can additionally grant access by using `usbguard allow-device <id>` where `<id>` is the device id seen in `usbguard list-devices`. This is temporary which will lose affect after a reboot; if you want to include the grant into the rules file `rules.conf`, use `usbguard allow-device <id> -p`.
+You can additionally grant access by using
+```sh
+usbguard allow-device <id>
+```
+where `<id>` is the device id seen in `usbguard list-devices`. This is temporary which will lose affect after a reboot; if you want to include the grant into the rules file `rules.conf`, use
+```sh
+usbguard allow-device <id> -p
+```
+.
 
 ### DBus interface
 <div class="note warning"><b>Warning: </b>DBus interface can be used to allow additional USB device permissions. If you install the USBGuard DBus package, make sure you correctly configure your desktop environment settings.</div>
