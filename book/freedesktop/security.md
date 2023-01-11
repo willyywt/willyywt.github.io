@@ -21,8 +21,6 @@ Ptrace is a very dangerous syscall which allows running process's memory to be m
 
 The above sysctl can restrict the relations of processes that uses ptrace. Settings this to `1` applies a default restriction to parent-child (and descendant child) process relation only, which is a large step from the default that only restricts uid. (On Freedesktop/Linux there are no reasonable protections against a malicious parent process, so trusting parent process is not a bad idea.) Alternatively, you can set this to `2` which restricts to root and `3` to disable entirely.
 
-See kernel documentation: https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html#ptrace-scope.
-
 #### fs
 ```conf
 fs.protected_fifos = 2
@@ -43,9 +41,6 @@ These are also intended to prevent incorrect file checking with potential TOCTOU
 These are more concerned with existing files, rather than creating a new temporary file, and are even more dangerous because symlink and hardlink are more frequently used as a dangerous interface that unprivileged process present to privileged process. (In other worlds, privileged process more frequently attempt to read them without sanitizing.)
 
 For hardlink, setting to `1` will prevent users to create hardlink for files that they don't own. For symlink, setting to `1` will prevent symlink to be followed in sticky world-writable directory that don't match the process's uid and also don't match the directory owner.
-
-
-See kernel documentation at https://www.kernel.org/doc/html/latest/admin-guide/sysctl/fs.html.
 
 ### Kernel modules
 TODO
@@ -72,10 +67,6 @@ Replace `<path_to_grub_config>` with the grub config file on your distribution, 
 Alternatively, on Debian or Ubuntu, you can use `update-grub` instead.
 
 You want to verify your GRUB settings. Reboot your computer; once GRUB screen starts, instead of picking an entry and booting the computer, press the key 'c' instead. This should require a GRUB username and a GRUB password; first enter "root" and then the password you give to `grub-mkpasswd-pbkdf2` (but not the PBKDF2 `<hash>` sum). If you successfully entered the GRUB commandline, you can press the key `<ESC>` to quit the GRUB commandline.
-
-See:
-* [GRUB command list](https://www.gnu.org/software/grub/manual/grub/html_node/Commands.html)
-* [Authentication and authorisation in GRUB](https://www.gnu.org/software/grub/manual/grub/html_node/Authentication-and-authorisation.html#Authentication-and-authorisation)
 
 ## Account
 TODO
@@ -113,9 +104,18 @@ GNOME will silently detect USBGuard and pickup support for it. It doesn't yet ha
 
 By default it will allow any device if the screen is unlocked. The gsettings `org.gnome.desktop.privacy usb-protection-level` can be used to control this behavior: `lockscreen` means USBGuard policy is only honored when your screen is locked, while `always` means it will be always honored. `always` will also cause the screen to be immediately locked for ANY USB device plugged in, including allowed devices. (This makes sense, since USB devices are unauthenticated in general; any new plug in can be potentially dangerous)
 
-See: 
+## References
+### General
+[Madaidan insecurities - Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
+
+### Kernel Documentation:
+* [/admin-guide/LSM/Yama.html](https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html#ptrace-scope
+* [/admin-guide/sysctl/fs.html](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/fs.html)
+
+### GRUB
+* [GRUB command list](https://www.gnu.org/software/grub/manual/grub/html_node/Commands.html)
+* [Authentication and authorisation in GRUB](https://www.gnu.org/software/grub/manual/grub/html_node/Authentication-and-authorisation.html#Authentication-and-authorisation)
+
+### USBGuard
 * [RHEL 9 documentation "Protecting systems against intrusive USB devices"](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/security_hardening/protecting-systems-against-intrusive-usb-devices_security-hardening)
 * [USBGuard Rule Language](https://usbguard.github.io/documentation/rule-language.html)
-
-## References
-[Madaidan insecurities - Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
