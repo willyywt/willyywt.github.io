@@ -2,6 +2,7 @@
 layout: book_chapter
 navigate_index: navigate_index.html
 title: "Security Notes"
+last_modified_at: 2023-01-29
 ---
 
 Freedesktop/Linux distributions usually ships with insane settings that void your security. Although the desktop security model is largely broken compared to mobile platforms, as dear users of a libre desktop platform, we at least can make the job of security crackers somewhat more difficult and expensive.
@@ -109,7 +110,7 @@ You can additionally grant access by using
 ```sh
 usbguard allow-device <id>
 ```
-where `<id>` is the device id seen in `usbguard list-devices`. This is temporary which will lose affect after a reboot; if you want to include the grant into the rules file `rules.conf`, use
+where `<id>` is the device id seen in `usbguard list-devices`. This is temporary which will lose affect after a reboot; if you want to include the grant into the rules file `rules.conf`, use (note this don't support `--no-hashes`, you may want to manually edit `/etc/usbguard/usbguard-daemon.conf` to remove hashes)
 ```sh
 usbguard allow-device <id> -p
 ```
@@ -127,7 +128,8 @@ By default it will allow any device if the screen is unlocked. The gsettings `or
 
 ## References
 ### General
-[Madaidan insecurities - Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
+* [Madaidan insecurities - Linux Hardening Guide](https://madaidans-insecurities.github.io/guides/linux-hardening.html)
+* [Peter's IT Docs](https://docs.arbitrary.ch/index.html)
 
 ### Kernel Documentation:
 * [/admin-guide/LSM/Yama.html](https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html#ptrace-scope)
