@@ -77,12 +77,30 @@ You want to verify your GRUB settings. Reboot your computer; once GRUB screen st
 TODO
 
 ## USBGuard
-USB device is not authenticated device in general, but you can smaller the kernel attack surface by restricting the vendor id and product id that the kernel recognizes (the kernel automatically loads drivers according to vendor id and product id; Chrome OS only blocks device class which is not secure enough: [ChromeOS usbguard bypass](https://packetstormsecurity.com/files/167269/ChromeOS-usbguard-Bypass.html)).
+USB device is not authenticated device in general, but you can smaller the kernel attack surface by restricting the vendor id, product id, device interface, etc. (Chrome OS only blocks device class which is not secure enough: [ChromeOS usbguard bypass](https://packetstormsecurity.com/files/167269/ChromeOS-usbguard-Bypass.html)).
 
 USBGuard is a software framework enforcing USB device policy.
 
+### Restrictions
+* Device VendorID and ProductID
+* Device Interface
+* Device Name
+* USB Connect type (hotplug/hardwired)
+* USB port
+* USBGuard Hash
+
+These restrictions are editable in the [USB Device Rules file](#usb-device-rules-file). If you want to keep a specific rule but loosen some of the above restrictions, delete the respective item in such rule; for example, deleting `via-port "1-3"` will cause USBGuard to don't check the USB port that such device plug in.
+
+### Configuration File
+
+Edits will take effect after restarting the USBGuard daemon.
+#### USB Device Rules file
+`/etc/usbguard/rules.conf`
+#### USBGuard Daemon file
+`/etc/usbguard/usbguard-daemon.conf`
+
 ### Initial configuration
-It ships an empty configuration on installation, but this can be automatically generated for the current USB devices that you plug in. Generate an initial policy list and install it (RHEL 9 documentation recommends `--no-hashes` so I followed it)
+USBGuard ships an empty [USB Device Rules file](#usb-device-rules-file) on installation. The following command will generate one for the current USB devices that you plug in (RHEL 9 documentation recommends `--no-hashes` so I followed it)
 ```sh
 usbguard generate-policy --no-hashes > ./rules.conf
 install -m 0600 -o root -g root ./rules.conf /etc/usbguard/rules.conf
@@ -93,28 +111,29 @@ install -m 0600 -o root -g root ./rules.conf /etc/usbguard/rules.conf
 Start the daemon with `systemctl enable --now usbguard`. It will start to reject new USB devices.
 
 ### IPC interface 
-USBGuard daemon provides an IPC interface, and the `usbguard` command use it to interact with the daemon. The interact permission can be configured in the file `/etc/usbguard/usbguard-daemon.conf` :
+USBGuard daemon provides an IPC interface, and the `usbguard` command use it to interact with the daemon.
+
+#### IPC interface permission
+The interact permission can be configured in the [USBGuard Daemon file](#usbguard-daemon-file):
 ```conf
 IPCAllowedUsers=root
 IPCAllowedGroups=wheel
 ```
 This will restrict the IPC interface to root and group wheel. More granular policies (I haven't figured this out yet) can be set with `IPCAccessControlFiles`.
 
+#### USB device list
 You can see a list of all devices with the command
 ```sh
 usbguard list-devices
 ```
 This will list all currently plugged USB devices's status: "allow" means the USB devices is allowed, "block" means the kernel will probe the device but not interact with it, and "reject" means the kernel will remove the device node from the system.
 
-You can additionally grant access by using
+#### Add usbguard allow rule
+You can additionally add allow rules from those printed by `usbguard list-devices`, either temporarily (lose affect after USGBuard restart) or permanently, by using
 ```sh
-usbguard allow-device <id>
+usbguard allow-device <id> [-p]
 ```
-where `<id>` is the device id seen in `usbguard list-devices`. This is temporary which will lose affect after a reboot; if you want to include the grant into the rules file `rules.conf`, use (note this don't support `--no-hashes`, you may want to manually edit `/etc/usbguard/usbguard-daemon.conf` to remove hashes)
-```sh
-usbguard allow-device <id> -p
-```
-.
+where `<id>` is the device id seen in `usbguard list-devices`, and the option `-p` makes the rule permanent. Note `usbguard allow-device` don't either edit the rules or add block rules; if you want to do this you must edit the [USB Device Rules file](#usb-device-rules-file).
 
 ### DBus interface
 <div class="note warning"><b>Warning: </b>DBus interface can be used to allow additional USB device permissions. If you install the USBGuard DBus package, make sure you correctly configure your desktop environment settings.</div>
