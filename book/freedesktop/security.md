@@ -2,7 +2,7 @@
 layout: book_chapter
 navigate_index: navigate_index.html
 title: "Security Notes"
-last_modified_at: 2023-01-29
+last_modified_at: 2023-01-31
 ---
 
 Freedesktop/Linux distributions usually ships with insane settings that void your security. Although the desktop security model is largely broken compared to mobile platforms, as dear users of a libre desktop platform, we at least can make the job of security crackers somewhat more difficult and expensive.
@@ -94,10 +94,10 @@ These restrictions are editable in the [USB Device Rules file](#usb-device-rules
 ### Configuration File
 
 Edits will take effect after restarting the USBGuard daemon.
-#### USB Device Rules file
-`/etc/usbguard/rules.conf`
-#### USBGuard Daemon file
-`/etc/usbguard/usbguard-daemon.conf`
+<ul>
+<li id="usb-device-rules-file">USB Device Rules file: <code>/etc/usbguard/rules.conf</code></li>
+<li id="usbguard-daemon-file">USBGuard Daemon file: <code>/etc/usbguard/usbguard-daemon.conf</code></li>
+</ul>
 
 ### Initial configuration
 USBGuard ships an empty [USB Device Rules file](#usb-device-rules-file) on installation. The following command will generate one for the current USB devices that you plug in (RHEL 9 documentation recommends `--no-hashes` so I followed it)
